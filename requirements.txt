@@ -1,0 +1,13 @@
+pandas==2.3.1
+pydantic==2.11.7
+openai==1.95.1
+timeout_decorator==0.5.0
+dotenv==0.9.9
+lxml==6.0.2
+#html5lib==1.17.0
+beautifulsoup4==4.14.2
+z3-solver==4.15.4.0
+requests==2.32.5
+ucumvert==0.3.1
+pymysql==1.1.2
+vllm==0.19.0

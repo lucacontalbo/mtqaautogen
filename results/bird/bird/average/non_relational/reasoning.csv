@@ -1,0 +1,2188 @@
+CoT Reasoning
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean geographic coordinate in terms of latitude for locations that are post office boxes in West Virginia, branches in Louisiana, unique post offices in Arkansas, and non-postal community names in North Carolina combined?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>division</th>
+      <th colspan=""6"" halign=""left"">South Atlantic</th>
+      <th colspan=""4"" halign=""left"">West South Central</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>GA</th>
+      <th>MD</th>
+      <th>NC</th>
+      <th>SC</th>
+      <th>VA</th>
+      <th>WV</th>
+      <th>AR</th>
+      <th>LA</th>
+      <th>OK</th>
+      <th>TX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Branch</th>
+      <td>South (not available)</td>
+      <td>South (38.805865)</td>
+      <td>South (35.146635)</td>
+      <td>South (not available)</td>
+      <td>South (38.886153)</td>
+      <td>South (38.35933)</td>
+      <td>South (34.280294)</td>
+      <td>South (32.515307)</td>
+      <td>South (34.681146)</td>
+      <td>South (33.02861)</td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td>South (33.968149)</td>
+      <td>South (not available)</td>
+      <td>South (36.463544)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (37.459645)</td>
+      <td>South (34.997197)</td>
+      <td>South (29.213034)</td>
+      <td>South (not available)</td>
+      <td>South (32.968169)</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (37.526504)</td>
+      <td>South (34.2286)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>South (33.771036)</td>
+      <td>South (38.613661)</td>
+      <td>South (35.944562)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (37.300884)</td>
+      <td>South (34.196858)</td>
+      <td>South (not available)</td>
+      <td>South (34.98039)</td>
+      <td>South (32.959787)</td>
+    </tr>
+    <tr>
+      <th>Unique Post Office</th>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (36.2404)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (34.127184)</td>
+      <td>South (not available)</td>
+      <td>South (not available)</td>
+      <td>South (30.219702)</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Extract latitudes (6-decimal precision)
+- P.O. Box Only, WV = 37.526504
+- Branch, LA = 32.515307
+- Unique Post Office, AR = 34.127184
+- Non Postal Community Name, NC = 36.463544
+
+Step 2: Sum with 6-decimal precision
+- 37.526504 + 32.515307 = 70.041811
+- 70.041811 + 34.127184 = 104.168995
+- 104.168995 + 36.463544 = 140.632539
+
+Step 3: Mean = 140.632539 / 4 = 35.158135 (rounded to 6 decimal places)
+
+Final answer: 35.158135"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average mana cost of cards that have a silver border and are categorized as either artifacts, creatures, or both artifacts and creatures together?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""4"" halign=""left"">uncommon</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">uncommon</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th></th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+    </tr>
+    <tr>
+      <th>borderColor</th>
+      <th>frameVersion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""4"" valign=""top"">black</th>
+      <th>1993</th>
+      <td>1.0 unit*</td>
+      <td>2.0 unit</td>
+      <td>0.0 unit*</td>
+      <td>4.0 unit</td>
+      <td>2.0 unit*</td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+      <td>1.0 unit</td>
+      <td></td>
+      <td>1.0 unit</td>
+      <td>1.0 unit</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>1.0 unit</td>
+      <td>7.0 unit</td>
+      <td>0.0 unit*</td>
+      <td>3.0 unit*</td>
+      <td>5.0 unit</td>
+      <td>6.0 unit</td>
+      <td>4.0 unit</td>
+      <td>1.0 unit</td>
+      <td></td>
+      <td>2.0 unit</td>
+      <td>3.0 unit*</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>3.0 unit</td>
+      <td>6.0 unit</td>
+      <td>0.0 unit</td>
+      <td>5.0 unit</td>
+      <td>2.0 unit*</td>
+      <td>3.0 unit</td>
+      <td>7.0 unit*</td>
+      <td>1.0 unit</td>
+      <td></td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>5.0 unit</td>
+      <td>2.0 unit</td>
+      <td>0.0 unit</td>
+      <td>6.0 unit*</td>
+      <td>2.0 unit*</td>
+      <td>3.0 unit</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit*</td>
+      <td></td>
+      <td>1.0 unit</td>
+      <td>5.0 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">gold</th>
+      <th>1997</th>
+      <td>4.0 unit</td>
+      <td>5.0 unit</td>
+      <td>0.0 unit</td>
+      <td>5.0 unit</td>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+      <td>3.0 unit*</td>
+      <td>2.0 unit</td>
+      <td></td>
+      <td>4.0 unit</td>
+      <td>3.0 unit*</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.0 unit</td>
+      <td>2.0 unit</td>
+      <td>0.0 unit*</td>
+      <td>4.0 unit*</td>
+      <td>2.0 unit*</td>
+      <td>0.0 unit</td>
+      <td>5.0 unit</td>
+      <td>2.0 unit</td>
+      <td></td>
+      <td>2.0 unit</td>
+      <td>7.0 unit</td>
+    </tr>
+    <tr>
+      <th>silver</th>
+      <th>2015</th>
+      <td>3.0 unit</td>
+      <td>13.0 unit*</td>
+      <td>0.0 unit</td>
+      <td>7.0 unit</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit*</td>
+      <td>3.0 unit</td>
+      <td>4.0 unit</td>
+      <td></td>
+      <td>1.0 unit</td>
+      <td>3.0 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">white</th>
+      <th>1993</th>
+      <td>1.0 unit</td>
+      <td>1.0 unit</td>
+      <td>0.0 unit</td>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+      <td>4.0 unit</td>
+      <td>5.0 unit</td>
+      <td>1.0 unit</td>
+      <td></td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>4.0 unit</td>
+      <td>2.0 unit</td>
+      <td>0.0 unit</td>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+      <td>4.0 unit</td>
+      <td>5.0 unit*</td>
+      <td>3.0 unit</td>
+      <td></td>
+      <td>2.0 unit</td>
+      <td>3.0 unit</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>3.0 unit</td>
+      <td>2.0 unit</td>
+      <td>0.0 unit</td>
+      <td>4.0 unit</td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+      <td>5.0 unit*</td>
+      <td>2.0 unit</td>
+      <td></td>
+      <td>4.0 unit</td>
+      <td>1.0 unit</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Locate the silver border row (frameVersion 2015).
+
+Step 2: Extract the values for Artifact, Artifact,Creature, and Creature:
+- Artifact = 4.000000
+- Artifact,Creature = 4.000000
+- Creature = 3.000000
+
+Step 3: Sum the values:
+4.000000 + 4.000000 + 3.000000 = 11.000000
+
+Step 4: Compute the average (sum / 3):
+11.000000 / 3 = 3.666667
+
+Final answer: 3.666667"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average longitude coordinate of private sector career-focused schools situated in Massachusetts, New York, and Pennsylvania combined?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>basic</th>
+      <th colspan=""10"" halign=""left"">Associates--Private For-profit</th>
+      <th colspan=""10"" halign=""left"">Associates--Public Rural-serving Medium</th>
+      <th colspan=""10"" halign=""left"">Associates--Public Suburban-serving Multicampus</th>
+      <th colspan=""10"" halign=""left"">Associates--Public Suburban-serving Single Campus</th>
+      <th colspan=""10"" halign=""left"">Associates--Public Urban-serving Multicampus</th>
+      <th colspan=""10"" halign=""left"">Baccalaureate Colleges--Arts &amp; Sciences</th>
+      <th colspan=""10"" halign=""left"">Baccalaureate Colleges--Diverse Fields</th>
+      <th colspan=""10"" halign=""left"">Masters Colleges and Universities--larger programs</th>
+      <th colspan=""10"" halign=""left"">Masters Colleges and Universities--medium programs</th>
+      <th colspan=""10"" halign=""left"">Theological seminaries- Bible colleges- and other faith-related institutions</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+    </tr>
+    <tr>
+      <th>control (vsa_year)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Private for-profit (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Public (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+      <th>Private not-for-profit (NULL)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>long_x</th>
+      <td>-76.572434 unit</td>
+      <td>-71.787915 unit</td>
+      <td>-83.117242 unit (see notes)</td>
+      <td>-94.590066 unit (see notes)</td>
+      <td>-73.810438 unit</td>
+      <td>-80.822384 unit</td>
+      <td>-75.20905 unit</td>
+      <td>-95.454505 unit (see notes)</td>
+      <td>-77.171071 unit</td>
+      <td>-117.417046 unit</td>
+      <td>-78.729766 unit</td>
+      <td>-73.318843 unit (see notes)</td>
+      <td>-83.445069 unit</td>
+      <td>-94.363218 unit</td>
+      <td>-73.655014 unit</td>
+      <td>-76.219606 unit (see notes)</td>
+      <td>-75.934701 unit</td>
+      <td>-94.73163 unit</td>
+      <td>-78.939038 unit</td>
+      <td>-122.51216 unit</td>
+      <td>-77.009328 unit</td>
+      <td>-71.264004 unit</td>
+      <td>-83.238409 unit</td>
+      <td>-90.975535 unit</td>
+      <td>-73.056165 unit</td>
+      <td>-79.921811 unit</td>
+      <td>-74.965841 unit</td>
+      <td>-95.858058 unit</td>
+      <td>-77.407937 unit</td>
+      <td>-122.495524 unit</td>
+      <td>-76.512223 unit (see notes)</td>
+      <td>-72.630978 unit</td>
+      <td>-83.470274 unit</td>
+      <td>-90.640147 unit</td>
+      <td>-76.543191 unit (see notes)</td>
+      <td>-80.181739 unit</td>
+      <td>-80.305272 unit</td>
+      <td>-97.792652 unit</td>
+      <td>-76.418615 unit</td>
+      <td>-122.178944 unit</td>
+      <td>-76.662878 unit</td>
+      <td>-71.120263 unit</td>
+      <td>-83.055527 unit</td>
+      <td>-94.591181 unit (see notes)</td>
+      <td>-74.011826 unit</td>
+      <td>-80.829796 unit</td>
+      <td>-80.01855 unit</td>
+      <td>-97.68172 unit</td>
+      <td>-77.472958 unit</td>
+      <td>-122.446412 unit (see notes)</td>
+      <td>-76.594843 unit</td>
+      <td>-72.518493 unit</td>
+      <td>-84.746088 unit</td>
+      <td>-91.954345 unit (see notes)</td>
+      <td>-73.906243 unit (see notes)</td>
+      <td>-79.77998 unit</td>
+      <td>-75.06093 unit</td>
+      <td>-96.598772 unit</td>
+      <td>-78.969011 unit (see notes)</td>
+      <td>-122.479714 unit</td>
+      <td>-77.00131 unit</td>
+      <td>-71.811895 unit</td>
+      <td>-84.059947 unit</td>
+      <td>-92.685276 unit (see notes)</td>
+      <td>-73.9458 unit</td>
+      <td>-77.913805 unit (see notes)</td>
+      <td>-75.519799 unit</td>
+      <td>-94.374337 unit</td>
+      <td>-79.413214 unit</td>
+      <td>-122.207663 unit</td>
+      <td>-76.623417 unit (see notes)</td>
+      <td>-72.558507 unit</td>
+      <td>-83.138369 unit</td>
+      <td>-90.315712 unit (see notes)</td>
+      <td>-77.788625 unit</td>
+      <td>-78.739508 unit</td>
+      <td>-75.376549 unit</td>
+      <td>-99.70954 unit (see notes)</td>
+      <td>-79.179688 unit (see notes)</td>
+      <td>-122.344331 unit</td>
+      <td>-77.419282 unit</td>
+      <td>-71.918961 unit</td>
+      <td>-85.626166 unit</td>
+      <td>-94.591387 unit</td>
+      <td>-73.901893 unit</td>
+      <td>-80.832227 unit</td>
+      <td>-75.938163 unit</td>
+      <td>-99.733815 unit</td>
+      <td>-76.337647 unit</td>
+      <td>-120.395287 unit (see notes)</td>
+      <td>-76.751799 unit</td>
+      <td>-71.1103 unit</td>
+      <td>-84.638714 unit</td>
+      <td>-93.285385 unit</td>
+      <td>-73.970807 unit</td>
+      <td>-79.997012 unit</td>
+      <td>-75.683551 unit (see notes)</td>
+      <td>-97.155661 unit</td>
+      <td>-79.151518 unit</td>
+      <td>-122.515945 unit</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the private-sector (Private for-profit) longitude entries for the states:
+- Massachusetts: -71.787915
+- New York: -73.810438
+- Pennsylvania: -75.209050 (expressed with six decimals)
+
+Step 2: Sum the three longitudes (precision to 6 decimals):
+-71.787915 + -73.810438 + -75.209050 = -220.807403
+
+Step 3: Compute the average (divide by 3) with required precision:
+-220.807403 / 3 = -73.602467666667 → round to 6 decimals = -73.602468
+
+Final answer: -73.602468"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average latitude of schools in low-poverty areas that concentrate on literacy and language education for students in middle and high school levels?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>poverty_level</th>
+      <th colspan=""20"" halign=""left"">highest poverty</th>
+      <th colspan=""40"" halign=""left"">low poverty</th>
+      <th colspan=""40"" halign=""left"">moderate poverty</th>
+    </tr>
+    <tr>
+      <th>primary_focus_area</th>
+      <th colspan=""2"" halign=""left"">Applied Learning</th>
+      <th colspan=""2"" halign=""left"">Health &amp; Sports</th>
+      <th colspan=""2"" halign=""left"">History &amp; Civics</th>
+      <th colspan=""2"" halign=""left"">Literacy &amp; Language</th>
+      <th colspan=""4"" halign=""left"">Math &amp; Science</th>
+      <th colspan=""4"" halign=""left"">Music &amp; The Arts</th>
+      <th colspan=""4"" halign=""left"">Special Needs</th>
+      <th colspan=""4"" halign=""left"">Applied Learning</th>
+      <th colspan=""4"" halign=""left"">Health &amp; Sports</th>
+      <th colspan=""4"" halign=""left"">History &amp; Civics</th>
+      <th colspan=""4"" halign=""left"">Literacy &amp; Language</th>
+      <th colspan=""8"" halign=""left"">Math &amp; Science</th>
+      <th colspan=""8"" halign=""left"">Music &amp; The Arts</th>
+      <th colspan=""8"" halign=""left"">Special Needs</th>
+      <th colspan=""4"" halign=""left"">Applied Learning</th>
+      <th colspan=""4"" halign=""left"">Health &amp; Sports</th>
+      <th colspan=""4"" halign=""left"">History &amp; Civics</th>
+      <th colspan=""4"" halign=""left"">Literacy &amp; Language</th>
+      <th colspan=""8"" halign=""left"">Math &amp; Science</th>
+      <th colspan=""8"" halign=""left"">Music &amp; The Arts</th>
+      <th colspan=""8"" halign=""left"">Special Needs</th>
+    </tr>
+    <tr>
+      <th>teacher_prefix (grade_level)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 3-5)</th>
+      <th>Mrs. (Grades 6-8)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 3-5)</th>
+      <th>Mrs. (Grades 6-8)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 3-5)</th>
+      <th>Mrs. (Grades 6-8)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 3-5)</th>
+      <th>Mrs. (Grades 6-8)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 3-5)</th>
+      <th>Mrs. (Grades 6-8)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+      <th>Mrs. (Grades 3-5)</th>
+      <th>Mrs. (Grades 6-8)</th>
+      <th>Mrs. (Grades 9-12)</th>
+      <th>Mrs. (Grades PreK-2)</th>
+      <th>Ms. (Grades 3-5)</th>
+      <th>Ms. (Grades 6-8)</th>
+      <th>Ms. (Grades 9-12)</th>
+      <th>Ms. (Grades PreK-2)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>school_latitude (unit)</th>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+      <td>school_latitude (unit)</td>
+    </tr>
+    <tr>
+      <th>school_latitude (unit)</th>
+      <td>not available</td>
+      <td>34.70128</td>
+      <td>not available</td>
+      <td>40.63196</td>
+      <td>34.22101</td>
+      <td>not available</td>
+      <td>35.17457</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>35.82270</td>
+      <td>34.04394</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>29.70943</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>21.35026</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>47.69931</td>
+      <td>not available</td>
+      <td>41.87758</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>39.80123</td>
+      <td>41.76428</td>
+      <td>38.90836</td>
+      <td>34.22145</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>38.89773</td>
+      <td>37.50794</td>
+      <td>43.13178</td>
+      <td>33.86865</td>
+      <td>33.71786</td>
+      <td>not available</td>
+      <td>34.05438</td>
+      <td>not available</td>
+      <td>32.93835</td>
+      <td>38.00286</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>33.58535</td>
+      <td>40.89452</td>
+      <td>34.14836</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>37.76882</td>
+      <td>not available</td>
+      <td>43.08716</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>42.86697</td>
+      <td>37.31187</td>
+      <td>37.90726</td>
+      <td>42.47766</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>43.28286</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>33.55191</td>
+      <td>42.01601</td>
+      <td>33.89673</td>
+      <td>31.35590</td>
+      <td>not available</td>
+      <td>29.64427</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>43.64853</td>
+      <td>not available</td>
+      <td>36.13605</td>
+      <td>39.76487</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>32.63691</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>41.69577</td>
+      <td>41.61737</td>
+      <td>21.66477</td>
+      <td>not available</td>
+      <td>45.67556</td>
+      <td>40.53481</td>
+      <td>29.75871</td>
+      <td>47.29390</td>
+      <td>not available</td>
+      <td>39.25475</td>
+      <td>35.00571</td>
+      <td>not available</td>
+      <td>42.12410</td>
+      <td>not available</td>
+      <td>26.24154</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify low-poverty ""Literacy & Language"" columns. Low-poverty block spans columns 21–60; within it Literacy & Language is the 4th group (columns 33–36).
+
+Step 2: Map grade-level columns within that group. The group order is (Grades 3–5), (Grades 6–8), (Grades 9–12), (Grades PreK–2). Therefore:
+- Grades 6–8 latitude = column 34 = 37.50794 → 37.507940
+- Grades 9–12 latitude = column 35 = 43.13178 → 43.131780
+
+Step 3: Compute the average with 6-decimal precision.
+- Sum = 37.507940 + 43.131780 = 80.639720
+- Average = 80.639720 / 2.000000 = 40.319860
+
+Final answer: 40.319860"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean value of the recorded identifier numbers corresponding to Tim Ryan from Ohio, Nita Lowey, Patrick Leahy, and Patrick J. Tiberi?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>first_name</th>
+      <th>Nita</th>
+      <th colspan=""2"" halign=""left"">Patrick</th>
+      <th>Peter</th>
+      <th>Richard</th>
+      <th>Sander</th>
+      <th>Steve</th>
+      <th>Tim</th>
+    </tr>
+    <tr>
+      <th>ballotpedia_id</th>
+      <th>Nita Lowey</th>
+      <th>Patrick J. Tiberi</th>
+      <th>Patrick Leahy</th>
+      <th>Peter J. Visclosky</th>
+      <th>Dick Durbin</th>
+      <th>Sadne rLvien</th>
+      <th>Steve Chabot</th>
+      <th>Tim Ryan (Ohio)</th>
+    </tr>
+    <tr>
+      <th>religion_bio (middle_name)</th>
+      <th>Jewish (M.)</th>
+      <th>Catholic (J.)</th>
+      <th>Roman Catholic (J.)</th>
+      <th>Roman Catholic (J.)</th>
+      <th>Roman Catholic (J.)</th>
+      <th>Jewish (M.)</th>
+      <th>Catholic (J.)</th>
+      <th>Roman Catholic (J.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cspan_id</th>
+      <td>6110.0 unit</td>
+      <td>88155.0 unit</td>
+      <td>1552.0 unit**</td>
+      <td>N/A</td>
+      <td>N/‍A</td>
+      <td>N/A</td>
+      <td>36705.0 unit</td>
+      <td>1003608.0 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+We extract the cspan_id numbers for the four people:
+- Nita Lowey: 6110.000000
+- Patrick J. Tiberi: 88155.000000
+- Patrick Leahy: 1552.000000
+- Tim Ryan (Ohio): 1003608.000000
+
+Sum the values: 6110.000000 + 88155.000000 + 1552.000000 + 1003608.000000 = 1099425.000000
+
+Compute the mean: 1099425.000000 / 4 = 274856.250000
+
+Final answer: 274856.250000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average rating level for the specified politicians who ended their terms on January 3, 2009, January 3, 2015 (for two different members), and January 3, 2003, based on their respective political identification codes?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Republican</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Republican</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>C000567</th>
+      <th>C001035</th>
+      <th>E000285</th>
+      <th></th>
+      <th>I000024</th>
+      <th>R000307</th>
+      <th>S001141</th>
+    </tr>
+    <tr>
+      <th>end</th>
+      <th>start</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <td></td>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2003-01-03</th>
+      <th>1997-01-07</th>
+      <td></td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>2.000</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>2009-01-03</th>
+      <th>2003-01-07</th>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>2015-01-03</th>
+      <th>2009-01-06</th>
+      <td></td>
+      <td>n.a.</td>
+      <td>2.000</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>2021-01-03</th>
+      <th>2015-01-06</th>
+      <td></td>
+      <td>n.a.</td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>2.000</td>
+      <td>2.000</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the rating values for the specified end dates from the table.
+- End 2009-01-03: rating = 2.000
+- End 2015-01-03 (member 1) : rating = 2.000
+- End 2015-01-03 (member 2) : rating = 2.000
+- End 2003-01-03: rating = 2.000
+
+Step 2: Sum the ratings with precision of six decimal places.
+Sum = 2.000000 + 2.000000 + 2.000000 + 2.000000 = 8.000000
+
+Step 3: Compute the average (sum divided by count = 4) with six-decimal precision.
+Average = 8.000000 / 4 = 2.000000
+
+Final answer: 2.000000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average identification number assigned to the political histories of Paul C. Broun and Spencer Bachus, who are Baptists, along with Jim Moran, who is a Roman Catholic?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Baptist</th>
+      <th>Presbyterian</th>
+      <th></th>
+      <th>Roman Catholic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Paul C. Broun</th>
+      <th>Spencer Bachus</th>
+      <th>Nick Rahall</th>
+      <th></th>
+      <th>Jim Moran</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Jr.</th>
+      <th>III</th>
+      <th>II</th>
+      <th></th>
+      <th>Jr.</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>733.0</th>
+      <th>133.0</th>
+      <th>424.0</th>
+      <th></th>
+      <th>380.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>house_history_id</th>
+      <td>10422.0 unit</td>
+      <td>8789.0 unit</td>
+      <td>20087.0 unit</td>
+      <td></td>
+      <td>18503.0 unit</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Extract the house_history_id values with six-decimal precision:
+- Paul C. Broun: 10422.000000
+- Spencer Bachus: 8789.000000
+- Jim Moran: 18503.000000
+
+Step 2: Sum the values with six-decimal precision:
+- Sum = 10422.000000 + 8789.000000 + 18503.000000 = 37714.000000
+
+Step 3: Compute the average with six-decimal precision:
+- Average = 37714.000000 / 3 = 12571.333333
+
+Final answer: 12571.333333"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the combined average rating for the representatives from Alaska and North Carolina affiliated with the Democrats, along with the Nebraska Republican delegate?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>party</th>
+      <th colspan=""2"" halign=""left"">Democrat</th>
+      <th colspan=""2"" halign=""left"">Republican</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>AK</th>
+      <th>NC</th>
+      <th>NE</th>
+      <th>NH</th>
+    </tr>
+    <tr>
+      <th>phone</th>
+      <th>202-224-3004</th>
+      <th>202-224-6342</th>
+      <th>202-224-4224</th>
+      <th>202-224-3324</th>
+    </tr>
+    <tr>
+      <th>rss_url</th>
+      <th>http://www.begich.senate.gov/public/?a=rss.feed</th>
+      <th>http://www.hagan.senate.gov/rss</th>
+      <th>http://www.johanns.senate.gov/public/?a=RSS.Feed</th>
+      <th>http://ayotte.senate.gov/rss/?p=news</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td>2.0 unit\nAdditional details are provided in the documentation</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+AK (Democrat) rating = 2.000000
+NC (Democrat) rating = 2.000000
+NE (Republican) rating = 2.000000
+Sum = 2.000000 + 2.000000 + 2.000000 = 6.000000
+Average = 6.000000 / 3 = 2.000000
+
+Final answer: 2.000000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average value of the Facebook ID numbers associated with the accounts that belong to the politicians whose Instagram and YouTube handles are matched as ""senlamaralexander"" with ""lamaralexander"", ""senjeffmerkley"" with ""SenatorJeffMerkley"", and ""senjohnmccain"" with ""SenatorJohnMcCain""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>youtube_id</th>
+      <th>UC⁠-​ny-W5mEU⁠GytiyMdXbQ20Q</th>
+      <th>UC1kQIC2Q_Fq9_NRqdb6eHiw</th>
+      <th>CU1oRxeUPma6-53wPBZ3N02A</th>
+      <th>UC9IJssXDUaKHzwx6gW4wEoA</th>
+      <th>MUCd7zLaBcbQ06HaKoj9KkQS</th>
+      <th>UCRoXttCJhMnLVCxCaa6VnNQ</th>
+      <th>UChDLBjn5RWqgMmCSswT05IQ</th>
+      <th>UCmYveHBVXVBRxl7GiCL-gjw</th>
+      <th>UCplVxs_j_sLAt0fkplXcl4A</th>
+      <th>UCwunkd8Zs-yAWKQwnwBp7ew</th>
+    </tr>
+    <tr>
+      <th>facebook</th>
+      <th>SteveDainesMT</th>
+      <th>SenatorJohnHoeven</th>
+      <th>jerrymoran</th>
+      <th>johnmccain</th>
+      <th>congresswomansusanwbrooks</th>
+      <th>jeffmerkley</th>
+      <th>senatorlamaralexander</th>
+      <th>RepSteveScalise</th>
+      <th>senatormikelee</th>
+      <th>senrobportman</th>
+    </tr>
+    <tr>
+      <th>youtube (instagram)</th>
+      <th>SteveDainesMT (stevedaines)</th>
+      <th>senatorjohnhoevennd (senjohnhoeven)</th>
+      <th>senatorjerrymoran (senjerrymoran)</th>
+      <th>SenatorJohnMcCain (senjohnmccain)</th>
+      <th>SusanWBrooks (susanwbrooks)</th>
+      <th>SenatorJeffMerkley (senjeffmerkley)</th>
+      <th>lamaralexander (senlamaralexander)</th>
+      <th>RepSteveScali⁠se (s‍t e​vescalis⁠e)</th>
+      <th>senatormikelee (senmikelee)</th>
+      <th>SenRobPortman (senrobportman)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>facebook_id (unit)</th>
+      <td>185361254941832.0</td>
+      <td>194483057244478.0</td>
+      <td>according to official data: 171578807105.0</td>
+      <td>6425923706.0</td>
+      <td>according to official data: 517697358277175.0</td>
+      <td>74374931545.0</td>
+      <td>89927603836.0</td>
+      <td>50936151681.0</td>
+      <td>178081365556898.0</td>
+      <td>45243961073.0</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+
+1) Identify the three Facebook ID numbers:
+- lamaralexander / senlamaralexander: 89927603836.000000
+- SenatorJeffMerkley / senjeffmerkley: 74374931545.000000
+- SenatorJohnMcCain / senjohnmccain: 6425923706.000000
+
+2) Sum the three values:
+89927603836.000000 + 74374931545.000000 = 164302535381.000000
+164302535381.000000 + 6425923706.000000 = 170728459087.000000
+
+3) Compute the average (divide by 3):
+170728459087.000000 / 3 = 56909486362.333333
+
+Final answer: 56909486362.333333"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average length of the rivers flowing into Lago di Como, Chickamauga Lake, Lake Burley Griffin, and Lago Maggiore, specifically for the Adda, Tennessee, Murrumbidgee River, and Ticino waterways respectively?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Mountains</th>
+      <th colspan=""2"" halign=""left"">Alps</th>
+      <th>Appalachian Mountains</th>
+      <th>Snowy Mountains</th>
+    </tr>
+    <tr>
+      <th>River</th>
+      <th colspan=""2"" halign=""left"">Po</th>
+      <th>Ohio River</th>
+      <th>Murray River</th>
+    </tr>
+    <tr>
+      <th>Name (Lake)</th>
+      <th>Adda (Lago di Como)</th>
+      <th>Ticino (Lago Maggiore)</th>
+      <th>Tennessee (Chickamauga Lake)</th>
+      <th>Murrumbidgee River (Lake Burley Griffin)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Length</th>
+      <td>313.0 unit</td>
+      <td>248.0 unit</td>
+      <td>1049.0 unit (latest update)</td>
+      <td>1579.0 unit</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Lengths: Adda = 313.000000, Tennessee = 1049.000000, Murrumbidgee = 1579.000000, Ticino = 248.000000.
+Sum = 313.000000 + 1049.000000 + 1579.000000 + 248.000000 = 3189.000000.
+Average = 3189.000000 / 4 = 797.250000.
+
+Final answer: 797.250000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average height of players born in New Jersey playing the forward-center role, together with those born in New York playing as forward-guards, and both forward-center and forward-guard players from Missouri?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""5"" halign=""left"">B</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>B</th>
+      <th colspan=""2"" halign=""left"">W</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">W</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>C-F</th>
+      <th>F</th>
+      <th>F​-C</th>
+      <th>F-G</th>
+      <th>G</th>
+      <th></th>
+      <th></th>
+      <th>G-F</th>
+      <th>C</th>
+      <th>C-F</th>
+      <th></th>
+      <th>F</th>
+      <th>G⁠</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>uni⁠t</td>
+    </tr>
+    <tr>
+      <th>MO</th>
+      <td>USA ()</td>
+      <td>USA (79.0)</td>
+      <td>USA (81.0)</td>
+      <td>USA (79.0)</td>
+      <td>USA ‍()</td>
+      <td></td>
+      <td></td>
+      <td>USA (77.0)</td>
+      <td>USA ()</td>
+      <td>USA (80.0)</td>
+      <td></td>
+      <td>USA (79.0)</td>
+      <td>USA ()</td>
+    </tr>
+    <tr>
+      <th>MS</th>
+      <td>USA (82.0)</td>
+      <td>USA (83.0)</td>
+      <td>USA (82.0)</td>
+      <td>USA (79.0)</td>
+      <td>USA ()</td>
+      <td></td>
+      <td></td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td></td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+    </tr>
+    <tr>
+      <th>NC</th>
+      <td>USA ()</td>
+      <td>USA (81.0)</td>
+      <td>USA  ()</td>
+      <td>USA (77.0)</td>
+      <td>USA (72.0)</td>
+      <td></td>
+      <td></td>
+      <td>USA ()</td>
+      <td>USA (86.0)</td>
+      <td>USA (82.0)</td>
+      <td></td>
+      <td>USA (79.0)</td>
+      <td>USA (72.0)</td>
+    </tr>
+    <tr>
+      <th>N​J</th>
+      <td>USA (81.0)</td>
+      <td>USA  ()</td>
+      <td>USA (78.0)</td>
+      <td>US‍A ()</td>
+      <td>USA ()</td>
+      <td></td>
+      <td></td>
+      <td>USA (77.0)</td>
+      <td>USA (84.0)</td>
+      <td>USA ()</td>
+      <td></td>
+      <td>USA (79.0)</td>
+      <td>USA ()</td>
+    </tr>
+    <tr>
+      <th>NY</th>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td>USA ​(77.0)</td>
+      <td>USA ()</td>
+      <td></td>
+      <td></td>
+      <td>USA ()</td>
+      <td>USA (84.0)</td>
+      <td>USA (81.0)</td>
+      <td></td>
+      <td>USA‌ ()</td>
+      <td>USA ()</td>
+    </tr>
+    <tr>
+      <th>OH</th>
+      <td>USA (80.0)</td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td>USA ⁠(78.0)</td>
+      <td>USA (75.0)</td>
+      <td></td>
+      <td></td>
+      <td>USA (78.0)</td>
+      <td>USA (84.0)</td>
+      <td>USA (81.0)</td>
+      <td></td>
+      <td>USA ()</td>
+      <td>U​SA ()</td>
+    </tr>
+    <tr>
+      <th>PA</th>
+      <td>USA ()</td>
+      <td>USA (81.0)</td>
+      <td>USA (81.0)</td>
+      <td>USA ()</td>
+      <td>SUA ()</td>
+      <td></td>
+      <td></td>
+      <td>USA (74.0)</td>
+      <td>USA (77.0)</td>
+      <td>USA ()</td>
+      <td></td>
+      <td>USA (75.0)</td>
+      <td>USA (76.0)</td>
+    </tr>
+    <tr>
+      <th>TN</th>
+      <td>USA ()</td>
+      <td>USA (79.0)</td>
+      <td>USA (79.0)</td>
+      <td>U​SA (79.0)</td>
+      <td>USA (73.0)</td>
+      <td></td>
+      <td></td>
+      <td>USA (77.0)</td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td></td>
+      <td>USA (81.0)</td>
+      <td>USA (74.0)</td>
+    </tr>
+    <tr>
+      <th>TX</th>
+      <td>USA ()</td>
+      <td>USA (83.0)</td>
+      <td>US⁠A ()</td>
+      <td>USA (77.0)</td>
+      <td>USA ()</td>
+      <td></td>
+      <td></td>
+      <td>USA ()</td>
+      <td>USA ()</td>
+      <td>USA (80.0)</td>
+      <td></td>
+      <td>USA (75.0)</td>
+      <td>USA ()</td>
+    </tr>
+    <tr>
+      <th>VA</th>
+      <td>USA ()</td>
+      <td>USA ‍(78.0)</td>
+      <td>USA ()</td>
+      <td>SUA( )</td>
+      <td>USA (73.0)</td>
+      <td></td>
+      <td></td>
+      <td>USA (77.0)</td>
+      <td>USA (83.0)</td>
+      <td>USA ()</td>
+      <td></td>
+      <td>USA (82.0)</td>
+      <td>USA (74.0)</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the required heights from the table.
+- New Jersey, forward-center (F-C): 78.000000
+- New York, forward-guard (F-G): 77.000000
+- Missouri, forward-center (F-C): 81.000000
+- Missouri, forward-guard (F-G): 79.000000
+
+Step 2: Sum the heights.
+- Sum = 78.000000 + 77.000000 + 81.000000 + 79.000000 = 315.000000
+
+Step 3: Compute the average (divide by 4).
+- Average = 315.000000 / 4 = 78.750000
+
+Final answer: 78.750000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the overall average level of the aCLIgG immune marker among patients who have ANAPattern = ""S"" and a diagnosis of ""SjS, brain infarction"", ""SLE, SjS"", or ""SjS(CNS)"", or who have ANAPattern = ""P"" and a diagnosis of ""SLE, brain infarction""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">P</th>
+      <th colspan=""2"" halign=""left"">S</th>
+      <th></th>
+      <th>S</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+      <th colspan=""2"" halign=""left"">CNS lupus</th>
+      <th></th>
+      <th>CN Slupus</th>
+      <th></th>
+      <th>CNS lupus</th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>SLE, brain infarction</th>
+      <th>brain infarction</th>
+      <th>SLE, CNS lupus, dead</th>
+      <th>SLE, SjS</th>
+      <th></th>
+      <th>SLE, SjS, Cliogloblin+</th>
+      <th></th>
+      <th>SjS(CNS)</th>
+      <th>SjS, brain infarction</th>
+      <th>brain infarction</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>1997-07-07</th>
+      <th>1998-02-20</th>
+      <th>1995-05-29</th>
+      <th>1992-06-08</th>
+      <th></th>
+      <th>1993-07-29</th>
+      <th></th>
+      <th>1995-06-26</th>
+      <th>1997-07-07</th>
+      <th>1997-04-28</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>aCLIgG</th>
+      <td>0.9 unit</td>
+      <td>\</td>
+      <td>\‌</td>
+      <td>10.9 unit</td>
+      <td></td>
+      <td>1.5 unit</td>
+      <td></td>
+      <td>1.1 unit</td>
+      <td>1.1 unit</td>
+      <td>\</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify matching patients.
+- ANAPattern = ""P"" and diagnosis ""SLE, brain infarction"": value = 0.900000 unit.
+- ANAPattern = ""S"" and diagnosis ""SLE, SjS"": value = 10.900000 unit.
+- ANAPattern = ""S"" and diagnosis ""SjS(CNS)"": value = 1.100000 unit.
+- ANAPattern = ""S"" and diagnosis ""SjS, brain infarction"": value is missing, so excluded.
+
+Step 2: Sum the included values.
+0.900000 + 10.900000 + 1.100000 = 12.900000
+
+Step 3: Compute the average (divide by 3 patients).
+12.900000 / 3 = 4.300000
+
+Final answer: 4.300000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average amount per assembly unit when considering the quantities measured in ounces and individual units from early June 2010, adding the quantity in individual units from early July 2010, and including the measurement in inches from mid-September 2010?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>2010-06-09 00:00:00.0‍</th>
+      <th>2010-06-09 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-07-08 00:00:00.0</th>
+      <th>2010-09-15 00:00:00.0</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>2010-09-15 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-09-06 00:00:00.0</th>
+      <th>2010-11-14 00:00:00.0​</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>2010-11-14 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>EA</th>
+      <th>OZ</th>
+      <th>EA</th>
+      <th>OZ</th>
+      <th>EA</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>IN</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-09-06 00:00:00.0</th>
+      <th>2010-09-06 00:00:00.0</th>
+      <th>2010-11-14 00:00:00.0</th>
+      <th></th>
+      <th></th>
+      <th>2010-11-14 00:00:00.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PerAssemblyQty (unit)</th>
+      <td>PerAssemblyQty (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PerAssemblyQty (unit)</th>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>2.0</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the requested quantities from the table:
+- Early June 2010 (ounces): 9.000000
+- Early June 2010 (individual units): 2.000000
+- Early July 2010 (individual units): 2.000000
+- Mid-September 2010 (inches): 41.000000
+
+Step 2: Sum the values:
+9.000000 + 2.000000 + 2.000000 + 41.000000 = 54.000000
+
+Step 3: Divide by the number of items (4) to get the average:
+54.000000 / 4 = 13.500000
+
+Final answer:13.500000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average manufacturing expense of products belonging to category M that were launched on May 30, 2012, and May 30, 2013?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>ProductLine</th>
+      <th colspan=""3"" halign=""left"">M</th>
+      <th colspan=""2"" halign=""left"">R</th>
+      <th>R‌</th>
+      <th>R</th>
+      <th>R‌</th>
+      <th colspan=""7"" halign=""left"">R</th>
+      <th colspan=""4"" halign=""left"">S</th>
+      <th>S‍</th>
+      <th colspan=""4"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th>Size</th>
+      <th colspan=""3"" halign=""left"">42</th>
+      <th colspan=""2"" halign=""left"">44</th>
+      <th>44</th>
+      <th>48</th>
+      <th>48</th>
+      <th>48</th>
+      <th colspan=""3"" halign=""left"">52</th>
+      <th colspan=""3"" halign=""left"">58</th>
+      <th colspan=""3"" halign=""left"">L</th>
+      <th>M</th>
+      <th>M</th>
+      <th>M</th>
+      <th colspan=""3"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th>SellStartDate</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th>Style</th>
+      <th>U‍</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U‍</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>StandardCost</th>
+      <td>747.2 unit</td>
+      <td>1265.6 unit</td>
+      <td>144.6 unit</td>
+      <td>868.6 unit</td>
+      <td>1518.8 unit</td>
+      <td>343.6 unit (latest update)</td>
+      <td>868.6 unit</td>
+      <td>1518.8 unit</td>
+      <td>343.6 unit (latest update)</td>
+      <td>868.6 unit</td>
+      <td>1518.8 unit</td>
+      <td>343.6 unit</td>
+      <td>204.6 unit</td>
+      <td>1554.9 unit</td>
+      <td>343.6 unit (latest update)</td>
+      <td>38.5 unit</td>
+      <td>9.2 unit</td>
+      <td>23.7 unit</td>
+      <td>38.5 unit (latest update)</td>
+      <td>9.2 unit</td>
+      <td>23.7 unit</td>
+      <td>38.5 un it</td>
+      <td>9.2 unit</td>
+      <td>23.7 u​nit</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+1. Locate ProductLine M entries for SellStartDate 2012-05-30 and 2013-05-30. The StandardCost values are 1265.6 and 144.6.
+2. Represent values with 6 decimal places: 1265.600000 and 144.600000.
+3. Sum: 1265.600000 + 144.600000 = 1410.200000.
+4. Average: 1410.200000 / 2 = 705.100000.
+
+Final answer: 705.100000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average land area of all territories in North America that are US territories, Dependent Territories of the UK, or Overseas Departments of France, together with those territories in Africa that are Overseas Departments of France?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Continent</th>
+      <th colspan=""2"" halign=""left"">Africa</th>
+      <th colspan=""3"" halign=""left"">North America</th>
+      <th colspan=""2"" halign=""left"">South America</th>
+    </tr>
+    <tr>
+      <th>Region</th>
+      <th colspan=""2"" halign=""left"">Eastern Africa</th>
+      <th colspan=""3"" halign=""left"">Caribbean</th>
+      <th colspan=""2"" halign=""left"">South America</th>
+    </tr>
+    <tr>
+      <th>GovernmentForm</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+      <th>US Territory</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+    </tr>
+    <tr>
+      <th>HeadOfState</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+      <th>George W. Bush</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SurfaceArea (unit)</th>
+      <td>78.0</td>
+      <td>2510.0</td>
+      <td>96.0</td>
+      <td>1705.0</td>
+      <td>347.0</td>
+      <td>12173.0</td>
+      <td>90000.0</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Select values — North America (Caribbean): Dependent Territory of the UK = 96.000000, Overseas Department of France = 1705.000000, US Territory = 347.000000; Africa (Eastern Africa): Overseas Department of France = 2510.000000.
+
+Step 2: Sum = 96.000000 + 1705.000000 + 347.000000 + 2510.000000 = 4658.000000.
+
+Step 3: Count = 4. Average = 4658.000000 / 4 = 1164.500000.
+
+Final answer: 1164.500000"

@@ -1,0 +1,1908 @@
+Question,SQL Query,Method,Table,Constraints,Label
+"What is the lowest latitude among all post office locations in Oklahoma, uniquely designated post offices in Arkansas, and post offices situated within Louisiana?","SELECT MIN(latitude) AS latitude FROM (SELECT latitude AS latitude FROM sample_table WHERE state = ""OK"" AND type = ""Post Office"" UNION ALL SELECT latitude AS latitude FROM sample_table WHERE state = ""AR"" AND type = ""Unique Post Office"" UNION ALL SELECT latitude AS latitude FROM sample_table WHERE state = ""LA"" AND type = ""Post Office"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Branch</th>
+      <th>Non Postal Community Name</th>
+      <th>P.O. Box Only</th>
+      <th></th>
+      <th>Post Office</th>
+      <th>Unique Post Office</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>South</th>
+      <th>South</th>
+      <th>South</th>
+      <th></th>
+      <th>South</th>
+      <th>South</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""6"" valign=""top"">South Atlantic</th>
+      <th>GA</th>
+      <td>n.a.</td>
+      <td>33.968149 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>33.771036 unit</td>
+      <td>n.a.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD</th>
+      <td>38.805865 unit</td>
+      <td>38.960659 unit</td>
+      <td>38.6247 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>39.0314 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC</th>
+      <td>35.146635 unit</td>
+      <td>36.463544 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>35.944562 unit</td>
+      <td>36.2404 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC</th>
+      <td>33.976492 unit</td>
+      <td>33.889613 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>33.773887 unit</td>
+      <td>33.498438 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA</th>
+      <td>38.886153 unit</td>
+      <td>n.a.</td>
+      <td>38.7657 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>37.526504 unit</td>
+      <td></td>
+      <td>37.300884 unit</td>
+      <td>38.3494 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">West South Central</th>
+      <th>AR</th>
+      <td>34.280294 unit</td>
+      <td>34.997197 unit</td>
+      <td>34.2286 unit</td>
+      <td></td>
+      <td>34.196858 unit</td>
+      <td>34.127184 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>LA</th>
+      <td>32.515307 unit</td>
+      <td>29.213034 unit</td>
+      <td>29.9839 unit</td>
+      <td></td>
+      <td>29.9843 unit</td>
+      <td>n.a.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>OK</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>35.2325 unit</td>
+      <td></td>
+      <td>34.98039 unit</td>
+      <td>35.2227 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>TX</th>
+      <td>33.02861 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>32.959787 unit</td>
+      <td>30.219702 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,29.9843
+"Among silver-bordered cards that are devices, creatures, device-creatures, or lands, what is the greatest amount of mana required to cast them?","SELECT MAX(convertedManaCost) AS convertedManaCost FROM (SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Artifact"" UNION ALL SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Artifact,Creature"" UNION ALL SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Creature"" UNION ALL SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Land"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>borderColor</th>
+      <th colspan=""40"" halign=""left"">black</th>
+      <th colspan=""20"" halign=""left"">gold</th>
+      <th colspan=""10"" halign=""left"">silver</th>
+      <th colspan=""30"" halign=""left"">white</th>
+    </tr>
+    <tr>
+      <th>frameVersion</th>
+      <th colspan=""10"" halign=""left"">1993</th>
+      <th colspan=""10"" halign=""left"">1997</th>
+      <th colspan=""10"" halign=""left"">2003</th>
+      <th colspan=""10"" halign=""left"">2015</th>
+      <th colspan=""10"" halign=""left"">1997</th>
+      <th colspan=""10"" halign=""left"">2003</th>
+      <th colspan=""10"" halign=""left"">2015</th>
+      <th colspan=""10"" halign=""left"">1993</th>
+      <th colspan=""10"" halign=""left"">1997</th>
+      <th colspan=""10"" halign=""left"">2003</th>
+    </tr>
+    <tr>
+      <th>rarity</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+      <th colspan=""4"" halign=""left"">rare</th>
+      <th colspan=""6"" halign=""left"">uncommon</th>
+    </tr>
+    <tr>
+      <th>types</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Land</th>
+      <th>Sorcery</th>
+      <th>Artifact</th>
+      <th>Artifact,Creature</th>
+      <th>Creature</th>
+      <th>Enchantment</th>
+      <th>Instant</th>
+      <th>Sorcery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>convertedManaCost (unit)</th>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>7.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>13.0</td>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>",,4.0
+"What is the easternmost longitude recorded for private sector, for-profit organizations located in New York, Pennsylvania, Maryland, and Michigan?","SELECT MAX(long_x) AS long_x FROM (SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""New York"" UNION ALL SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Pennsylvania"" UNION ALL SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Maryland"" UNION ALL SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Michigan"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>state</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Mich‌igan</th>
+      <th>Missouri</th>
+      <th>NewY ork</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+    </tr>
+    <tr>
+      <th>control</th>
+      <th>basic</th>
+      <th>vsa_year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>long_x (unit)</th>
+      <th>long_x (unit)</th>
+      <th>long_x (unit)</th>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+      <td>long_x (unit)</td>
+    </tr>
+    <tr>
+      <th>Private for-profit</th>
+      <th>Associates--Private For-profit</th>
+      <th>NULL</th>
+      <td>-76.572434</td>
+      <td>-71.787915</td>
+      <td>-83.117242</td>
+      <td>-94.590066‌</td>
+      <td>-73.810438</td>
+      <td>-80.822384</td>
+      <td>-75.20905</td>
+      <td>-95.454505</td>
+      <td>-77.171071</td>
+      <td>-117.417046</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">Private not-for-profit</th>
+      <th>Baccalaureate Colleges--Arts &amp; Sciences</th>
+      <th>NULL</th>
+      <td>-76.594843</td>
+      <td>-72.518493</td>
+      <td>-84.746088</td>
+      <td>-91.954345</td>
+      <td>-73.906243</td>
+      <td>-79.779980</td>
+      <td>-75.06093</td>
+      <td>-96.598772</td>
+      <td>-78.969011</td>
+      <td>-122.479714</td>
+    </tr>
+    <tr>
+      <th>Bacca⁠laur​eate C olleges -‌-Divers⁠e Fiel ds</th>
+      <th>NULL</th>
+      <td>-77.001310</td>
+      <td>-71.811895</td>
+      <td>-84.059947​</td>
+      <td>-92.685276​</td>
+      <td>-73.945800</td>
+      <td>-77.913805</td>
+      <td>-75.519799</td>
+      <td>-94.374337</td>
+      <td>-79.413214</td>
+      <td>-122.207663</td>
+    </tr>
+    <tr>
+      <th>Masters Colleges and Universities--larger programs</th>
+      <th>NULL</th>
+      <td>-76.623417</td>
+      <td>-72.558507</td>
+      <td>-83.138369</td>
+      <td>-90.315712‌</td>
+      <td>-77.788625</td>
+      <td>-78.739508</td>
+      <td>-75.376549​</td>
+      <td>-99.709540</td>
+      <td>-79.179688</td>
+      <td>-122.344331</td>
+    </tr>
+    <tr>
+      <th>M asters Colleges and U⁠ni⁠ve‍r sities-⁠-medi‍um⁠ pro grams</th>
+      <th>NULL</th>
+      <td>-77.419282</td>
+      <td>-71.918961</td>
+      <td>-85.626166</td>
+      <td>-94.591387</td>
+      <td>-73.901893</td>
+      <td>-80.832227</td>
+      <td>-75.938163</td>
+      <td>-99.733815</td>
+      <td>-76.337647</td>
+      <td>-120.395287</td>
+    </tr>
+    <tr>
+      <th>hTeloogic alseimanires- iBbl eocllgese- adn ohterf iatrh-elated isntitutiosn</th>
+      <th>NULL</th>
+      <td>-76.751799</td>
+      <td>-71.110300</td>
+      <td>-84.638714</td>
+      <td>-93.285385</td>
+      <td>-73.970807</td>
+      <td>-79.997012</td>
+      <td>-75.683551</td>
+      <td>-97.155661</td>
+      <td>-79.151518</td>
+      <td>-122.515945</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Public</th>
+      <th>Associates--Public Rural-serving Medium</th>
+      <th>NU‍LL</th>
+      <td>-78.729766</td>
+      <td>-73.318843</td>
+      <td>-83.445069</td>
+      <td>-94.363218</td>
+      <td>-73.655014</td>
+      <td>-76.219606‌</td>
+      <td>-75.934701</td>
+      <td>-94.731630</td>
+      <td>-78.939038</td>
+      <td>-122.512160</td>
+    </tr>
+    <tr>
+      <th>Associates--Public Suburban-serving Multicampus</th>
+      <th>NULL</th>
+      <td>-77.009328</td>
+      <td>-71.264004</td>
+      <td>-83.238409</td>
+      <td>-90.975535</td>
+      <td>-73.056165</td>
+      <td>-79.921811</td>
+      <td>-74.965841</td>
+      <td>-95.858058</td>
+      <td>-77.407937</td>
+      <td>-122.495524</td>
+    </tr>
+    <tr>
+      <th>Associates--Public Suburban-serving Single Campus</th>
+      <th>NULL</th>
+      <td>-76.512223</td>
+      <td>-72.630978</td>
+      <td>-83.470274</td>
+      <td>-90.640147</td>
+      <td>-76.543191</td>
+      <td>-80.181739</td>
+      <td>-80.305272</td>
+      <td>-97.792652</td>
+      <td>-76.418615</td>
+      <td>-122.178944</td>
+    </tr>
+    <tr>
+      <th>Associates--Public Urban-serving Multicampus</th>
+      <th>NULL</th>
+      <td>-76.662878</td>
+      <td>-71.120263</td>
+      <td>-83.055527</td>
+      <td>-94.591181</td>
+      <td>-74.011826</td>
+      <td>-80.829796</td>
+      <td>-80.018550</td>
+      <td>-97.68172</td>
+      <td>-77.472958</td>
+      <td>-122.446412</td>
+    </tr>
+  </tbody>
+</table>",,-73.810438
+"Among all schools either with a low level of poverty serving students in grades six through eight with a focus on health and sports, or those with the highest poverty status serving students in grades nine through twelve that concentrate mainly on applied learning, or those with the highest poverty status in grades nine through twelve focusing on health and sports, what is the greatest latitude coordinate recorded?","SELECT MAX(school_latitude) AS school_latitude FROM (SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""low poverty"" AND grade_level = ""Grades 6-8"" AND primary_focus_area = ""Health & Sports"" UNION ALL SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""highest poverty"" AND grade_level = ""Grades 9-12"" AND primary_focus_area = ""Applied Learning"" UNION ALL SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""highest poverty"" AND grade_level = ""Grades 9-12"" AND primary_focus_area = ""Health & Sports"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">highest poverty</th>
+      <th colspan=""4"" halign=""left"">low poverty</th>
+      <th colspan=""2"" halign=""left"">moderate poverty</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">moderate poverty</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Grades 9-12</th>
+      <th>Grades PreK-2</th>
+      <th>Grades 3-5</th>
+      <th>Grades 6-8</th>
+      <th>Grades 9-12</th>
+      <th>Grades PreK-2</th>
+      <th>Grades 3-5</th>
+      <th>Grades 6-8</th>
+      <th></th>
+      <th>Grades 9-12</th>
+      <th>Grades PreK-2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>school_latitude (primary_focus_area) (unit)</th>
+      <td>school_latitude (primary_focus_area) (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mrs.</th>
+      <td>33.98181 (Math &amp; Science)</td>
+      <td>(Math &amp; Science)</td>
+      <td>(Music &amp; The Arts)</td>
+      <td>(Math &amp; Science)</td>
+      <td>(Math &amp; Science) (cf. appendix)</td>
+      <td>(Math &amp; Science)</td>
+      <td>39.76487 (Math &amp; Science)</td>
+      <td>40.15146 (Math &amp; Science)</td>
+      <td></td>
+      <td>(Math &amp; Science)</td>
+      <td>34.0277 (Math &amp; Science)</td>
+    </tr>
+    <tr>
+      <th>Ms.</th>
+      <td>41.86386 (Applied Learning)</td>
+      <td>as listed on the website: 34.04394 (Math &amp; Science)</td>
+      <td>(Literacy &amp; Language)</td>
+      <td>as listed on the website: 39.80123 (Health &amp; Sports)</td>
+      <td>(Math &amp; Science)</td>
+      <td>33.86865 (Literacy &amp; Language)</td>
+      <td>(Applied Learning) (cf. appendix)</td>
+      <td>(Special Needs)</td>
+      <td></td>
+      <td>(Literacy &amp; Language)</td>
+      <td>(Literacy &amp; Language)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,41.86386
+"Among the identifiers assigned to Sander Levin, Patrick J. Tiberi, and Peter J. Visclosky, which one has the highest number?","SELECT MAX(cspan_id) AS cspan_id FROM (SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Sander"" AND ballotpedia_id = ""Sander Levin"" UNION ALL SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Patrick"" AND ballotpedia_id = ""Patrick J. Tiberi"" UNION ALL SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Peter"" AND ballotpedia_id = ""Peter J. Visclosky"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>first_name</th>
+      <th>Nita</th>
+      <th colspan=""2"" halign=""left"">Patrick</th>
+      <th>Peter</th>
+      <th>Richard</th>
+      <th>Sander</th>
+      <th>Steve</th>
+      <th>Tim</th>
+    </tr>
+    <tr>
+      <th>ballotpedia_id</th>
+      <th>Nita Lowey</th>
+      <th>Patrick J. Tiberi</th>
+      <th>Patrick Leahy</th>
+      <th>Peter J. Visclosky</th>
+      <th>Dick Durbin</th>
+      <th>Sander Levin</th>
+      <th>Steve Chabot</th>
+      <th>Tim Ryan (Ohio)</th>
+    </tr>
+    <tr>
+      <th>religion_bio</th>
+      <th>Jewish</th>
+      <th>Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Jewish</th>
+      <th>Catholic</th>
+      <th>Roman Catholic</th>
+    </tr>
+    <tr>
+      <th>middle_name</th>
+      <th>M.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>M.</th>
+      <th>J.</th>
+      <th>J.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cspan_id (unit)</th>
+      <td>cspan_id (unit)</td>
+      <td>spcan_id u(nti)</td>
+      <td>cspan_id (unit)</td>
+      <td>cspan_id​ (uni‌t)</td>
+      <td>cspan_id (unit)</td>
+      <td>cspan_id (unit)</td>
+      <td>csp‍an_‍id (unit)</td>
+      <td>cspa_ind (unit)</td>
+    </tr>
+    <tr>
+      <th>cspan_id (unit)</th>
+      <td>6110.0</td>
+      <td>88155.0</td>
+      <td>1552.0</td>
+      <td>6785.0</td>
+      <td>6741.0</td>
+      <td>251.0</td>
+      <td>36705.0</td>
+      <td>1003608.0</td>
+    </tr>
+  </tbody>
+</table>",,88155.0
+"Among the four individuals identified by their unique codes with records ending on January 3rd, 2021 for two of them, January 3rd, 2015 for another, and January 3rd, 2009 for the last, what is the highest category or ranking assigned to any of these records?","SELECT MAX(class) AS class FROM (SELECT class AS class FROM sample_table WHERE end = ""2021-01-03"" AND bioguide = ""I000024"" UNION ALL SELECT class AS class FROM sample_table WHERE end = ""2015-01-03"" AND bioguide = ""R000307"" UNION ALL SELECT class AS class FROM sample_table WHERE end = ""2009-01-03"" AND bioguide = ""S001141"" UNION ALL SELECT class AS class FROM sample_table WHERE end = ""2021-01-03"" AND bioguide = ""C000567"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>1997-01-07</th>
+      <th>2003-01-07</th>
+      <th>2009-01-06</th>
+      <th>2015-01-06</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Republican</th>
+      <th>Republican</th>
+      <th>Republican</th>
+      <th>Republican</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>bioguide</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C000567</th>
+      <td></td>
+      <td>not available (2003-01-03) unit</td>
+      <td>2.0 (2009-01-03) un‌it</td>
+      <td>not available (2015-01-03) unit</td>
+      <td>2.0 (2021-01-03) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>C001035</th>
+      <td></td>
+      <td>2.0 (2003-01-03) unit</td>
+      <td>not available (2009-01-03) unit</td>
+      <td>2.0 (2015-01-03) unit</td>
+      <td>2.0 (2021-01-03) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>E000285</th>
+      <td></td>
+      <td>not available (2003-01-03) unit</td>
+      <td>2.0 (2009-01-03)‌ unit</td>
+      <td>not available (2015-01-03) unit</td>
+      <td>2.0 (2021-01-03) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>I000024</th>
+      <td></td>
+      <td>not available (2003-01-03) unit</td>
+      <td>2.0 (2009-01-03) unit</td>
+      <td>2.0 (2015-01-03) unit</td>
+      <td>2.0 (2021-01-03) uni⁠t</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>R000307</th>
+      <td></td>
+      <td>2.0 (2003-01-03) unit</td>
+      <td>not ava⁠ilab⁠le‌ (2009-01-03) unit</td>
+      <td>2.0 (2015-01-03) un⁠it</td>
+      <td>2.0 (2021-01-03) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>S001141</th>
+      <td></td>
+      <td>not available (2003-01-03) unit</td>
+      <td>2.0 (2009-01-03) unit</td>
+      <td>not available (2015-01-03) unit</td>
+      <td>2.0 (2021-01-03) unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,2.0
+"Among Paul C. Broun, Jim Moran, and Spencer Bachus, considering only those who are Baptists or Roman Catholics as specified, what is the greatest recorded house history identifier associated with their tenure?","SELECT MAX(house_history_id) AS house_history_id FROM (SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Baptist"" AND ballotpedia_id = ""Paul C. Broun"" UNION ALL SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Roman Catholic"" AND ballotpedia_id = ""Jim Moran"" UNION ALL SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Baptist"" AND ballotpedia_id = ""Spencer Bachus"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>ballotpedia_id</th>
+      <th>Jim Moran</th>
+      <th>Nick Rahall</th>
+      <th>Paul C. Broun</th>
+      <th>Spencer Bachus</th>
+    </tr>
+    <tr>
+      <th>suffix_name</th>
+      <th>Jr.</th>
+      <th>II</th>
+      <th>Jr.</th>
+      <th>III</th>
+    </tr>
+    <tr>
+      <th>maplight_id (religion_bio)</th>
+      <th>380.0 (Roman Catholic)</th>
+      <th>424.0 (Presbyterian)</th>
+      <th>733.0 (Baptist)</th>
+      <th>133.0 (Baptist)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>house_history_id (unit)</th>
+      <td>house_history_id (unit)</td>
+      <td>house_history_id (unit)</td>
+      <td>house_history_id (unit)</td>
+      <td>house_history_id (unit)</td>
+    </tr>
+    <tr>
+      <th>house_history‌_‌id ‍(unit‌)</th>
+      <td>18503.0⁠</td>
+      <td>20087.000</td>
+      <td>10422.0 (latest update)</td>
+      <td>8789.000</td>
+    </tr>
+  </tbody>
+</table>",,18503.0
+"Among the following groups—Democratic representatives from Alaska and North Carolina, and Republican representatives from Nebraska and New Hampshire—what is the lowest unit measurement recorded?","SELECT MIN(class) AS class FROM (SELECT class AS class FROM sample_table WHERE party = ""Democrat"" AND state = ""AK"" UNION ALL SELECT class AS class FROM sample_table WHERE party = ""Democrat"" AND state = ""NC"" UNION ALL SELECT class AS class FROM sample_table WHERE party = ""Republican"" AND state = ""NE"" UNION ALL SELECT class AS class FROM sample_table WHERE party = ""Republican"" AND state = ""NH"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>party</th>
+      <th colspan=""2"" halign=""left"">Democrat</th>
+      <th colspan=""2"" halign=""left"">Republican</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>AK</th>
+      <th>NC</th>
+      <th>NE</th>
+      <th>NH</th>
+    </tr>
+    <tr>
+      <th>phone</th>
+      <th>202-224-3004</th>
+      <th>202-224-6342</th>
+      <th>202-224-4224</th>
+      <th>202-224-3324</th>
+    </tr>
+    <tr>
+      <th>rss_url</th>
+      <th>http://www.begich.senate.gov/public/?a=rss.feed</th>
+      <th>http://www.hagan.senate.gov/rss</th>
+      <th>http://www.johanns.senate.gov/public/?a=RSS.Feed</th>
+      <th>http://ayotte.senate.gov/rss/?p=news</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>3.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,2.0
+"What is the minimum Facebook ID among the accounts for Susan Brooks (instagram ""susanwbrooks"", youtube ""SusanWBrooks""), John McCain (instagram ""senjohnmccain"", youtube ""SenatorJohnMcCain""), Rob Portman (instagram ""senrobportman"", youtube ""SenRobPortman""), and Steve Daines (instagram ""stevedaines"", youtube ""SteveDainesMT"")?","SELECT MIN(facebook_id) AS facebook_id FROM (SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""susanwbrooks"" AND youtube = ""SusanWBrooks"" UNION ALL SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""senjohnmccain"" AND youtube = ""SenatorJohnMcCain"" UNION ALL SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""senrobportman"" AND youtube = ""SenRobPortman"" UNION ALL SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""stevedaines"" AND youtube = ""SteveDainesMT"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>senjeffmerkley</th>
+      <th>senjerrymoran</th>
+      <th>senjohnhoeven</th>
+      <th></th>
+      <th>senjohnmccain</th>
+      <th>senlamaralexander</th>
+      <th>senmikelee</th>
+      <th>senrobportman</th>
+      <th>stevedaines</th>
+      <th>stevescalise</th>
+      <th>susanwbrooks</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>SenatorJeffMerkley</th>
+      <th>senatorjerrymoran</th>
+      <th>senatorjohnhoevennd</th>
+      <th></th>
+      <th>SenatorJohnMcCain</th>
+      <th>lamaralexander</th>
+      <th>senatormikelee</th>
+      <th>SenRobPortman</th>
+      <th>SteveDainesMT</th>
+      <th>RepSteveScalise</th>
+      <th>SusanWBrooks</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>UCRoXttCJhMnLVCxCaa6VnNQ</th>
+      <th>UC1oRxeUPam6-53wPBZ3N02A</th>
+      <th>UC1kQIC2Q_Fq9_NRqdb6eHiw</th>
+      <th></th>
+      <th>UC9IJssXDUaKHzwx6gW4wEoA</th>
+      <th>UChDLBjn5RWqgMmCSswT05IQ</th>
+      <th>UCplVxs_j_sLAt0fkplXcl4A</th>
+      <th>UwCunkd8Zs-yAWKQnwBwp7ew</th>
+      <th>UC-ny-W5mEUGytiyMdXbQ20Q</th>
+      <th>UCmYveHBVXVBRxl7GiCL-gjw</th>
+      <th>UCMd7LzaBcbQ06aKHoj9KkSQ</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>jeffmerkley</th>
+      <th>jerrymoran</th>
+      <th>SenatorJohnHoeven</th>
+      <th></th>
+      <th>joh‌nmccain</th>
+      <th>senatorlamaralexander</th>
+      <th>senatormikelee</th>
+      <th>senrobportman</th>
+      <th>SteveDainesMT</th>
+      <th>RepSteveScalise</th>
+      <th>congresswomansusanwbrooks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>facebook_id (unit)</th>
+      <td></td>
+      <td>faceboo_kid (nuti)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>faceboo⁠k_id ‌(unit⁠)</th>
+      <td></td>
+      <td>74374931545.0</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>6425923706.0</td>
+      <td>89927603836.0</td>
+      <td>178081365556898.0</td>
+      <td>45243961073.0</td>
+      <td>185361254941832.0</td>
+      <td>50936151681.0</td>
+      <td>517697358277175.0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,6425923706.0
+"What is the shortest Length among the distances for these reservoir–river pairs: Lake Burley Griffin with the Murrumbidgee River, Lago Maggiore with the Ticino River, Lago di Como with the Adda River, and Chickamauga Lake with the Tennessee River?","SELECT MIN(Length) AS Length FROM (SELECT Length AS Length FROM sample_table WHERE Lake = ""Lake Burley Griffin"" AND Name = ""Murrumbidgee River"" UNION ALL SELECT Length AS Length FROM sample_table WHERE Lake = ""Lago Maggiore"" AND Name = ""Ticino"" UNION ALL SELECT Length AS Length FROM sample_table WHERE Lake = ""Lago di Como"" AND Name = ""Adda"" UNION ALL SELECT Length AS Length FROM sample_table WHERE Lake = ""Chickamauga Lake"" AND Name = ""Tennessee"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Chickamauga Lake</th>
+      <th>Lago Maggiore</th>
+      <th>Lago di Como</th>
+      <th></th>
+      <th>Lake Burley Griffin</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Tennessee</th>
+      <th>Ticino</th>
+      <th>Adda</th>
+      <th></th>
+      <th>Murrumbidgee River</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Appalachian Mountains</th>
+      <th>Alps</th>
+      <th>Alps</th>
+      <th></th>
+      <th>Snowy Mountains</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Ohio River</th>
+      <th>Po</th>
+      <th>Po</th>
+      <th></th>
+      <th>Murray River</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Length</th>
+      <td>1049.0 unit</td>
+      <td>248.0 unit</td>
+      <td>313.0 unit</td>
+      <td></td>
+      <td>1579.0 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,248.0
+"Among players from Virginia who play G-F or F-G, and players from Texas who play G-F, what is the smallest height recorded?","SELECT MIN(height) AS height FROM (SELECT height AS height FROM sample_table WHERE birthState = ""VA"" AND pos = ""G-F"" UNION ALL SELECT height AS height FROM sample_table WHERE birthState = ""TX"" AND pos = ""G-F"" UNION ALL SELECT height AS height FROM sample_table WHERE birthState = ""VA"" AND pos = ""F-G"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""6"" halign=""left"">USA</th>
+      <th></th>
+      <th colspan=""4"" halign=""left"">USA</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>B (C-F)</th>
+      <th>B (F)</th>
+      <th>B (F-C)</th>
+      <th>B (F-G)</th>
+      <th>B (G)</th>
+      <th>B (G-F)</th>
+      <th></th>
+      <th>W (C)</th>
+      <th>W (C-F)</th>
+      <th>W (F)</th>
+      <th>W (G)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>MO</th>
+      <td>81.0</td>
+      <td>-</td>
+      <td>-</td>
+      <td>79.0</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>80.0</td>
+      <td>-</td>
+      <td>79.0</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>MS</th>
+      <td>82.0</td>
+      <td>83.0</td>
+      <td>-</td>
+      <td>79.0</td>
+      <td>73.0</td>
+      <td>-</td>
+      <td></td>
+      <td>81.0</td>
+      <td>-</td>
+      <td>75.0</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>NC</th>
+      <td>-</td>
+      <td>81.0</td>
+      <td>80.0</td>
+      <td>77.0</td>
+      <td>72.0</td>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>82.0</td>
+      <td>79.0</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <th>NJ</th>
+      <td>-</td>
+      <td>-</td>
+      <td>78.0</td>
+      <td>-</td>
+      <td>72.0</td>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>83.0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>NY</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>77.0</td>
+      <td>74.0</td>
+      <td>78.0</td>
+      <td></td>
+      <td>84.0</td>
+      <td>-</td>
+      <td>77.0</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>OH</th>
+      <td>-</td>
+      <td>77.0</td>
+      <td>-</td>
+      <td>78.0</td>
+      <td>-</td>
+      <td>78.0</td>
+      <td></td>
+      <td>-</td>
+      <td>81.0</td>
+      <td>-</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>PA</th>
+      <td>-</td>
+      <td>81.0</td>
+      <td>-</td>
+      <td>79.0</td>
+      <td>-</td>
+      <td>74.0</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>TN</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>79.0</td>
+      <td>73.0</td>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>75.0</td>
+      <td>81.0</td>
+      <td>74.0</td>
+    </tr>
+    <tr>
+      <th>TX</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>79.0</td>
+      <td></td>
+      <td>83.0</td>
+      <td>-</td>
+      <td>75.0</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>VA</th>
+      <td>-</td>
+      <td>78.0</td>
+      <td>81.0</td>
+      <td>78.0</td>
+      <td>73.0</td>
+      <td>77.0</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>",,77.0
+"What is the highest recorded level of the IgG anticardiolipin antibody among patients showing the ""S"" antibody pattern who have been diagnosed with either SLE with central nervous system lupus and have died, Sjögren’s syndrome affecting the CNS, Sjögren’s syndrome with brain infarction, or SLE combined with Sjögren’s syndrome?","SELECT MAX(aCLIgG) AS aCLIgG FROM (SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""S"" AND Diagnosis = ""SLE, CNS lupus, dead"" UNION ALL SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""S"" AND Diagnosis = ""SjS(CNS)"" UNION ALL SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""S"" AND Diagnosis = ""SjS, brain infarction"" UNION ALL SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""S"" AND Diagnosis = ""SLE, SjS"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">P</th>
+      <th></th>
+      <th>S</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">S</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+      <th></th>
+      <th>CNS lupus</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">CNS lupus</th>
+      <th></th>
+      <th>CNS lupus</th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>SLE, brain infarction</th>
+      <th>brain infarction</th>
+      <th></th>
+      <th>SLE, CNS lupus, dead</th>
+      <th></th>
+      <th>SLE, SjS</th>
+      <th>SLE, SjS, Cliogloblin+</th>
+      <th></th>
+      <th>SjS(CNS)</th>
+      <th>SjS, brain infarction</th>
+      <th>brain infarction</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>1997-07-07</th>
+      <th>1998-02-20</th>
+      <th></th>
+      <th>1995-05-29</th>
+      <th></th>
+      <th>1992-06-08</th>
+      <th>1993-07-29</th>
+      <th></th>
+      <th>1995-06-26</th>
+      <th>1997-07-07</th>
+      <th>1997-04-28</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>aCLIgG</th>
+      <td>-</td>
+      <td>0.0 unit</td>
+      <td></td>
+      <td>0.0 unit</td>
+      <td></td>
+      <td>10.9 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>1.1 unit</td>
+      <td>1.1 unit</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,10.9
+"Among the parts measured in ounces or counted as individual pieces starting on June 9, 2010, and those measured in inches starting on September 15, 2010, what is the lowest quantity needed per assembly?","SELECT MIN(PerAssemblyQty) AS PerAssemblyQty FROM (SELECT PerAssemblyQty AS PerAssemblyQty FROM sample_table WHERE StartDate = ""2010-06-09 00:00:00.0"" AND UnitMeasureCode = ""OZ"" UNION ALL SELECT PerAssemblyQty AS PerAssemblyQty FROM sample_table WHERE StartDate = ""2010-06-09 00:00:00.0"" AND UnitMeasureCode = ""EA"" UNION ALL SELECT PerAssemblyQty AS PerAssemblyQty FROM sample_table WHERE StartDate = ""2010-09-15 00:00:00.0"" AND UnitMeasureCode = ""IN"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>StartDate</th>
+      <th colspan=""2"" halign=""left"">2010-06-09 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-07-08 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-09-15 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th>ModifiedDate</th>
+      <th colspan=""2"" halign=""left"">2010-08-08 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-09-06 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-11-14 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th>UnitMeasureCode</th>
+      <th>EA</th>
+      <th>OZ</th>
+      <th>EA</th>
+      <th>OZ</th>
+      <th>EA</th>
+      <th>IN</th>
+    </tr>
+    <tr>
+      <th>EndDate</th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-09-06 00:00:00.0</th>
+      <th>2010-09-06 00:00:00.0</th>
+      <th>2010-11-14 00:00:00.0</th>
+      <th>2010-11-14 00:00:00.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PerAssemblyQty</th>
+      <td>2.0 unit</td>
+      <td>9.0 unit</td>
+      <td>2.0 unit</td>
+      <td>9.0 unit</td>
+      <td>3.0 unit</td>
+      <td>41.0 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,2.0
+"What is the largest land area of any British-controlled territory situated in the continents of Africa, South America, or North America?","SELECT MAX(SurfaceArea) AS SurfaceArea FROM (SELECT SurfaceArea AS SurfaceArea FROM sample_table WHERE Continent = ""Africa"" AND GovernmentForm = ""Dependent Territory of the UK"" UNION ALL SELECT SurfaceArea AS SurfaceArea FROM sample_table WHERE Continent = ""South America"" AND GovernmentForm = ""Dependent Territory of the UK"" UNION ALL SELECT SurfaceArea AS SurfaceArea FROM sample_table WHERE Continent = ""North America"" AND GovernmentForm = ""Dependent Territory of the UK"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Africa</th>
+      <th colspan=""2"" halign=""left"">North America</th>
+      <th></th>
+      <th>North America</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th colspan=""2"" halign=""left"">South America</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Eastern Africa</th>
+      <th colspan=""2"" halign=""left"">Caribbean</th>
+      <th></th>
+      <th>Caribbean</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th colspan=""2"" halign=""left"">South America</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+      <th></th>
+      <th>US Territory</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+      <th></th>
+      <th>George W. Bush</th>
+      <th></th>
+      <th></th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SurfaceArea (unit)</th>
+      <td>78.0</td>
+      <td>-</td>
+      <td>96.0</td>
+      <td>1705.0</td>
+      <td></td>
+      <td>347.0\nAs listed on the website</td>
+      <td></td>
+      <td></td>
+      <td>12173.0</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>",,12173.0

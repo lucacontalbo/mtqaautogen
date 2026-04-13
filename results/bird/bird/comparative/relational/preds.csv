@@ -1,0 +1,17 @@
+Prediction,Label,Match,F1
+yes,yes,True,1.0
+yes,yes,True,1.0
+yes,yes,True,1.0
+yes,yes,True,1.0
+no,no,True,1.0
+yes,yes,True,1.0
+no,no,True,1.0
+yes,yes,True,1.0
+yes,yes,True,1.0
+yes,yes,True,1.0
+no,no,True,1.0
+yes,yes,True,1.0
+yes,yes,True,1.0
+no,no,True,1.0
+no,no,True,1.0
+no,no,True,1.0

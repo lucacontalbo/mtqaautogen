@@ -1,0 +1,114 @@
+Prediction,Label,Match,F1
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No — 109.700000 vs 87.300000,no,False,0.33333333333333337
+No,no,True,1.0
+No — Zealios V2: 48.400000 g; TTC Gold Pink: not listed (no actuation force given).,no,False,0.125
+No,no,True,1.0
+Yes,yes,True,1.0
+316L surgical-steel mesh backed by an acoustic chamber (44.200000 Ω),yes,False,0.0
+No — 78.500000 dB vs 76.700000 dB (difference 1.800000 dB),no,False,0.18181818181818182
+No — the Kailh range 2.940000–3.320000 mm does not match or exceed the Gateron 3.850000 mm.,yes,False,0.0
+No,no,True,1.0
+Gateron Ink Black,yes,False,0.0
+No,no,True,1.0
+"No — the Leica is 35.000000 mm and the Fujifilm is 56.000000 mm (difference 21.000000 mm, 60.000000), and their distinct optical designs mean their focal distances and imaging behavior cannot be considered identical.",no,False,0.0625
+No — the Feliks offers a lower peak analog output voltage.,no,False,0.19999999999999998
+No,no,True,1.0
+Alnico V re-tempered voiced-for-warmth single-coil design,no,False,0.0
+No,no,True,1.0
+No — Marshall Monitor II A.N.C. price is n.a.; Bose QuietComfort 45 price is 438.470000 USD.,no,False,0.1111111111111111
+Yes,no,False,0.0
+Cannot determine — MKR-Urban 57 (dimpled powdercoat) mass not available; RDX-Midline 11x = 512.900000 g,no,False,0.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No.,no,False,0.0
+No.,no,False,0.0
+No,no,True,1.0
+No — cannot determine that Aegis needs as little or less pressure (Aegis low-profile tactile data not available; Zenith = 40.000000).,no,False,0.09523809523809523
+Yes,yes,True,1.0
+No — the first speaker consumes less power than the second.,no,False,0.19999999999999998
+No,no,True,1.0
+Drop CTRL v2,yes,False,0.0
+The noise-canceling commuter design (AH-Urban-10) is louder — 108.500000 dB versus the open-back artisan (AH-Classic-101) at 108.200000 dB (difference 0.300000 dB).,yes,False,0.0
+No.,no,False,0.0
+Cannot determine — the walnut veneer / discrete balanced transistor version has no peak loudness value provided.,yes,False,0.0
+"No — the Pelikan Souverän M800 grip is 11.100000 mm versus the Sailor 1911 Large’s 8.300000 mm, so it is 2.800000 mm wider.",no,False,0.0909090909090909
+No — Parker IM 63.800000 vs Kaweco Classic Sport 30.000000 (difference 33.800000),no,False,0.15384615384615385
+Yes,yes,True,1.0
+Yes — the Thermaltake Flow cooler (269.000000 W) surpasses the EKWB (195.800000 W) by 73.200000 W.,yes,False,0.13333333333333333
+Yes,yes,True,1.0
+Cannot determine (Kestrel Nomad price for that configuration is not available).,yes,False,0.0
+"No — Grado 0.300000 mV, Miyajima 0.370000 mV",no,False,0.2222222222222222
+No,no,True,1.0
+Yes — the SA vintage tall PBT keycaps require 3.100000 less finger pressure to register a key press (SA 62.700000 vs OEM 65.800000),no,False,0.0
+No — the gold-coated vented-backplate model produces less self-generated noise (6.600000 dBA) than the polymer-coated tensioned-spider model (10.000000 dBA).,no,False,0.1111111111111111
+No,no,True,1.0
+15‑mm solid axle with ProgressiveHelix — 1.980000 N·m,yes,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+"No — Cherry MX Red requires less force to activate (34.400000 gf) than NovelKeys Cream (68.100000 gf), a difference of 33.700000 gf.",yes,False,0.0
+Yes,yes,True,1.0
+No,no,True,1.0
+lower,yes,False,0.0
+No — 218.000000 ≠ 127.800000,no,False,0.33333333333333337
+less,no,False,0.0
+Comparison not possible — the Lelit Bianca (PF-700-015E) throughput for the specified basket is not available while the Nuova Simonelli Oscar II (LM-2024-001A) triple-spout throughput = 1.940000 L/h.,no,False,0.0
+No,no,True,1.0
+"Cannot determine — the table does not list a headphone with polished rosewood cups and sealed edges, so a sensitivity comparison to the vegan microfiber model cannot be made.",yes,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+"Cannot determine — the Kailh Speed Silver value for a heavy-duty spring with a nitrided contact finish is not provided (n.a.), while the Zealios V2 balanced/stainless value is 48.600000 cN.",yes,False,0.0
+Cannot determine,yes,False,0.0
+Yes — it surpasses (1340.900000 MB/s vs 344.500000 MB/s).,yes,False,0.19999999999999998
+Yes,yes,True,1.0
+No,no,True,1.0
+"No — the 2022 guitar measures 642.600000 mm and the 2024 measures 648.600000 mm, so the 2022 is 6.000000 mm shorter.",yes,False,0.0
+No.,no,False,0.0
+The anodized pen (ObsidianRail clipless pen — counterbalanced fulcrum series) is heavier (399.900000 vs 170.900000).,yes,False,0.0
+Cannot determine,no,False,0.0
+Yes,yes,True,1.0
+"No. Wüsthof = 0.412000 kg, Global G-2 = 0.379000 kg, difference = 0.033000 kg.",no,False,0.0
+No — Durock T1 requires 70.500000 g and Zealios V2 requires 77.200000 g (difference 6.700000 g).,no,False,0.11764705882352941
+No,no,True,1.0
+Cannot be determined from the table.,yes,False,0.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No — the conductor cross-sectional areas differ: 0.600000 mm2 vs 3.200000 mm2 (difference 2.600000 mm2).,no,False,0.13333333333333333
+Yes,yes,True,1.0
+No — insufficient data (Palisade Lite speed is N/A; NimbusCache Traveler = 2461.600000),yes,False,0.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Cannot be determined from the table (POM low-friction cast housing entry for the soft-quiet TTC Gold Pink variant is missing).,yes,False,0.0
+Cannot be determined.,yes,False,0.0
+No — it is thicker.,no,False,0.33333333333333337
+Longer,no,False,0.0
+No — glossy black 6.370000 vs polished brass 1.450000 (difference 4.920000),no,False,0.16666666666666669
+Echo acrylic sandwich diffuser edition custom,yes,False,0.0
+Yes,yes,True,1.0
+Cannot be determined.,yes,False,0.0
+No — 42.830000 < 244.610000,no,False,0.4
+It does not; the Kailh Box Jade's travel is greater by 0.100000 mm.,no,False,0.0
+Aurelia Reference In-Ear Monitor Set - dual-connector hybrid (USB-C + 3.5mm),yes,False,0.0
+Yes,yes,True,1.0
+The Leica allows you to focus closer than the Sigma; Leica MFD = 2.920000 m vs Sigma MFD = 3.710000 m (Leica is 0.790000 m closer).,no,False,0.0
+NEBULA-Plus (the hybrid-drive model),yes,False,0.0
+No,no,True,1.0
+The rubber expedition nylon band with the magnetic clasp is thinner.,no,False,0.0
+Yes,no,False,0.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No.,no,False,0.0
+No,no,True,1.0
+No — they do not share the same weight.,no,False,0.2222222222222222
+Yes,no,False,0.0
+Yes,yes,True,1.0
+Cannot determine (B&O value not available),no,False,0.0
+"No — not always; it depends on the specific variant (some quieter cushioned variants require more force, but at least one requires less).",yes,False,0.0
+Sennheiser HD 660S2 Open-Back Reference Headphone - Black Walnut,yes,False,0.0
+No,no,True,1.0
+No,no,True,1.0

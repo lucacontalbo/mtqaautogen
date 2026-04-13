@@ -1,0 +1,51 @@
+index,question,value,response
+0,What is the average total waste in tons for the years 2022 and 2023?,4710.0, 4710.00
+1,What is the increase in the amount of unsorted waste (in tons) from 2022 to 2023?,802.0, -802.00
+2,What is the sum of the total waste in tons for the years 2022 and 2023?,9420.0, 9420.00
+3,What is the percentage reduction in the amount of unsorted waste from 2022 to 2023?,29.09, 29.09%
+4,What is the difference in total waste (T) from 2022 to 2023?,720.0, -720.00 t
+5,What is the average intensity of GHG emissions (Scope 1+2) of operated upstream oil and gas activities and on equity basis for the year 2022?,18.0," 17.00, 19.00"
+6,What is the increase between the intensity of GHG emissions (Scope 1+2) of operated upstream oil & gas activities in 2023 and 2022?,0.0, 0.00
+7,What is the sum of intensity of GHG emissions (Scope 1+2) of operated upstream oil and gas activities and on equity basis for the year 2021?,36.0, 36.00 kg co2e/boe
+8,What is the percentage reduction in the intensity of GHG emissions (Scope 1+2) of upstream oil and gas activities on an equity basis from 2021 to 2023?,5.26, 5.26%
+9,What is the reduction between the intensity of methane emissions from operated oil and gas facilities (Upstream) in 2023 and 2021?,0.02, 0.02%
+10,What is the percentage reduction in the intensity of methane emissions from operated oil and gas facilities (Upstream) when comparing the values from 2021 to 2022?,15.38, 15.38%
+11,"What is the average intensity of methane emissions from operated oil and gas facilities (Upstream) for the years 2023, 2022, 2021, and 2015?",0.14," 0.11, 0.11, 0.13, 0.23"
+12,What is the increase in the intensity of methane emissions from operated oil and gas facilities (Upstream) between the years 2015 and 2022?,-0.12, -0.12 percentage points
+13,What is the average net primary energy consumption (in TWh) from the years 2015 to 2023?,155.17, 155.17 twh
+14,What is the increase in renewable energy consumption (TWh) between the years 2021 and 2023?,1.0, 1.00
+15,What is the total sum of the net primary energy consumption (in TWh) from the years 2015 to 2023?,931.0, 931.00
+16,What is the percentage increase in the number of operated sites with annual consumption greater than 50 ktoe from 2020 to 2023?,2.38, 2.38%
+17,What is the reduction between the Global Energy Efficiency Indicator (GEEI) values for the years 2022 and 2020?,5.1, 5.10
+18,What is the percentage decrease in the Global Energy Efficiency Indicator (GEEI) from 2015 to 2021?,4.19, 4.18%
+19,What is the average value of the Global Energy Efficiency Indicator (GEEI) from 2015 to 2023?,87.92, 87.92
+20,What is the decrease in the Global Energy Efficiency Indicator (GEEI) from 2019 to 2021?,1.0, 1.00
+21,"What is the sum of the Global Energy Efficiency Indicator (GEEI) values for the years 2015, 2019, 2020, 2021, 2022, and 2023?",527.5, 527.50
+22,What is the difference between the fresh water withdrawals (excluding open loop cooling water) and the fresh water consumption in 2021?,21.0, 21.00 mm3
+23,"What is the sum of the SO2 emissions, NOx emissions and NMVOC emissions for the year 2021?",133.0, 133.00 kt
+24,What is the reduction in offshore continuous water discharges hydrocarbon content from the year 2020 to 2022?,-0.1, -0.10 mg/l
+25,What is the increase in the percentage of sites that meet the target for offshore discharges quality from 2020 to 2021?,8.0, -8.00%
+26,What is the average value of onshore continuous water discharges hydrocarbon content for the years 2021 and 2022?,2.2, 2.20
+27,What is the decrease in the lifecycle carbon intensity of energy products used by customers from 2022 to 2023?,1.0, 1.00
+28,"What is the sum of the intensity of GHG emissions (Scope 1+2) of operated Upstream oil & gas activities for the years 2023, 2022, 2021, and 2015?",72.0, 72.00 kg co2e/boe
+29,What is the difference between the total Scope 3 GHG emissions and those related to Europe alone in 2015?,154.0, 154.00 mt co2e
+30,What is the percentage decrease in the GHG emissions from Gas in 2023 compared to 2022?,4.62, 4.62%
+31,What is the sum of GHG emissions from Biofuels and Gas in 2022?,134.0, 134.00
+32,What is the average between GHG emissions from Biofuels and Gas in 2022?,67.0, 67.00
+33,What is the difference between GHG emissions from Oil in 2015 compared to the emissions from Gas in the same year?,290.0, 290.00
+34,What is the sum of gas-related GHG emissions and petroleum products emissions for the year 2015?,410.0, 410.00
+35,What is the percentage increase in indirect GHG emissions from gas between the years 2021 and 2023?,7.83, 7.83%
+36,"What is the total of the indirect GHG emissions from gas for the years 2023, 2022, 2021, and 2015?",429.0, 429.00
+37,What is the average lifecycle carbon intensity of energy products sold between the years 2021 and 2023?,88.33, 88.33
+38,"What is the difference between the indirect GHG emissions from ""Cat 1 Purchased goods and services"" in 2022 and ""Cat 9 Downstream transportation"" in the same year?",29.0, 29.00
+39,"What is the total estimate of indirect GHG emissions from the categories of Purchased goods and services, Fuel-and-energy-related activities, Upstream transportation, Downstream transportation, Processing of sold products, Use of sold products, and End of life treatment of sold products for the year 2023?",410.0, 410.00 mt co2e
+40,"What is the percentage increase in indirect GHG emissions from the category ""Cat 3 Fuel-and-energy-related activities"" when comparing the values for the years 2023 and 2022?",33.33, 33.33%
+41,"What is the reduction in indirect GHG emissions from the category ""Upstream transportation"" when comparing the values for the years 2022 and 2023?",1.0, 1.00 mt co2e
+42,"What is the sum of the indirect GHG emissions for the category ""Downstream transportation"" in the years 2022 and 2023?",2.0, 2.00 mt co2e
+43,"What is the average of the GHG emissions in Mt CO2e for ""End of life treatment of sold products"" and ""Waste generated in operations"" for the year 2023?",5.5, 5.50
+44,"What is the average of the indirect GHG emissions from ""Cat 3 Fuel-and-energy-related activities"" for the years 2022 and 2023?",3.5, 3.50
+45,What is the reduction in indirect GHG emissions from upstream transportation between the years 2022 and 2023?,1.0, 1.00 mt co2e
+46,"What is the sum of indirect GHG emissions from the category ""Purchased goods and services"" for the years 2022 and 2023?",57.0, 57.00
+47,What is the average of indirect GHG emissions in Mt CO2e for the upstream and downstream transportation for the year 2022?,5.0, 5.00
+48,"What is the total amount of indirect GHG emissions (in Mt CO2e) for the year 2023, calculated by summing all the reported values in the table, excluding values less than 1 and any unspecified values?",414.0, 414.00
+49,What is the difference between the total volume of processed waste compared to the non-hazardous waste in 2019?,287.0, 287.00 kt

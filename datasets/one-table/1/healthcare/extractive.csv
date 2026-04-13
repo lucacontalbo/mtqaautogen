@@ -1,0 +1,1524 @@
+Question,SQL Query,Method,Table,Label
+"What is the average duration, in days, for patients treated with physical therapy who did not fully recover but showed partial improvement?","SELECT RecoveryTimeDays FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Physical Therapy"" AND RecoveryStatus = ""Partially Recovered"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>RecoveryStatus</th>
+      <th>Fully Recovered</th>
+      <th>Not Recovered</th>
+      <th>Partially Recovered</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Counseling</th>
+      <td>107.138446</td>
+      <td>129.308181</td>
+      <td>37.748849</td>
+    </tr>
+    <tr>
+      <th>Home Care</th>
+      <td>187.255399</td>
+      <td>11.232379</td>
+      <td>215.694696</td>
+    </tr>
+    <tr>
+      <th>Medication</th>
+      <td>131.804478</td>
+      <td>35.286365</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Physical Therapy</th>
+      <td>345.176570</td>
+      <td>77.451317</td>
+      <td>322.254200</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>224.090515</td>
+      <td>289.663408</td>
+      <td>363.687081</td>
+    </tr>
+  </tbody>
+</table>",322.2542
+What is the price of Lisinopril capsules?,"SELECT MedicationCost FROM PatientMedicationDetails WHERE MedicationName = ""Lisinopril"" AND DosageForm = ""Capsule"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>MedicationFrequency</th>
+      <th colspan=""3"" halign=""left"">As needed</th>
+      <th colspan=""4"" halign=""left"">Once a day</th>
+      <th colspan=""4"" halign=""left"">Three times a day</th>
+      <th colspan=""2"" halign=""left"">Twice a day</th>
+    </tr>
+    <tr>
+      <th>MedicationName</th>
+      <th>Amoxicillin</th>
+      <th>Lisinopril</th>
+      <th>Metformin</th>
+      <th>Amoxicillin</th>
+      <th>Aspirin</th>
+      <th>Ibuprofen</th>
+      <th>Metformin</th>
+      <th>Amoxicillin</th>
+      <th>Aspirin</th>
+      <th>Ibuprofen</th>
+      <th>Lisinopril</th>
+      <th>Lisinopril</th>
+      <th>Metformin</th>
+    </tr>
+    <tr>
+      <th>DosageForm</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Capsule</th>
+      <td>NaN</td>
+      <td>260.614861</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>99.612839</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>73.468443</td>
+    </tr>
+    <tr>
+      <th>Injection</th>
+      <td>54.950971</td>
+      <td>NaN</td>
+      <td>124.055968</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>302.653440</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>76.405685</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Liquid</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>90.074188</td>
+      <td>NaN</td>
+      <td>421.341113</td>
+      <td>134.306909</td>
+      <td>76.482273</td>
+      <td>NaN</td>
+      <td>114.544174</td>
+      <td>268.460325</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Tablet</th>
+      <td>354.664930</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>373.188258</td>
+      <td>492.754379</td>
+      <td>475.204695</td>
+      <td>NaN</td>
+      <td>277.124421</td>
+      <td>NaN</td>
+      <td>327.240578</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>442.098332</td>
+    </tr>
+  </tbody>
+</table>",260.614861
+What chronic conditions are reported among men between the ages of 19 and 35?,"SELECT ChronicConditions FROM PatientHealthMetrics WHERE AgeGroup = ""19-35"" AND Gender = ""Male"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Gender</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Other</th>
+    </tr>
+    <tr>
+      <th>AgeGroup</th>
+      <th>ChronicConditions</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">0-18</th>
+      <th>Hypertension</th>
+      <td>78.622171</td>
+      <td>NaN</td>
+      <td>78.692757</td>
+    </tr>
+    <tr>
+      <th>None</th>
+      <td>73.129049</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">19-35</th>
+      <th>Diabetes</th>
+      <td>16.680412</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Heart Disease</th>
+      <td>NaN</td>
+      <td>15.544180</td>
+      <td>39.814772</td>
+    </tr>
+    <tr>
+      <th>Hypertension</th>
+      <td>13.022653</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">36-50</th>
+      <th>Diabetes</th>
+      <td>NaN</td>
+      <td>48.514918</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Heart Disease</th>
+      <td>NaN</td>
+      <td>0.932983</td>
+      <td>94.756755</td>
+    </tr>
+    <tr>
+      <th>Hypertension</th>
+      <td>1.915081</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>None</th>
+      <td>22.498944</td>
+      <td>10.833158</td>
+      <td>30.679083</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">51-65</th>
+      <th>Diabetes</th>
+      <td>2.681122</td>
+      <td>90.244210</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Heart Disease</th>
+      <td>6.764300</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>None</th>
+      <td>87.894707</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">66+</th>
+      <th>Hypertension</th>
+      <td>16.555647</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>None</th>
+      <td>20.761031</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",Heart Disease
+What is the expense recorded for urgent cases handled by the Pediatrics unit?,"SELECT Cost FROM PatientVisitData WHERE Department = ""Pediatrics"" AND VisitReason = ""Emergency"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Outcome</th>
+      <th colspan=""2"" halign=""left"">Cancelled</th>
+      <th colspan=""3"" halign=""left"">Further tests required</th>
+      <th colspan=""3"" halign=""left"">Not resolved</th>
+      <th colspan=""5"" halign=""left"">Resolved</th>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <th>Neurology</th>
+      <th>Oncology</th>
+      <th>Dermatology</th>
+      <th>Neurology</th>
+      <th>Oncology</th>
+      <th>Cardiology</th>
+      <th>Oncology</th>
+      <th>Pediatrics</th>
+      <th>Cardiology</th>
+      <th>Dermatology</th>
+      <th>Neurology</th>
+      <th>Oncology</th>
+      <th>Pediatrics</th>
+    </tr>
+    <tr>
+      <th>VisitReason</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Emergency</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4643.82941</td>
+      <td>NaN</td>
+      <td>2176.691357</td>
+      <td>NaN</td>
+      <td>1134.608589</td>
+      <td>1290.048844</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Medication review</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2274.935168</td>
+      <td>1266.962570</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2659.941679</td>
+      <td>108.150471</td>
+      <td>2002.36894</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>New symptoms</th>
+      <td>2258.160046</td>
+      <td>3745.532083</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3910.294786</td>
+      <td>258.525431</td>
+      <td>2175.545183</td>
+      <td>4842.384108</td>
+      <td>1251.664945</td>
+      <td>2068.271907</td>
+      <td>NaN</td>
+      <td>1254.285983</td>
+    </tr>
+    <tr>
+      <th>Routine checkup</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1290.014735</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2197.403690</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",1290.048844
+What is the visit duration for patients diagnosed with high blood pressure during consultation appointments?,"SELECT VisitDuration FROM PatientVisitRecords WHERE PatientDiagnosis = ""Hypertension"" AND VisitType = ""Consultation"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>VisitType</th>
+      <th>Consultation</th>
+      <th>Emergency</th>
+      <th>Follow-Up</th>
+      <th>Routine Check-Up</th>
+    </tr>
+    <tr>
+      <th>PatientDiagnosis</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Cancer</th>
+      <td>3.505885</td>
+      <td>2.861308</td>
+      <td>2.010060</td>
+      <td>6.884908</td>
+    </tr>
+    <tr>
+      <th>Diabetes</th>
+      <td>3.691379</td>
+      <td>0.816838</td>
+      <td>10.192391</td>
+      <td>5.031687</td>
+    </tr>
+    <tr>
+      <th>Flu</th>
+      <td>1.592335</td>
+      <td>6.116338</td>
+      <td>10.973607</td>
+      <td>6.596908</td>
+    </tr>
+    <tr>
+      <th>Healthy</th>
+      <td>6.431791</td>
+      <td>7.217018</td>
+      <td>7.599010</td>
+      <td>9.730010</td>
+    </tr>
+    <tr>
+      <th>Hypertension</th>
+      <td>6.030347</td>
+      <td>3.673907</td>
+      <td>7.231835</td>
+      <td>8.605267</td>
+    </tr>
+  </tbody>
+</table>",6.030347
+What is the feedback score given by patients who experienced an emergency visit and rated the quality of service as good?,"SELECT FeedbackRating FROM PatientFeedback WHERE VisitType = ""Emergency Visit"" AND ServiceQuality = ""Good"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>FollowUpNeeded</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>VisitType</th>
+      <th>ServiceQuality</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Emergency Visit</th>
+      <th>Average</th>
+      <td>2.921662</td>
+      <td>2.970616</td>
+    </tr>
+    <tr>
+      <th>Good</th>
+      <td>NaN</td>
+      <td>1.193020</td>
+    </tr>
+    <tr>
+      <th>Poor</th>
+      <td>2.558222</td>
+      <td>2.726720</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Follow-up Appointment</th>
+      <th>Average</th>
+      <td>2.860212</td>
+      <td>3.405485</td>
+    </tr>
+    <tr>
+      <th>Excellent</th>
+      <td>NaN</td>
+      <td>3.921783</td>
+    </tr>
+    <tr>
+      <th>Good</th>
+      <td>2.083936</td>
+      <td>2.684047</td>
+    </tr>
+    <tr>
+      <th>Poor</th>
+      <td>2.326664</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Initial Consultation</th>
+      <th>Average</th>
+      <td>2.388457</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Excellent</th>
+      <td>3.874284</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Good</th>
+      <td>2.464034</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Poor</th>
+      <td>NaN</td>
+      <td>2.599957</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Telehealth Consultation</th>
+      <th>Average</th>
+      <td>2.501954</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Excellent</th>
+      <td>NaN</td>
+      <td>2.554783</td>
+    </tr>
+    <tr>
+      <th>Good</th>
+      <td>4.567711</td>
+      <td>1.963465</td>
+    </tr>
+    <tr>
+      <th>Poor</th>
+      <td>4.887867</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",1.19302
+How satisfied are patients with surgical procedures performed at City Hospital?,"SELECT PatientSatisfaction FROM PatientTreatmentDetails WHERE TreatmentType = ""Surgery"" AND HealthcareProvider = ""City Hospital"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>TreatmentType</th>
+      <th>Chemotherapy</th>
+      <th>Counseling</th>
+      <th>Physical Therapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>HealthcareProvider</th>
+      <th>PatientSatisfaction</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">City Hospital</th>
+      <th>Neutral</th>
+      <td>37.346376</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>27.438238</td>
+      <td>48.935411</td>
+    </tr>
+    <tr>
+      <th>Very Unsatisfied</th>
+      <td>NaN</td>
+      <td>2.805867</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Community Health Center</th>
+      <th>Unsatisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>50.741170</td>
+    </tr>
+    <tr>
+      <th>Very Satisfied</th>
+      <td>28.608195</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">General Clinic</th>
+      <th>Satisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>19.602349</td>
+    </tr>
+    <tr>
+      <th>Very Satisfied</th>
+      <td>6.009940</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Very Unsatisfied</th>
+      <td>NaN</td>
+      <td>30.301072</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">Specialist Center</th>
+      <th>Neutral</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.190856</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Satisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.942952</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Unsatisfied</th>
+      <td>39.892800</td>
+      <td>NaN</td>
+      <td>2.217357</td>
+      <td>7.197137</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Very Satisfied</th>
+      <td>30.745827</td>
+      <td>NaN</td>
+      <td>46.838789</td>
+      <td>48.494820</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Very Unsatisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>19.074379</td>
+    </tr>
+  </tbody>
+</table>",Neutral
+What is the expense recorded for preventive care provided to patients admitted in the inpatient ward?,"SELECT TreatmentCost FROM PatientTreatmentDetails WHERE TreatmentCategory = ""Preventive"" AND TreatmentLocation = ""Inpatient Ward"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>TreatmentCategory</th>
+      <th>Medical</th>
+      <th>Palliative</th>
+      <th>Preventive</th>
+      <th>Rehabilitation</th>
+      <th>Surgical</th>
+    </tr>
+    <tr>
+      <th>TreatmentLocation</th>
+      <th>TreatmentOutcome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Emergency Room</th>
+      <th>Complications</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>38428.784539</td>
+    </tr>
+    <tr>
+      <th>Died</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>23480.733660</td>
+      <td>26014.239125</td>
+    </tr>
+    <tr>
+      <th>Needs Follow-up</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>23297.769430</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Home Care</th>
+      <th>Complications</th>
+      <td>500.455614</td>
+      <td>NaN</td>
+      <td>48009.098208</td>
+      <td>19025.566486</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Died</th>
+      <td>9024.675372</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Needs Follow-up</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>22609.975745</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Inpatient Ward</th>
+      <th>Complications</th>
+      <td>40369.315581</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Died</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15924.212540</td>
+    </tr>
+    <tr>
+      <th>Needs Follow-up</th>
+      <td>NaN</td>
+      <td>23410.782489</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Successful</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7049.738484</td>
+      <td>45635.359819</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Outpatient Clinic</th>
+      <th>Complications</th>
+      <td>NaN</td>
+      <td>8603.662265</td>
+      <td>42791.461119</td>
+      <td>NaN</td>
+      <td>27.067180</td>
+    </tr>
+    <tr>
+      <th>Died</th>
+      <td>NaN</td>
+      <td>21691.000582</td>
+      <td>NaN</td>
+      <td>20791.906805</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Successful</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>41767.920291</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",7049.738484
+"What is the duration, in days, of chemotherapy for patients at an outpatient clinic?","SELECT DurationDays FROM PatientTreatmentRecords WHERE TreatmentType = ""Chemotherapy"" AND TreatmentLocation = ""Outpatient Clinic"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>TreatmentType</th>
+      <th>Chemotherapy</th>
+      <th>Physical Therapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>TreatmentLocation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Emergency Room</th>
+      <td>19.509555</td>
+      <td>9.907644</td>
+      <td>17.713134</td>
+      <td>17.181419</td>
+    </tr>
+    <tr>
+      <th>Home Care</th>
+      <td>18.473764</td>
+      <td>15.259711</td>
+      <td>20.443802</td>
+      <td>17.306395</td>
+    </tr>
+    <tr>
+      <th>Inpatient Ward</th>
+      <td>2.291188</td>
+      <td>22.052442</td>
+      <td>26.518740</td>
+      <td>17.620626</td>
+    </tr>
+    <tr>
+      <th>Outpatient Clinic</th>
+      <td>27.174989</td>
+      <td>17.404330</td>
+      <td>9.494232</td>
+      <td>2.192808</td>
+    </tr>
+  </tbody>
+</table>",27.174989
+What is the expenditure associated with female patients who underwent medication treatment?,"SELECT Cost FROM PatientTreatmentOutcomes WHERE Gender = ""Female"" AND TreatmentType = ""Medication"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Gender</th>
+      <th colspan=""3"" halign=""left"">Female</th>
+      <th colspan=""3"" halign=""left"">Male</th>
+      <th colspan=""3"" halign=""left"">Non-binary</th>
+    </tr>
+    <tr>
+      <th>Outcome</th>
+      <th>Improved</th>
+      <th>Unchanged</th>
+      <th>Worsened</th>
+      <th>Improved</th>
+      <th>Unchanged</th>
+      <th>Worsened</th>
+      <th>Improved</th>
+      <th>Unchanged</th>
+      <th>Worsened</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Consultation</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>44897.470888</td>
+      <td>26913.529209</td>
+      <td>10028.936535</td>
+      <td>29639.68843</td>
+      <td>45012.307984</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Medication</th>
+      <td>NaN</td>
+      <td>27540.855229</td>
+      <td>NaN</td>
+      <td>31601.298346</td>
+      <td>11847.249359</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2765.083462</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>17498.099147</td>
+      <td>NaN</td>
+      <td>30888.465851</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1716.63976</td>
+      <td>NaN</td>
+      <td>30962.009840</td>
+    </tr>
+    <tr>
+      <th>Therapy</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6334.872891</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>37871.076902</td>
+      <td>27021.127982</td>
+    </tr>
+  </tbody>
+</table>",27540.855229
+What is the expense incurred for managing pneumonia cases with insulin-based treatment?,"SELECT Cost FROM PatientTreatmentRecords WHERE Diagnosis = ""Pneumonia"" AND TreatmentMethod = ""Insulin Therapy"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>TreatmentMethod</th>
+      <th>Insulin Therapy</th>
+      <th>Medication</th>
+      <th>Physical Therapy</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>Diagnosis</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asthma</th>
+      <td>5425.069503</td>
+      <td>4850.427215</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Diabetes</th>
+      <td>2856.369635</td>
+      <td>9795.606962</td>
+      <td>2272.872283</td>
+      <td>9010.751300</td>
+    </tr>
+    <tr>
+      <th>Hypertension</th>
+      <td>3438.245554</td>
+      <td>2944.859073</td>
+      <td>1540.894631</td>
+      <td>863.036035</td>
+    </tr>
+    <tr>
+      <th>Pneumonia</th>
+      <td>8853.984689</td>
+      <td>NaN</td>
+      <td>1620.381629</td>
+      <td>9159.521262</td>
+    </tr>
+  </tbody>
+</table>",8853.984689
+What is the prescribed dosage level of inhaler medication for individuals diagnosed with cancer?,"SELECT DosageAmount FROM PatientHealthMetrics WHERE HealthCondition = ""Cancer"" AND MedicationType = ""Inhalers"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>MedicationType</th>
+      <th>Antibiotics</th>
+      <th>Beta Blockers</th>
+      <th>Chemotherapy</th>
+      <th>Inhalers</th>
+      <th>Insulin</th>
+    </tr>
+    <tr>
+      <th>HealthCondition</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asthma</th>
+      <td>388.591066</td>
+      <td>348.956850</td>
+      <td>NaN</td>
+      <td>461.264915</td>
+      <td>157.913234</td>
+    </tr>
+    <tr>
+      <th>Cancer</th>
+      <td>207.767832</td>
+      <td>NaN</td>
+      <td>233.461931</td>
+      <td>273.862778</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Diabetes</th>
+      <td>473.945952</td>
+      <td>NaN</td>
+      <td>221.226512</td>
+      <td>209.001128</td>
+      <td>110.253738</td>
+    </tr>
+    <tr>
+      <th>Heart Disease</th>
+      <td>340.403991</td>
+      <td>55.485054</td>
+      <td>175.769885</td>
+      <td>271.914445</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Hypertension</th>
+      <td>67.829155</td>
+      <td>148.551425</td>
+      <td>322.590357</td>
+      <td>78.114356</td>
+      <td>409.557080</td>
+    </tr>
+  </tbody>
+</table>",273.862778
+What are the lengths of time patients spend during follow-up appointments with dermatology specialists?,"SELECT VisitDuration FROM PatientVisitRecords WHERE VisitReason = ""Follow-up Consultation"" AND PhysicianSpecialty = ""Dermatology"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>PhysicianSpecialty</th>
+      <th colspan=""3"" halign=""left"">Cardiology</th>
+      <th colspan=""3"" halign=""left"">Dermatology</th>
+      <th colspan=""2"" halign=""left"">Neurology</th>
+      <th colspan=""2"" halign=""left"">Oncology</th>
+      <th colspan=""2"" halign=""left"">Pediatrics</th>
+    </tr>
+    <tr>
+      <th>VisitReason</th>
+      <th>Emergency Visit</th>
+      <th>Follow-up Consultation</th>
+      <th>Routine Checkup</th>
+      <th>Emergency Visit</th>
+      <th>Follow-up Consultation</th>
+      <th>Routine Checkup</th>
+      <th>Emergency Visit</th>
+      <th>Follow-up Consultation</th>
+      <th>Follow-up Consultation</th>
+      <th>Routine Checkup</th>
+      <th>Emergency Visit</th>
+      <th>Follow-up Consultation</th>
+    </tr>
+    <tr>
+      <th>VisitOutcome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Further Tests Needed</th>
+      <td>2.283214</td>
+      <td>NaN</td>
+      <td>0.548028</td>
+      <td>NaN</td>
+      <td>2.295632</td>
+      <td>NaN</td>
+      <td>2.898858</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.109635</td>
+    </tr>
+    <tr>
+      <th>Referral Made</th>
+      <td>1.626720</td>
+      <td>2.917547</td>
+      <td>NaN</td>
+      <td>2.617928</td>
+      <td>NaN</td>
+      <td>2.9748</td>
+      <td>2.194843</td>
+      <td>1.919675</td>
+      <td>1.562784</td>
+      <td>1.082283</td>
+      <td>2.225954</td>
+      <td>1.279393</td>
+    </tr>
+    <tr>
+      <th>Successful Treatment</th>
+      <td>2.270976</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.880481</td>
+      <td>NaN</td>
+      <td>2.781363</td>
+      <td>2.730165</td>
+      <td>1.693979</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",2.295632
+What was the total charge incurred by John Doe during all types of visits?,"SELECT BillingAmount FROM PatientVisitDetails WHERE PatientName = ""John Doe"" AND VisitType = ""Emergency"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>PatientName</th>
+      <th>Alice Smith</th>
+      <th>Emily Johnson</th>
+      <th>John Doe</th>
+      <th>Michael Brown</th>
+      <th>Sarah Davis</th>
+    </tr>
+    <tr>
+      <th>VisitType</th>
+      <th>DiagnosisCategory</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Check-up</th>
+      <th>Chronic Condition</th>
+      <td>NaN</td>
+      <td>4548.278066</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Infection</th>
+      <td>9347.670508</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Injury</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8089.353394</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Preventive Care</th>
+      <td>NaN</td>
+      <td>3404.718671</td>
+      <td>2792.915744</td>
+      <td>NaN</td>
+      <td>87.349096</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">Consultation</th>
+      <th>Chronic Condition</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8736.150662</td>
+      <td>3497.371705</td>
+      <td>7263.176127</td>
+    </tr>
+    <tr>
+      <th>Infection</th>
+      <td>NaN</td>
+      <td>6893.342018</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Injury</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1794.635152</td>
+      <td>9674.156829</td>
+    </tr>
+    <tr>
+      <th>Mental Health</th>
+      <td>5675.315840</td>
+      <td>NaN</td>
+      <td>3031.914368</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Preventive Care</th>
+      <td>NaN</td>
+      <td>3204.936983</td>
+      <td>9415.309590</td>
+      <td>498.446583</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Emergency</th>
+      <th>Infection</th>
+      <td>8469.763757</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Preventive Care</th>
+      <td>NaN</td>
+      <td>1490.816807</td>
+      <td>6763.127818</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",6763.127818
+What is the recorded duration for telehealth follow-up appointments conducted after surgery?,"SELECT FollowUpDuration FROM PatientFollowUp WHERE FollowUpType = ""Telehealth"" AND FollowUpReason = ""Post-Surgery"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>FollowUpType</th>
+      <th colspan=""3"" halign=""left"">Home Visit</th>
+      <th colspan=""3"" halign=""left"">In-person</th>
+      <th colspan=""2"" halign=""left"">Telehealth</th>
+    </tr>
+    <tr>
+      <th>PatientStatus</th>
+      <th>Critical</th>
+      <th>Improving</th>
+      <th>Stable</th>
+      <th>Critical</th>
+      <th>Improving</th>
+      <th>Stable</th>
+      <th>Improving</th>
+      <th>Stable</th>
+    </tr>
+    <tr>
+      <th>FollowUpReason</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Medication Review</th>
+      <td>88.885469</td>
+      <td>91.418662</td>
+      <td>100.098276</td>
+      <td>NaN</td>
+      <td>30.024608</td>
+      <td>63.636224</td>
+      <td>30.829166</td>
+      <td>25.324567</td>
+    </tr>
+    <tr>
+      <th>Post-Surgery</th>
+      <td>21.710401</td>
+      <td>30.020022</td>
+      <td>83.076784</td>
+      <td>75.168809</td>
+      <td>108.037888</td>
+      <td>88.009194</td>
+      <td>NaN</td>
+      <td>98.941690</td>
+    </tr>
+    <tr>
+      <th>Routine Check</th>
+      <td>15.095874</td>
+      <td>109.866461</td>
+      <td>NaN</td>
+      <td>3.063472</td>
+      <td>38.208448</td>
+      <td>NaN</td>
+      <td>87.870787</td>
+      <td>18.067559</td>
+    </tr>
+  </tbody>
+</table>",98.94169
+"What is the amount of professional experience, measured in years, held by doctors certified as physicians in the field of cancer treatment?","SELECT YearsOfExperience FROM HealthcareCertifications WHERE CertificationType = ""Physician"" AND SpecializationArea = ""Oncology"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>SpecializationArea</th>
+      <th>Cardiology</th>
+      <th>General Surgery</th>
+      <th>Neurology</th>
+      <th>Oncology</th>
+      <th>Pediatrics</th>
+    </tr>
+    <tr>
+      <th>CertificationType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Nurse Practitioner</th>
+      <td>5.853088</td>
+      <td>40.386801</td>
+      <td>NaN</td>
+      <td>10.397246</td>
+      <td>31.207730</td>
+    </tr>
+    <tr>
+      <th>Physical Therapist</th>
+      <td>39.628297</td>
+      <td>13.362360</td>
+      <td>13.718155</td>
+      <td>2.875092</td>
+      <td>18.421412</td>
+    </tr>
+    <tr>
+      <th>Physician</th>
+      <td>34.628713</td>
+      <td>32.650067</td>
+      <td>22.604312</td>
+      <td>47.373723</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Registered Nurse</th>
+      <td>NaN</td>
+      <td>21.264852</td>
+      <td>4.595329</td>
+      <td>7.381498</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Surgeon</th>
+      <td>NaN</td>
+      <td>37.685154</td>
+      <td>28.759831</td>
+      <td>21.817326</td>
+      <td>3.368262</td>
+    </tr>
+  </tbody>
+</table>",47.373723
+What is the status of follow-up appointments for patients prescribed Statins who demonstrate a moderate degree of medication adherence?,"SELECT FollowUpStatus FROM PatientMedicationAdherence WHERE MedicationType = ""Statins"" AND AdherenceLevel = ""Medium"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>AdherenceLevel</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Medium</th>
+    </tr>
+    <tr>
+      <th>MedicationType</th>
+      <th>FollowUpStatus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Antibiotics</th>
+      <th>Completed</th>
+      <td>74.086365</td>
+      <td>NaN</td>
+      <td>48.656545</td>
+    </tr>
+    <tr>
+      <th>Scheduled</th>
+      <td>5.160636</td>
+      <td>NaN</td>
+      <td>93.654142</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Antidepressants</th>
+      <th>Completed</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>88.029788</td>
+    </tr>
+    <tr>
+      <th>Not Scheduled</th>
+      <td>26.574377</td>
+      <td>NaN</td>
+      <td>66.516773</td>
+    </tr>
+    <tr>
+      <th>Scheduled</th>
+      <td>52.037427</td>
+      <td>26.745798</td>
+      <td>49.337623</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Antihypertensives</th>
+      <th>Completed</th>
+      <td>NaN</td>
+      <td>38.321862</td>
+      <td>82.317905</td>
+    </tr>
+    <tr>
+      <th>Not Scheduled</th>
+      <td>NaN</td>
+      <td>51.006135</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Scheduled</th>
+      <td>NaN</td>
+      <td>59.143100</td>
+      <td>14.090615</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Statins</th>
+      <th>Completed</th>
+      <td>NaN</td>
+      <td>9.609616</td>
+      <td>69.088544</td>
+    </tr>
+    <tr>
+      <th>Not Scheduled</th>
+      <td>NaN</td>
+      <td>82.350137</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",Completed
+"For individuals treated surgically to manage high blood pressure, was there any recorded need for follow-up care?","SELECT FollowUpStatus FROM PatientHealthMetrics WHERE HealthCondition = ""Hypertension"" AND TreatmentType = ""Surgery"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>HealthCondition</th>
+      <th colspan=""2"" halign=""left"">Asthma</th>
+      <th colspan=""4"" halign=""left"">Diabetes</th>
+      <th colspan=""4"" halign=""left"">Heart Disease</th>
+      <th colspan=""4"" halign=""left"">Hypertension</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th>Lifestyle Change</th>
+      <th>Surgery</th>
+      <th>Lifestyle Change</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+      <th>Lifestyle Change</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+      <th>Lifestyle Change</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+    </tr>
+    <tr>
+      <th>FollowUpStatus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>6290.231333</td>
+      <td>2825.630319</td>
+      <td>8924.408804</td>
+      <td>NaN</td>
+      <td>9594.885136</td>
+      <td>2318.983155</td>
+      <td>NaN</td>
+      <td>969.806439</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6102.701579</td>
+      <td>3636.032231</td>
+      <td>5353.343391</td>
+      <td>456.090261</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3153.494264</td>
+      <td>2765.99204</td>
+      <td>5941.916662</td>
+      <td>NaN</td>
+      <td>3971.250345</td>
+      <td>2132.249211</td>
+      <td>9517.888896</td>
+      <td>2377.363071</td>
+      <td>6800.917744</td>
+      <td>2924.113346</td>
+      <td>NaN</td>
+      <td>3508.048532</td>
+    </tr>
+  </tbody>
+</table>",No

@@ -1,0 +1,1505 @@
+Question,SQL Query,Method,Table,Label
+"Considering patients aged 0 to 18 receiving Immunotherapy and those aged 36 to 50 undergoing Radiation Therapy, is the effectiveness score of the younger group's treatment at most equal to that of the older group's therapy?","SELECT (SELECT TreatmentOutcomeScore FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Immunotherapy"" AND PatientAgeGroup = ""0-18"") <= (SELECT TreatmentOutcomeScore FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Radiation Therapy"" AND PatientAgeGroup = ""36-50"") as TreatmentOutcomeScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Gender</th>
+      <th colspan=""4"" halign=""left"">Female</th>
+      <th colspan=""4"" halign=""left"">Male</th>
+      <th colspan=""4"" halign=""left"">Non-Binary</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th>Chemotherapy</th>
+      <th>Immunotherapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+      <th>Chemotherapy</th>
+      <th>Immunotherapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+      <th>Chemotherapy</th>
+      <th>Immunotherapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>PatientAgeGroup</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0-18</th>
+      <td>NaN</td>
+      <td>1.4754</td>
+      <td>53.268143</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>88.266798</td>
+      <td>8.446399</td>
+      <td>NaN</td>
+      <td>86.370476</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19-35</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>22.079563</td>
+      <td>51.190108</td>
+      <td>NaN</td>
+      <td>28.787405</td>
+      <td>44.772194</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>46.343588</td>
+      <td>72.582383</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36-50</th>
+      <td>94.685351</td>
+      <td>NaN</td>
+      <td>74.490674</td>
+      <td>83.862620</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>29.710568</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>53.804852</td>
+    </tr>
+    <tr>
+      <th>51+</th>
+      <td>55.112750</td>
+      <td>51.0986</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.486806</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>98.789213</td>
+    </tr>
+  </tbody>
+</table>",yes
+Is the amount prescribed of Metformin for treating bacterial infections less than the dosage of Aspirin used for alleviating pain?,"SELECT (SELECT Dosage FROM PatientMedicationData WHERE MedicationName = ""Metformin"" AND PatientCondition = ""Bacterial Infection"") < (SELECT Dosage FROM PatientMedicationData WHERE MedicationName = ""Aspirin"" AND PatientCondition = ""Pain Relief"") as Dosage;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>MedicationName</th>
+      <th colspan=""3"" halign=""left"">Amoxicillin</th>
+      <th colspan=""3"" halign=""left"">Aspirin</th>
+      <th colspan=""3"" halign=""left"">Lisinopril</th>
+      <th colspan=""4"" halign=""left"">Metformin</th>
+    </tr>
+    <tr>
+      <th>PatientCondition</th>
+      <th>Cardiovascular</th>
+      <th>Diabetes</th>
+      <th>Hypertension</th>
+      <th>Bacterial Infection</th>
+      <th>Diabetes</th>
+      <th>Pain Relief</th>
+      <th>Bacterial Infection</th>
+      <th>Cardiovascular</th>
+      <th>Pain Relief</th>
+      <th>Bacterial Infection</th>
+      <th>Cardiovascular</th>
+      <th>Diabetes</th>
+      <th>Hypertension</th>
+    </tr>
+    <tr>
+      <th>AdministrationRoute</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Inhalation</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>111.057065</td>
+      <td>482.38068</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>136.707056</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Intravenous</th>
+      <td>240.565153</td>
+      <td>26.500324</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>197.947394</td>
+      <td>290.734733</td>
+      <td>463.856861</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Oral</th>
+      <td>214.516889</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>105.409812</td>
+      <td>79.843493</td>
+      <td>400.014430</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Subcutaneous</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>292.140652</td>
+      <td>NaN</td>
+      <td>413.765055</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>375.094655</td>
+      <td>NaN</td>
+      <td>37.585521</td>
+      <td>NaN</td>
+      <td>24.814694</td>
+    </tr>
+    <tr>
+      <th>Topical</th>
+      <td>NaN</td>
+      <td>400.566780</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>456.641152</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>382.583651</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",no
+Is the expense for a Follow-Up appointment with a stable patient lower than the charge for a Specialist Consultation involving a critical patient?,"SELECT (SELECT Cost FROM PatientVisitRecords WHERE VisitType = ""Follow-Up"" AND PatientStatus = ""Stable"") < (SELECT Cost FROM PatientVisitRecords WHERE VisitType = ""Specialist Consultation"" AND PatientStatus = ""Critical"") as Cost;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>VisitType</th>
+      <th>Emergency Visit</th>
+      <th>Follow-Up</th>
+      <th>Routine Checkup</th>
+      <th>Specialist Consultation</th>
+    </tr>
+    <tr>
+      <th>PatientStatus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Critical</th>
+      <td>7369.148856</td>
+      <td>3281.594030</td>
+      <td>1857.830635</td>
+      <td>8181.199031</td>
+    </tr>
+    <tr>
+      <th>Discharged</th>
+      <td>1769.263612</td>
+      <td>435.486455</td>
+      <td>2117.904725</td>
+      <td>5211.034579</td>
+    </tr>
+    <tr>
+      <th>Recovering</th>
+      <td>4962.331138</td>
+      <td>8530.721737</td>
+      <td>8916.760641</td>
+      <td>9256.211567</td>
+    </tr>
+    <tr>
+      <th>Stable</th>
+      <td>8299.265440</td>
+      <td>9015.580337</td>
+      <td>6723.437473</td>
+      <td>1241.869306</td>
+    </tr>
+  </tbody>
+</table>",no
+Do patients suffering from Critical Conditions who undergo Physical Therapy tend to recuperate more rapidly compared to those with Chronic Conditions treated with Medication?,"SELECT (SELECT RecoveryTime FROM PatientHealthMetrics WHERE HealthStatus = ""Critical Condition"" AND TreatmentPlan = ""Physical Therapy"") < (SELECT RecoveryTime FROM PatientHealthMetrics WHERE HealthStatus = ""Chronic Condition"" AND TreatmentPlan = ""Medication"") as RecoveryTime;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>HealthStatus</th>
+      <th>Chronic Condition</th>
+      <th>Critical Condition</th>
+      <th>Healthy</th>
+      <th>Minor Illness</th>
+    </tr>
+    <tr>
+      <th>TreatmentPlan</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Lifestyle Changes</th>
+      <td>38.606629</td>
+      <td>46.854719</td>
+      <td>34.047215</td>
+      <td>18.930139</td>
+    </tr>
+    <tr>
+      <th>Medication</th>
+      <td>48.453631</td>
+      <td>51.232403</td>
+      <td>48.589581</td>
+      <td>41.304096</td>
+    </tr>
+    <tr>
+      <th>Physical Therapy</th>
+      <td>10.114547</td>
+      <td>29.054677</td>
+      <td>7.867924</td>
+      <td>43.602312</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>25.496040</td>
+      <td>35.894483</td>
+      <td>7.660865</td>
+      <td>10.560150</td>
+    </tr>
+  </tbody>
+</table>",yes
+Did the recorded vital sign in the ICU show an increase or remain the same when comparing the beginning of 2020 to the end of 2023?,"SELECT (SELECT VitalSignValue FROM PatientMonitoringData WHERE MonitoringLocation = ""ICU"" AND MonitoringDate = ""2020-01-01"") < (SELECT VitalSignValue FROM PatientMonitoringData WHERE MonitoringLocation = ""ICU"" AND MonitoringDate = ""2023-12-31"") as VitalSignValue;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>MonitoringDate</th>
+      <th>2020-01-01</th>
+      <th>2023-12-31</th>
+    </tr>
+    <tr>
+      <th>MonitoringLocation</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Emergency Room</th>
+      <td>116.719088</td>
+      <td>11.554224</td>
+    </tr>
+    <tr>
+      <th>ICU</th>
+      <td>91.482231</td>
+      <td>84.601126</td>
+    </tr>
+    <tr>
+      <th>Outpatient Clinic</th>
+      <td>73.149196</td>
+      <td>22.245367</td>
+    </tr>
+    <tr>
+      <th>Ward</th>
+      <td>97.453199</td>
+      <td>48.549806</td>
+    </tr>
+  </tbody>
+</table>",no
+"Considering patients aged 66 and above who are dissatisfied with their treatment, does the effectiveness rating fall at or below the score given by patients aged 36 to 50 who reported being very dissatisfied?","SELECT (SELECT TreatmentEffectivenessScore FROM PatientFeedbackSurvey WHERE PatientAgeRange = ""66+"" AND SatisfactionLevel = ""Dissatisfied"") <= (SELECT TreatmentEffectivenessScore FROM PatientFeedbackSurvey WHERE PatientAgeRange = ""36-50"" AND SatisfactionLevel = ""Very Dissatisfied"") as TreatmentEffectivenessScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>FollowUpRecommendation</th>
+      <th colspan=""4"" halign=""left"">Maybe</th>
+      <th colspan=""5"" halign=""left"">No</th>
+      <th colspan=""4"" halign=""left"">Yes</th>
+    </tr>
+    <tr>
+      <th>PatientAgeRange</th>
+      <th>0-18</th>
+      <th>19-35</th>
+      <th>36-50</th>
+      <th>66+</th>
+      <th>0-18</th>
+      <th>19-35</th>
+      <th>36-50</th>
+      <th>51-65</th>
+      <th>66+</th>
+      <th>19-35</th>
+      <th>36-50</th>
+      <th>51-65</th>
+      <th>66+</th>
+    </tr>
+    <tr>
+      <th>SatisfactionLevel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Dissatisfied</th>
+      <td>1.909911</td>
+      <td>NaN</td>
+      <td>0.669490</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.271355</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.865279</td>
+      <td>2.390174</td>
+      <td>5.669332</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Neutral</th>
+      <td>NaN</td>
+      <td>5.028957</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.808313</td>
+      <td>7.765535</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.156814</td>
+      <td>7.172997</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Satisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.405289</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.113253</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.728471</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Very Dissatisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.857210</td>
+      <td>9.467743</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.012665</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Very Satisfied</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.565815</td>
+      <td>6.787821</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.497885</td>
+    </tr>
+  </tbody>
+</table>",yes
+Does the expense for Radiation Therapy provided by City Hospital surpass the cost charged for Physical Therapy services at General Care Clinic?,"SELECT (SELECT TreatmentCost FROM PatientTreatmentDetails WHERE TreatmentType = ""Radiation Therapy"" AND HealthcareProvider = ""City Hospital"") > (SELECT TreatmentCost FROM PatientTreatmentDetails WHERE TreatmentType = ""Physical Therapy"" AND HealthcareProvider = ""General Care Clinic"") as TreatmentCost;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>TreatmentType</th>
+      <th colspan=""3"" halign=""left"">Chemotherapy</th>
+      <th colspan=""2"" halign=""left"">Medication</th>
+      <th colspan=""3"" halign=""left"">Physical Therapy</th>
+      <th colspan=""3"" halign=""left"">Radiation Therapy</th>
+      <th colspan=""3"" halign=""left"">Surgery</th>
+    </tr>
+    <tr>
+      <th>HealthcareProvider</th>
+      <th>City Hospital</th>
+      <th>General Care Clinic</th>
+      <th>Specialty Health Center</th>
+      <th>Community Health Organization</th>
+      <th>General Care Clinic</th>
+      <th>Community Health Organization</th>
+      <th>General Care Clinic</th>
+      <th>Specialty Health Center</th>
+      <th>City Hospital</th>
+      <th>General Care Clinic</th>
+      <th>Specialty Health Center</th>
+      <th>City Hospital</th>
+      <th>General Care Clinic</th>
+      <th>Specialty Health Center</th>
+    </tr>
+    <tr>
+      <th>TreatmentOutcome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>In Progress</th>
+      <td>NaN</td>
+      <td>6893.617132</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8397.901212</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>41107.812215</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>30781.069333</td>
+    </tr>
+    <tr>
+      <th>Needs Follow-Up</th>
+      <td>25696.622564</td>
+      <td>NaN</td>
+      <td>31142.268322</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>13118.559206</td>
+      <td>41054.299833</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16840.745230</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Partially Successful</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>25349.160082</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18595.688708</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Successful</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>40354.356953</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>35118.590319</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Unsuccessful</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>26923.711841</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6021.307553</td>
+      <td>NaN</td>
+      <td>10110.436001</td>
+      <td>6500.272814</td>
+      <td>27026.530752</td>
+      <td>30096.328412</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",yes
+Does the higher 1 gram dose of Ibuprofen produce side effects that are equal to or more severe than those caused by the 200 milligram dose?,"SELECT (SELECT SideEffectsScore FROM PatientMedicationDetails WHERE MedicationName = ""Ibuprofen"" AND Dosage = ""1 g"") >= (SELECT SideEffectsScore FROM PatientMedicationDetails WHERE MedicationName = ""Ibuprofen"" AND Dosage = ""200 mg"") as SideEffectsScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>MedicationName</th>
+      <th colspan=""3"" halign=""left"">Amoxicillin</th>
+      <th colspan=""3"" halign=""left"">Aspirin</th>
+      <th colspan=""3"" halign=""left"">Ibuprofen</th>
+      <th colspan=""3"" halign=""left"">Lisinopril</th>
+      <th colspan=""3"" halign=""left"">Metformin</th>
+    </tr>
+    <tr>
+      <th>Dosage</th>
+      <th>1 g</th>
+      <th>200 mg</th>
+      <th>500 mg</th>
+      <th>1 g</th>
+      <th>200 mg</th>
+      <th>500 mg</th>
+      <th>1 g</th>
+      <th>100 mg</th>
+      <th>200 mg</th>
+      <th>1 g</th>
+      <th>100 mg</th>
+      <th>200 mg</th>
+      <th>100 mg</th>
+      <th>200 mg</th>
+      <th>500 mg</th>
+    </tr>
+    <tr>
+      <th>AdministrationRoute</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Intravenous</th>
+      <td>NaN</td>
+      <td>2.562298</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.909171</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.182404</td>
+      <td>NaN</td>
+      <td>0.279389</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Oral</th>
+      <td>2.860746</td>
+      <td>NaN</td>
+      <td>7.680037</td>
+      <td>2.590053</td>
+      <td>8.786538</td>
+      <td>1.194142</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.571655</td>
+      <td>8.515088</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Subcutaneous</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.552884</td>
+      <td>5.841568</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.791251</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.666955</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Topical</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.70125</td>
+      <td>NaN</td>
+      <td>5.510679</td>
+      <td>NaN</td>
+      <td>0.797157</td>
+      <td>NaN</td>
+      <td>2.917035</td>
+      <td>1.522286</td>
+    </tr>
+  </tbody>
+</table>",yes
+"Considering the durations patients spend in the hospital, is the length of stay for those receiving Physical Therapy due to high blood pressure less than or equal to the time spent by patients undergoing Radiation treatment for Heart Disease?","SELECT (SELECT HospitalVisitDuration FROM PatientTreatmentMetrics WHERE TreatmentType = ""Physical Therapy"" AND DiagnosisType = ""Hypertension"") <= (SELECT HospitalVisitDuration FROM PatientTreatmentMetrics WHERE TreatmentType = ""Radiation"" AND DiagnosisType = ""Heart Disease"") as HospitalVisitDuration;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>DiagnosisType</th>
+      <th colspan=""3"" halign=""left"">Cancer</th>
+      <th colspan=""3"" halign=""left"">Diabetes</th>
+      <th colspan=""3"" halign=""left"">Heart Disease</th>
+      <th colspan=""4"" halign=""left"">Hypertension</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th>Physical Therapy</th>
+      <th>Radiation</th>
+      <th>Surgery</th>
+      <th>Chemotherapy</th>
+      <th>Physical Therapy</th>
+      <th>Surgery</th>
+      <th>Chemotherapy</th>
+      <th>Physical Therapy</th>
+      <th>Radiation</th>
+      <th>Chemotherapy</th>
+      <th>Physical Therapy</th>
+      <th>Radiation</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>InsurancePlan</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>HMO</th>
+      <td>NaN</td>
+      <td>39.164848</td>
+      <td>NaN</td>
+      <td>75.455826</td>
+      <td>65.828449</td>
+      <td>41.252169</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>22.73321</td>
+      <td>31.014364</td>
+      <td>NaN</td>
+      <td>89.670705</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Medicaid</th>
+      <td>83.467953</td>
+      <td>NaN</td>
+      <td>21.545768</td>
+      <td>NaN</td>
+      <td>16.282061</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>53.892083</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Medicare</th>
+      <td>63.654830</td>
+      <td>NaN</td>
+      <td>59.236101</td>
+      <td>45.857231</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>31.722764</td>
+      <td>8.414201</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>PPO</th>
+      <td>NaN</td>
+      <td>36.345937</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>33.885503</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.677502</td>
+      <td>NaN</td>
+      <td>40.205223</td>
+    </tr>
+  </tbody>
+</table>",yes
+"Among patients who strictly follow their medication regimen, does Simvastatin cause more severe side effects compared to Lisinopril?","SELECT (SELECT SideEffectsSeverity FROM PatientMedicationAdherence WHERE MedicationName = ""Simvastatin"" AND AdherenceLevel = ""Fully Adherent"") > (SELECT SideEffectsSeverity FROM PatientMedicationAdherence WHERE MedicationName = ""Lisinopril"" AND AdherenceLevel = ""Fully Adherent"") as SideEffectsSeverity;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>TreatmentDuration</th>
+      <th>19</th>
+      <th>92</th>
+      <th>123</th>
+      <th colspan=""2"" halign=""left"">124</th>
+      <th>133</th>
+      <th>143</th>
+      <th>159</th>
+      <th>179</th>
+      <th>180</th>
+      <th>190</th>
+      <th>289</th>
+      <th>313</th>
+      <th>357</th>
+      <th>362</th>
+    </tr>
+    <tr>
+      <th>AdherenceLevel</th>
+      <th>Fully Adherent</th>
+      <th>Partially Adherent</th>
+      <th>Fully Adherent</th>
+      <th>Fully Adherent</th>
+      <th>Partially Adherent</th>
+      <th>Partially Adherent</th>
+      <th>Non-Adherent</th>
+      <th>Fully Adherent</th>
+      <th>Fully Adherent</th>
+      <th>Non-Adherent</th>
+      <th>Non-Adherent</th>
+      <th>Partially Adherent</th>
+      <th>Non-Adherent</th>
+      <th>Partially Adherent</th>
+      <th>Non-Adherent</th>
+    </tr>
+    <tr>
+      <th>MedicationName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Amlodipine</th>
+      <td>NaN</td>
+      <td>6.620817</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.276563</td>
+      <td>NaN</td>
+      <td>9.631437</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Levothyroxine</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.842392</td>
+      <td>NaN</td>
+      <td>2.695982</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.629288</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Lisinopril</th>
+      <td>2.999229</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.671838</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.769254</td>
+    </tr>
+    <tr>
+      <th>Metformin</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.893872</td>
+      <td>NaN</td>
+      <td>2.157554</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.906396</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Simvastatin</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.285797</td>
+      <td>NaN</td>
+      <td>4.165005</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.904539</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",no
+"Considering the expenses for treatments at City Hospital and Specialized Health Center, does the fee for a consultation at City Hospital equal or surpass the cost charged for chemotherapy at Specialized Health Center?","SELECT (SELECT TreatmentCost FROM PatientTreatmentRecords WHERE TreatmentType = ""Consultation"" AND HealthcareFacility = ""City Hospital"") >= (SELECT TreatmentCost FROM PatientTreatmentRecords WHERE TreatmentType = ""Chemotherapy"" AND HealthcareFacility = ""Specialized Health Center"") as TreatmentCost;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>TreatmentType</th>
+      <th>Chemotherapy</th>
+      <th>Consultation</th>
+      <th>Physical Therapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>HealthcareFacility</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>City Hospital</th>
+      <td>3068.728879</td>
+      <td>12241.628658</td>
+      <td>4926.672148</td>
+      <td>8174.456677</td>
+      <td>24650.133025</td>
+    </tr>
+    <tr>
+      <th>County Clinic</th>
+      <td>19859.460127</td>
+      <td>13362.338126</td>
+      <td>47931.090952</td>
+      <td>27433.332628</td>
+      <td>44170.231671</td>
+    </tr>
+    <tr>
+      <th>General Medical Center</th>
+      <td>6132.762095</td>
+      <td>27911.380504</td>
+      <td>2684.242295</td>
+      <td>18396.933472</td>
+      <td>12420.969123</td>
+    </tr>
+    <tr>
+      <th>Specialized Health Center</th>
+      <td>5523.271541</td>
+      <td>1625.985237</td>
+      <td>30224.410948</td>
+      <td>22380.391330</td>
+      <td>44223.852298</td>
+    </tr>
+  </tbody>
+</table>",yes
+"Considering patients diagnosed with high blood pressure who follow lifestyle modifications, do they achieve better health outcomes compared to individuals without health issues who are on medicinal treatment?","SELECT (SELECT HealthScore FROM PatientHealthAssessment WHERE HealthCondition = ""Hypertension"" AND TreatmentType = ""Lifestyle Change"") > (SELECT HealthScore FROM PatientHealthAssessment WHERE HealthCondition = ""Healthy"" AND TreatmentType = ""Medication"") as HealthScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>TreatmentType</th>
+      <th>Lifestyle Change</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+    </tr>
+    <tr>
+      <th>HealthCondition</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asthma</th>
+      <td>51.711388</td>
+      <td>81.951704</td>
+      <td>9.082845</td>
+      <td>11.740249</td>
+    </tr>
+    <tr>
+      <th>Diabetes</th>
+      <td>25.180359</td>
+      <td>14.132773</td>
+      <td>35.850821</td>
+      <td>76.743025</td>
+    </tr>
+    <tr>
+      <th>Healthy</th>
+      <td>76.455628</td>
+      <td>72.492297</td>
+      <td>90.489145</td>
+      <td>73.339163</td>
+    </tr>
+    <tr>
+      <th>Heart Disease</th>
+      <td>31.652591</td>
+      <td>97.219822</td>
+      <td>16.642176</td>
+      <td>98.780028</td>
+    </tr>
+    <tr>
+      <th>Hypertension</th>
+      <td>68.115353</td>
+      <td>39.231158</td>
+      <td>73.961235</td>
+      <td>61.673484</td>
+    </tr>
+  </tbody>
+</table>",no
+"For female patients, does the satisfaction rating for routine medical examinations fall below that of emergency room visits?","SELECT (SELECT SatisfactionScore FROM PatientEncounterData WHERE PatientGender = ""Female"" AND VisitType = ""Routine Checkup"") < (SELECT SatisfactionScore FROM PatientEncounterData WHERE PatientGender = ""Female"" AND VisitType = ""Emergency"") as SatisfactionScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>VisitType</th>
+      <th>Emergency</th>
+      <th>Follow-up</th>
+      <th>Routine Checkup</th>
+    </tr>
+    <tr>
+      <th>PatientGender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>1.636006</td>
+      <td>5.515199</td>
+      <td>5.532278</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>6.688393</td>
+      <td>3.538229</td>
+      <td>0.848038</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>2.861253</td>
+      <td>3.226437</td>
+      <td>3.256131</td>
+    </tr>
+  </tbody>
+</table>",no
+"Among patients who do not have chronic illnesses, does undergoing surgical treatment result in a health index score that is at least as high as the score for those receiving counseling?","SELECT (SELECT HealthIndexScore FROM PatientHealthMetrics WHERE ChronicCondition = ""No"" AND TreatmentType = ""Surgery"") >= (SELECT HealthIndexScore FROM PatientHealthMetrics WHERE ChronicCondition = ""No"" AND TreatmentType = ""Counseling"") as HealthIndexScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>ChronicCondition</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Counseling</th>
+      <td>80.080035</td>
+      <td>79.010157</td>
+    </tr>
+    <tr>
+      <th>Medication</th>
+      <td>89.857869</td>
+      <td>50.159990</td>
+    </tr>
+    <tr>
+      <th>Physical Therapy</th>
+      <td>83.163206</td>
+      <td>8.450883</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>28.530525</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",no
+"Is the recovery duration for patients classified as ""Critical"" during the initial stage of treatment shorter than the recovery duration for those labeled ""Stable"" at the conclusion of their treatment?","SELECT (SELECT RecoveryTime FROM PatientHealthMetrics WHERE HealthOutcome = ""Critical"" AND TreatmentPhase = ""Initial"") < (SELECT RecoveryTime FROM PatientHealthMetrics WHERE HealthOutcome = ""Stable"" AND TreatmentPhase = ""Final"") as RecoveryTime;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>TreatmentPhase</th>
+      <th>Final</th>
+      <th>Initial</th>
+      <th>Ongoing</th>
+    </tr>
+    <tr>
+      <th>HealthOutcome</th>
+      <th>DiagnosisType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Critical</th>
+      <th>Acute</th>
+      <td>360.084398</td>
+      <td>NaN</td>
+      <td>131.538662</td>
+    </tr>
+    <tr>
+      <th>Chronic</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>352.559870</td>
+    </tr>
+    <tr>
+      <th>Preventive</th>
+      <td>246.297388</td>
+      <td>183.055951</td>
+      <td>96.757756</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Recovered</th>
+      <th>Acute</th>
+      <td>59.942272</td>
+      <td>275.640813</td>
+      <td>312.191479</td>
+    </tr>
+    <tr>
+      <th>Chronic</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>267.410442</td>
+    </tr>
+    <tr>
+      <th>Preventive</th>
+      <td>102.718657</td>
+      <td>242.826608</td>
+      <td>0.600506</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Stable</th>
+      <th>Acute</th>
+      <td>NaN</td>
+      <td>65.889797</td>
+      <td>231.658412</td>
+    </tr>
+    <tr>
+      <th>Chronic</th>
+      <td>113.393446</td>
+      <td>48.505445</td>
+      <td>73.666712</td>
+    </tr>
+    <tr>
+      <th>Preventive</th>
+      <td>NaN</td>
+      <td>217.311810</td>
+      <td>177.791930</td>
+    </tr>
+  </tbody>
+</table>",no
+Is the health rating identical for patients who feel dissatisfied and have a moderate level of health awareness compared to those who are very dissatisfied and possess a low level of health awareness?,"SELECT (SELECT HealthScore FROM PatientHealthSurveyResults WHERE PatientSatisfactionLevel = ""Dissatisfied"" AND HealthAwareness = ""Moderate"") = (SELECT HealthScore FROM PatientHealthSurveyResults WHERE PatientSatisfactionLevel = ""Very Dissatisfied"" AND HealthAwareness = ""Low"") as HealthScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>PatientSatisfactionLevel</th>
+      <th>Dissatisfied</th>
+      <th>Neutral</th>
+      <th>Satisfied</th>
+      <th>Very Dissatisfied</th>
+      <th>Very Satisfied</th>
+    </tr>
+    <tr>
+      <th>HealthAwareness</th>
+      <th>FollowUpNeeded</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">High</th>
+      <th>No</th>
+      <td>5.587367</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>60.770649</td>
+      <td>0.701979</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>77.392411</td>
+      <td>NaN</td>
+      <td>37.716249</td>
+      <td>70.425962</td>
+      <td>80.118991</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Low</th>
+      <th>No</th>
+      <td>71.952145</td>
+      <td>2.995897</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>61.954816</td>
+      <td>NaN</td>
+      <td>29.805824</td>
+      <td>35.605602</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Moderate</th>
+      <th>No</th>
+      <td>NaN</td>
+      <td>9.083416</td>
+      <td>65.821875</td>
+      <td>12.785552</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>47.147102</td>
+      <td>83.108518</td>
+      <td>98.991929</td>
+      <td>40.061569</td>
+      <td>81.890146</td>
+    </tr>
+  </tbody>
+</table>",no
+Is the amount of Acetaminophen administered topically less than or equal to the quantity of Metformin given in liquid form?,"SELECT (SELECT DosageAmount FROM PatientMedicationRecords WHERE MedicationName = ""Acetaminophen"" AND DosageForm = ""Topical"") > (SELECT DosageAmount FROM PatientMedicationRecords WHERE MedicationName = ""Metformin"" AND DosageForm = ""Liquid"") as DosageAmount;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>DosageForm</th>
+      <th>Injection</th>
+      <th>Liquid</th>
+      <th>Tablet</th>
+      <th>Topical</th>
+    </tr>
+    <tr>
+      <th>MedicationName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Acetaminophen</th>
+      <td>303.461475</td>
+      <td>257.406707</td>
+      <td>104.089449</td>
+      <td>83.674931</td>
+    </tr>
+    <tr>
+      <th>Amoxicillin</th>
+      <td>460.758066</td>
+      <td>703.126204</td>
+      <td>802.080632</td>
+      <td>785.739798</td>
+    </tr>
+    <tr>
+      <th>Aspirin</th>
+      <td>923.542531</td>
+      <td>369.920140</td>
+      <td>680.784334</td>
+      <td>411.459210</td>
+    </tr>
+    <tr>
+      <th>Ibuprofen</th>
+      <td>131.485572</td>
+      <td>693.438156</td>
+      <td>700.867643</td>
+      <td>653.609706</td>
+    </tr>
+    <tr>
+      <th>Metformin</th>
+      <td>526.856723</td>
+      <td>833.361201</td>
+      <td>392.182243</td>
+      <td>917.951428</td>
+    </tr>
+  </tbody>
+</table>",no
+Is the effectiveness of Surgery when patients have no side effects lower than or equal to the effectiveness of Chemotherapy in cases where patients suffer from severe side effects?,"SELECT (SELECT SuccessRate FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Surgery"" AND SideEffects = ""None"") <= (SELECT SuccessRate FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Chemotherapy"" AND SideEffects = ""Severe"") as SuccessRate;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>SideEffects</th>
+      <th>Mild</th>
+      <th>None</th>
+      <th>Severe</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Chemotherapy</th>
+      <td>7.075482</td>
+      <td>96.698788</td>
+      <td>39.274760</td>
+    </tr>
+    <tr>
+      <th>Radiation Therapy</th>
+      <td>53.536189</td>
+      <td>87.321255</td>
+      <td>85.465647</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>51.825417</td>
+      <td>5.543618</td>
+      <td>86.718658</td>
+    </tr>
+  </tbody>
+</table>",yes
+Is the patient satisfaction rating at specialized healthcare centers situated in rural areas lower than that of hospitals found in urban settings?,"SELECT (SELECT AveragePatientSatisfactionScore FROM HealthcareProviderPerformance WHERE ProviderType = ""Specialized Center"" AND Location = ""Rural"") < (SELECT AveragePatientSatisfactionScore FROM HealthcareProviderPerformance WHERE ProviderType = ""Hospital"" AND Location = ""Urban"") as AveragePatientSatisfactionScore;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>Location</th>
+      <th>Rural</th>
+      <th>Suburban</th>
+      <th>Urban</th>
+    </tr>
+    <tr>
+      <th>ProviderType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Clinic</th>
+      <td>0.151271</td>
+      <td>2.560583</td>
+      <td>7.020721</td>
+    </tr>
+    <tr>
+      <th>Hospital</th>
+      <td>0.983846</td>
+      <td>0.815380</td>
+      <td>2.588656</td>
+    </tr>
+    <tr>
+      <th>Specialized Center</th>
+      <td>8.270507</td>
+      <td>0.243087</td>
+      <td>1.634506</td>
+    </tr>
+  </tbody>
+</table>",no
+"Between Asthma and Hypertension, which condition exhibited a greater vital sign measurement after half a year of monitoring?","SELECT (SELECT VitalSignValue FROM PatientVitalSignsAnalysis WHERE HealthCondition = ""Asthma"" AND MonitoringPeriod = ""6 months"") > (SELECT VitalSignValue FROM PatientVitalSignsAnalysis WHERE HealthCondition = ""Hypertension"" AND MonitoringPeriod = ""6 months"") as VitalSignValue;",comparative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>HealthCondition</th>
+      <th>Asthma</th>
+      <th>Diabetes</th>
+      <th>Heart Disease</th>
+      <th>Hypertension</th>
+    </tr>
+    <tr>
+      <th>MonitoringPeriod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1 month</th>
+      <td>188.818979</td>
+      <td>91.306968</td>
+      <td>186.480987</td>
+      <td>223.638918</td>
+    </tr>
+    <tr>
+      <th>12 months</th>
+      <td>79.161365</td>
+      <td>131.549115</td>
+      <td>202.074789</td>
+      <td>171.953651</td>
+    </tr>
+    <tr>
+      <th>3 months</th>
+      <td>163.053387</td>
+      <td>186.303228</td>
+      <td>124.931330</td>
+      <td>235.185674</td>
+    </tr>
+    <tr>
+      <th>6 months</th>
+      <td>197.200066</td>
+      <td>235.353311</td>
+      <td>54.166234</td>
+      <td>179.667935</td>
+    </tr>
+  </tbody>
+</table>",yes

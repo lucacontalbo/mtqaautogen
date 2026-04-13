@@ -1,0 +1,51 @@
+index,question,value,response
+0,Is the maximum amount of total waste higher in 2022 than in 2023?,yes, yes
+1,"Among 2019, 2022 and 2023, what are the two lowest amounts of unsorted waste (T) in decreasing order?","2757.0, 1955.0"," 2757.00, 1955.00"
+2,"What is the minimum total waste in tons recorded in the years 2019, 2022 and 2023?",4350, 4350.00
+3,What are the two lowest values of total waste in tons for the years 2019 and 2022 in ascending order?,"5070.0, 7129.0"," 5070.00, 7129.00"
+4,"In 2023, is the amount of Mwh between on site generated renewable electricity higher than energy consumption by heating?",yes, yes
+5,"What are the amounts of energy consumption in MWh for the year 2022, ranked in descending order?","107019.0, 77831.0, 33245.0, 2829.0, 855.0, 0.0, 0.0, 0.0"," 107019.00, 77831.00, 33245.00, 2829.00, 855.00, 0.00, 0.00, 0.00"
+6,Is the estimated energy consumption from purchased renewable electricity lower than grid electricity in MWh for the year 2023?,yes, yes
+7,"What is the minimum estimated energy consumption from district heating in MWh for the years 2023, 2022, and 2021?",2490, 2490.00
+8,"What are the two lowest values of fuel oil electricity consumption in MWh for the years 2023, 2022 and 2021 in increasing order?","797.0, 855.0"," 797.00, 855.00"
+9,"What is the highest estimated energy consumption from gas in MWh for the years 2021, 2022, and 2023?",49674, 49674.00
+10,"What are the two lowest values in decreasing order of energy consumption from coal measured in MWh for the years 2023, 2022 and 2021?","0.0, 0.0"," 0.00, 0.00"
+11,Is the value of energy consumption from renewable fuel and heat in MWh in 2022 lower than in 2021?,no, no
+12,Is the estimated energy consumption from purchased renewable electricity higher than the energy consumption from renewable electricity generated on site in MWh in 2023?,yes, yes
+13,What are the two highest values of purchased renewable electricity and gas consumption in MWh for the year 2022 in descending order?,"77831.0, 33245.0"," 77831.00, 33245.00"
+14,"In ascending order, what are the four lowest values of energy consumption by source in MWh in 2023?","0.0, 0.0, 0.0, 1013.0"," 0.00, 0.00, 0.00, 1013.00"
+15,Is the estimated energy consumption from district heating in MWh in 2021 lower than the one in 2022?,no, no
+16,"What is the maximum value of fuel oil consumption in MWh for the years 2021, 2022, and 2023?",1013, 1013.00
+17,"What is the minimum estimated energy consumption from gas in MWh for the years 2021, 2022, and 2023?",21008," 49674.00, 33245.00, 21008.00"
+18,"What are the three values for the consumption of self-generated renewable electricity measured in MWh for the years 2023, 2022, and 2021 in decreasing order?","0.0, 0.0, 0.0"," 0.00, 0.00, 0.00"
+19,What are the two lowest values of estimated total energy consumption per turnover in MWh/million € for the years 2020 to 2023 in increasing order?,"31.3, 35.1"," 31.30, 35.10"
+20,"What is the lowest amount of energy consumed in Mwh between 2023, 2022, 2021 and 2020?",1124327, 1124327.00
+21,Is the amount of Mwh of measured energy consumption higher than the estimated energy consumption for sites out of reporting perimeter in 2022?,yes, yes
+22,What are the top five amounts of Mwh for energy consumption by source in 2020 in decreasing order?,"585495, 251377, 148969, 27602, 12464"," 585495.00, 251377.00, 148969.00, 27602.00, 12464.00"
+23,What is the minimum measured energy consumption from fuel oil in MWh for the years 2020 to 2023?,6520, 6520.00
+24,What is the maximum energy consumption by source in 2022?,588851, purchased renewable electricity 588851.00 mwh
+25,What is the maximum energy consumption by source in 2020?,585495, 585495.00 mwh
+26,Is the estimated total energy consumption in MWh in 2023 lower than in 2022?,yes, yes
+27,What are the values of energy consumption from renewable and non-renewable sources in Mwh in 2021 in descending order?,"670287, 655204"," 670287.00, 655204.00"
+28,Is the estimated total energy consumption from fuel oil in MWh in 2023 lower than the one in 2021?,no, no
+29,Is the value of surface water withdrawals in cubic meters in 2022 higher than in 2023?,no, no
+30,What are the amounts of groundwater withdrawals in cubic meters ranked in descending order?,"513631.0, 492308.0, 472199.0, 452602.0"," 513631.00, 492308.00, 472199.00, 452602.00"
+31,Is the total water withdrawals from third party sources in cubic meters 2021 lower than in 2023?,no, no
+32,"What was the minimum amount of water withdrawal between surface water, groundwater, third party or other sources in 2020?",11578, 11578.00
+33,"What are the amounts of non-cooling water withdrawal between surface water, groundwater, third party or other sources in 2021 ranked in ascending order?","19156, 31870, 513631, 1507606"," 19156.00, 31870.00, 513631.00, 1507606.00"
+34,"Other than for cooling, what are the top two values of specific water withdrawal by source from the year 2021, ranked in descending order?","1507606.0, 513631.0"," 1507606.00, 513631.00"
+35,"What are the four total water withdrawals from third-party sources for the years 2023, 2022, 2021 and 2020 in increasing order?","1377377.0, 1388474.0, 1446391.0, 1507606.0"," 1377377.00, 1388474.00, 1446391.00, 1507606.00"
+36,"Except for cooling, is the value of water withdrawals from surface waters lower than the amount of water withdrawal from other sources in cubic meters for the year 2020?",no, no
+37,"Between different non-cooling water withdrawal sources in 2023, what is the highest amount of water withdrawn in m3?",1377377, 1377377.00 m3
+38,What was the minimum water withdrawal per million euros for the years 2020 to 2023?,52.9, 52.90
+39,Is the value of water withdrawn for cooling lower than the value of water not withdrawn for cooling in 2020?,yes, yes
+40,What is the minimum value of the direct (Scope 1) GHG emissions by source in TCO2e for the year 2023?,0, 0.00
+41,"For the year 2023, between Scope 1, Scope 2 and Scope 3 total emissions, what are the two lowest amounts of emissions in ascending order?","89440.0, 112792.0"," 89440.00, 112792.00"
+42,Is the value of direct Scope 1 GHG emissions greater than the Scope 3 emissions in TCO2e for the year 2023?,no, no
+43,What are the top two amounts of GHG Scope 2 emissions by source in TCO2e in 2022 ranked in descending order?,"50995, 49674"," 50995.00, 49674.00"
+44,What is the minimum value of the direct (Scope 1) GHG emissions from gas for the years 2020 to 2023?,38968, 38968.00
+45,"What are the lowest values of direct (Scope 1) GHG emissions from coal for the years 2023, 2022, 2021, and 2020 in ascending order?","0.0, 0.0, 0.0, 0.0"," 0.00, 0.00, 0.00, 0.00"
+46,What was the highest value of GHG emissions from the vehicle fleet (Scope 1) reported in the years 2020 to 2023?,73229, 73229.00 tco2e
+47,Is the value of SF6 emissions recorded in the year 2022 higher than the one recorded in 2020?,no, no
+48,What is the minimum estimated Scope 1 GHG emissions of sites out of the reporting perimeter in TCO2e for the years 2020 to 2023?,5162, 5162.00 tco2e
+49,"What are the total Scope 2 GHG emissions in TCO2e for the years 2023, 2022, 2021, and 2020, ranked in ascending order?","89440.0, 109730.0, 145207.0, 153115.0"," 89440.00, 109730.00, 145207.00, 153115.00"

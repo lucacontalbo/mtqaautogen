@@ -1,0 +1,2315 @@
+Question,SQL Query,Method,Table,Constraints,Label
+"What is the combined sum of all the latitude coordinates for places that are branches in North Carolina, unique postal locations in South Carolina, and communities without postal services in Arkansas?","SELECT SUM(latitude) AS latitude FROM (SELECT latitude AS latitude FROM sample_table WHERE state = ""NC"" AND type = ""Branch"" UNION ALL SELECT latitude AS latitude FROM sample_table WHERE state = ""SC"" AND type = ""Unique Post Office"" UNION ALL SELECT latitude AS latitude FROM sample_table WHERE state = ""AR"" AND type = ""Non Postal Community Name"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>type</th>
+      <th>Br⁠anch</th>
+      <th>Non Postal Community Name</th>
+      <th>P.O. Box Only</th>
+      <th>Post Office</th>
+      <th>Unique Post Office</th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""4"" valign=""top"">South Atlantic</th>
+      <th>GA</th>
+      <td>33.390811 (South) unit</td>
+      <td>33.968149 (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>33.9525 (South) unit</td>
+    </tr>
+    <tr>
+      <th>MD</th>
+      <td>n.a. (South) unit (latest update)</td>
+      <td>n.a. (South) unit</td>
+      <td>38.6247 (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+    </tr>
+    <tr>
+      <th>NC</th>
+      <td>35.146635 (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>na.. (oStuh )unit</td>
+      <td>36.2404 ‌(South) un​it</td>
+    </tr>
+    <tr>
+      <th>SC</th>
+      <td>33.976492 (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>33.773887( South) tuni</td>
+      <td>33.498438 (South) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">South Atlantic</th>
+      <th>VA</th>
+      <td>38.886153 (oSuh) tunit (latest update)</td>
+      <td>n.a. (South) unit</td>
+      <td>n⁠.​a.⁠ (South) unit</td>
+      <td>38.960832 (South) unit (latest update)</td>
+      <td>39.3355 (South) unit</td>
+    </tr>
+    <tr>
+      <th>WV</th>
+      <td>38.35933 (South) unit</td>
+      <td>n.a. (South) unit (latest update)</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit (latest update)</td>
+    </tr>
+    <tr>
+      <th>eWst SuohtC nertal</th>
+      <th>AR</th>
+      <td>n.a. (South) unit (latest update)</td>
+      <td>34.997197 ​(Sout​h) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (Sou‍t‌h)  unit</td>
+      <td>n.a. (South) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">West South Central</th>
+      <th>L​A</th>
+      <td>n.a. (South) unit</td>
+      <td>29.213034 (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>.na. (Suoth) uint</td>
+    </tr>
+    <tr>
+      <th>OK</th>
+      <td>34.681146 (South) unit (latest update)</td>
+      <td>n.a. (South) unit (latest update)</td>
+      <td>n.a. (South) unit</td>
+      <td>34.98039 (South) unit (latest update)</td>
+      <td>n.a. (South) unit</td>
+    </tr>
+    <tr>
+      <th>TX</th>
+      <td>n.a. (South) unit (latest update)</td>
+      <td>n.a. (Sou t h ) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+      <td>n.a. (South) unit</td>
+    </tr>
+  </tbody>
+</table>",,103.64227
+"What is the combined rating total for apps in the News & Magazines category with installs equal to ""100,000+"" or ""5,000,000+"", and for apps in the Sports and Travel & Local categories with installs equal to ""100,000+""?","SELECT SUM(Rating) AS Rating FROM (SELECT Rating AS Rating FROM sample_table WHERE Installs = ""100,000+"" AND Category = ""NEWS_AND_MAGAZINES"" UNION ALL SELECT Rating AS Rating FROM sample_table WHERE Installs = ""5,000,000+"" AND Category = ""NEWS_AND_MAGAZINES"" UNION ALL SELECT Rating AS Rating FROM sample_table WHERE Installs = ""100,000+"" AND Category = ""SPORTS"" UNION ALL SELECT Rating AS Rating FROM sample_table WHERE Installs = ""100,000+"" AND Category = ""TRAVEL_AND_LOCAL"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Type</th>
+      <th>Free</th>
+    </tr>
+    <tr>
+      <th>Installs</th>
+      <th>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""10"" valign=""top"">1,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.8 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>3.8 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>2.3 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>nan (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.7 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>nan (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>2.0 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">1,000,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.5 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.5 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>4.5 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>4.6 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">10,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.5 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>3.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>4.0 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>3.8 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>3.6 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.8 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>3.8 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>3.9 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>3.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">10,000,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.7 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>4.7 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>4.6 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">100+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>5.0 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.5 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>5.0 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>nan (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>nan (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>3.7 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>nan (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>nan (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>nan (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.8 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">100,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.1 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.5 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>4.3 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>3.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>3.8 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">5,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>3.9 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>3.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>3.7 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>nan (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>4.6 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>nan (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>3.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">5,000,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.6 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.6 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>3.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.6 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>3.2 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.6 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">50,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.6 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.6 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.7 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>3.6 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>2.2 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.4 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">500,000+</th>
+      <th>NEWS_AND_MAGAZINES</th>
+      <td>4.4 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>PERSONALIZATION</th>
+      <td>4.3 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PHOTOGRAPHY</th>
+      <td>4.0 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>PRODUCTIVITY</th>
+      <td>4.4 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SHOPPING</th>
+      <td>4.4 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>SOCIAL</th>
+      <td>4.4 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>SPORTS</th>
+      <td>4.6 (Everyone) unit⁵</td>
+    </tr>
+    <tr>
+      <th>TOOLS</th>
+      <td>3.7 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>TRAVEL_AND_LOCAL</th>
+      <td>4.1 (Everyone) unit</td>
+    </tr>
+    <tr>
+      <th>VIDEO_PLAYERS</th>
+      <td>4.6 (Everyone) unit</td>
+    </tr>
+  </tbody>
+</table>",,16.1
+"What is the combined mana cost of all items with a silver border that are categorized as artifacts, creatures, lands, or a combination of artifact and creature types?","SELECT SUM(convertedManaCost) AS convertedManaCost FROM (SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Artifact,Creature"" UNION ALL SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Land"" UNION ALL SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Creature"" UNION ALL SELECT convertedManaCost AS convertedManaCost FROM sample_table WHERE borderColor = ""silver"" AND types = ""Artifact"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>borderColor</th>
+      <th colspan=""4"" halign=""left"">black</th>
+      <th colspan=""2"" halign=""left"">gold</th>
+      <th>sivlre</th>
+      <th colspan=""3"" halign=""left"">white</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>frameVersion</th>
+      <th>1993</th>
+      <th>1997</th>
+      <th>2003</th>
+      <th>2015</th>
+      <th>1997</th>
+      <th>2003</th>
+      <th>2015</th>
+      <th>1993</th>
+      <th>1997</th>
+      <th>2003</th>
+    </tr>
+    <tr>
+      <th>rarity</th>
+      <th>types</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">rare</th>
+      <th>Enchantment</th>
+      <td>1.0 unit</td>
+      <td>1.0 unit</td>
+      <td>3.0 unit</td>
+      <td>5.0 unit</td>
+      <td>4.0 unit</td>
+      <td>5.0 unit</td>
+      <td>3.0 unit</td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+    </tr>
+    <tr>
+      <th>Instant</th>
+      <td>2.0 unit</td>
+      <td>7.0 unit</td>
+      <td>6.0 unit</td>
+      <td>2.0 unit</td>
+      <td>5.0 unit</td>
+      <td>2.0 unit</td>
+      <td>13.0 unit</td>
+      <td>1.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>rare</th>
+      <th>Land</th>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>rare</th>
+      <th>Sorcery</th>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+      <td>5.0 unit</td>
+      <td>6.0 unit</td>
+      <td>5.0 unit</td>
+      <td>4.0 unit</td>
+      <td>7.0 ‍unit</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">uncommon</th>
+      <th>Artifac t</th>
+      <td>2.0 unit</td>
+      <td>5.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>4.0 unit</td>
+      <td>2.0 unit</td>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+      <td>3.0 unit</td>
+      <td>1.0 unit</td>
+    </tr>
+    <tr>
+      <th>Artifact,Creature</th>
+      <td>1.0 unit</td>
+      <td>6.0 unit</td>
+      <td>3.0 unit</td>
+      <td>3.0 unit</td>
+      <td>3.0 unit</td>
+      <td>0.0 un​it</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit</td>
+      <td>4.0 unit</td>
+    </tr>
+    <tr>
+      <th>Creature</th>
+      <td>4.0 unit</td>
+      <td>4.0 uni t</td>
+      <td>7.0 unit</td>
+      <td>4.0 unit</td>
+      <td>3.0 unit</td>
+      <td>5.0 unit</td>
+      <td>3.0 unit</td>
+      <td>5.0 unit</td>
+      <td>5.0 unit</td>
+      <td>5.0 unit</td>
+    </tr>
+    <tr>
+      <th>Enchantm​e nt</th>
+      <td>1.0 unit</td>
+      <td>1.0 unit</td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+      <td>2.0 u⁠nit</td>
+      <td>2.0 unit</td>
+      <td>4.0 unit</td>
+      <td>1.0 unit</td>
+      <td>3.0 unit</td>
+      <td>2.0 unit</td>
+    </tr>
+    <tr>
+      <th>Instant</th>
+      <td>1.0 unit</td>
+      <td>2.0 unit</td>
+      <td>1.0 unit</td>
+      <td>1.0 unit</td>
+      <td>4.0 unit</td>
+      <td>2.0 unit</td>
+      <td>1.0 ​unit</td>
+      <td>1.0 unit</td>
+      <td>2.0 unit</td>
+      <td>4.0 uni​t</td>
+    </tr>
+    <tr>
+      <th>Sorcery</th>
+      <td>1.0 ​unit</td>
+      <td>3.0 unit</td>
+      <td>4.0 unit</td>
+      <td>5.0 unit</td>
+      <td>3.0 unit</td>
+      <td>7.0 unit</td>
+      <td>3.0 unit</td>
+      <td>4.0 u⁠nit</td>
+      <td>3.0 unit</td>
+      <td>1.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,11.0
+"What is the combined longitude of all private-sector for-profit institutions situated in the states of Washington, Maryland, North Carolina, and Missouri?","SELECT SUM(long_x) AS long_x FROM (SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Washington"" UNION ALL SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Maryland"" UNION ALL SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""North Carolina"" UNION ALL SELECT long_x AS long_x FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Missouri"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""6"" halign=""left"">Private for-profit</th>
+      <th>Priv‍a‌t⁠e for-profit</th>
+      <th colspan=""3"" halign=""left"">Private for-profit</th>
+      <th colspan=""5"" halign=""left"">Private not-for-profit</th>
+      <th>Priv a te not-​f‍or-profit</th>
+      <th colspan=""10"" halign=""left"">Private not-for-profit</th>
+      <th>Pr i‌v‌ate not-for​-profit</th>
+      <th>Private not-for-profit</th>
+      <th></th>
+      <th colspan=""12"" halign=""left"">Private not-for-profit</th>
+      <th>Privaten otf-or-oprfit</th>
+      <th>Private not-for-profit</th>
+      <th>rPivate not-forp-orfti</th>
+      <th colspan=""2"" halign=""left"">Private not-for-profit</th>
+      <th>Priv‍a‌te not-for​-⁠profit</th>
+      <th colspan=""5"" halign=""left"">Private not-for-profit</th>
+      <th>Private no‌t-for‍-pr ofi t</th>
+      <th></th>
+      <th colspan=""8"" halign=""left"">Private not-for-profit</th>
+      <th colspan=""3"" halign=""left"">Public</th>
+      <th>Pu blic</th>
+      <th colspan=""12"" halign=""left"">Public</th>
+      <th>uPblci</th>
+      <th colspan=""5"" halign=""left"">Public</th>
+      <th>P⁠ublic</th>
+      <th colspan=""17"" halign=""left"">Public</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Associates-P-irvate oF-rprfoit</th>
+      <th colspan=""5"" halign=""left"">Associates--Private For-profit</th>
+      <th>Associates--Private For-profit</th>
+      <th colspan=""3"" halign=""left"">Associates--Private For-profit</th>
+      <th colspan=""5"" halign=""left"">Baccalaureate Colleges--Arts &amp; Sciences</th>
+      <th>Baccalaureate Colleges--Arts &amp; Sciences</th>
+      <th colspan=""4"" halign=""left"">Baccalaureate Colleges--Arts &amp; Sciences</th>
+      <th colspan=""6"" halign=""left"">Baccalaureate Colleges--Diverse Fields</th>
+      <th>Baccalaureate Colleges--Diverse Fields</th>
+      <th>Baccalaureate Colleges--Diverse Fields</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Baccalaureate Colleges--Diverse Fields</th>
+      <th colspan=""10"" halign=""left"">Masters Colleges and Universities--larger programs</th>
+      <th>Masters Colleges and Universities--medium programs</th>
+      <th>Masters Colleges and Universities--medium programs</th>
+      <th>Masters Colleges and Universities--medium programs</th>
+      <th colspan=""2"" halign=""left"">Masters Colleges and Universities--medium programs</th>
+      <th>Masters Colleges and Universities--medium programs</th>
+      <th colspan=""4"" halign=""left"">Masters Colleges and Universities--medium programs</th>
+      <th>Theological seminaries- Bible colleges- and other faith-related institutions</th>
+      <th>Theological seminaries- Bible colleges- and other faith-related institutions</th>
+      <th></th>
+      <th colspan=""4"" halign=""left"">Theological seminaries- Bible colleges- and other faith-related institutions</th>
+      <th>Theo‍logical se‌minaries-  B⁠ible col‍le​ges‍-  and ‌other fait h-rela⁠t ed  in​stitut⁠ions</th>
+      <th>eTohgolci aslemianreis-B ibel colelges- an dohtre fati-hrleated insttuiitosn</th>
+      <th colspan=""2"" halign=""left"">Theological seminaries- Bible colleges- and other faith-related institutions</th>
+      <th colspan=""3"" halign=""left"">Associates--Public Rural-serving Medium</th>
+      <th>Associates--Public Rural-serving Medium</th>
+      <th colspan=""6"" halign=""left"">Associates--Public Rural-serving Medium</th>
+      <th colspan=""6"" halign=""left"">Associates--Public Suburban-serving Multicampus</th>
+      <th>Associates--Public Suburban-serving Multicampus</th>
+      <th colspan=""3"" halign=""left"">Associates--Public Suburban-serving Multicampus</th>
+      <th colspan=""2"" halign=""left"">Associates--Public Suburban-serving Single Campus</th>
+      <th>Associates--Public Suburban-serving Single Campus</th>
+      <th colspan=""7"" halign=""left"">Associates--Public Suburban-serving Single Campus</th>
+      <th colspan=""10"" halign=""left"">Associates--Public Urban-serving Multicampus</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NULL</th>
+      <th colspan=""5"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th colspan=""3"" halign=""left"">NULL</th>
+      <th colspan=""5"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th colspan=""4"" halign=""left"">NULL</th>
+      <th colspan=""6"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">NULL</th>
+      <th colspan=""10"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th colspan=""2"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th colspan=""4"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th></th>
+      <th>N‌ULL</th>
+      <th colspan=""3"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th colspan=""2"" halign=""left"">NULL</th>
+      <th colspan=""3"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th colspan=""6"" halign=""left"">NULL</th>
+      <th colspan=""6"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th colspan=""3"" halign=""left"">NULL</th>
+      <th colspan=""2"" halign=""left"">NULL</th>
+      <th>NULL</th>
+      <th colspan=""7"" halign=""left"">NULL</th>
+      <th colspan=""10"" halign=""left"">NULL</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th></th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New  York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texa⁠s</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th></th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>N​ew York</th>
+      <th>NortC harolian</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Miss‌ouri</th>
+      <th>New York</th>
+      <th>North Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>Maryland</th>
+      <th>Massachusetts</th>
+      <th>Michigan</th>
+      <th>Missorui</th>
+      <th>Nwe Yrok</th>
+      <th>No⁠rt‌h Carolina</th>
+      <th>Pennsylvania</th>
+      <th>Texas</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>logn_x</th>
+      <td>-76.572434 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-94.590066 unit</td>
+      <td>\</td>
+      <td>-80.822384 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-77.171071 unit</td>
+      <td>-117.417046 unit</td>
+      <td>-76.594843 unit</td>
+      <td>-72.518493 unit</td>
+      <td>\⁠</td>
+      <td>-91.954345 unit</td>
+      <td>\</td>
+      <td>-79.77998 unit</td>
+      <td>\</td>
+      <td>-96.598772 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-77.00131 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-92.685276 unit</td>
+      <td>-73.9458 u‍nit</td>
+      <td>-77.913805 unit</td>
+      <td>-75.519799 unit</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>-122.207663 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-77.788625 unit</td>
+      <td>\</td>
+      <td>-75.376549 unit</td>
+      <td>\</td>
+      <td>-79.179688 unit</td>
+      <td>-122.344331 unit</td>
+      <td>-77.419282 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\‍</td>
+      <td>-80.832227 unit</td>
+      <td>\‍</td>
+      <td>\</td>
+      <td>-76.337647 unit</td>
+      <td>\</td>
+      <td>-76.751799 unit</td>
+      <td>\</td>
+      <td></td>
+      <td>\​</td>
+      <td>\</td>
+      <td>-73.970807 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-79.151518 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-83.445069 unit</td>
+      <td>-94.363218 unit</td>
+      <td>-73.655014 unit</td>
+      <td>\</td>
+      <td>-75.934701 unit</td>
+      <td>\</td>
+      <td>-78.939038 unit</td>
+      <td>\</td>
+      <td>-77.009328 unit</td>
+      <td>-71.264004 unit</td>
+      <td>-83.238409 unit</td>
+      <td>-90.975535 unit</td>
+      <td>-73.056165 unit</td>
+      <td>\</td>
+      <td>\⁠</td>
+      <td>-95.858058 unit</td>
+      <td>\</td>
+      <td>-122.495524 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-83.470274 unit</td>
+      <td>-90.640147 unit</td>
+      <td>-76.543191 unit</td>
+      <td>\‌</td>
+      <td>\</td>
+      <td>-97.792652 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-76.662878 unit</td>
+      <td>-71.120263 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>-74.011826 unit</td>
+      <td>-80.829796 unit</td>
+      <td>-80.01855 uni‍t</td>
+      <td>\⁠</td>
+      <td>\</td>
+      <td>-122.446412 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,-369.40193
+"What is the combined total latitude value of schools that are either from communities with the most severe economic hardship teaching early learners in language and social studies, or from more affluent areas with middle-grade students focusing on language, and also those elementary schools in wealthier neighborhoods emphasizing physical education?","SELECT SUM(school_latitude) AS school_latitude FROM (SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""highest poverty"" AND grade_level = ""Grades PreK-2"" AND primary_focus_area = ""Literacy & Language"" UNION ALL SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""highest poverty"" AND grade_level = ""Grades PreK-2"" AND primary_focus_area = ""History & Civics"" UNION ALL SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""low poverty"" AND grade_level = ""Grades 6-8"" AND primary_focus_area = ""Literacy & Language"" UNION ALL SELECT school_latitude AS school_latitude FROM sample_table WHERE poverty_level = ""low poverty"" AND grade_level = ""Grades 3-5"" AND primary_focus_area = ""Health & Sports"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""20"" halign=""left"">highest poverty</th>
+      <th colspan=""5"" halign=""left"">low poverty</th>
+      <th></th>
+      <th colspan=""32"" halign=""left"">low poverty</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">low poverty</th>
+      <th colspan=""28"" halign=""left"">moderate poverty</th>
+      <th></th>
+      <th colspan=""12"" halign=""left"">moderate poverty</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""10"" halign=""left"">Grades 9-12</th>
+      <th colspan=""10"" halign=""left"">Grades PreK-2</th>
+      <th colspan=""5"" halign=""left"">Grades 3-5</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">Grades 3-5</th>
+      <th colspan=""10"" halign=""left"">Grades 6-8</th>
+      <th colspan=""10"" halign=""left"">Grades 9-12</th>
+      <th colspan=""7"" halign=""left"">Grades PreK-2</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Grades PreK-2</th>
+      <th colspan=""10"" halign=""left"">Grades 3-5</th>
+      <th colspan=""10"" halign=""left"">Grades 6-8</th>
+      <th colspan=""8"" halign=""left"">Grades 9-12</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Grades 9-12</th>
+      <th colspan=""10"" halign=""left"">Grades PreK-2</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""2"" halign=""left"">Ms.</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""4"" halign=""left"">Ms.</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""5"" halign=""left"">Ms.</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Ms.</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th></th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th></th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th></th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>History &amp; Civics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>school_latitude</th>
+      <td>33.98181 unit</td>
+      <td>41.05923 unit</td>
+      <td>39.31113 unit</td>
+      <td>N/A</td>
+      <td>40.77438 unit (see [1])</td>
+      <td>34.22101 unit</td>
+      <td>N/A</td>
+      <td>35.8227 unit</td>
+      <td>29.70943 unit (see [4])</td>
+      <td>33.7426 unit</td>
+      <td>32.91118 unit</td>
+      <td>42.88912 unit</td>
+      <td>21.35026 unit</td>
+      <td>34.70128 unit</td>
+      <td>N/A</td>
+      <td>36.74079 unit (see [3])</td>
+      <td>42.42205 unit</td>
+      <td>N/A</td>
+      <td>28.29493 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>37.42861 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>47.69931 unit</td>
+      <td></td>
+      <td>34.22145 unit</td>
+      <td>38.89773 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>42.86697 unit</td>
+      <td>34.17286 unit</td>
+      <td>33.58535 unit (see [3])</td>
+      <td>42.4983 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>37.50794 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>37.31187 unit</td>
+      <td>34.05438 unit</td>
+      <td>N/A</td>
+      <td>35.96255 unit</td>
+      <td>41.87758 unit</td>
+      <td>41.76428 unit</td>
+      <td>N/A</td>
+      <td>43.13178 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>37.38055 unit</td>
+      <td>34.14836 unit</td>
+      <td>41.68886 unit</td>
+      <td>41.8129 unit</td>
+      <td>38.90836 unit</td>
+      <td>N/A</td>
+      <td>33.86865 unit (see [2])</td>
+      <td></td>
+      <td>33.93681 unit</td>
+      <td>N/A</td>
+      <td>42.47766 unit (see [5])</td>
+      <td>39.76487 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>48.00487 unit</td>
+      <td>42.39731 unit (see [4])</td>
+      <td>31.3559 unit</td>
+      <td>29.97865 unit (see [3])</td>
+      <td>N/A</td>
+      <td>40.66432 unit</td>
+      <td>33.73579 unit (see [2])</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>33.55191 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>43.28286 unit</td>
+      <td>42.01601 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>34.0277 unit</td>
+      <td>21.66477 unit</td>
+      <td>35.00571 unit (see [5])</td>
+      <td>40.6181 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,164.37009
+"What is the combined total of the recorded units for the four politicians named Patrick Leahy, Dick Durbin, Steve Chabot, and Tim Ryan from Ohio?","SELECT SUM(cspan_id) AS cspan_id FROM (SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Patrick"" AND ballotpedia_id = ""Patrick Leahy"" UNION ALL SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Richard"" AND ballotpedia_id = ""Dick Durbin"" UNION ALL SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Steve"" AND ballotpedia_id = ""Steve Chabot"" UNION ALL SELECT cspan_id AS cspan_id FROM sample_table WHERE first_name = ""Tim"" AND ballotpedia_id = ""Tim Ryan (Ohio)"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nita</th>
+      <th colspan=""2"" halign=""left"">Patrick</th>
+      <th>Peter</th>
+      <th>Richard</th>
+      <th>Sander</th>
+      <th>Steve</th>
+      <th>Tim</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Nita Lowey</th>
+      <th>Patrick J. Tiberi</th>
+      <th>Patrick Leahy</th>
+      <th>Peter J. Visclosky</th>
+      <th>Dick Durbin</th>
+      <th>Sander Levin</th>
+      <th>Steve Chabot</th>
+      <th>Tim Ryan (Ohio)</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Jewish</th>
+      <th>Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Jewish</th>
+      <th>Catholic</th>
+      <th>Roman Catholic</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>M.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>M.</th>
+      <th>J.</th>
+      <th>J.</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>cspan_id</th>
+      <td>6110.0 unit</td>
+      <td>88155.0 unit</td>
+      <td>1552.0 unit (see notes)</td>
+      <td>6785.0 unit</td>
+      <td>6741.0 unit</td>
+      <td>251.0 unit</td>
+      <td>36705.0 unit</td>
+      <td>1003608.0 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1048606.0
+"What is the combined total of the unit counts for E000285 on 2003-01-03 and 2015-01-03, for C000567 on 2009-01-03, and for I000024 on 2015-01-03?","SELECT SUM(class) AS class FROM (SELECT class AS class FROM sample_table WHERE end = ""2003-01-03"" AND bioguide = ""E000285"" UNION ALL SELECT class AS class FROM sample_table WHERE end = ""2009-01-03"" AND bioguide = ""C000567"" UNION ALL SELECT class AS class FROM sample_table WHERE end = ""2015-01-03"" AND bioguide = ""E000285"" UNION ALL SELECT class AS class FROM sample_table WHERE end = ""2015-01-03"" AND bioguide = ""I000024"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>end</th>
+      <th>2003-01-03</th>
+      <th>2009-01-03</th>
+      <th>2015-01-03</th>
+      <th>2021-01-03</th>
+    </tr>
+    <tr>
+      <th>start</th>
+      <th>1997-01-07</th>
+      <th>2003-01-07</th>
+      <th>2009-01-06</th>
+      <th>2015-01-06</th>
+    </tr>
+    <tr>
+      <th>party</th>
+      <th>Republican</th>
+      <th>Republican</th>
+      <th>Republican</th>
+      <th>Republican</th>
+    </tr>
+    <tr>
+      <th>bioguide</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C000567</th>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+    </tr>
+    <tr>
+      <th>C001035</th>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>-</td>
+      <td>2.0 unit</td>
+    </tr>
+    <tr>
+      <th>E000285</th>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+    </tr>
+    <tr>
+      <th>I000024</th>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+    </tr>
+    <tr>
+      <th>R000307</th>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>S001141</th>
+      <td>2.0 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>2.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,8.0
+"What is the total combined count of historical house record numbers for Paul C. Broun and Spencer Bachus, who are Baptist, together with Nick Rahall, a Presbyterian, and Jim Moran, who is Roman Catholic?","SELECT SUM(house_history_id) AS house_history_id FROM (SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Baptist"" AND ballotpedia_id = ""Paul C. Broun"" UNION ALL SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Baptist"" AND ballotpedia_id = ""Spencer Bachus"" UNION ALL SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Roman Catholic"" AND ballotpedia_id = ""Jim Moran"" UNION ALL SELECT house_history_id AS house_history_id FROM sample_table WHERE religion_bio = ""Presbyterian"" AND ballotpedia_id = ""Nick Rahall"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Baptist</th>
+      <th></th>
+      <th>Presbyterian</th>
+      <th>Roman Catholic</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Paul C. Broun</th>
+      <th>Spencer Bachus</th>
+      <th></th>
+      <th>Nick Rahall</th>
+      <th>Jim Moran</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Jr.</th>
+      <th>III</th>
+      <th></th>
+      <th>II</th>
+      <th>Jr.</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>733.0</th>
+      <th>133.0</th>
+      <th></th>
+      <th>424.0</th>
+      <th>380.0</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>house_history_id (unit)</th>
+      <td>10422.000</td>
+      <td>8789.000</td>
+      <td></td>
+      <td>20087.000</td>
+      <td>18503.000</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,57801.0
+What is the combined total of the specified classification value for the members serving Nebraska Republican and the Democrats representing North Carolina and Alaska?,"SELECT SUM(class) AS class FROM (SELECT class AS class FROM sample_table WHERE party = ""Republican"" AND state = ""NE"" UNION ALL SELECT class AS class FROM sample_table WHERE party = ""Democrat"" AND state = ""NC"" UNION ALL SELECT class AS class FROM sample_table WHERE party = ""Democrat"" AND state = ""AK"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>party</th>
+      <th colspan=""2"" halign=""left"">Democrat</th>
+      <th colspan=""2"" halign=""left"">Republican</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>AK</th>
+      <th>NC</th>
+      <th>NE</th>
+      <th>NH</th>
+    </tr>
+    <tr>
+      <th>phone</th>
+      <th>202-224-3004</th>
+      <th>202-224-6342</th>
+      <th>202-224-4224</th>
+      <th>202-224-3324</th>
+    </tr>
+    <tr>
+      <th>rss_url</th>
+      <th>http://www.begich.senate.gov/public/?a=rss.feed</th>
+      <th>http://www.hagan.senate.gov/rss</th>
+      <th>http://www.johanns.senate.gov/public/?a=RSS.Feed</th>
+      <th>http://ayotte.senate.gov/rss/?p=news</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>class</th>
+      <td>2.0 u nit</td>
+      <td>2.0 unit</td>
+      <td>2.0 unit</td>
+      <td>3.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,6.0
+"What is the total combined Facebook numeric identifier for the four people who use the Instagram names ""stevedaines,"" ""senjerrymoran,"" ""senrobportman,"" and ""senjeffmerkley,"" given that their corresponding YouTube channels are named ""SteveDainesMT,"" ""senatorjerrymoran,"" ""SenRobPortman,"" and ""SenatorJeffMerkley,"" respectively?","SELECT SUM(facebook_id) AS facebook_id FROM (SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""stevedaines"" AND youtube = ""SteveDainesMT"" UNION ALL SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""senjerrymoran"" AND youtube = ""senatorjerrymoran"" UNION ALL SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""senrobportman"" AND youtube = ""SenRobPortman"" UNION ALL SELECT facebook_id AS facebook_id FROM sample_table WHERE instagram = ""senjeffmerkley"" AND youtube = ""SenatorJeffMerkley"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>instagram</th>
+      <th>senjeffmerkley</th>
+      <th>senjerrymoran</th>
+      <th>senjohnhoeven</th>
+      <th>senjohnmccain</th>
+      <th>senlamaralexander</th>
+      <th>senmikelee</th>
+      <th>senrobportman</th>
+      <th>stevedaines</th>
+      <th>stevescalise</th>
+      <th>susanwbrooks</th>
+    </tr>
+    <tr>
+      <th>facebook</th>
+      <th>jeffmerkley</th>
+      <th>jerrymoran</th>
+      <th>SenatorJohnHoeven</th>
+      <th>johnmccain</th>
+      <th>senatorlamaralexander</th>
+      <th>senatormikelee</th>
+      <th>senrobportman</th>
+      <th>SteveDainesMT</th>
+      <th>RepSteveScalise</th>
+      <th>congresswomansusanwbrooks</th>
+    </tr>
+    <tr>
+      <th>youtube (youtube_id)</th>
+      <th>SenatorJeffMerkley (UCRoXttCJhMnLVCxCaa6VnNQ)</th>
+      <th>senatorjerrymoran (UC1oRxeUPam6-53wPBZ3N02A)</th>
+      <th>senatorjohnhoevennd (UC1kQIC2Q_Fq9_NRqdb6eHiw)</th>
+      <th>SenatorJohnMcCain (UC9IJssXDUaKHzwx6gW4wEoA)</th>
+      <th>lamarlaexnadre (UCDhBjLn5RWqgMmCSwsT05IQ)</th>
+      <th>senatormikelee (UCplVxs_j_sLAt0fkplXcl4A)</th>
+      <th>SenRobPortman (UCwunkd8Zs-yAWKQwnwBp7ew)</th>
+      <th>SteveDainesMT (UC-ny-W5mEUGytiyMdXbQ20Q)</th>
+      <th>RepSteveScalise (UCmYveHBVXVBRxl7GiCL-gjw)</th>
+      <th>SusanWBrooks (UCMd7LzaBcbQ06aKHoj9KkSQ)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>facebook_id (unit)</th>
+      <td>facebook_id (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>fa ceb ook_id ( unit)</th>
+      <td>74374931545.0</td>
+      <td>171578807105.0</td>
+      <td>194483057244478.0​</td>
+      <td></td>
+      <td>89927603836.0​</td>
+      <td>178081365556898.0</td>
+      <td>45243961073.0</td>
+      <td>185361254941832.0</td>
+      <td>50936151681.0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,185652452641555.0
+"What is the combined total length of Lago di Como connected to the Adda river, Lago Maggiore associated with the Ticino river, and Lake Burley Griffin linked to the Murrumbidgee River?","SELECT SUM(Length) AS Length FROM (SELECT Length AS Length FROM sample_table WHERE Lake = ""Lago di Como"" AND Name = ""Adda"" UNION ALL SELECT Length AS Length FROM sample_table WHERE Lake = ""Lago Maggiore"" AND Name = ""Ticino"" UNION ALL SELECT Length AS Length FROM sample_table WHERE Lake = ""Lake Burley Griffin"" AND Name = ""Murrumbidgee River"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Lake</th>
+      <th>Chickamauga Lake</th>
+      <th>Lago Maggiore</th>
+      <th>Lago di Como</th>
+      <th>Lake Burley Griffin</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Tennessee</th>
+      <th>Ticino</th>
+      <th>Adda</th>
+      <th>Murrumbidgee River</th>
+    </tr>
+    <tr>
+      <th>Mountains</th>
+      <th>Appalachian Mountains</th>
+      <th>Alps</th>
+      <th>Alps</th>
+      <th>Snowy Mountains</th>
+    </tr>
+    <tr>
+      <th>River</th>
+      <th>Ohio River</th>
+      <th>Po</th>
+      <th>Po</th>
+      <th>Murray River</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Len‍gth</th>
+      <td>1049.0 unit</td>
+      <td>248.0 unit</td>
+      <td>313.0 unit</td>
+      <td>1579.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,2140.0
+"What is the total combined height of all athletes born in New Jersey who play as forward-guards, and of all athletes born in New York who play as forward-centers or forward-guards?","SELECT SUM(height) AS height FROM (SELECT height AS height FROM sample_table WHERE birthState = ""NJ"" AND pos = ""F-G"" UNION ALL SELECT height AS height FROM sample_table WHERE birthState = ""NY"" AND pos = ""F-C"" UNION ALL SELECT height AS height FROM sample_table WHERE birthState = ""NY"" AND pos = ""F-G"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>birthState</th>
+      <th>MO</th>
+      <th>MS</th>
+      <th>NC</th>
+      <th>NJ</th>
+      <th>NY</th>
+      <th>O​H</th>
+      <th>PA</th>
+      <th>TN</th>
+      <th>T​X</th>
+      <th>VA</th>
+    </tr>
+    <tr>
+      <th>hsCountry</th>
+      <th>race</th>
+      <th>pos</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""10"" valign=""top"">USA</th>
+      <th rowspan=""6"" valign=""top"">B</th>
+      <th>C-F</th>
+      <td>81.0 unit</td>
+      <td>82.0 unit</td>
+      <td>80.0 u‍nit</td>
+      <td>81.0 unit</td>
+      <td>81.0 unit</td>
+      <td>80.0 unit</td>
+      <td>85.0 unit</td>
+      <td>81.0 unit</td>
+      <td>83.0 unit</td>
+      <td>82.0 unit</td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td>79.0 unit</td>
+      <td>83.0 unit</td>
+      <td>81.0 unit</td>
+      <td>81.0 unit</td>
+      <td>83.0 unit</td>
+      <td>77.0 unit</td>
+      <td>81.0 unit</td>
+      <td>79.0 unit</td>
+      <td>83.0 unit</td>
+      <td>78.0 unit</td>
+    </tr>
+    <tr>
+      <th>F-C</th>
+      <td>81.0 unit</td>
+      <td>82.0 u‍nit</td>
+      <td>80.0 unit</td>
+      <td>78.0 unit</td>
+      <td>83.0 unit</td>
+      <td>83.0 unit</td>
+      <td>81.0 uni​t</td>
+      <td>79.0 unit</td>
+      <td>82.0 unit</td>
+      <td>81.0 unit</td>
+    </tr>
+    <tr>
+      <th>F-G</th>
+      <td>79.0 unit</td>
+      <td>79.0 ​unit</td>
+      <td>77.0 unit</td>
+      <td>79.0 unit</td>
+      <td>77.0 unit</td>
+      <td>78.0 unit</td>
+      <td>79.0 unit</td>
+      <td>79.0 unit</td>
+      <td>77.0 u nit</td>
+      <td>78.0 unit</td>
+    </tr>
+    <tr>
+      <th>G‍</th>
+      <td>78.0 u​nit</td>
+      <td>73.0 unit</td>
+      <td>72.0 unit</td>
+      <td>72.0 unit</td>
+      <td>74.0 unit</td>
+      <td>75.0 unit</td>
+      <td>76.0 uni t</td>
+      <td>73.0 un‌it</td>
+      <td>76.0 unit</td>
+      <td>73.0 unit</td>
+    </tr>
+    <tr>
+      <th>G-F</th>
+      <td>77.0 unit</td>
+      <td>77.0 unit</td>
+      <td>77.0 unit</td>
+      <td>77.0 unit</td>
+      <td>78.0 unit</td>
+      <td>78.0 unit</td>
+      <td>74.0 unit</td>
+      <td>77.0 unit</td>
+      <td>79.0 unit</td>
+      <td>77.0 unit</td>
+    </tr>
+    <tr>
+      <th>W‍</th>
+      <th>C</th>
+      <td>80.0 unit</td>
+      <td>81.0 unit</td>
+      <td>86.0 unit</td>
+      <td>84.0 unit</td>
+      <td>84.0 unit</td>
+      <td>84.0 unit</td>
+      <td>77.0 unit</td>
+      <td>87.0 unit</td>
+      <td>83.0 unit</td>
+      <td>83.0 un it</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">W</th>
+      <th>C-F</th>
+      <td>80.0 ​unit</td>
+      <td>74.0 unit</td>
+      <td>82.0 unit</td>
+      <td>83.0 unit</td>
+      <td>81.0 unit</td>
+      <td>81.0 unit</td>
+      <td>78.0 unit</td>
+      <td>75.0 u⁠nit</td>
+      <td>80.0 un⁠it</td>
+      <td>77.0 unit</td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td>79.0 unit</td>
+      <td>75.0 unit</td>
+      <td>79.0 unit</td>
+      <td>79.0 uni‍t</td>
+      <td>77.0 unit</td>
+      <td>81.0 unit</td>
+      <td>75.0 unit</td>
+      <td>81.0 unit</td>
+      <td>75.0 unit</td>
+      <td>82.0 unit</td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <td>74.0 unit</td>
+      <td>76.0 uni​t</td>
+      <td>72.0 unit</td>
+      <td>73.0 unit</td>
+      <td>72.0 unit</td>
+      <td>75.0 unit</td>
+      <td>76.0 unit</td>
+      <td>74.0 unit</td>
+      <td>74.0 unit</td>
+      <td>74.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,239.0
+"What is the total level of the anticardiolipin IgG antibody recorded across cases showing the ""S"" autoimmune pattern with both Sjögren’s syndrome and brain infarction, as well as cases presenting the ""P"" autoimmune pattern linked to either systemic lupus erythematosus with brain infarction or brain infarction alone?","SELECT SUM(aCLIgG) AS aCLIgG FROM (SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""S"" AND Diagnosis = ""SjS, brain infarction"" UNION ALL SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""P"" AND Diagnosis = ""SLE, brain infarction"" UNION ALL SELECT aCLIgG AS aCLIgG FROM sample_table WHERE ANAPattern = ""P"" AND Diagnosis = ""brain infarction"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>ANAPattern</th>
+      <th colspan=""2"" halign=""left"">P</th>
+      <th colspan=""6"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th>Symptoms</th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+      <th colspan=""4"" halign=""left"">CNS lupus</th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+    </tr>
+    <tr>
+      <th>ExaminationDate</th>
+      <th>1997-07-07​</th>
+      <th>1998-02-20</th>
+      <th>1992-06-08</th>
+      <th>1993-07-29</th>
+      <th>1995-05-29</th>
+      <th>1995-06-26</th>
+      <th>1997-04-28</th>
+      <th>1997-07-07</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aCLIgG (Diagnosis) (unit)</th>
+      <td>aCLIgG (Diagnosis) (unit)</td>
+      <td>aCLIgG (Diagnosis) (unit)</td>
+      <td>aCLIgG (Diagnosis) (unit)</td>
+      <td>aCLIgG (Diagnosis) (unit)</td>
+      <td>aCLIgG (Diagnosis) (unit)</td>
+      <td>aLICGg Di(angossi) (nuit)</td>
+      <td>aCLIgG (Diagnosis) (unit)</td>
+      <td>aCLIgG (Diagnosis) (unit) (source: official reports)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>aCLIgG (Diagnosis) (unit)</th>
+      <td>0.9( SLE,b rnai finratcion)</td>
+      <td>0.0 (brain infarction) (source: official reports)</td>
+      <td>10.9 (SLE, SjS)</td>
+      <td>1.5 (SLE, SjS, Cliogloblin+)</td>
+      <td>0.0 (SLE, CNS luup,ds ead)</td>
+      <td>1.1 (SjS(CNS)) (see [4])</td>
+      <td>0.0 (brain infarction)</td>
+      <td>1.1 (SjS, brain infarction)</td>
+    </tr>
+  </tbody>
+</table>",,2.0
+"What is the total quantity when you add the amounts measured in inches on September 15, 2010, and those counted as individual items from July 8, 2010?","SELECT SUM(PerAssemblyQty) AS PerAssemblyQty FROM (SELECT PerAssemblyQty AS PerAssemblyQty FROM sample_table WHERE StartDate = ""2010-09-15 00:00:00.0"" AND UnitMeasureCode = ""IN"" UNION ALL SELECT PerAssemblyQty AS PerAssemblyQty FROM sample_table WHERE StartDate = ""2010-07-08 00:00:00.0"" AND UnitMeasureCode = ""EA"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>ModifiedDate</th>
+      <th colspan=""2"" halign=""left"">2010-08-08 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-09-06 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-11-14 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th>EndDate</th>
+      <th colspan=""2"" halign=""left"">2010-08-08 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-09-06 00:00:00.0</th>
+      <th colspan=""2"" halign=""left"">2010-11-14 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th>StartDate (UnitMeasureCode)</th>
+      <th>2010-06-09 00:00:00.0 (EA)</th>
+      <th>2010-06-09 00:00:00.0 (OZ)</th>
+      <th>2010-07-08 00:00:00.0 (EA)</th>
+      <th>2010-07-08 00:00:00.0 (OZ)</th>
+      <th>2010-09-15 00:00:00.0 (EA)</th>
+      <th>2010-09-15 00:00:00.0 (IN)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PerAssemblyQty</th>
+      <td>2.0 unit</td>
+      <td>9.0 unit</td>
+      <td>2.0 unit</td>
+      <td>9.0 unit</td>
+      <td>3.0 unit</td>
+      <td>41.0 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,43.0
+"What is the total base price of items from category M that began selling on May 31, 2011, May 30, 2012, and May 30, 2013 combined?","SELECT SUM(StandardCost) AS StandardCost FROM (SELECT StandardCost AS StandardCost FROM sample_table WHERE ProductLine = ""M"" AND SellStartDate = ""2011-05-31 00:00:00.0"" UNION ALL SELECT StandardCost AS StandardCost FROM sample_table WHERE ProductLine = ""M"" AND SellStartDate = ""2012-05-30 00:00:00.0"" UNION ALL SELECT StandardCost AS StandardCost FROM sample_table WHERE ProductLine = ""M"" AND SellStartDate = ""2013-05-30 00:00:00.0"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>42</th>
+      <th>44</th>
+      <th>48</th>
+      <th>52</th>
+      <th>58</th>
+      <th>L</th>
+      <th>M</th>
+      <th>S</th>
+    </tr>
+    <tr>
+      <th>Style</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+      <th>U</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>uni‍t</td>
+      <td>unit</td>
+      <td>unit - Note: recorded in [4]</td>
+      <td>uni‌t</td>
+      <td>unit⁴</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>2011-05-31 00:00:00.0⁠</th>
+      <td>M‍ (747.2)</td>
+      <td>R (868.6)</td>
+      <td>R (868.6)</td>
+      <td>R (868.6)</td>
+      <td>R (204.6)</td>
+      <td>S (38.5)</td>
+      <td>S ‍(38.5) - Note: recorded in [2]</td>
+      <td>S (38.5)</td>
+    </tr>
+    <tr>
+      <th>2012-05-30 00:00:00.0</th>
+      <td>M (1265.6)⁴</td>
+      <td>R (1518.8)</td>
+      <td>R (1518.8)</td>
+      <td>R ​(1518.8)⁴</td>
+      <td>R (1554.9) - Note: recorded in [4]</td>
+      <td>S (9.2)</td>
+      <td>S (9.2)</td>
+      <td>S (9.2)</td>
+    </tr>
+    <tr>
+      <th>2013-05-30 00:00:00.0</th>
+      <td>M (144.6)</td>
+      <td>R (343.6)</td>
+      <td>R (343.6)</td>
+      <td>R (343.6)</td>
+      <td>R (343.6)</td>
+      <td>S (23.7)</td>
+      <td>S (23.7)</td>
+      <td>S (23.7)</td>
+    </tr>
+  </tbody>
+</table>",,2157.4
+What is the combined land area of British-dependent territories located in Africa and French overseas regions situated in South America?,"SELECT SUM(SurfaceArea) AS SurfaceArea FROM (SELECT SurfaceArea AS SurfaceArea FROM sample_table WHERE Continent = ""Africa"" AND GovernmentForm = ""Dependent Territory of the UK"" UNION ALL SELECT SurfaceArea AS SurfaceArea FROM sample_table WHERE Continent = ""South America"" AND GovernmentForm = ""Overseas Department of France"");",sum,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Caribbean</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Caribbean</th>
+      <th>Eastern Africa</th>
+      <th></th>
+      <th>Eastern Africa</th>
+      <th colspan=""2"" halign=""left"">South America</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Dependent Territory of the UK</th>
+      <th></th>
+      <th>Overseas Department of France</th>
+      <th>US Territory</th>
+      <th>Dependent Territory of the UK</th>
+      <th></th>
+      <th>Overseas Department of France</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>North America (Elisabeth II)</th>
+      <th></th>
+      <th>North America (Jacques Chirac)</th>
+      <th>North America (George W. Bush)</th>
+      <th>Africa (Elisabeth II)</th>
+      <th></th>
+      <th>Africa (Jacques Chirac)</th>
+      <th>South America (Elisabeth II)</th>
+      <th>South America (Jacques Chirac)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SurfaceArea</th>
+      <td></td>
+      <td>96.0 unit</td>
+      <td></td>
+      <td>1705.0 unit</td>
+      <td>347.0 unit</td>
+      <td>78.0 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>12173.0 unit</td>
+      <td>90000.0 unit (see notes)</td>
+    </tr>
+  </tbody>
+</table>",,90078.0

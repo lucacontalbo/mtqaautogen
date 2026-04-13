@@ -1,0 +1,1375 @@
+Question,SQL Query,Method,Table,Label
+"Among patients receiving either surgical treatment aged between 18 and 49 years or radiation therapy for those under 18, what is the greatest treatment cost recorded?","SELECT MAX(Cost) AS Cost FROM (SELECT Cost AS Cost FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Surgery"" AND PatientAgeGroup = ""35-49"" UNION ALL SELECT Cost AS Cost FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Surgery"" AND PatientAgeGroup = ""18-34"" UNION ALL SELECT Cost AS Cost FROM PatientTreatmentOutcomes WHERE TreatmentType = ""Radiation Therapy"" AND PatientAgeGroup = ""0-17"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Outcome</th>
+      <th>Improved</th>
+      <th>Unchanged</th>
+      <th>Worsened</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th>PatientAgeGroup</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Chemotherapy</th>
+      <th>35-49</th>
+      <td>49775.166657</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>65+</th>
+      <td>38886.298587</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">Immunotherapy</th>
+      <th>0-17</th>
+      <td>NaN</td>
+      <td>22051.501557</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18-34</th>
+      <td>45741.338902</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>35-49</th>
+      <td>10849.079629</td>
+      <td>NaN</td>
+      <td>41021.096300</td>
+    </tr>
+    <tr>
+      <th>50-64</th>
+      <td>NaN</td>
+      <td>13139.989550</td>
+      <td>13011.974177</td>
+    </tr>
+    <tr>
+      <th>65+</th>
+      <td>32253.157823</td>
+      <td>NaN</td>
+      <td>43129.935754</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Radiation Therapy</th>
+      <th>0-17</th>
+      <td>NaN</td>
+      <td>9961.575272</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18-34</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20962.430592</td>
+    </tr>
+    <tr>
+      <th>50-64</th>
+      <td>33772.161320</td>
+      <td>NaN</td>
+      <td>11247.572818</td>
+    </tr>
+    <tr>
+      <th>65+</th>
+      <td>6628.932323</td>
+      <td>NaN</td>
+      <td>26943.768138</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Surgery</th>
+      <th>0-17</th>
+      <td>NaN</td>
+      <td>46410.027722</td>
+      <td>49004.030035</td>
+    </tr>
+    <tr>
+      <th>18-34</th>
+      <td>12750.966477</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>35-49</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>38865.226518</td>
+    </tr>
+  </tbody>
+</table>",38865.226518
+"Among Metformin with headache, Aspirin with fatigue, and Lisinopril with nausea, which medication-side effect combination achieves the greatest effectiveness rating?","SELECT MAX(EffectivenessScore) AS EffectivenessScore FROM (SELECT EffectivenessScore AS EffectivenessScore FROM MedicationEffectiveness WHERE MedicationName = ""Metformin"" AND SideEffects = ""Headache"" UNION ALL SELECT EffectivenessScore AS EffectivenessScore FROM MedicationEffectiveness WHERE MedicationName = ""Aspirin"" AND SideEffects = ""Fatigue"" UNION ALL SELECT EffectivenessScore AS EffectivenessScore FROM MedicationEffectiveness WHERE MedicationName = ""Lisinopril"" AND SideEffects = ""Nausea"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>MedicationName</th>
+      <th>Aspirin</th>
+      <th>Ibuprofen</th>
+      <th>Lisinopril</th>
+      <th>Metformin</th>
+    </tr>
+    <tr>
+      <th>SideEffects</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Dizziness</th>
+      <td>3.530715</td>
+      <td>1.828081</td>
+      <td>8.480104</td>
+      <td>6.027829</td>
+    </tr>
+    <tr>
+      <th>Fatigue</th>
+      <td>6.197176</td>
+      <td>4.199084</td>
+      <td>5.654581</td>
+      <td>3.483876</td>
+    </tr>
+    <tr>
+      <th>Headache</th>
+      <td>4.413033</td>
+      <td>2.754901</td>
+      <td>8.336808</td>
+      <td>0.483275</td>
+    </tr>
+    <tr>
+      <th>Nausea</th>
+      <td>1.770018</td>
+      <td>3.213467</td>
+      <td>6.780906</td>
+      <td>5.029803</td>
+    </tr>
+  </tbody>
+</table>",6.780906
+"Among the average treatment expenses for patients experiencing mild nausea and those with moderate levels of fever, fatigue, or headache, which condition incurs the greatest cost?","SELECT MAX(AverageTreatmentCost) AS AverageTreatmentCost FROM (SELECT AverageTreatmentCost AS AverageTreatmentCost FROM HospitalAdmissionsSymptomMetrics WHERE SymptomDescription = ""Nausea"" AND SeverityLevel = ""Mild"" UNION ALL SELECT AverageTreatmentCost AS AverageTreatmentCost FROM HospitalAdmissionsSymptomMetrics WHERE SymptomDescription = ""Fever"" AND SeverityLevel = ""Moderate"" UNION ALL SELECT AverageTreatmentCost AS AverageTreatmentCost FROM HospitalAdmissionsSymptomMetrics WHERE SymptomDescription = ""Fatigue"" AND SeverityLevel = ""Moderate"" UNION ALL SELECT AverageTreatmentCost AS AverageTreatmentCost FROM HospitalAdmissionsSymptomMetrics WHERE SymptomDescription = ""Headache"" AND SeverityLevel = ""Moderate"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>SymptomDescription</th>
+      <th>Cough</th>
+      <th>Fatigue</th>
+      <th>Fever</th>
+      <th>Headache</th>
+      <th>Nausea</th>
+    </tr>
+    <tr>
+      <th>SeverityLevel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Mild</th>
+      <td>5977.494934</td>
+      <td>5756.494038</td>
+      <td>9095.597627</td>
+      <td>7754.131963</td>
+      <td>515.193628</td>
+    </tr>
+    <tr>
+      <th>Moderate</th>
+      <td>1907.783561</td>
+      <td>4576.689362</td>
+      <td>2777.337151</td>
+      <td>9209.074721</td>
+      <td>7032.763741</td>
+    </tr>
+    <tr>
+      <th>Severe</th>
+      <td>3860.935978</td>
+      <td>7232.679301</td>
+      <td>8141.075366</td>
+      <td>8062.452346</td>
+      <td>7445.268349</td>
+    </tr>
+  </tbody>
+</table>",9209.074721
+"Among the average wait times for hypertension cases at Community Health Clinic, flu patients at City Hospital, and asthma sufferers at both General Medical Center and City Hospital, what is the shortest recorded waiting period?","SELECT MIN(AverageWaitingTime) AS AverageWaitingTime FROM (SELECT AverageWaitingTime AS AverageWaitingTime FROM PatientVisitStatistics WHERE HospitalName = ""Community Health Clinic"" AND DiagnosisType = ""Hypertension"" UNION ALL SELECT AverageWaitingTime AS AverageWaitingTime FROM PatientVisitStatistics WHERE HospitalName = ""City Hospital"" AND DiagnosisType = ""Flu"" UNION ALL SELECT AverageWaitingTime AS AverageWaitingTime FROM PatientVisitStatistics WHERE HospitalName = ""General Medical Center"" AND DiagnosisType = ""Asthma"" UNION ALL SELECT AverageWaitingTime AS AverageWaitingTime FROM PatientVisitStatistics WHERE HospitalName = ""City Hospital"" AND DiagnosisType = ""Asthma"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>DiagnosisType</th>
+      <th>Allergy</th>
+      <th>Asthma</th>
+      <th>Diabetes</th>
+      <th>Flu</th>
+      <th>Hypertension</th>
+    </tr>
+    <tr>
+      <th>HospitalName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>City Hospital</th>
+      <td>6.275642</td>
+      <td>3.640574</td>
+      <td>7.342968</td>
+      <td>5.617219</td>
+      <td>6.595387</td>
+    </tr>
+    <tr>
+      <th>Community Health Clinic</th>
+      <td>1.692532</td>
+      <td>5.811923</td>
+      <td>2.501487</td>
+      <td>2.698785</td>
+      <td>5.552280</td>
+    </tr>
+    <tr>
+      <th>Downtown Healthcare Facility</th>
+      <td>4.718996</td>
+      <td>1.996176</td>
+      <td>2.185852</td>
+      <td>2.958799</td>
+      <td>4.054370</td>
+    </tr>
+    <tr>
+      <th>General Medical Center</th>
+      <td>3.190899</td>
+      <td>4.557133</td>
+      <td>6.037664</td>
+      <td>3.451855</td>
+      <td>1.873840</td>
+    </tr>
+  </tbody>
+</table>",3.640574
+"Among the follow-up costs for patients undergoing lifestyle modifications for diabetes, surgical treatment for cardiovascular disease, and physical therapy for asthma, which one has the smallest expense?","SELECT MIN(FollowUpCost) AS FollowUpCost FROM (SELECT FollowUpCost AS FollowUpCost FROM PatientHealthData WHERE HealthCondition = ""Diabetes"" AND TreatmentPlan = ""Lifestyle Changes"" UNION ALL SELECT FollowUpCost AS FollowUpCost FROM PatientHealthData WHERE HealthCondition = ""Cardiovascular Disease"" AND TreatmentPlan = ""Surgery"" UNION ALL SELECT FollowUpCost AS FollowUpCost FROM PatientHealthData WHERE HealthCondition = ""Asthma"" AND TreatmentPlan = ""Physical Therapy"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>HealthCondition</th>
+      <th>Asthma</th>
+      <th>Cardiovascular Disease</th>
+      <th>Diabetes</th>
+      <th>Hypertension</th>
+    </tr>
+    <tr>
+      <th>TreatmentPlan</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Lifestyle Changes</th>
+      <td>3938.244299</td>
+      <td>4416.160079</td>
+      <td>303.840098</td>
+      <td>3559.317604</td>
+    </tr>
+    <tr>
+      <th>Medication Only</th>
+      <td>3748.977931</td>
+      <td>4705.407468</td>
+      <td>3000.725787</td>
+      <td>1464.466719</td>
+    </tr>
+    <tr>
+      <th>Physical Therapy</th>
+      <td>2856.833707</td>
+      <td>3190.798373</td>
+      <td>2487.718388</td>
+      <td>1554.678756</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>1230.171319</td>
+      <td>1324.194227</td>
+      <td>2790.727650</td>
+      <td>529.676921</td>
+    </tr>
+  </tbody>
+</table>",303.840098
+"Among patients who either required follow-up after an emergency routine checkup, had a follow-up visit with a specialist without needing further follow-up, underwent a follow-up visit in emergency care requiring additional follow-up, or attended a follow-up appointment in primary care without subsequent follow-up, what is the smallest satisfaction rating recorded?","SELECT MIN(PatientSatisfactionScore) AS PatientSatisfactionScore FROM (SELECT PatientSatisfactionScore AS PatientSatisfactionScore FROM PatientFeedbackSurvey WHERE CareType = ""Emergency Care"" AND VisitReason = ""Routine Checkup"" AND FollowUpNeeded = ""Yes"" UNION ALL SELECT PatientSatisfactionScore AS PatientSatisfactionScore FROM PatientFeedbackSurvey WHERE CareType = ""Specialist Care"" AND VisitReason = ""Follow-up Visit"" AND FollowUpNeeded = ""No"" UNION ALL SELECT PatientSatisfactionScore AS PatientSatisfactionScore FROM PatientFeedbackSurvey WHERE CareType = ""Emergency Care"" AND VisitReason = ""Follow-up Visit"" AND FollowUpNeeded = ""Yes"" UNION ALL SELECT PatientSatisfactionScore AS PatientSatisfactionScore FROM PatientFeedbackSurvey WHERE CareType = ""Primary Care"" AND VisitReason = ""Follow-up Visit"" AND FollowUpNeeded = ""No"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>CareType</th>
+      <th>Emergency Care</th>
+      <th>Primary Care</th>
+      <th>Specialist Care</th>
+    </tr>
+    <tr>
+      <th>VisitReason</th>
+      <th>FollowUpNeeded</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Follow-up Visit</th>
+      <th>No</th>
+      <td>4.892412</td>
+      <td>7.986034</td>
+      <td>8.405823</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>4.854952</td>
+      <td>0.517386</td>
+      <td>8.123290</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Routine Checkup</th>
+      <th>No</th>
+      <td>0.715859</td>
+      <td>5.616267</td>
+      <td>3.693629</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>3.466795</td>
+      <td>0.416532</td>
+      <td>0.023319</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Urgent Issue</th>
+      <th>No</th>
+      <td>7.546009</td>
+      <td>7.887739</td>
+      <td>6.666720</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>6.885617</td>
+      <td>5.105280</td>
+      <td>8.888151</td>
+    </tr>
+  </tbody>
+</table>",3.466795
+"Among the medications Metformin (in grams), Amoxicillin (in milligrams), and Lisinopril (in milligrams), what is the greatest recorded cost?","SELECT MAX(MedicationCost) AS MedicationCost FROM (SELECT MedicationCost AS MedicationCost FROM PatientMedicationRecords WHERE MedicationName = ""Metformin"" AND DosageUnit = ""g"" UNION ALL SELECT MedicationCost AS MedicationCost FROM PatientMedicationRecords WHERE MedicationName = ""Amoxicillin"" AND DosageUnit = ""mg"" UNION ALL SELECT MedicationCost AS MedicationCost FROM PatientMedicationRecords WHERE MedicationName = ""Lisinopril"" AND DosageUnit = ""mg"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>MedicationName</th>
+      <th>Amoxicillin</th>
+      <th>Atorvastatin</th>
+      <th>Lisinopril</th>
+      <th>Metformin</th>
+    </tr>
+    <tr>
+      <th>DosageUnit</th>
+      <th>FrequencyOfAdministration</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">g</th>
+      <th>As Needed</th>
+      <td>397.626440</td>
+      <td>17.409325</td>
+      <td>107.572673</td>
+      <td>393.394402</td>
+    </tr>
+    <tr>
+      <th>Once Daily</th>
+      <td>NaN</td>
+      <td>144.522609</td>
+      <td>440.168758</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Twice Daily</th>
+      <td>107.795755</td>
+      <td>497.363015</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">mg</th>
+      <th>Once Daily</th>
+      <td>NaN</td>
+      <td>350.371985</td>
+      <td>403.078528</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Twice Daily</th>
+      <td>327.708910</td>
+      <td>120.382177</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">ml</th>
+      <th>As Needed</th>
+      <td>282.463931</td>
+      <td>NaN</td>
+      <td>400.218479</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Once Daily</th>
+      <td>248.021007</td>
+      <td>42.721264</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Twice Daily</th>
+      <td>26.869200</td>
+      <td>322.000010</td>
+      <td>103.436701</td>
+      <td>364.631853</td>
+    </tr>
+  </tbody>
+</table>",403.078528
+"Among the durations recorded for patients treated with Ciprofloxacin as a medication, Ibuprofen during therapy, Amoxicillin under observation, and Ciprofloxacin in therapy sessions, which treatment lasted the longest?","SELECT MAX(TreatmentDuration) AS TreatmentDuration FROM (SELECT TreatmentDuration AS TreatmentDuration FROM PatientTreatmentHistory WHERE TreatmentType = ""Medication"" AND MedicationName = ""Ciprofloxacin"" UNION ALL SELECT TreatmentDuration AS TreatmentDuration FROM PatientTreatmentHistory WHERE TreatmentType = ""Therapy"" AND MedicationName = ""Ibuprofen"" UNION ALL SELECT TreatmentDuration AS TreatmentDuration FROM PatientTreatmentHistory WHERE TreatmentType = ""Observation"" AND MedicationName = ""Amoxicillin"" UNION ALL SELECT TreatmentDuration AS TreatmentDuration FROM PatientTreatmentHistory WHERE TreatmentType = ""Therapy"" AND MedicationName = ""Ciprofloxacin"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>TreatmentType</th>
+      <th>Medication</th>
+      <th>Observation</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+    </tr>
+    <tr>
+      <th>MedicationName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Amoxicillin</th>
+      <td>70.146917</td>
+      <td>25.686296</td>
+      <td>37.044787</td>
+      <td>30.768503</td>
+    </tr>
+    <tr>
+      <th>Aspirin</th>
+      <td>20.709837</td>
+      <td>42.648531</td>
+      <td>23.145647</td>
+      <td>50.191841</td>
+    </tr>
+    <tr>
+      <th>Ciprofloxacin</th>
+      <td>15.259291</td>
+      <td>63.148259</td>
+      <td>44.607763</td>
+      <td>54.232161</td>
+    </tr>
+    <tr>
+      <th>Ibuprofen</th>
+      <td>67.570717</td>
+      <td>53.286449</td>
+      <td>37.193417</td>
+      <td>31.163597</td>
+    </tr>
+  </tbody>
+</table>",54.232161
+"Among patients receiving Radiation Therapy who are classified as ""Other"" ethnicity, and those undergoing Chemotherapy or Surgery who identify as African American, what is the greatest treatment expense recorded?","SELECT MAX(TreatmentCost) AS TreatmentCost FROM (SELECT TreatmentCost AS TreatmentCost FROM PatientTreatmentRecords WHERE TreatmentType = ""Radiation Therapy"" AND PatientEthnicity = ""Other"" UNION ALL SELECT TreatmentCost AS TreatmentCost FROM PatientTreatmentRecords WHERE TreatmentType = ""Chemotherapy"" AND PatientEthnicity = ""African American"" UNION ALL SELECT TreatmentCost AS TreatmentCost FROM PatientTreatmentRecords WHERE TreatmentType = ""Surgery"" AND PatientEthnicity = ""African American"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>HospitalLocation</th>
+      <th>City Center</th>
+      <th>Downtown</th>
+      <th>Rural</th>
+      <th>Suburban</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th>PatientEthnicity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Chemotherapy</th>
+      <th>African American</th>
+      <td>49760.449049</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Caucasian</th>
+      <td>24548.482069</td>
+      <td>30810.224437</td>
+      <td>21801.161885</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>38822.553212</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Medication Management</th>
+      <th>African American</th>
+      <td>NaN</td>
+      <td>6399.115518</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Caucasian</th>
+      <td>27387.565074</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18561.258221</td>
+    </tr>
+    <tr>
+      <th>Hispanic</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>44438.395147</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>34159.763534</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Physical Therapy</th>
+      <th>Caucasian</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>48053.123154</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>12743.240743</td>
+      <td>30946.115197</td>
+      <td>NaN</td>
+      <td>41570.572721</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Radiation Therapy</th>
+      <th>Caucasian</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>44746.242444</td>
+    </tr>
+    <tr>
+      <th>Hispanic</th>
+      <td>NaN</td>
+      <td>40278.234483</td>
+      <td>NaN</td>
+      <td>31233.861838</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>NaN</td>
+      <td>502.967208</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Surgery</th>
+      <th>African American</th>
+      <td>23463.583924</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>49160.439293</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",49760.449049
+"Among patients with either Cancer receiving medication or watchful waiting, and those with Diabetes undergoing surgery, what is the shortest recorded length of hospital stay?","SELECT MIN(HospitalStayDuration) AS HospitalStayDuration FROM (SELECT HospitalStayDuration AS HospitalStayDuration FROM PatientHealthRecords WHERE Diagnosis = ""Cancer"" AND TreatmentMethod = ""Medication"" UNION ALL SELECT HospitalStayDuration AS HospitalStayDuration FROM PatientHealthRecords WHERE Diagnosis = ""Cancer"" AND TreatmentMethod = ""Watchful Waiting"" UNION ALL SELECT HospitalStayDuration AS HospitalStayDuration FROM PatientHealthRecords WHERE Diagnosis = ""Diabetes"" AND TreatmentMethod = ""Surgery"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Diagnosis</th>
+      <th>Asthma</th>
+      <th>Cancer</th>
+      <th>Diabetes</th>
+      <th>Heart Disease</th>
+      <th>Hypertension</th>
+    </tr>
+    <tr>
+      <th>TreatmentMethod</th>
+      <th>RecoveryStatus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Medication</th>
+      <th>Deceased</th>
+      <td>NaN</td>
+      <td>21.014606</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Ongoing Treatment</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>19.913547</td>
+      <td>NaN</td>
+      <td>27.471624</td>
+    </tr>
+    <tr>
+      <th>Recovered</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.484726</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Surgery</th>
+      <th>Deceased</th>
+      <td>25.519249</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.803193</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Ongoing Treatment</th>
+      <td>NaN</td>
+      <td>10.258364</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.582650</td>
+    </tr>
+    <tr>
+      <th>Recovered</th>
+      <td>NaN</td>
+      <td>26.264869</td>
+      <td>7.093431</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Therapy</th>
+      <th>Deceased</th>
+      <td>1.553964</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.949829</td>
+    </tr>
+    <tr>
+      <th>Recovered</th>
+      <td>NaN</td>
+      <td>29.555321</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Watchful Waiting</th>
+      <th>Deceased</th>
+      <td>26.028245</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20.001381</td>
+    </tr>
+    <tr>
+      <th>Ongoing Treatment</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.615646</td>
+      <td>7.129845</td>
+      <td>29.568064</td>
+    </tr>
+    <tr>
+      <th>Recovered</th>
+      <td>NaN</td>
+      <td>28.202513</td>
+      <td>26.133686</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",7.093431
+"Among males aged 19 to 35, 36 to 50, and over 66, as well as non-binary individuals under 19, what is the peak blood pressure measurement recorded?","SELECT MAX(BloodPressure) AS BloodPressure FROM (SELECT BloodPressure AS BloodPressure FROM PatientVitalSigns WHERE AgeGroup = ""19-35"" AND Gender = ""Male"" UNION ALL SELECT BloodPressure AS BloodPressure FROM PatientVitalSigns WHERE AgeGroup = ""36-50"" AND Gender = ""Male"" UNION ALL SELECT BloodPressure AS BloodPressure FROM PatientVitalSigns WHERE AgeGroup = ""0-18"" AND Gender = ""Non-binary"" UNION ALL SELECT BloodPressure AS BloodPressure FROM PatientVitalSigns WHERE AgeGroup = ""66+"" AND Gender = ""Male"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Gender</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Non-binary</th>
+    </tr>
+    <tr>
+      <th>AgeGroup</th>
+      <th>AdmissionType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">0-18</th>
+      <th>Elective</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>123.166345</td>
+    </tr>
+    <tr>
+      <th>Emergency</th>
+      <td>170.248519</td>
+      <td>133.733206</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Urgent</th>
+      <td>148.855658</td>
+      <td>181.220789</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">19-35</th>
+      <th>Elective</th>
+      <td>186.102589</td>
+      <td>NaN</td>
+      <td>114.750915</td>
+    </tr>
+    <tr>
+      <th>Urgent</th>
+      <td>194.692601</td>
+      <td>77.862662</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36-50</th>
+      <th>Urgent</th>
+      <td>NaN</td>
+      <td>75.595618</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">51-65</th>
+      <th>Elective</th>
+      <td>144.061567</td>
+      <td>124.027917</td>
+      <td>98.536203</td>
+    </tr>
+    <tr>
+      <th>Emergency</th>
+      <td>109.522280</td>
+      <td>73.161118</td>
+      <td>168.525624</td>
+    </tr>
+    <tr>
+      <th>Urgent</th>
+      <td>72.816457</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">66+</th>
+      <th>Elective</th>
+      <td>72.003023</td>
+      <td>NaN</td>
+      <td>109.139187</td>
+    </tr>
+    <tr>
+      <th>Urgent</th>
+      <td>NaN</td>
+      <td>175.094340</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",175.09434
+"Among patients who are either healthy or have heart disease and are undergoing medication, as well as healthy individuals receiving therapy, what is the smallest recorded body mass index?","SELECT MIN(BodyMassIndex) AS BodyMassIndex FROM (SELECT BodyMassIndex AS BodyMassIndex FROM PatientHealthMetrics WHERE HealthCondition = ""Healthy"" AND TreatmentType = ""Medication"" UNION ALL SELECT BodyMassIndex AS BodyMassIndex FROM PatientHealthMetrics WHERE HealthCondition = ""Heart Disease"" AND TreatmentType = ""Medication"" UNION ALL SELECT BodyMassIndex AS BodyMassIndex FROM PatientHealthMetrics WHERE HealthCondition = ""Healthy"" AND TreatmentType = ""Therapy"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>HealthCondition</th>
+      <th>Diabetes</th>
+      <th>Healthy</th>
+      <th>Heart Disease</th>
+      <th>Hypertension</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Medication</th>
+      <td>18.193189</td>
+      <td>26.336605</td>
+      <td>16.393106</td>
+      <td>43.074849</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>16.651039</td>
+      <td>33.789935</td>
+      <td>34.848633</td>
+      <td>18.737457</td>
+    </tr>
+    <tr>
+      <th>Therapy</th>
+      <td>15.936247</td>
+      <td>27.099957</td>
+      <td>21.385953</td>
+      <td>18.456772</td>
+    </tr>
+  </tbody>
+</table>",16.393106
+"Among patients taking Lisinopril once, twice, or three times daily, as well as those using Atorvastatin on an as-needed basis, what is the greatest severity level of side effects reported?","SELECT MAX(SideEffectsSeverity) AS SideEffectsSeverity FROM (SELECT SideEffectsSeverity AS SideEffectsSeverity FROM PatientMedicationDetails WHERE MedicationName = ""Lisinopril"" AND DosageFrequency = ""Once a day"" UNION ALL SELECT SideEffectsSeverity AS SideEffectsSeverity FROM PatientMedicationDetails WHERE MedicationName = ""Lisinopril"" AND DosageFrequency = ""Twice a day"" UNION ALL SELECT SideEffectsSeverity AS SideEffectsSeverity FROM PatientMedicationDetails WHERE MedicationName = ""Lisinopril"" AND DosageFrequency = ""Three times a day"" UNION ALL SELECT SideEffectsSeverity AS SideEffectsSeverity FROM PatientMedicationDetails WHERE MedicationName = ""Atorvastatin"" AND DosageFrequency = ""As needed"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>MedicationName</th>
+      <th>Amoxicillin</th>
+      <th>Atorvastatin</th>
+      <th>Lisinopril</th>
+      <th>Metformin</th>
+    </tr>
+    <tr>
+      <th>DosageFrequency</th>
+      <th>MedicationType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">As needed</th>
+      <th>Antibiotic</th>
+      <td>NaN</td>
+      <td>0.677425</td>
+      <td>3.810407</td>
+      <td>3.506547</td>
+    </tr>
+    <tr>
+      <th>Antidiabetic</th>
+      <td>5.310008</td>
+      <td>NaN</td>
+      <td>1.188750</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Antihypertensive</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.494335</td>
+      <td>6.300867</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Once a day</th>
+      <th>Analgesic</th>
+      <td>4.774810</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Antibiotic</th>
+      <td>NaN</td>
+      <td>0.415957</td>
+      <td>NaN</td>
+      <td>8.735942</td>
+    </tr>
+    <tr>
+      <th>Antidiabetic</th>
+      <td>1.260791</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.890390</td>
+    </tr>
+    <tr>
+      <th>Antihypertensive</th>
+      <td>7.420984</td>
+      <td>NaN</td>
+      <td>2.060612</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Three times a day</th>
+      <th>Antihypertensive</th>
+      <td>NaN</td>
+      <td>7.882195</td>
+      <td>7.349347</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">Twice a day</th>
+      <th>Analgesic</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.500516</td>
+    </tr>
+    <tr>
+      <th>Antibiotic</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.512448</td>
+    </tr>
+    <tr>
+      <th>Antidiabetic</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.072259</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Antihypertensive</th>
+      <td>5.052337</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",7.349347
+"Among patients who are either stable and very active, critical and sedentary, or recovering and very active, what is the lowest recorded weight?","SELECT MIN(Weight) AS Weight FROM (SELECT Weight AS Weight FROM PatientHealthRecords WHERE HealthCondition = ""Stable"" AND LifestyleFactor = ""Very Active"" UNION ALL SELECT Weight AS Weight FROM PatientHealthRecords WHERE HealthCondition = ""Critical"" AND LifestyleFactor = ""Sedentary"" UNION ALL SELECT Weight AS Weight FROM PatientHealthRecords WHERE HealthCondition = ""Recovering"" AND LifestyleFactor = ""Very Active"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>LifestyleFactor</th>
+      <th>Active</th>
+      <th>Sedentary</th>
+      <th>Very Active</th>
+    </tr>
+    <tr>
+      <th>HealthCondition</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Critical</th>
+      <td>33.015354</td>
+      <td>169.080755</td>
+      <td>188.221036</td>
+    </tr>
+    <tr>
+      <th>Improving</th>
+      <td>31.856157</td>
+      <td>113.159199</td>
+      <td>192.288785</td>
+    </tr>
+    <tr>
+      <th>Recovering</th>
+      <td>117.799773</td>
+      <td>114.054384</td>
+      <td>159.574801</td>
+    </tr>
+    <tr>
+      <th>Stable</th>
+      <td>153.164187</td>
+      <td>145.707270</td>
+      <td>142.846139</td>
+    </tr>
+  </tbody>
+</table>",142.846139
+"Among patients who had surgery during an emergency visit, surgery during a routine examination, or therapy during a routine examination, which group received the lowest feedback score?","SELECT MIN(FeedbackRating) AS FeedbackRating FROM (SELECT FeedbackRating AS FeedbackRating FROM PatientFeedbackSurvey WHERE VisitType = ""Routine Check-up"" AND TreatmentReceived = ""Therapy"" UNION ALL SELECT FeedbackRating AS FeedbackRating FROM PatientFeedbackSurvey WHERE VisitType = ""Emergency"" AND TreatmentReceived = ""Surgery"" UNION ALL SELECT FeedbackRating AS FeedbackRating FROM PatientFeedbackSurvey WHERE VisitType = ""Routine Check-up"" AND TreatmentReceived = ""Surgery"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>VisitType</th>
+      <th colspan=""3"" halign=""left"">Emergency</th>
+      <th colspan=""3"" halign=""left"">Follow-up</th>
+      <th colspan=""3"" halign=""left"">Routine Check-up</th>
+    </tr>
+    <tr>
+      <th>TreatmentReceived</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+      <th>Medication</th>
+      <th>Surgery</th>
+      <th>Therapy</th>
+    </tr>
+    <tr>
+      <th>SatisfactionLevel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Neutral</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.831108</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Satisfied</th>
+      <td>8.381981</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.830395</td>
+      <td>NaN</td>
+      <td>5.306849</td>
+      <td>6.966147</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Unsatisfied</th>
+      <td>5.727229</td>
+      <td>9.816267</td>
+      <td>4.187259</td>
+      <td>NaN</td>
+      <td>5.278343</td>
+      <td>NaN</td>
+      <td>6.599398</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Very Satisfied</th>
+      <td>2.756414</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.961262</td>
+      <td>7.777780</td>
+      <td>NaN</td>
+      <td>6.494875</td>
+      <td>NaN</td>
+      <td>9.051735</td>
+    </tr>
+    <tr>
+      <th>Very Unsatisfied</th>
+      <td>8.101061</td>
+      <td>NaN</td>
+      <td>9.315329</td>
+      <td>2.144711</td>
+      <td>NaN</td>
+      <td>9.410435</td>
+      <td>NaN</td>
+      <td>2.397922</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",2.397922
+"Among pediatric patients receiving medication, adults undergoing surgery, and adults treated with medication, which group achieved the highest treatment outcome score?","SELECT MAX(OutcomeRating) AS OutcomeRating FROM (SELECT OutcomeRating AS OutcomeRating FROM PatientTreatmentOutcomes WHERE PatientCategory = ""Pediatric"" AND TreatmentType = ""Medication"" UNION ALL SELECT OutcomeRating AS OutcomeRating FROM PatientTreatmentOutcomes WHERE PatientCategory = ""Adult"" AND TreatmentType = ""Surgery"" UNION ALL SELECT OutcomeRating AS OutcomeRating FROM PatientTreatmentOutcomes WHERE PatientCategory = ""Adult"" AND TreatmentType = ""Medication"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>TreatmentType</th>
+      <th>Medication</th>
+      <th>Physical Therapy</th>
+      <th>Radiation Therapy</th>
+      <th>Surgery</th>
+    </tr>
+    <tr>
+      <th>PatientCategory</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Adult</th>
+      <td>4.735211</td>
+      <td>7.192565</td>
+      <td>5.101810</td>
+      <td>4.111885</td>
+    </tr>
+    <tr>
+      <th>Geriatric</th>
+      <td>7.012289</td>
+      <td>6.813173</td>
+      <td>7.237921</td>
+      <td>0.278423</td>
+    </tr>
+    <tr>
+      <th>Pediatric</th>
+      <td>9.865729</td>
+      <td>5.660169</td>
+      <td>5.981319</td>
+      <td>5.406690</td>
+    </tr>
+  </tbody>
+</table>",9.865729
+"What is the largest billing charge recorded for patients either aged 0 to 17 during follow-up appointments, those aged 75 and older during emergency visits, or individuals between 35 and 54 years old attending follow-up consultations?","SELECT MAX(TotalBillAmount) AS TotalBillAmount FROM (SELECT TotalBillAmount AS TotalBillAmount FROM PatientVisitData WHERE PatientAgeGroup = ""0-17 years"" AND VisitReason = ""Follow-up visit"" UNION ALL SELECT TotalBillAmount AS TotalBillAmount FROM PatientVisitData WHERE PatientAgeGroup = ""75 years and above"" AND VisitReason = ""Emergency care"" UNION ALL SELECT TotalBillAmount AS TotalBillAmount FROM PatientVisitData WHERE PatientAgeGroup = ""35-54 years"" AND VisitReason = ""Follow-up visit"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>InsuranceType</th>
+      <th>Employer Sponsored</th>
+      <th>Medicaid</th>
+      <th>Medicare</th>
+      <th>Private Insurance</th>
+      <th>Uninsured</th>
+    </tr>
+    <tr>
+      <th>PatientAgeGroup</th>
+      <th>VisitReason</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""4"" valign=""top"">0-17 years</th>
+      <th>Diagnostic testing</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>450.751258</td>
+    </tr>
+    <tr>
+      <th>Follow-up visit</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>857.157888</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Routine check-up</th>
+      <td>1739.680011</td>
+      <td>NaN</td>
+      <td>4284.909408</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Specialist consultation</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3520.282890</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">18-34 years</th>
+      <th>Follow-up visit</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>172.501180</td>
+    </tr>
+    <tr>
+      <th>Routine check-up</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2566.373014</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">35-54 years</th>
+      <th>Diagnostic testing</th>
+      <td>NaN</td>
+      <td>3878.870471</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Emergency care</th>
+      <td>286.784558</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Follow-up visit</th>
+      <td>NaN</td>
+      <td>3500.871813</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Specialist consultation</th>
+      <td>NaN</td>
+      <td>2096.838748</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">55-74 years</th>
+      <th>Diagnostic testing</th>
+      <td>404.532940</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>150.863557</td>
+    </tr>
+    <tr>
+      <th>Follow-up visit</th>
+      <td>NaN</td>
+      <td>710.988294</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Specialist consultation</th>
+      <td>4497.894344</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">75 years and above</th>
+      <th>Diagnostic testing</th>
+      <td>1510.724997</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3000.262395</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Emergency care</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1665.720342</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Follow-up visit</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3286.888467</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Specialist consultation</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2716.715912</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",3500.871813
+"What is the smallest treatment expense recorded for either patients identifying as Other undergoing Psychotherapy or Surgery, or male patients receiving Radiation Therapy?","SELECT MIN(TreatmentCost) AS TreatmentCost FROM (SELECT TreatmentCost AS TreatmentCost FROM PatientTreatmentHistory WHERE PatientGender = ""Other"" AND TreatmentType = ""Psychotherapy"" UNION ALL SELECT TreatmentCost AS TreatmentCost FROM PatientTreatmentHistory WHERE PatientGender = ""Other"" AND TreatmentType = ""Surgery"" UNION ALL SELECT TreatmentCost AS TreatmentCost FROM PatientTreatmentHistory WHERE PatientGender = ""Male"" AND TreatmentType = ""Radiation Therapy"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th>PatientGender</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Non-Binary</th>
+      <th>Other</th>
+    </tr>
+    <tr>
+      <th>TreatmentType</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Chemotherapy</th>
+      <td>49316.812003</td>
+      <td>14409.328252</td>
+      <td>14111.788536</td>
+      <td>20359.389874</td>
+    </tr>
+    <tr>
+      <th>Physical Therapy</th>
+      <td>11429.615542</td>
+      <td>6506.948660</td>
+      <td>48705.309539</td>
+      <td>15517.414932</td>
+    </tr>
+    <tr>
+      <th>Psychotherapy</th>
+      <td>34772.962710</td>
+      <td>26818.802385</td>
+      <td>33286.592920</td>
+      <td>15686.987727</td>
+    </tr>
+    <tr>
+      <th>Radiation Therapy</th>
+      <td>36568.933321</td>
+      <td>31391.122819</td>
+      <td>26996.873486</td>
+      <td>22630.480844</td>
+    </tr>
+    <tr>
+      <th>Surgery</th>
+      <td>32821.193980</td>
+      <td>35209.172698</td>
+      <td>2963.149612</td>
+      <td>41396.438921</td>
+    </tr>
+  </tbody>
+</table>",15686.987727

@@ -1,0 +1,21 @@
+Prediction,Label,Match,F1
+38.765700,38.7657,True,0.0
+Traditional,Traditional,True,1.0
+uncommon,uncommon,True,1.0
+NULL,nan,False,0.0
+45.000000,45.0,True,0.0
+Ms.,Ms.,True,1.0
+1.850000,1.85,True,0.0
+Catholic,Catholic,True,1.0
+2.000000,2.0,True,0.0
+18503.000000,18503.0,True,0.0
+2022243324,202-224-3324,True,1.0
+jeffmerkley,jeffmerkley,True,1.0
+313.000000,313.0,True,0.0
+B,B,True,1.0
+City,City,True,1.0
+U.S. Virgin Islands,U.S. Virgin Islands,True,1.0
+1.100000,1.1,True,0.0
+2010-11-14 00:00:00.0,2010-11-14 00:00:00.0,True,1.0
+U,U,True,1.0
+Jacques Chirac,Jacques Chirac,True,1.0

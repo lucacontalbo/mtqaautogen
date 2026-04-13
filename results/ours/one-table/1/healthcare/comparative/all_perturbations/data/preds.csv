@@ -1,0 +1,99 @@
+Prediction,Label,Match,F1
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No — IL-6 is higher in the suppressed-profile severe oxygenation decline (1001.730000) than in Th17-skewed tracheobronchitis (384.910000).,no,False,0.11764705882352941
+No,no,True,1.0
+No — they are equal (0.000000 vs 0.000000),no,False,0.2222222222222222
+No,no,True,1.0
+"No; transplant patients have higher bacterial levels — 4480196.000000 copies/mL versus 792974.000000 copies/mL (difference 3687222.000000, ratio 5.649865).",no,False,0.1111111111111111
+No,no,True,1.0
+No — 27.530000 is not lower than 23.220000 (difference 4.310000),yes,False,0.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+"No — the NK-cell–expanded mean is not reported, so a shorter average cannot be established; regulatory T-cell mean = 52.800000 days.",no,False,0.10526315789473684
+No,no,True,1.0
+No — 128.690000 DDD/100 bed-days is greater than 84.460000 DDD/100 bed-days (difference 44.230000).,no,False,0.14285714285714288
+Yes,yes,True,1.0
+Yes — 893.000000 mL ≤ 1099.000000 mL,no,False,0.0
+Yes,yes,True,1.0
+Yes,no,False,0.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No — the 3-month neuroinflammation level (109.580000 pg/mL) is lower than the pre-surgery neuroscience biobank level (181.700000 pg/mL) by 72.120000 pg/mL.,no,False,0.1
+Yes,yes,True,1.0
+No,yes,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No — 313.400000 mOsm/kg vs 294.600000 mOsm/kg (difference 18.800000 mOsm/kg).,no,False,0.18181818181818182
+No,no,True,1.0
+Yes — Karolinska reports less usage (Karolinska: 0.000000 DDD/1000PD; Addenbrooke's: 301.490000 DDD/1000PD).,yes,False,0.15384615384615385
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Cannot be determined,no,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No — it exceeds (71.200000 mut/Mb vs 60.800000 mut/Mb),no,False,0.19999999999999998
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Cannot determine; OR-2026-00048 anion gap value is not available.,yes,False,0.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No — 70694657.900000 copies/mL vs 68512744.900000 copies/mL (difference 2181913.000000 copies/mL),no,False,0.18181818181818182
+No,no,True,1.0
+CRX-2021109 — 41.830000 (vs 8.230000; difference 33.600000),yes,False,0.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No — cohort-010: 0.487000 1/h; cohort-004: 0.184000 1/h; difference: 0.303000 1/h,no,False,0.16666666666666669
+Yes,yes,True,1.0
+The fibrotic (myelofibrotic) sample — 27.200000,yes,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+"No — 386.420000 ng/mL (age-related, delayed processing) vs 294.690000 ng/mL (liver-related, baseline pre-dose); difference 91.730000 ng/mL.",no,False,0.11764705882352941
+higher blood clotting factor levels,yes,False,0.0
+No,no,True,1.0
+Yes — 60.200000 exceeds 40.800000 by 19.400000.,yes,False,0.25
+Yes,yes,True,1.0
+No — right axillary FNA is not available; bone marrow core = 10.090000 mutations/Mb.,no,False,0.14285714285714288
+No — 1752.400000 pg/mL vs 1048.300000 pg/mL,no,False,0.25
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Cannot be determined,no,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,no,False,0.0
+the patient experiencing a neutropenic fever,yes,False,0.0
+No,no,True,1.0
+Higher,no,False,0.0
+"No — the adult group has better respiratory mechanics (78.530000 mL/cmH2O) than the newborn group (59.750000 mL/cmH2O), difference 18.780000 mL/cmH2O.",no,False,0.10526315789473684
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Regulatory T cells,yes,False,0.0
+No,yes,False,0.0
+Yes,yes,True,1.0
+No — total for the S. aureus regimen is 113.800000 and for the E. faecalis regimen is 99.700000,no,False,0.11764705882352941
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes — 2.790000 L/min < 6.550000 L/min,yes,False,0.2857142857142857
+No. Chronic group = 4.060000 mg/L; Pre-renal responsive group = 7.440000 mg/L; difference = −3.380000 mg/L.,no,False,0.0
+No,no,True,1.0

@@ -1,0 +1,51 @@
+index,question,value,response,correct
+0,What are the 2 lowest amounts of non-hazardous waste produced in 2022 (sorted in ascending order) among the following companies in tons?,"8430, 123311"," 8430.00, 123311.00",True
+1,Which company has the lowest energy consumption over the last 3 years among the following companies in TWh?,heidelberg-materials, heidelberg-materials (288.91 twh),False
+2,What is the highest direct GHG emissions (Scope 1) produced in the years 2023 and 2022 among the following companies in tCO2-eq?,1910000.0," 1890000.00, 1910000.00",False
+3,Which company has the highest direct GHG emissions (Scope 1) produced in the years 2023 and 2022 among the following companies in tCO2-eq?,nyse_az, nyse_az,True
+4,What are the 2 highest values of direct GHG emissions (Scope 1) produced in 2023 (sorted in descending order) among the following companies in tCO2-eq?,"61900000.0, 4178.0"," 61900000.00, 4178.00",True
+5,What is the lowest location-based scope 2 GHG emissions in the last 2 years among the following companies in tCO2e?,100000.0, 100000.00,True
+6,Which companies have the 2 lowest values of scope 3 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in tCO2e?,"nyse_az, otc_bayzf"," nyse_az, otc_bayzf",True
+7,What are the top 2 highest values of energy consumed in 2023 (sorted in descending order) among the following companies in million kWh?,"35056.0, 1124.33"," 35056.00, 1124.33",True
+8,What are the 2 lowest values of direct GHG emissions (Scope 1) produced in 2023 (sorted in ascending order) among the following companies in tCO2eq?,"21598.0, 31774.0"," 21598.00, 31774.00",True
+9,What are the 2 lowest values of market-based scope 2 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in Million metric tons of CO2 equivalents?,"0.14, 1.12"," 0.14, 1.12",True
+10,Which company has the highest water consumption in the years 2023 and 2022 for the following companies in m3?,otc_crerf, otc_crerf,True
+11,Which companies have the top 2 lowest water consumption values (in ascending order) for the year 2023 among the following companies in million cubic meters?,"otc_bamgf, otc_bayzf"," otc_bamgf, otc_bayzf",True
+12,What are the 2 highest amounts of non-hazardous waste produced in 2022 (sorted in descending order) among the following companies in kt?,"322.0, 123.31"," 322.00, 123.31",True
+13,Which companies have the 2 lowest amounts of non-hazardous waste produced in 2022 (sorted in ascending order) among the following companies in tons?,"vivendi, otc_su"," vivendi, otc_su",True
+14,Which company has the highest energy consumed in the last 2 years among the following companies in MWh?,otc_su, otc_su,True
+15,What are the 2 lowest values of market-based scope 2 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in tCO2e?,"19496.0, 30490.0"," 19496.00, 30490.00",True
+16,Which companies have the 2 lowest values of market-based scope 2 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in Million metric tons of CO2 equivalents?,"otc_adddf, otc_bayzf"," otc_adddf 0.14, otc_bayzf 1.12",False
+17,What are the 2 lowest values of direct GHG emissions (Scope 1) produced in 2023 (sorted in ascending order) among the following companies in tCO2-eq?,"4178.0, 21779.0"," 4178.00, 21779.00",True
+18,What are the 2 highest values of location-based scope 2 GHG emissions produced in 2023 (sorted in descending order) among the following companies in million mt CO2e?,"0.2, 0.02"," 0.20, 0.02",True
+19,Which company has the maximum amount of GHG emissions Scope 3 in 2023 among the following companies in Million metric tons of CO2 equivalents?,otc_bayzf, otc_bayzf,True
+20,Which companies have the 2 lowest values of direct GHG emissions (Scope 1) produced in 2023 (sorted in ascending order) among the following companies in tCO2eq?,"axa, nyse_az"," axa (21598.00), nyse_az (31774.00)",False
+21,Which companies have the 2 lowest values of location-based scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in TCO2eq?,"vivendi, otc_esocf"," vivendi 22042.00, otc_esocf 3280000.00",False
+22,What are the 2 lowest values of scope 3 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in million mt CO2e?,"0.09, 23.8"," 0.09, 23.80",True
+23,What are the 2 highest values of location-based scope 2 GHG emissions produced in 2023 (sorted in descending order) among the following companies in tCO2e?,"112228.0, 42423.0"," 112228.00, 42423.00",True
+24,Which company has the highest energy consumed in the last 2 years among the following companies in MWh?,munich-re, munich-re,True
+25,What is the highest total emissions (both direct and indirect) of GHG generated in 2022 among the following companies in tCO2e?,3192798.0, 3192798.00,True
+26,Which company has the lowest location-based scope 2 GHG emissions in the last 2 years among the following companies in tCO2e?,otc_rwnef, otc_rwnef 100000.00 tco2e,False
+27,Which companies have the 2 highest values of location-based scope 2 GHG emissions produced in 2023 (sorted in descending order) among the following companies in tCO2e?,"otc_esocf, nyse_az"," otc_esocf 3280000.00 tco2e, nyse_az 112228.00 tco2e",False
+28,Which companies have the top 2 highest values of energy consumed in 2023 (sorted in descending order) among the following companies in MWh?,"otc_su, munich-re"," otc_su, munich-re",True
+29,What is the largest energy consumption from 2022 to 2023 among the following companies?,1201276, 35056.00 million kwh,False
+30,What are the 2 lowest values of scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in tCO2-eq?,"3193.0, 1110000.0"," 3193.00, 1110000.00",True
+31,Which companies have the 2 lowest values of location-based scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in million mt CO2e?,"vivendi, otc_rwnef"," vivendi (0.02), otc_rwnef (0.20)",False
+32,What are the top 2 highest values of energy consumed in 2023 (sorted in ascending order) among the following companies in GWh?,"33.09, 12241.0"," 33.09, 12241.00",True
+33,Which companies have the 2 highest values of scope 3 GHG emissions produced in 2022 (sorted in descending order) among the following companies in tons CO2e?,"otc_adddf, nyse_az"," otc_adddf (7635784.00), nyse_az (92467.00)",False
+34,Which company has the highest water consumption in the years 2023 and 2022 for the following companies in m3?,otc_esocf," otc_esocf, otc_esocf",False
+35,Which companies have the 2 lowest values of scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in tCO2-eq?,"nasdaq_dasty, otc_rwnef"," nasdaq_dasty, otc_rwnef",True
+36,Which company has the highest energy consumed in the last 4 years among the following companies in GWh?,otc_dpsgy, otc_dpsgy,True
+37,What are the 2 lowest amounts of non-hazardous waste produced in 2022 (sorted in ascending order) among the following companies in tons?,"8430.0, 322000.0"," 8430.00, 322000.00",True
+38,What are the 2 lowest values of direct GHG emissions (Scope 1) produced in 2023 (sorted in ascending order) among the following companies in tCO2e?,"10291.0, 31774.0"," 10291.00, 31774.00",True
+39,What are the 2 lowest values of location-based scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in tCO2eq?,"42423.0, 200000.0"," 42423.00, 200000.00",True
+40,What are the 2 highest values of scope 3 GHG emissions produced in 2022 (sorted in descending order) among the following companies in tons CO2e?,"7635784.0, 3130824.0"," 7635784.00, 3130824.00",True
+41,What are the 2 highest values of market-based scope 2 GHG emissions produced in 2022 (sorted in descending order) among the following companies in tCO2e?,"30490.0, 19496.0"," 30490.00, 19496.00",True
+42,What are the top 2 highest water consumption values (in descending order) for the year 2023 among the following companies in millions of m3?,"35.4, 6.78"," 35.40, 6.78",True
+43,Which companies have the 2 lowest values of scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in tCO2-eq?,"nasdaq_dasty, otc_bayzf"," nasdaq_dasty, otc_bayzf",True
+44,What are the 2 lowest values of scope 2 GHG emissions produced in 2023 (sorted in ascending order) among the following companies in tCO2-eq?,"3193.0, 200000.0"," 3193.00, 200000.00",True
+45,Which company has the maximum amount of GHG emissions Scope 3 in 2023 among the following companies in tons CO2e?,otc_adddf, otc_adddf (5894811.00 tco2e),False
+46,Which companies have the 2 lowest values of market-based scope 2 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in TCO2eq?,"vivendi, axa"," vivendi, axa",True
+47,What is the maximum amount of market-based scope 2 GHG emissions in 2023 among the following companies in tons CO2e?,4510000.0, 4510000.00 tons co2e,True
+48,Which companies have the 2 highest values of location-based scope 2 GHG emissions produced in 2023 (sorted in descending order) among the following companies in tCO2e?,"nyse_az, axa"," nyse_az 112228.00, axa 42423.00",False
+49,What are the 2 lowest values of scope 3 GHG emissions produced in 2022 (sorted in ascending order) among the following companies in Million metric tons of CO2 equivalents?,"7.64, 9.72"," 7.64, 9.72",True

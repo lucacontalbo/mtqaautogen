@@ -1,0 +1,1 @@
+these .csv files are the first 500 csv files of the tatqa dataset. The total filtered are in `total_filtered/`

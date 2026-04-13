@@ -1,0 +1,109 @@
+Prediction,Label,Match,F1
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Higher.,yes,False,0.0
+Yes,yes,True,1.0
+No — 18.410000 gC m-2 d-1 is lower than 21.520000 gC m-2 d-1,no,True,0.1428571428571428
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No — the anaerobic digester site emits less methane (454.549000 kgCH4) than the brackish delta vent station (1234.201000 kgCH4); difference 779.652000 kgCH4.,no,True,0.0952380952380952
+No — 128.020000 mg CH4 m-2 d-1 (saltpan) vs 63.460000 mg CH4 m-2 d-1 (domed bog rivulet-fed); difference 64.560000 mg CH4 m-2 d-1,no,True,0.0833333333333333
+No,no,True,1.0
+No — 1485.000000 Mg C ha-1 is not equal to 2997.000000 Mg C ha-1.,no,True,0.1333333333333333
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No — 877.110000 versus 915.760000 (difference 38.650000),no,True,0.25
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No — 599.600000 t C ha-1 is greater than 140.200000 t C ha-1 (difference 459.400000 t C ha-1).,no,True,0.1052631578947368
+Yes,yes,True,1.0
+No — Wadden Sea eelgrass: 7.980000 Mg C ha-1 yr-1; Doñana salt-panne tidal creek: 6.920000 Mg C ha-1 yr-1; difference 1.060000 Mg C ha-1 yr-1.,no,True,0.0769230769230769
+Yes,yes,True,1.0
+Yes — 148.410000 gC m-2 yr-1 (marshy brackish) is lower than 600.880000 gC m-2 yr-1 (alluvial floodplain); difference 452.470000 gC m-2 yr-1 and the marsh is 0.246988 (24.698800) of the floodplain.,yes,True,0.0666666666666666
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Not universally — lower in 2 of 3 mixed-pathway samples (PT-BGR and PT-MAR) but slightly higher in PT-ALP.,no,True,0.0
+Yes,no,False,0.0
+Yes — the Ria Formosa oligohaline Spartina alterniflora marsh mosaic (156.530000 Mg C ha-1) has a greater buried carbon stock than the Kuala Selangor organogenic peat marsh (74.200000 Mg C ha-1); difference = 82.330000 Mg C ha-1 (2.109569×).,yes,True,0.0571428571428571
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No.,no,True,0.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+Yes — 994.480000 mg C m-2 d-1 exceeds 165.590000 mg C m-2 d-1.,yes,True,0.1428571428571428
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes — 4039.110000 tCO2e (North Sea) surpasses 562.340000 tCO2e (Sierra Madre) by 3476.770000 tCO2e.,yes,True,0.1333333333333333
+Yes,yes,True,1.0
+No — 101.700000 g C m-2 yr-1 (coastal marsh) is lower than 875.700000 g C m-2 yr-1 (riverside meadow).,yes,False,0.0
+No,no,True,1.0
+No — PLT-LST-08K is lower (79.293000 mg CH4 m-2 d-1) than PLT-CFB-04F (85.453000 mg CH4 m-2 d-1); difference = −6.160000 mg CH4 m-2 d-1.,no,True,0.0833333333333333
+Yes,yes,True,1.0
+No,yes,False,0.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+"Yes, it is lower by 3.030000 Mg C ha-1 yr-1.",no,False,0.0
+Yes — 1112.570000 mg m-2 d-1 (APS-Alpine-SLK-006) is higher than 327.620000 mg m-2 d-1 (APS-Permafrost-INT-010); difference = 784.950000 mg m-2 d-1,yes,True,0.0952380952380952
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No — 10.785000 ≠ 2.011000 (difference 8.774000 mmol CO2 m-2 d-1),no,True,0.1666666666666666
+No — 158.270000 mg CH4 m-2 d-1 is greater than 157.860000 mg CH4 m-2 d-1 (difference 0.410000 mg CH4 m-2 d-1).,no,True,0.0909090909090909
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+"No — Congo Basin (2008 montane peat, peat harvesting) = 341.670000 Mg C ha-1; Great Dismal Swamp (2023 tidal mangrove, frequent burning) = 480.860000 Mg C ha-1; difference = 139.190000 Mg C ha-1",no,True,0.064516129032258
+Yes,yes,True,1.0
+Yes,yes,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+"Yes — 273.140000 g C m-2 d-1 (string-flark fen, 2022) surpasses 194.300000 g C m-2 d-1 (lagg margin, 2023) by 78.840000 g C m-2 d-1 (40.576428).",yes,True,0.074074074074074
+No — 497.810000 is not equal to 1191.070000 (difference 693.260000 g CO2 m-2 day-1).,no,True,0.1333333333333333
+Yes,yes,True,1.0
+No,no,True,1.0
+No,no,True,1.0
+Yes,yes,True,1.0
+Yes,no,False,0.0
+lower,yes,False,0.0
+No,no,True,1.0
+No,no,True,1.0
+No — fermentative ebullition = 17.560000 mg CH4 m-2 d-1; methanotrophic rhizosphere oxidation = 51.600000 mg CH4 m-2 d-1; difference = 34.040000 mg CH4 m-2 d-1,no,True,0.0833333333333333
+No,no,True,1.0
+Yes,yes,True,1.0
+No — Okavango 2017 (−2.322000) does not match Congo 2014 (2.856000); difference = 5.178000.,no,True,0.1428571428571428
+Yes,yes,True,1.0
+Yes,yes,True,1.0
