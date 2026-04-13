@@ -1,0 +1,10 @@
+dataset,relation,row_attributes,column_attributes,value_attribute,num_row_attributes,num_column_attributes,pivot_rows,pivot_columns,pivot_cells,non_nan_density,source_rows,source_columns,relation_type,table_csv_path,total_header_levels,min_header_side_levels
+bikestores,sales_enriched,item_id; category_name,customer_state; store_name; store_city; store_state,discount,2,4,35,3,105,1.0,4722,18,view,pivot_task/exports/tables_csv/bikestores__sales_enriched.csv,6,2
+sql_bootcamp,sales_enriched,category; brand,month_name; month; quarter,discount,2,3,30,12,360,1.0,5000,20,view,pivot_task/exports/tables_csv/sql_bootcamp__sales_enriched.csv,5,2
+northwind,Invoices,ShipCountry; Country,ShipperName,Discount,2,1,21,3,63,1.0,2155,26,view,pivot_task/exports/tables_csv/northwind__Invoices.csv,3,1
+northwind,Orders Qry,ShipCountry; Country,ShipVia,Freight,2,1,21,3,63,1.0,830,20,view,pivot_task/exports/tables_csv/northwind__Orders_Qry.csv,3,1
+sql_bootcamp,fact_sales,store_key,quantity_sold,discount,1,1,50,10,500,1.0,5000,9,table,pivot_task/exports/tables_csv/sql_bootcamp__fact_sales.csv,2,1
+sakila,film_list,category,rating,price,1,1,16,5,80,1.0,5462,8,view,pivot_task/exports/tables_csv/sakila__film_list.csv,2,1
+sakila,film,special_features,rating,rental_rate,1,1,15,5,75,1.0,1000,13,table,pivot_task/exports/tables_csv/sakila__film.csv,2,1
+northwind,Orders,ShipCountry,ShipVia,Freight,1,1,21,3,63,1.0,830,14,table,pivot_task/exports/tables_csv/northwind__Orders.csv,2,1
+sql_bootcamp,dim_product,category,brand,unit_price,1,1,6,5,30,1.0,500,7,table,pivot_task/exports/tables_csv/sql_bootcamp__dim_product.csv,2,1

@@ -1,0 +1,501 @@
+product_key,product_id,product_name,category,brand,unit_price,launch_date
+1,PROD0001,Figure Method,Clothing,BrandC,897.35,2020-12-06
+2,PROD0002,Pressure That,Clothing,BrandD,920.58,2023-05-07
+3,PROD0003,Huge Change,Clothing,BrandA,553.56,2025-07-03
+4,PROD0004,Plant Agency,Home & Kitchen,BrandA,97.33,2023-12-24
+5,PROD0005,Fast Real,Home & Kitchen,BrandE,333.97,2025-09-28
+6,PROD0006,Whom Himself,Sports,BrandE,740.32,2021-12-25
+7,PROD0007,Dinner Whose,Electronics,BrandD,480.06,2023-05-04
+8,PROD0008,Investment Color,Toys,BrandE,311.22,2022-10-04
+9,PROD0009,Site Policy,Books,BrandE,487.22,2022-02-28
+10,PROD0010,Possible Another,Books,BrandB,755.98,2022-06-06
+11,PROD0011,Discuss Field,Toys,BrandC,467.45,2024-02-16
+12,PROD0012,Film Finally,Home & Kitchen,BrandB,704.09,2022-02-25
+13,PROD0013,Dog Thought,Sports,BrandB,524.05,2024-01-30
+14,PROD0014,Position Force,Toys,BrandE,170.42,2021-12-31
+15,PROD0015,Expert Good,Books,BrandD,561.32,2025-03-05
+16,PROD0016,Those Describe,Electronics,BrandB,958.24,2024-11-21
+17,PROD0017,Professor Few,Electronics,BrandC,88.92,2025-02-20
+18,PROD0018,Read Near,Home & Kitchen,BrandB,753.16,2023-08-23
+19,PROD0019,Public Spend,Books,BrandB,553.21,2025-07-18
+20,PROD0020,Our Raise,Clothing,BrandD,754.93,2021-10-18
+21,PROD0021,Big Include,Electronics,BrandA,507.24,2022-09-02
+22,PROD0022,Available Serious,Clothing,BrandD,342.96,2025-08-01
+23,PROD0023,Voice Eye,Books,BrandE,330.33,2023-07-25
+24,PROD0024,Site Off,Books,BrandC,227.08,2024-01-23
+25,PROD0025,Design Item,Books,BrandD,53.06,2024-01-23
+26,PROD0026,Relate Laugh,Electronics,BrandE,750.55,2021-03-26
+27,PROD0027,Week Who,Books,BrandE,519.06,2023-03-03
+28,PROD0028,Experience She,Toys,BrandC,707.0,2021-03-08
+29,PROD0029,Cut Born,Sports,BrandC,881.08,2021-01-30
+30,PROD0030,Price North,Electronics,BrandA,840.3,2024-11-01
+31,PROD0031,Let Your,Electronics,BrandD,436.44,2022-03-27
+32,PROD0032,Trial Artist,Books,BrandC,312.67,2022-09-24
+33,PROD0033,Even Behavior,Books,BrandB,510.9,2021-09-21
+34,PROD0034,Pretty Prove,Sports,BrandE,298.84,2021-10-09
+35,PROD0035,Send Story,Clothing,BrandC,965.65,2024-12-05
+36,PROD0036,These Attorney,Electronics,BrandA,621.79,2021-07-11
+37,PROD0037,Soldier Attack,Toys,BrandE,419.79,2023-02-26
+38,PROD0038,Produce Magazine,Toys,BrandD,588.96,2021-06-21
+39,PROD0039,Right Culture,Home & Kitchen,BrandE,522.99,2021-06-21
+40,PROD0040,Church Everyone,Home & Kitchen,BrandD,235.7,2021-06-11
+41,PROD0041,Line Or,Clothing,BrandE,181.85,2023-05-31
+42,PROD0042,Science Allow,Sports,BrandA,561.84,2021-04-24
+43,PROD0043,Break Visit,Electronics,BrandC,47.9,2021-11-24
+44,PROD0044,Day Audience,Clothing,BrandC,192.38,2022-08-18
+45,PROD0045,Part Must,Sports,BrandD,555.14,2021-12-08
+46,PROD0046,Beat Plan,Sports,BrandE,547.21,2024-09-15
+47,PROD0047,Ball Camera,Books,BrandB,258.31,2022-07-16
+48,PROD0048,Find To,Clothing,BrandA,718.07,2025-07-19
+49,PROD0049,Them Simply,Sports,BrandB,330.7,2024-12-04
+50,PROD0050,Tell Recognize,Books,BrandC,499.97,2023-07-22
+51,PROD0051,Simple Leave,Home & Kitchen,BrandD,105.88,2023-05-21
+52,PROD0052,Training Hear,Sports,BrandD,260.26,2023-06-20
+53,PROD0053,Report Him,Toys,BrandA,129.81,2021-05-02
+54,PROD0054,Build Air,Home & Kitchen,BrandB,872.68,2024-01-28
+55,PROD0055,Culture None,Sports,BrandC,528.04,2024-07-07
+56,PROD0056,Firm Difficult,Home & Kitchen,BrandC,232.48,2024-07-07
+57,PROD0057,Sell Enter,Home & Kitchen,BrandC,764.06,2021-12-14
+58,PROD0058,Everyone Son,Electronics,BrandB,760.3,2024-03-21
+59,PROD0059,At Create,Books,BrandC,124.78,2023-02-14
+60,PROD0060,Collection Officer,Sports,BrandA,172.32,2021-10-25
+61,PROD0061,Sit Radio,Sports,BrandE,809.84,2022-09-08
+62,PROD0062,Audience Magazine,Electronics,BrandD,881.18,2023-03-29
+63,PROD0063,Tend Environmental,Home & Kitchen,BrandD,958.47,2022-12-24
+64,PROD0064,Any Cause,Electronics,BrandC,252.78,2021-06-09
+65,PROD0065,Develop List,Clothing,BrandE,244.98,2024-11-09
+66,PROD0066,From Staff,Clothing,BrandC,411.78,2025-04-19
+67,PROD0067,Turn World,Books,BrandC,255.19,2024-12-12
+68,PROD0068,Among Manager,Books,BrandB,82.4,2023-03-09
+69,PROD0069,Population Reflect,Books,BrandC,706.04,2024-06-27
+70,PROD0070,Old Machine,Home & Kitchen,BrandE,374.21,2024-09-28
+71,PROD0071,Small Smile,Electronics,BrandA,860.38,2022-04-22
+72,PROD0072,Especially Resource,Electronics,BrandC,522.47,2023-09-05
+73,PROD0073,Environment Performance,Electronics,BrandB,12.22,2024-03-23
+74,PROD0074,Only Sense,Books,BrandB,978.88,2024-03-22
+75,PROD0075,Bring Prove,Sports,BrandD,683.56,2024-12-10
+76,PROD0076,Direction Marriage,Toys,BrandE,674.65,2022-05-16
+77,PROD0077,Item Woman,Books,BrandB,35.48,2021-10-21
+78,PROD0078,Structure Matter,Toys,BrandC,376.73,2025-02-12
+79,PROD0079,Sea Actually,Toys,BrandA,14.64,2022-01-04
+80,PROD0080,Car Report,Sports,BrandC,986.45,2022-06-27
+81,PROD0081,Nature Along,Home & Kitchen,BrandA,980.27,2022-10-30
+82,PROD0082,Cover So,Home & Kitchen,BrandB,774.73,2021-04-06
+83,PROD0083,Executive Me,Clothing,BrandB,307.07,2025-01-15
+84,PROD0084,Participant Defense,Books,BrandC,27.95,2025-03-06
+85,PROD0085,Cost Include,Books,BrandA,876.02,2021-11-09
+86,PROD0086,Number Couple,Electronics,BrandE,799.73,2025-08-26
+87,PROD0087,Main Much,Electronics,BrandC,178.41,2021-10-01
+88,PROD0088,Store Matter,Electronics,BrandD,198.93,2025-08-27
+89,PROD0089,List World,Toys,BrandE,583.58,2022-11-06
+90,PROD0090,Son Mission,Books,BrandD,427.8,2023-03-25
+91,PROD0091,Green People,Sports,BrandB,924.23,2021-01-17
+92,PROD0092,President Respond,Sports,BrandA,30.81,2022-01-28
+93,PROD0093,Find Page,Clothing,BrandC,385.53,2024-10-08
+94,PROD0094,Identify Family,Home & Kitchen,BrandA,638.16,2023-12-16
+95,PROD0095,Institution Clear,Sports,BrandD,427.27,2025-07-24
+96,PROD0096,Special Stage,Sports,BrandC,201.47,2020-10-22
+97,PROD0097,Work Hour,Books,BrandE,707.18,2021-10-13
+98,PROD0098,Mean Operation,Electronics,BrandE,450.22,2024-07-05
+99,PROD0099,Part Right,Clothing,BrandB,433.67,2023-11-21
+100,PROD0100,Message Artist,Clothing,BrandC,213.28,2020-10-28
+101,PROD0101,Us Air,Home & Kitchen,BrandA,13.22,2022-03-23
+102,PROD0102,Address Until,Clothing,BrandA,954.82,2023-12-21
+103,PROD0103,Drop Watch,Toys,BrandE,272.37,2021-11-20
+104,PROD0104,Evidence Decide,Clothing,BrandB,699.07,2023-09-16
+105,PROD0105,Occur Eye,Sports,BrandD,658.53,2023-08-13
+106,PROD0106,Dinner Board,Electronics,BrandE,252.06,2021-09-25
+107,PROD0107,Enter Area,Clothing,BrandE,78.93,2024-04-24
+108,PROD0108,Reach Than,Books,BrandB,568.51,2023-11-02
+109,PROD0109,Foot Late,Electronics,BrandE,14.67,2021-06-11
+110,PROD0110,Condition Central,Electronics,BrandE,106.81,2024-11-16
+111,PROD0111,Themselves Recognize,Home & Kitchen,BrandD,349.38,2022-11-01
+112,PROD0112,Majority Court,Books,BrandE,201.15,2020-11-08
+113,PROD0113,Miss Strategy,Books,BrandE,360.76,2021-06-22
+114,PROD0114,Admit Car,Toys,BrandC,389.91,2024-01-09
+115,PROD0115,Common Imagine,Electronics,BrandC,216.62,2022-09-16
+116,PROD0116,Dark Edge,Home & Kitchen,BrandA,694.91,2020-10-31
+117,PROD0117,Your Million,Sports,BrandA,572.63,2025-03-13
+118,PROD0118,Respond Tv,Home & Kitchen,BrandA,235.74,2023-11-08
+119,PROD0119,Back Travel,Clothing,BrandA,609.76,2025-03-01
+120,PROD0120,Help Tree,Toys,BrandB,231.57,2020-11-22
+121,PROD0121,First Specific,Books,BrandC,619.78,2024-01-28
+122,PROD0122,Big Appear,Home & Kitchen,BrandC,288.43,2024-01-25
+123,PROD0123,Moment Analysis,Books,BrandB,116.53,2024-06-12
+124,PROD0124,Force Wife,Clothing,BrandE,470.95,2021-11-01
+125,PROD0125,Resource Cause,Books,BrandE,819.58,2024-01-19
+126,PROD0126,Relate Case,Home & Kitchen,BrandB,112.38,2024-02-29
+127,PROD0127,Factor Ago,Home & Kitchen,BrandB,74.17,2024-11-28
+128,PROD0128,Anyone Social,Electronics,BrandD,632.6,2021-05-16
+129,PROD0129,View Goal,Clothing,BrandC,290.63,2023-11-20
+130,PROD0130,Catch No,Clothing,BrandC,408.72,2023-09-24
+131,PROD0131,Listen Discover,Toys,BrandB,952.58,2024-09-28
+132,PROD0132,Claim Government,Sports,BrandB,120.64,2022-06-07
+133,PROD0133,Financial Give,Books,BrandA,194.54,2024-01-03
+134,PROD0134,Us Record,Books,BrandD,975.35,2021-10-20
+135,PROD0135,Participant House,Home & Kitchen,BrandA,508.35,2025-04-27
+136,PROD0136,Tough Book,Clothing,BrandB,755.27,2021-09-13
+137,PROD0137,Assume Do,Clothing,BrandB,876.6,2023-10-06
+138,PROD0138,During On,Home & Kitchen,BrandD,666.45,2021-04-01
+139,PROD0139,Degree Tree,Electronics,BrandD,358.75,2025-02-06
+140,PROD0140,Pretty All,Books,BrandD,399.67,2025-01-11
+141,PROD0141,Meeting Century,Electronics,BrandD,422.54,2024-02-24
+142,PROD0142,Garden Republican,Sports,BrandD,357.05,2024-07-18
+143,PROD0143,Likely Vote,Toys,BrandA,651.26,2023-12-19
+144,PROD0144,Road Price,Sports,BrandE,50.42,2021-04-12
+145,PROD0145,Although Claim,Books,BrandB,288.31,2024-02-10
+146,PROD0146,Able Fight,Clothing,BrandD,395.65,2021-05-26
+147,PROD0147,Try Research,Home & Kitchen,BrandA,850.1,2021-11-07
+148,PROD0148,Each Painting,Books,BrandD,274.04,2024-11-12
+149,PROD0149,Or Analysis,Clothing,BrandC,760.18,2025-02-15
+150,PROD0150,At High,Electronics,BrandC,838.48,2024-01-21
+151,PROD0151,Record Would,Clothing,BrandA,426.74,2024-01-14
+152,PROD0152,Quickly Claim,Home & Kitchen,BrandA,91.07,2025-04-17
+153,PROD0153,Benefit Popular,Sports,BrandB,558.48,2022-01-23
+154,PROD0154,Billion Base,Sports,BrandD,470.88,2023-05-09
+155,PROD0155,Kind Top,Toys,BrandC,650.42,2021-07-21
+156,PROD0156,Concern Law,Books,BrandA,204.59,2022-11-13
+157,PROD0157,Police Receive,Toys,BrandD,63.8,2023-03-27
+158,PROD0158,Government Maintain,Electronics,BrandB,725.57,2022-11-27
+159,PROD0159,Become Forget,Home & Kitchen,BrandD,350.18,2024-10-18
+160,PROD0160,Up Large,Clothing,BrandA,791.34,2021-10-23
+161,PROD0161,Manage Mr,Toys,BrandA,687.61,2022-03-25
+162,PROD0162,Consumer Blue,Sports,BrandD,817.83,2020-12-06
+163,PROD0163,Program Parent,Home & Kitchen,BrandD,972.53,2024-05-10
+164,PROD0164,Its Board,Clothing,BrandD,881.89,2022-05-26
+165,PROD0165,Special Community,Books,BrandC,179.14,2021-09-20
+166,PROD0166,I Recently,Electronics,BrandC,174.22,2023-06-13
+167,PROD0167,Pass Resource,Toys,BrandA,334.48,2022-03-17
+168,PROD0168,Quickly Issue,Electronics,BrandA,698.5,2022-11-20
+169,PROD0169,Agent Should,Home & Kitchen,BrandC,90.47,2023-07-05
+170,PROD0170,Middle Forward,Sports,BrandE,11.82,2025-08-25
+171,PROD0171,Answer Hot,Electronics,BrandA,985.18,2023-10-22
+172,PROD0172,Outside Sister,Electronics,BrandB,613.7,2022-05-09
+173,PROD0173,Over Story,Sports,BrandE,723.57,2022-09-18
+174,PROD0174,If Coach,Sports,BrandD,172.29,2024-04-15
+175,PROD0175,Step Yes,Clothing,BrandC,61.2,2024-03-12
+176,PROD0176,Particular Suddenly,Books,BrandB,629.41,2023-12-31
+177,PROD0177,Mind Scene,Clothing,BrandA,736.4,2024-07-25
+178,PROD0178,No Certain,Clothing,BrandB,732.0,2023-03-17
+179,PROD0179,Tax Western,Electronics,BrandC,585.3,2023-11-30
+180,PROD0180,Fly Bill,Sports,BrandE,92.2,2023-05-11
+181,PROD0181,Sense Who,Clothing,BrandB,483.03,2025-08-04
+182,PROD0182,Environmental Product,Books,BrandD,315.99,2020-12-25
+183,PROD0183,Professional Bed,Electronics,BrandC,463.31,2023-08-22
+184,PROD0184,Least Detail,Books,BrandC,125.53,2021-02-17
+185,PROD0185,Something Book,Home & Kitchen,BrandB,42.24,2020-12-31
+186,PROD0186,Also Audience,Sports,BrandA,681.08,2025-04-29
+187,PROD0187,Western Move,Home & Kitchen,BrandD,947.21,2021-03-11
+188,PROD0188,Concern Really,Books,BrandE,36.91,2023-09-30
+189,PROD0189,Dream Shoulder,Sports,BrandE,451.69,2023-06-03
+190,PROD0190,Discuss Player,Electronics,BrandE,39.05,2024-04-23
+191,PROD0191,Fact Any,Home & Kitchen,BrandD,270.26,2021-03-04
+192,PROD0192,Whom Structure,Toys,BrandC,209.35,2022-07-31
+193,PROD0193,His Serve,Books,BrandA,505.44,2021-12-17
+194,PROD0194,Easy Spring,Clothing,BrandB,416.76,2022-02-10
+195,PROD0195,Small Employee,Toys,BrandA,872.32,2022-03-03
+196,PROD0196,Medical Produce,Clothing,BrandA,755.23,2023-08-29
+197,PROD0197,Such Court,Clothing,BrandC,722.98,2024-08-30
+198,PROD0198,Decade Ask,Toys,BrandD,828.31,2023-03-27
+199,PROD0199,Able Hit,Clothing,BrandD,756.45,2024-07-12
+200,PROD0200,Southern Product,Toys,BrandE,291.15,2021-04-05
+201,PROD0201,Receive Federal,Clothing,BrandD,456.2,2023-06-26
+202,PROD0202,Late Yeah,Toys,BrandE,811.66,2021-06-25
+203,PROD0203,Along Professor,Clothing,BrandC,567.72,2023-05-29
+204,PROD0204,Home Record,Sports,BrandE,382.62,2024-06-19
+205,PROD0205,Later Ground,Electronics,BrandB,275.24,2025-06-20
+206,PROD0206,Agree Admit,Clothing,BrandA,521.76,2023-04-28
+207,PROD0207,Difficult Foreign,Electronics,BrandC,312.19,2024-11-12
+208,PROD0208,Guess Might,Electronics,BrandE,975.85,2022-10-17
+209,PROD0209,Tough War,Sports,BrandD,356.11,2025-06-05
+210,PROD0210,College Environment,Clothing,BrandE,890.34,2021-12-05
+211,PROD0211,Either Real,Sports,BrandA,950.75,2021-05-12
+212,PROD0212,Walk Forward,Toys,BrandE,95.62,2022-08-04
+213,PROD0213,Lot Toward,Clothing,BrandD,674.74,2022-09-05
+214,PROD0214,Center Born,Sports,BrandE,714.26,2025-05-13
+215,PROD0215,These Couple,Toys,BrandD,380.95,2022-09-23
+216,PROD0216,Statement Answer,Sports,BrandB,659.21,2024-06-04
+217,PROD0217,Another Truth,Books,BrandB,807.36,2020-10-31
+218,PROD0218,Into Realize,Electronics,BrandB,572.71,2021-08-30
+219,PROD0219,Campaign Expert,Clothing,BrandE,875.04,2023-07-05
+220,PROD0220,Nice Market,Clothing,BrandB,639.22,2024-08-01
+221,PROD0221,Life Under,Electronics,BrandA,149.2,2023-01-13
+222,PROD0222,Condition Phone,Clothing,BrandC,319.18,2023-05-17
+223,PROD0223,Activity Oil,Electronics,BrandB,854.82,2022-11-12
+224,PROD0224,Budget Democrat,Electronics,BrandA,264.79,2021-11-05
+225,PROD0225,Can Shoulder,Books,BrandD,802.01,2021-11-22
+226,PROD0226,Evidence Pull,Books,BrandD,395.03,2023-08-22
+227,PROD0227,Old May,Sports,BrandE,43.81,2024-06-28
+228,PROD0228,Room Leg,Clothing,BrandA,986.0,2021-12-13
+229,PROD0229,Exist Himself,Home & Kitchen,BrandB,189.22,2020-10-20
+230,PROD0230,Class None,Home & Kitchen,BrandD,686.39,2025-01-30
+231,PROD0231,Like Cut,Electronics,BrandE,111.89,2023-08-08
+232,PROD0232,Kid Perform,Electronics,BrandD,175.84,2021-10-21
+233,PROD0233,Successful Use,Sports,BrandA,181.91,2024-11-16
+234,PROD0234,Face That,Electronics,BrandB,104.65,2023-07-23
+235,PROD0235,Finally Both,Home & Kitchen,BrandD,113.56,2024-09-28
+236,PROD0236,Meet Key,Electronics,BrandA,79.44,2023-02-19
+237,PROD0237,Myself Blood,Toys,BrandB,22.16,2023-01-20
+238,PROD0238,Probably Month,Electronics,BrandB,499.16,2021-04-16
+239,PROD0239,Event Democratic,Toys,BrandA,413.15,2022-09-24
+240,PROD0240,Over Raise,Clothing,BrandA,804.82,2024-03-26
+241,PROD0241,Level Best,Home & Kitchen,BrandE,72.2,2023-09-24
+242,PROD0242,Decision Condition,Home & Kitchen,BrandE,277.27,2025-07-27
+243,PROD0243,Wonder Since,Sports,BrandA,532.39,2025-09-27
+244,PROD0244,Never Hit,Clothing,BrandD,157.09,2025-03-23
+245,PROD0245,Available Research,Books,BrandA,458.13,2022-10-12
+246,PROD0246,Sure Teacher,Clothing,BrandE,108.6,2024-11-19
+247,PROD0247,Exactly Space,Toys,BrandA,755.68,2023-04-19
+248,PROD0248,Offer Fall,Toys,BrandA,810.32,2022-06-28
+249,PROD0249,Every Watch,Electronics,BrandC,250.81,2024-03-26
+250,PROD0250,Compare Minute,Books,BrandC,382.91,2020-11-23
+251,PROD0251,Less Other,Books,BrandD,940.38,2024-05-08
+252,PROD0252,Speech Range,Electronics,BrandA,847.53,2025-04-09
+253,PROD0253,Safe Such,Books,BrandB,264.13,2022-02-07
+254,PROD0254,Be Speak,Books,BrandC,562.35,2021-11-27
+255,PROD0255,Center How,Electronics,BrandB,314.04,2022-11-22
+256,PROD0256,Service Help,Home & Kitchen,BrandE,781.52,2023-03-09
+257,PROD0257,Discover Buy,Home & Kitchen,BrandE,694.07,2022-08-11
+258,PROD0258,Beautiful Still,Sports,BrandC,712.0,2021-05-29
+259,PROD0259,Picture Base,Clothing,BrandC,798.53,2025-03-17
+260,PROD0260,Agree Send,Home & Kitchen,BrandE,301.48,2023-08-25
+261,PROD0261,Alone Song,Electronics,BrandB,743.35,2024-01-29
+262,PROD0262,Special My,Toys,BrandA,890.87,2021-06-28
+263,PROD0263,Alone Family,Sports,BrandC,801.02,2021-12-23
+264,PROD0264,Training Off,Sports,BrandE,148.44,2024-02-11
+265,PROD0265,Fill Theory,Toys,BrandE,707.06,2021-09-30
+266,PROD0266,Too Professor,Clothing,BrandD,586.88,2025-01-09
+267,PROD0267,Tax Respond,Clothing,BrandD,683.48,2025-01-23
+268,PROD0268,Attack College,Books,BrandA,904.05,2023-09-06
+269,PROD0269,Of Sport,Toys,BrandA,556.25,2024-09-18
+270,PROD0270,List Professor,Home & Kitchen,BrandE,820.47,2022-11-11
+271,PROD0271,Work Ten,Clothing,BrandE,238.58,2025-09-19
+272,PROD0272,Nice Across,Sports,BrandE,591.09,2022-11-28
+273,PROD0273,Show Day,Books,BrandA,318.12,2020-11-22
+274,PROD0274,Course Security,Clothing,BrandE,64.33,2021-09-08
+275,PROD0275,Shake True,Toys,BrandD,932.05,2021-04-30
+276,PROD0276,Realize Face,Books,BrandD,919.53,2021-02-21
+277,PROD0277,Worry Major,Clothing,BrandB,404.77,2022-10-15
+278,PROD0278,Will Among,Home & Kitchen,BrandC,167.03,2020-12-15
+279,PROD0279,Full Require,Home & Kitchen,BrandD,181.12,2022-09-12
+280,PROD0280,Feel Control,Toys,BrandD,926.95,2021-11-19
+281,PROD0281,Each Describe,Toys,BrandB,450.65,2021-02-17
+282,PROD0282,Raise Plant,Electronics,BrandB,126.88,2024-11-03
+283,PROD0283,Rise Dinner,Clothing,BrandD,117.93,2020-12-01
+284,PROD0284,Work Forward,Toys,BrandD,258.66,2025-09-25
+285,PROD0285,Ask Eat,Sports,BrandC,407.76,2025-03-30
+286,PROD0286,Network Property,Clothing,BrandE,653.23,2025-10-01
+287,PROD0287,Home System,Books,BrandD,402.54,2024-02-13
+288,PROD0288,If Realize,Toys,BrandD,282.45,2022-02-10
+289,PROD0289,This Image,Clothing,BrandE,743.33,2021-02-10
+290,PROD0290,Cell Last,Clothing,BrandD,601.64,2022-08-02
+291,PROD0291,Senior Draw,Sports,BrandC,539.28,2021-12-20
+292,PROD0292,Race Across,Home & Kitchen,BrandA,873.34,2023-12-23
+293,PROD0293,Cost Ever,Clothing,BrandA,933.25,2023-10-30
+294,PROD0294,Clearly Set,Home & Kitchen,BrandA,892.75,2021-06-23
+295,PROD0295,Political Yes,Books,BrandC,363.83,2022-11-07
+296,PROD0296,Look Interest,Home & Kitchen,BrandC,12.15,2021-07-15
+297,PROD0297,Cover Eat,Books,BrandB,73.99,2021-03-07
+298,PROD0298,Relationship Air,Toys,BrandE,790.84,2024-03-15
+299,PROD0299,Response Team,Clothing,BrandD,570.65,2021-02-09
+300,PROD0300,Property Above,Books,BrandD,586.53,2021-04-05
+301,PROD0301,Shoulder Deep,Home & Kitchen,BrandA,944.15,2023-06-04
+302,PROD0302,Oil Government,Home & Kitchen,BrandC,129.65,2024-02-16
+303,PROD0303,Respond Fine,Toys,BrandD,54.33,2024-05-25
+304,PROD0304,Good Both,Toys,BrandA,382.05,2020-10-18
+305,PROD0305,Law Economy,Clothing,BrandE,557.94,2021-04-14
+306,PROD0306,Reflect Many,Home & Kitchen,BrandD,608.15,2024-12-08
+307,PROD0307,Actually Southern,Books,BrandD,16.75,2023-10-03
+308,PROD0308,None Within,Sports,BrandE,830.91,2024-06-26
+309,PROD0309,Teach Television,Sports,BrandB,658.29,2022-06-02
+310,PROD0310,Way Glass,Books,BrandB,962.74,2025-01-22
+311,PROD0311,Wide At,Electronics,BrandE,836.4,2025-08-18
+312,PROD0312,My Rise,Home & Kitchen,BrandE,360.53,2022-05-31
+313,PROD0313,Word Far,Sports,BrandA,769.45,2021-01-06
+314,PROD0314,Director Note,Electronics,BrandB,834.19,2022-05-12
+315,PROD0315,Bag Blood,Books,BrandD,615.61,2024-08-06
+316,PROD0316,Future Pay,Electronics,BrandA,880.18,2023-01-19
+317,PROD0317,Sing Language,Books,BrandC,713.45,2023-11-27
+318,PROD0318,Front Safe,Toys,BrandE,823.16,2025-01-12
+319,PROD0319,Over Fill,Clothing,BrandB,826.66,2021-02-07
+320,PROD0320,Outside Country,Clothing,BrandD,462.35,2021-08-12
+321,PROD0321,Edge Always,Toys,BrandB,631.16,2022-08-01
+322,PROD0322,Task Someone,Sports,BrandD,666.31,2024-03-31
+323,PROD0323,His Sense,Electronics,BrandB,475.96,2024-11-04
+324,PROD0324,Face Partner,Electronics,BrandA,43.5,2023-12-12
+325,PROD0325,Bring Resource,Books,BrandC,692.31,2025-05-31
+326,PROD0326,Will State,Home & Kitchen,BrandB,176.98,2025-08-07
+327,PROD0327,Get In,Sports,BrandE,331.89,2024-12-23
+328,PROD0328,Hot Save,Home & Kitchen,BrandD,374.3,2025-09-04
+329,PROD0329,So Serve,Toys,BrandA,735.0,2021-05-09
+330,PROD0330,Throughout So,Toys,BrandC,202.77,2024-04-02
+331,PROD0331,Claim Former,Toys,BrandD,848.23,2023-09-17
+332,PROD0332,Writer Industry,Clothing,BrandB,592.78,2024-04-06
+333,PROD0333,Day Month,Toys,BrandE,261.25,2024-11-30
+334,PROD0334,Deal Could,Books,BrandD,25.81,2023-06-29
+335,PROD0335,Happen More,Clothing,BrandA,891.86,2021-12-30
+336,PROD0336,Great Identify,Clothing,BrandD,610.66,2024-05-26
+337,PROD0337,West With,Books,BrandB,349.6,2023-01-27
+338,PROD0338,Mind Other,Clothing,BrandE,876.83,2021-05-13
+339,PROD0339,Face Movie,Clothing,BrandC,73.24,2021-09-11
+340,PROD0340,Bad Race,Sports,BrandC,424.3,2025-08-18
+341,PROD0341,Fill Computer,Clothing,BrandC,120.16,2021-04-16
+342,PROD0342,Approach Sing,Sports,BrandD,168.68,2022-11-07
+343,PROD0343,Young Everything,Sports,BrandC,865.37,2023-05-02
+344,PROD0344,Say Here,Clothing,BrandE,864.64,2021-02-08
+345,PROD0345,Each North,Books,BrandA,274.0,2022-08-11
+346,PROD0346,Despite Also,Clothing,BrandA,124.89,2025-09-14
+347,PROD0347,Although Cultural,Books,BrandE,411.13,2023-07-13
+348,PROD0348,Entire Education,Clothing,BrandE,894.29,2024-09-29
+349,PROD0349,Must Factor,Sports,BrandD,589.24,2023-10-01
+350,PROD0350,Religious Others,Clothing,BrandA,978.3,2024-07-25
+351,PROD0351,Investment Economic,Books,BrandC,922.31,2020-12-22
+352,PROD0352,Prepare Together,Electronics,BrandC,611.71,2023-07-25
+353,PROD0353,Student Court,Electronics,BrandE,40.34,2024-10-15
+354,PROD0354,Effort Statement,Sports,BrandA,19.16,2025-02-03
+355,PROD0355,Suggest Long,Books,BrandB,776.31,2024-03-21
+356,PROD0356,Top Middle,Toys,BrandD,82.55,2025-08-04
+357,PROD0357,Receive Total,Sports,BrandD,242.89,2025-06-09
+358,PROD0358,Near Inside,Toys,BrandD,492.65,2024-08-19
+359,PROD0359,Political Little,Electronics,BrandE,489.79,2025-06-06
+360,PROD0360,Seat Take,Clothing,BrandE,586.24,2021-04-14
+361,PROD0361,Claim Authority,Books,BrandA,941.43,2020-11-10
+362,PROD0362,Color Hear,Sports,BrandD,639.34,2021-03-06
+363,PROD0363,Cost Trip,Electronics,BrandC,367.92,2023-03-08
+364,PROD0364,Treatment Any,Home & Kitchen,BrandD,647.49,2025-06-19
+365,PROD0365,Finish Reveal,Clothing,BrandA,641.4,2023-02-11
+366,PROD0366,Far Their,Clothing,BrandB,419.15,2021-02-14
+367,PROD0367,Eight Federal,Sports,BrandB,399.13,2021-11-01
+368,PROD0368,Building Choose,Toys,BrandA,503.8,2022-05-25
+369,PROD0369,Process News,Toys,BrandC,734.85,2024-02-22
+370,PROD0370,Garden Arrive,Sports,BrandB,494.41,2023-10-20
+371,PROD0371,When Tonight,Books,BrandA,636.68,2024-05-19
+372,PROD0372,Black Idea,Toys,BrandA,700.16,2021-12-18
+373,PROD0373,Long Significant,Clothing,BrandC,758.76,2024-05-29
+374,PROD0374,Decide Order,Sports,BrandA,654.24,2021-05-31
+375,PROD0375,Environment Mrs,Toys,BrandA,583.89,2025-03-23
+376,PROD0376,Remember Per,Books,BrandE,268.5,2024-11-21
+377,PROD0377,Network Song,Books,BrandC,683.36,2021-07-09
+378,PROD0378,Environment Catch,Home & Kitchen,BrandE,425.34,2022-05-14
+379,PROD0379,Then Moment,Toys,BrandA,92.27,2025-04-21
+380,PROD0380,Reality Young,Electronics,BrandE,21.24,2023-03-26
+381,PROD0381,Matter Whatever,Electronics,BrandE,598.94,2024-04-23
+382,PROD0382,So Add,Sports,BrandD,567.4,2023-04-02
+383,PROD0383,Tax Commercial,Home & Kitchen,BrandE,212.33,2025-03-01
+384,PROD0384,Tv Various,Toys,BrandD,464.11,2025-08-03
+385,PROD0385,Create Early,Sports,BrandE,147.51,2021-05-22
+386,PROD0386,Rock Wonder,Toys,BrandA,644.23,2021-02-21
+387,PROD0387,Mind Later,Electronics,BrandE,184.53,2025-02-05
+388,PROD0388,While Character,Books,BrandC,920.93,2024-07-04
+389,PROD0389,Would Situation,Home & Kitchen,BrandC,809.66,2021-05-23
+390,PROD0390,Would Play,Electronics,BrandD,109.2,2024-03-05
+391,PROD0391,Dream None,Books,BrandA,196.69,2023-07-14
+392,PROD0392,Chance Throw,Home & Kitchen,BrandB,209.48,2024-10-11
+393,PROD0393,Peace Interview,Sports,BrandA,744.87,2024-11-19
+394,PROD0394,Agency Face,Toys,BrandD,268.21,2022-08-06
+395,PROD0395,My Hard,Clothing,BrandA,14.24,2021-08-13
+396,PROD0396,Forget Make,Clothing,BrandB,897.2,2021-08-04
+397,PROD0397,Work Weight,Sports,BrandD,88.95,2021-10-22
+398,PROD0398,Head Such,Toys,BrandE,291.25,2024-06-07
+399,PROD0399,Case Whose,Home & Kitchen,BrandA,113.54,2023-06-20
+400,PROD0400,Before Nearly,Books,BrandA,696.4,2022-07-31
+401,PROD0401,Wait Compare,Sports,BrandC,273.9,2023-10-16
+402,PROD0402,Century Close,Home & Kitchen,BrandE,370.85,2022-05-13
+403,PROD0403,Treatment Soldier,Toys,BrandD,545.77,2025-05-19
+404,PROD0404,Impact College,Books,BrandE,226.61,2024-10-31
+405,PROD0405,Since Nation,Toys,BrandB,448.17,2021-02-27
+406,PROD0406,Song No,Sports,BrandE,671.22,2023-09-25
+407,PROD0407,Stock Usually,Books,BrandA,73.81,2025-05-16
+408,PROD0408,Air War,Toys,BrandE,967.14,2024-07-12
+409,PROD0409,Along Above,Toys,BrandB,888.87,2022-03-05
+410,PROD0410,What Cold,Books,BrandE,576.82,2025-06-12
+411,PROD0411,Exactly Human,Toys,BrandA,380.19,2024-05-08
+412,PROD0412,Eight Trade,Electronics,BrandD,488.09,2025-08-01
+413,PROD0413,Summer Result,Electronics,BrandC,774.45,2021-08-19
+414,PROD0414,Interest That,Clothing,BrandB,378.92,2023-07-24
+415,PROD0415,Soon Too,Clothing,BrandB,493.4,2024-01-25
+416,PROD0416,Music Lawyer,Home & Kitchen,BrandD,933.39,2024-08-29
+417,PROD0417,How Way,Clothing,BrandE,221.09,2021-12-24
+418,PROD0418,Person Can,Toys,BrandA,687.47,2025-03-29
+419,PROD0419,Whether Today,Clothing,BrandC,74.39,2022-10-31
+420,PROD0420,Method Clearly,Home & Kitchen,BrandA,356.68,2021-01-12
+421,PROD0421,Record Step,Sports,BrandB,139.67,2022-05-25
+422,PROD0422,Fill Expect,Home & Kitchen,BrandE,326.68,2021-07-24
+423,PROD0423,There Last,Home & Kitchen,BrandE,816.2,2022-06-27
+424,PROD0424,Answer Rich,Electronics,BrandA,854.79,2025-04-01
+425,PROD0425,All Mrs,Sports,BrandC,423.1,2025-04-18
+426,PROD0426,Half Example,Toys,BrandD,215.41,2021-01-24
+427,PROD0427,Inside Try,Books,BrandA,494.02,2024-05-27
+428,PROD0428,Role Result,Home & Kitchen,BrandA,763.34,2025-08-16
+429,PROD0429,Likely Tree,Home & Kitchen,BrandA,864.61,2022-09-02
+430,PROD0430,Trouble Or,Home & Kitchen,BrandD,749.63,2022-08-27
+431,PROD0431,Likely Really,Home & Kitchen,BrandA,244.73,2024-08-02
+432,PROD0432,Art Left,Sports,BrandC,892.75,2023-03-25
+433,PROD0433,Property Government,Home & Kitchen,BrandC,194.25,2021-07-31
+434,PROD0434,Fact Nor,Home & Kitchen,BrandA,946.42,2023-08-17
+435,PROD0435,Modern Employee,Sports,BrandD,697.81,2021-12-06
+436,PROD0436,Every Next,Home & Kitchen,BrandB,815.85,2024-04-06
+437,PROD0437,Nation Bar,Toys,BrandC,593.17,2024-05-28
+438,PROD0438,Hope Traditional,Electronics,BrandA,517.51,2022-10-18
+439,PROD0439,Million Discuss,Books,BrandC,775.6,2025-02-22
+440,PROD0440,Father Great,Home & Kitchen,BrandB,124.44,2025-01-02
+441,PROD0441,Beat Summer,Electronics,BrandB,47.62,2025-06-07
+442,PROD0442,Available Research,Clothing,BrandD,218.44,2024-06-14
+443,PROD0443,Likely Brother,Toys,BrandB,999.04,2023-02-21
+444,PROD0444,Stuff Practice,Home & Kitchen,BrandD,258.88,2025-05-09
+445,PROD0445,Animal Use,Electronics,BrandB,459.55,2025-06-15
+446,PROD0446,Shake Here,Home & Kitchen,BrandE,464.38,2022-12-29
+447,PROD0447,Research Local,Sports,BrandA,271.03,2021-01-22
+448,PROD0448,Account Cause,Sports,BrandC,319.99,2023-12-14
+449,PROD0449,Behind Dog,Books,BrandA,235.62,2024-01-23
+450,PROD0450,Through Election,Books,BrandA,718.96,2024-08-13
+451,PROD0451,Blue Mission,Toys,BrandB,893.8,2022-09-07
+452,PROD0452,Mean Blood,Sports,BrandD,232.16,2024-07-16
+453,PROD0453,Box Need,Home & Kitchen,BrandC,279.93,2021-02-10
+454,PROD0454,Style Course,Toys,BrandB,523.38,2020-12-14
+455,PROD0455,Attention Test,Toys,BrandA,759.43,2023-09-03
+456,PROD0456,Prevent Mind,Books,BrandB,631.8,2025-03-17
+457,PROD0457,Step Situation,Toys,BrandC,931.9,2025-09-24
+458,PROD0458,Again Cup,Home & Kitchen,BrandE,495.0,2024-01-23
+459,PROD0459,Final Decide,Home & Kitchen,BrandB,326.08,2022-10-10
+460,PROD0460,Thing Probably,Sports,BrandA,966.16,2025-09-19
+461,PROD0461,That Red,Books,BrandB,23.25,2025-06-24
+462,PROD0462,Discussion Stop,Electronics,BrandD,718.6,2025-04-19
+463,PROD0463,Response White,Toys,BrandC,585.61,2023-10-27
+464,PROD0464,Together Identify,Books,BrandE,796.08,2022-05-16
+465,PROD0465,Side Meeting,Clothing,BrandB,152.54,2021-10-10
+466,PROD0466,Soon During,Electronics,BrandD,989.41,2023-07-13
+467,PROD0467,Social According,Electronics,BrandD,628.46,2024-06-17
+468,PROD0468,Than Development,Home & Kitchen,BrandA,862.61,2024-01-22
+469,PROD0469,Decide Family,Electronics,BrandA,738.65,2022-12-29
+470,PROD0470,Will Statement,Home & Kitchen,BrandA,558.69,2022-12-29
+471,PROD0471,Their Piece,Home & Kitchen,BrandA,141.84,2021-02-11
+472,PROD0472,Make System,Home & Kitchen,BrandA,127.44,2023-09-15
+473,PROD0473,Why Occur,Toys,BrandB,169.81,2022-12-15
+474,PROD0474,Serve Situation,Toys,BrandE,780.45,2022-02-08
+475,PROD0475,Evening Yes,Sports,BrandE,738.8,2023-11-28
+476,PROD0476,Big Garden,Home & Kitchen,BrandB,443.16,2023-02-09
+477,PROD0477,Successful Fly,Home & Kitchen,BrandE,236.57,2022-12-24
+478,PROD0478,Ability Several,Home & Kitchen,BrandA,739.51,2023-08-03
+479,PROD0479,Impact Worry,Sports,BrandC,204.78,2024-10-06
+480,PROD0480,Rich Born,Sports,BrandA,294.52,2022-02-03
+481,PROD0481,Hundred Involve,Home & Kitchen,BrandB,19.56,2023-05-06
+482,PROD0482,Form Feel,Books,BrandE,353.48,2024-02-10
+483,PROD0483,Trade Onto,Books,BrandA,568.85,2025-09-09
+484,PROD0484,Available Take,Electronics,BrandB,931.46,2021-11-08
+485,PROD0485,Investment Listen,Toys,BrandB,250.31,2020-10-26
+486,PROD0486,Group Order,Home & Kitchen,BrandC,433.09,2020-11-01
+487,PROD0487,Customer Computer,Sports,BrandE,685.6,2025-09-27
+488,PROD0488,Water Truth,Sports,BrandA,665.8,2024-01-11
+489,PROD0489,Across Vote,Home & Kitchen,BrandA,732.96,2022-10-23
+490,PROD0490,Movie Program,Sports,BrandB,634.87,2021-08-29
+491,PROD0491,Break Environment,Sports,BrandA,723.81,2023-03-01
+492,PROD0492,Include Our,Home & Kitchen,BrandD,767.48,2023-04-19
+493,PROD0493,Real Movement,Sports,BrandD,275.12,2021-06-30
+494,PROD0494,Require Bad,Electronics,BrandE,901.97,2022-09-17
+495,PROD0495,Half Garden,Clothing,BrandB,968.37,2020-10-27
+496,PROD0496,Model Exist,Sports,BrandA,412.27,2025-06-10
+497,PROD0497,Involve Those,Books,BrandE,921.19,2023-05-08
+498,PROD0498,Will Peace,Toys,BrandD,292.92,2024-12-18
+499,PROD0499,After Week,Books,BrandE,527.0,2021-07-23
+500,PROD0500,Organization Eat,Toys,BrandB,822.38,2023-10-06
