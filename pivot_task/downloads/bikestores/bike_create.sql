@@ -1,0 +1,91 @@
+CREATE TABLE IF NOT EXISTS "categories" (
+  category_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  category_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "brands" (
+  brand_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  brand_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "products" (
+  product_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  product_name VARCHAR(255) NOT NULL,
+  brand_id INTEGER NOT NULL,
+  category_id INTEGER NOT NULL,
+  model_year INTEGER NOT NULL,
+  list_price REAL NOT NULL,
+  FOREIGN KEY (category_id) REFERENCES categories (category_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (brand_id) REFERENCES brands (brand_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "customers" (
+  customer_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  phone VARCHAR(25),
+  email VARCHAR(255) NOT NULL,
+  street VARCHAR(255),
+  city VARCHAR(50),
+  state VARCHAR(25),
+  zip_code VARCHAR(5)
+);
+
+CREATE TABLE IF NOT EXISTS "stores" (
+  store_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  store_name VARCHAR(255) NOT NULL,
+  phone VARCHAR(25),
+  email VARCHAR(255),
+  street VARCHAR(255),
+  city VARCHAR(255),
+  state VARCHAR(10),
+  zip_code VARCHAR(5)
+);
+
+CREATE TABLE IF NOT EXISTS "staffs" (
+  staff_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  phone VARCHAR(25),
+  active BOOLEAN NOT NULL DEFAULT 1,
+  store_id INTEGER NOT NULL,
+  manager_id INTEGER,
+  FOREIGN KEY (store_id) REFERENCES stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (manager_id) REFERENCES staffs (staff_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "orders" (
+  order_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  customer_id INTEGER NOT NULL,
+  order_status VARCHAR(25) NOT NULL,
+  order_date DATE NOT NULL,
+  required_date DATE NOT NULL,
+  shipped_date DATE,
+  store_id INTEGER NOT NULL,
+  staff_id INTEGER NOT NULL,
+  FOREIGN KEY (customer_id) REFERENCES customers (customer_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (store_id) REFERENCES stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (staff_id) REFERENCES staffs (staff_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "order_items" (
+  order_id INTEGER NOT NULL,
+  item_id INTEGER NOT NULL,
+  product_id INTEGER NOT NULL,
+  quantity INTEGER NOT NULL,
+  list_price REAL NOT NULL,
+  discount REAL NOT NULL,
+  PRIMARY KEY (order_id, item_id),
+  FOREIGN KEY (order_id) REFERENCES orders (order_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "stocks" (
+  store_id INTEGER NOT NULL,
+  product_id INTEGER NOT NULL,
+  quantity INTEGER NOT NULL,
+  PRIMARY KEY (store_id, product_id),
+  FOREIGN KEY (store_id) REFERENCES stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE CASCADE ON UPDATE CASCADE
+);

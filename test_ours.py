@@ -1,6 +1,5 @@
-from openai_model import OpenAIModel, remove_markdown_syntax, extract_result
+from inference_models import OpenAIModel, remove_markdown_syntax, extract_result, QwenModel
 
-from inference_models import QwenModel
 from prompts.inference import prompt
 import pandas as pd
 from tqdm import tqdm
