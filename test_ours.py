@@ -74,13 +74,16 @@ if __name__ == '__main__':
     df = pd.read_csv(args['filepath'])
     #method = args['filepath'].split("/")[-1].split(".")[0]
     if args["tatqa"]:
-        to_save_path = os.path.join("results", "tatqa", f"{'/'.join(args['filepath'].split('/')[1:]).split('.')[0]}")
+        filepath = os.path.join(args["model"], args['filepath'].split("datasets/")[-1])
+        to_save_path = os.path.join("results", "tatqa", f"{filepath.split('.')[0]}")
         method = ""
     elif args["bird"]:
-        to_save_path = os.path.join("results", "bird", f"{'/'.join(args['filepath'].split('/')[1:]).split('.')[0]}")
+        filepath = os.path.join(args["model"], args['filepath'].split("datasets/")[-1])
+        to_save_path = os.path.join("results", "bird", f"{filepath.split('.')[0]}")
         method = df.iloc[0]['Method']
     else:
-        to_save_path = os.path.join("results", "ours", f"{'/'.join(args['filepath'].split('/')[1:]).split('.')[0]}")
+        filepath = os.path.join(args["model"], args['filepath'].split("datasets/")[-1])
+        to_save_path = os.path.join("results", "ours", f"{filepath.split('.')[0]}")
         method = df.iloc[0]['Method']
 
     predictions = []
@@ -100,6 +103,14 @@ if __name__ == '__main__':
         attr = {"question": question, "table": table}
         result, logging = model.query(prompt, attr=attr)
         results.append(logging["text"])
+        if i == 0:
+            print(logging["text"])
+            print()
+            print()
+            print("**************************")
+            print()
+            print()
+            print(result, flush=True)
         result = extract_result(remove_markdown_syntax(result), "Final answer:")
         result = result.replace("%", "").strip()
         result_to_float = extract_number(result)

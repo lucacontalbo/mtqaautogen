@@ -1,5 +1,5 @@
 Question,SQL Query,Method,Table,Constraints,Label
-"What is the mean price of products number 2, 3, and 4 sold in store 2, considering only those with purchase states equal to either four or, in one case, the first status for product 2?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""4"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""3"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""2"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND item_id = ""2"" AND store_id = ""2"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean price of products numbered two, three, and four sold at the second retail location, considering only orders marked with status four for products three and four, while including orders with statuses one and four for product two?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""4"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""3"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""2"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND item_id = ""2"" AND store_id = ""2"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -154,7 +154,7 @@ Question,SQL Query,Method,Table,Constraints,Label
     </tr>
   </tbody>
 </table>",,779.99
-What is the average cost of cyclocross bicycles available at the third location for the years 2017 and 2018 combined?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE store_id = ""3"" AND model_year = ""2018"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE store_id = ""3"" AND model_year = ""2017"" AND category_name = ""Cyclocross Bicycles"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average asking price for cyclocross bicycles available at the third store, considering the models released in both 2017 and 2018?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE store_id = ""3"" AND model_year = ""2018"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE store_id = ""3"" AND model_year = ""2017"" AND category_name = ""Cyclocross Bicycles"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -258,7 +258,7 @@ What is the average cost of cyclocross bicycles available at the third location 
     </tr>
   </tbody>
 </table>",,3249.99
-What is the average discount received when buying the first product in California from the categories of cyclocross and cruisers bicycles combined with the discount given on the fourth product bought in Texas under the road bike type?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""CA"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""CA"" AND category_name = ""Cruisers Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""4"" AND customer_state = ""TX"" AND category_name = ""Road Bikes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average percentage off received when buying item number 1 in California for both cyclocross and cruisers bicycles, together with item number 4 bought in Texas from the road bike selection?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""CA"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""CA"" AND category_name = ""Cruisers Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""4"" AND customer_state = ""TX"" AND category_name = ""Road Bikes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -408,7 +408,7 @@ What is the average discount received when buying the first product in Californi
     </tr>
   </tbody>
 </table>",,0.133333
-"What is the mean discount given on items from Ritchey handled by employee number nine, together with all discounts on Pure Cycles goods managed by employees three and nine?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE brand_name = ""Ritchey"" AND staff_id = ""9"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""3"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""9"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average amount of discount offered on items made by Ritchey when sold by employee number 9, together with the discounts on products from Pure Cycles handled by employees numbered 3 and 9?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE brand_name = ""Ritchey"" AND staff_id = ""9"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""3"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""9"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr>
       <th></th>
@@ -606,7 +606,7 @@ What is the average discount received when buying the first product in Californi
     </tr>
   </tbody>
 </table>",,0.166667
-What is the average price reduction given on purchases from store number 3 when combining the discounts for electric bikes that were completed and cruiser bicycles that are still in processing?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE order_status = ""4"" AND store_id = ""3"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""2"" AND store_id = ""3"" AND category_name = ""Cruisers Bicycles"");",average,"<table border=""1"" class=""dataframe"">
+What is the average percentage off offered for orders placed at store number 3 that are either completed electric bike purchases or pending cruiser bicycle sales?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE order_status = ""4"" AND store_id = ""3"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""2"" AND store_id = ""3"" AND category_name = ""Cruisers Bicycles"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -748,7 +748,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,0.15
-"What is the mean price of all purchases that either have an order status of 2 or 4 involving item number 4 sold to New York clients, or have an order status of 1 with item number 1 or status 3 with item number 3 made by customers from Texas?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""4"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""3"" AND customer_state = ""TX"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""4"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND item_id = ""1"" AND customer_state = ""TX"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average amount charged for orders placed in New York for product number four at order stages two or four, combined with the average price of product three sold in Texas during order phase three, and product one sold in Texas when the order phase is one?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""4"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""3"" AND customer_state = ""TX"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""4"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND item_id = ""1"" AND customer_state = ""TX"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -893,7 +893,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,867.49
-"What is the overall average discount on item number 4, considering only the discounts given by staff 8 for Cyclocross Bicycles and by staff 7 for Mountain Bikes?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE category_name = ""Cyclocross Bicycles"" AND item_id = ""4"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Mountain Bikes"" AND item_id = ""4"" AND staff_id = ""7"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean discount percentage for item 4 combining the discount given by employee 8 in the ""Cyclocross Bicycles"" category and the discount given by employee 7 in the ""Mountain Bikes"" category?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE category_name = ""Cyclocross Bicycles"" AND item_id = ""4"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Mountain Bikes"" AND item_id = ""4"" AND staff_id = ""7"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr>
       <th></th>
@@ -1036,7 +1036,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,0.1
-"What is the average amount earned from sales when looking at sports products sold in the East during the third quarter with a quantity sold of nine, clothing items sold in the Central area in the second quarter with just one unit purchased, and books bought in the West region during the second quarter with eight copies sold?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""3"" AND category = ""Sports"" AND region = ""East"" AND quantity_sold = ""9"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""2"" AND category = ""Clothing"" AND region = ""Central"" AND quantity_sold = ""1"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""2"" AND category = ""Books"" AND region = ""West"" AND quantity_sold = ""8"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average sales value of sports goods sold in the East during the third quarter with nine units sold, clothing items sold in the Central area during the second quarter with a single unit sold, and books sold in the West region during the second quarter when eight copies were sold?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""3"" AND category = ""Sports"" AND region = ""East"" AND quantity_sold = ""9"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""2"" AND category = ""Clothing"" AND region = ""Central"" AND quantity_sold = ""1"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""2"" AND category = ""Books"" AND region = ""West"" AND quantity_sold = ""8"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -1244,7 +1244,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,3059.403333
-"What is the overall average discount given when buying 5 units in the ninth month from BrandC, 1 unit in the third month from BrandD, and 7 units in the seventh month from BrandB?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""5"" AND month = ""9"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""1"" AND month = ""3"" AND brand = ""BrandD"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""7"" AND month = ""7"" AND brand = ""BrandB"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean discount offered when the units sold are 5 in September for brand C, 1 in March for brand D, and 7 in July for brand B combined together?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""5"" AND month = ""9"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""1"" AND month = ""3"" AND brand = ""BrandD"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""7"" AND month = ""7"" AND brand = ""BrandB"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -1416,7 +1416,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,30.63
-"What is the mean price per unit for products sold in the northern region during December and March combined, along with those sold in the western region in January and the eastern region in October?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""December"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""March"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""January"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""October"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average cost per unit for sales made in the northern region during December and March, combined with those in the western region for January, and in the eastern region during October?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""December"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""March"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""January"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""October"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -1557,7 +1557,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,488.285
-"What is the average price of products for BrandB in the eastern area during July 2025, BrandE in the western area for both June and November 2024, and BrandA also in the eastern area in June 2024?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""July"" AND year = ""2025"" AND brand = ""BrandB"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""June"" AND year = ""2024"" AND brand = ""BrandE"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""November"" AND year = ""2024"" AND brand = ""BrandE"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""June"" AND year = ""2024"" AND brand = ""BrandA"");",average,"<table border=""1"" class=""dataframe"">
+"What is the combined average cost per unit for products from the east area in July 2025 made by BrandB, as well as those sold in the west area during June and November 2024 produced by BrandE, together with items from the east area in June 2024 for BrandA?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""July"" AND year = ""2025"" AND brand = ""BrandB"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""June"" AND year = ""2024"" AND brand = ""BrandE"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""November"" AND year = ""2024"" AND brand = ""BrandE"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""June"" AND year = ""2024"" AND brand = ""BrandA"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -1687,7 +1687,7 @@ What is the average price reduction given on purchases from store number 3 when 
     </tr>
   </tbody>
 </table>",,455.62
-What is the combined average sales figure for BrandE's books sold in the southern area during 2024 and BrandB's toys sold in the northern area in the same year?,"SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND year = ""2024"" AND category = ""Books"" AND region = ""South"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND year = ""2024"" AND category = ""Toys"" AND region = ""North"");",average,"<table border=""1"" class=""dataframe"">
+What is the combined average sales figure for books sold by BrandE in the southern area and toys sold by BrandB in the northern area during 2024?,"SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND year = ""2024"" AND category = ""Books"" AND region = ""South"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND year = ""2024"" AND category = ""Toys"" AND region = ""North"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -1881,7 +1881,7 @@ What is the combined average sales figure for BrandE's books sold in the souther
     </tr>
   </tbody>
 </table>",,3563.825
-"What is the average revenue generated from clothing items sold in the first month of the year with a purchase quantity of four, together with electronic products bought in the last month, where only two units were sold?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Clothing"" AND month_name = ""January"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Electronics"" AND month_name = ""December"" AND quantity_sold = ""2"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean total revenue generated from clothing items sold in January when four units were purchased, combined with electronics sales from December where two units were bought?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Clothing"" AND month_name = ""January"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Electronics"" AND month_name = ""December"" AND quantity_sold = ""2"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -2040,7 +2040,7 @@ What is the combined average sales figure for BrandE's books sold in the souther
     </tr>
   </tbody>
 </table>",,1939.125
-What is the combined average markdown percentage for items from BrandC in kitchen and household goods during July and for BrandB’s athletic products sold in November?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE month = ""7"" AND category = ""Home & Kitchen"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE month = ""11"" AND category = ""Sports"" AND brand = ""BrandB"");",average,"<table border=""1"" class=""dataframe"">
+What is the combined average percentage discount offered on BrandC's home and kitchen items in July and BrandB's sports equipment in November?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE month = ""7"" AND category = ""Home & Kitchen"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE month = ""11"" AND category = ""Sports"" AND brand = ""BrandB"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -2183,7 +2183,7 @@ What is the combined average markdown percentage for items from BrandC in kitche
     </tr>
   </tbody>
 </table>",,25.04
-What is the mean price of items if you consider sports products from Canada made by brand D together with clothing items from Indonesia offered by brand B?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Sports"" AND store_country = ""Canada"" AND brand = ""BrandD"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Clothing"" AND store_country = ""Indonesia"" AND brand = ""BrandB"");",average,"<table border=""1"" class=""dataframe"">
+What is the combined average price of items from the sports selection available in Canada under Brand D and clothing products offered by Brand B in Indonesia?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Sports"" AND store_country = ""Canada"" AND brand = ""BrandD"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Clothing"" AND store_country = ""Indonesia"" AND brand = ""BrandB"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -2317,7 +2317,7 @@ What is the mean price of items if you consider sports products from Canada made
     </tr>
   </tbody>
 </table>",,749.37
-"What is the mean value of the sales totals when considering sales of three items in the southern area during November, eight items sold in the northern area in April, four items sold in the southern area in June, and four items sold in the western area in November?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""November"" AND quantity_sold = ""3"" AND region = ""South"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""April"" AND quantity_sold = ""8"" AND region = ""North"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""June"" AND quantity_sold = ""4"" AND region = ""South"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""November"" AND quantity_sold = ""4"" AND region = ""West"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean sales value for the combined data of selling three items in November in the southern area, eight items in April in the northern area, four items in June in the southern area, and four items in November in the western area?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""November"" AND quantity_sold = ""3"" AND region = ""South"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""April"" AND quantity_sold = ""8"" AND region = ""North"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""June"" AND quantity_sold = ""4"" AND region = ""South"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""November"" AND quantity_sold = ""4"" AND region = ""West"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -2448,7 +2448,7 @@ What is the mean price of items if you consider sports products from Canada made
     </tr>
   </tbody>
 </table>",,2862.05
-"What is the average selling price of the products numbered one, two, and three sold in New York, where the first product is from 2017 and the other two are from 2016?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND model_year = ""2017"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2016"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2016"" AND customer_state = ""NY"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average list_price of the three entries: item 1 in New York in 2017, item 3 in New York in 2016, and item 2 in New York in 2016?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND model_year = ""2017"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2016"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2016"" AND customer_state = ""NY"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th>customer_state</th>
@@ -2496,7 +2496,7 @@ What is the mean price of items if you consider sports products from Canada made
     </tr>
   </tbody>
 </table>",,583.99
-What is the average selling price of items that were either completed in 2018 by the staff member numbered three or placed with status one in 2016 by the staff member identified as eight?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND model_year = ""2018"" AND staff_id = ""3"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2016"" AND staff_id = ""8"");",average,"<table border=""1"" class=""dataframe"">
+What is the average selling price of items for orders that were either completed in 2018 by employee number three or placed in 2016 by employee number eight but with a different order status in each case?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND model_year = ""2018"" AND staff_id = ""3"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2016"" AND staff_id = ""8"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr>
       <th></th>
@@ -2678,7 +2678,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,699.99
-"What is the average list_price of these three items: the Electric Bikes item with item_id = 1 sold by staff_id 6, the Children Bicycles item with item_id = 5 sold by staff_id 6, and the Cruisers Bicycles item with item_id = 3 sold by staff_id 7?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND category_name = ""Electric Bikes"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND category_name = ""Children Bicycles"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""7"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average price of the electric bicycle model numbered 1 overseen by staff member 6, the children's bike model numbered 5 also managed by staff 6, and the cruiser bicycle model labeled 3 handled by staff member 7?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND category_name = ""Electric Bikes"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND category_name = ""Children Bicycles"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""7"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -2916,7 +2916,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,1289.99
-"What is the combined average percentage discount applied to electric bicycles sold in the first shop when the order is finalized at stage four, together with the discounts given on road bicycles at the second shop when orders are at status two?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""4"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""2"" AND order_status = ""2"" AND category_name = ""Road Bikes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the combined average markdown given to customers purchasing electric bikes from the first location with a finalized purchase status, and on road bike orders from the second location where the transaction is currently in a different specified processing stage?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""4"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""2"" AND order_status = ""2"" AND category_name = ""Road Bikes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -3097,7 +3097,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,0.15
-"What is the mean cost of the products with IDs three, four, and five sold at the Rowlett Bikes shop during 2017 and 2018, considering only items three in 2017, four in both years, and five in 2018?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2017"" AND store_name = ""Rowlett Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND model_year = ""2018"" AND store_name = ""Rowlett Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2018"" AND store_name = ""Rowlett Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2017"" AND store_name = ""Rowlett Bikes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average list_price at the Rowlett Bikes store for these specific item-year combinations: item_id 3 in model_year 2017, item_id 4 in model_year 2017, item_id 4 in model_year 2018, and item_id 5 in model_year 2018?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2017"" AND store_name = ""Rowlett Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND model_year = ""2018"" AND store_name = ""Rowlett Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2018"" AND store_name = ""Rowlett Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2017"" AND store_name = ""Rowlett Bikes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr>
       <th>model_year</th>
@@ -3205,7 +3205,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,347.74
-"What is the average cost of sending packages through Federal Shipping to the countries France, the UK, and Spain combined?","SELECT AVG(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""France"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""UK"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Spain"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average cost of shipments handled by Federal Shipping when sending parcels to France, the United Kingdom, and Spain?","SELECT AVG(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""France"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""UK"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Spain"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -3315,7 +3315,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,205.0
-"What is the average discount rate applied by the shipping companies Speedy Express for deliveries to the United Kingdom, United Package for shipments to Sweden, and Federal Shipping for parcels sent to Brazil?","SELECT AVG(Discount) AS Discount FROM (SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""UK"" AND ShipperName = ""Speedy Express"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Sweden"" AND ShipperName = ""United Package"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Brazil"" AND ShipperName = ""Federal Shipping"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean discount percentage for shipments handled by Speedy Express to the United Kingdom, United Package deliveries to Sweden, and Federal Shipping consignments sent to Brazil?","SELECT AVG(Discount) AS Discount FROM (SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""UK"" AND ShipperName = ""Speedy Express"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Sweden"" AND ShipperName = ""United Package"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Brazil"" AND ShipperName = ""Federal Shipping"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th>ShipperName</th>
@@ -3393,7 +3393,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,0.033333
-"What is the mean cost per item when sending packages using Speedy Express to Belgium, United Package to Spain, and Federal Shipping to the United Kingdom?","SELECT AVG(UnitPrice) AS UnitPrice FROM (SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Belgium"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""United Package"" AND ShipCountry = ""Spain"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""UK"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average cost per item for packages sent by Speedy Express to Belgium, United Package to Spain, and Federal Shipping to the United Kingdom?","SELECT AVG(UnitPrice) AS UnitPrice FROM (SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Belgium"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""United Package"" AND ShipCountry = ""Spain"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""UK"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -3507,7 +3507,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,10.9
-"What is the average shipping charge for shipments sent to Portugal and Argentina using the Federal Shipping service, combined with shipments sent to Austria and Germany handled by United Package?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Portugal"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Austria"" AND ShipperName = ""United Package"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Germany"" AND ShipperName = ""United Package"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average shipping fee charged for deliveries sent to Portugal and Argentina using Federal Shipping, combined with shipments to Austria and Germany handled by United Package?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Portugal"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Austria"" AND ShipperName = ""United Package"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Germany"" AND ShipperName = ""United Package"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -3611,7 +3611,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,53.9775
-"What is the mean shipping charge for packages that were dispatched using the first shipping option to either Italy or Spain, combined with those sent via the third shipping option heading to Austria?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""1"" AND ShipCountry = ""Italy"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Austria"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""1"" AND ShipCountry = ""Spain"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average shipping cost for deliveries sent either using the first shipping option to Italy or Spain, or using the third shipping option to Austria?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""1"" AND ShipCountry = ""Italy"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Austria"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""1"" AND ShipCountry = ""Spain"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -3757,7 +3757,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,58.643333
-"What is the average shipping cost for deliveries that were sent either to Belgium using the first shipping option, to Canada through the second delivery method, or to Poland via the third type of shipment?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Belgium"" AND ShipVia = ""1"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Canada"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Poland"" AND ShipVia = ""3"");",average,"<table border=""1"" class=""dataframe"">
+"What is the overall average shipping cost for deliveries sent to Belgium using the first shipping option, to Canada with the second shipping method, and to Poland transported by the third shipment mode?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Belgium"" AND ShipVia = ""1"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Canada"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Poland"" AND ShipVia = ""3"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -3889,7 +3889,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,41.766667
-"What is the average replacement cost for movies that meet one of these exact conditions: (1) rating = ""PG"", rental_duration = 4 days, and special_features exactly ""Commentaries,Behind the Scenes""; (2) rating = ""PG"", rental_duration = 7 days, and special_features exactly ""Commentaries,Behind the Scenes""; or (3) rating = ""G"", rental_duration = 5 days, and special_features exactly ""Commentaries,Deleted Scenes,Behind the Scenes""?","SELECT AVG(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""4"" AND special_features = ""Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""7"" AND special_features = ""Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""G"" AND rental_duration = ""5"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average replacement cost of movies that either (a) have rating ""PG"", are rented for 4 days, and have special_features exactly ""Commentaries,Behind the Scenes""; (b) have rating ""PG"", are rented for 7 days, and have special_features exactly ""Commentaries,Behind the Scenes""; or (c) have rating ""G"", are rented for 5 days, and have special_features exactly ""Commentaries,Deleted Scenes,Behind the Scenes""?","SELECT AVG(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""4"" AND special_features = ""Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""7"" AND special_features = ""Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""G"" AND rental_duration = ""5"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th>rental_duration</th>
@@ -4015,7 +4015,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,20.99
-"What is the mean rental price for movies that are either rented for five days rated PG with extras like trailers, commentaries, and deleted scenes; or rented for four days with an R rating featuring deleted scenes only; or rented for four days rated NC-17 which include trailers, commentaries, and behind-the-scenes materials; or rented for six days with an R rating that offers deleted scenes and behind-the-scenes content?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG"" AND special_features = ""Trailers,Commentaries,Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""4"" AND rating = ""NC-17"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""6"" AND rating = ""R"" AND special_features = ""Deleted Scenes,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean rental fee charged for films that either have a rental period of five days with a PG rating and special features ""Trailers,Commentaries,Deleted Scenes"", or have a four-day rental with an R rating and special features ""Deleted Scenes"", or have a four-day rental with an NC-17 rating and special features ""Trailers,Commentaries,Behind the Scenes"", or have a six-day rental with an R rating and special features ""Deleted Scenes,Behind the Scenes""?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG"" AND special_features = ""Trailers,Commentaries,Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""4"" AND rating = ""NC-17"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""6"" AND rating = ""R"" AND special_features = ""Deleted Scenes,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th>rental_duration</th>
@@ -4125,7 +4125,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,4.49
-"For movies available for a six-day rental period, what is the average cost to rent the titles that are either (1) rated PG-13 with special_features exactly equal to ""Commentaries,Behind the Scenes"" or (2) rated G with special_features exactly equal to ""Trailers,Commentaries""?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND special_features = ""Commentaries,Behind the Scenes"" AND rental_duration = ""6"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""G"" AND special_features = ""Trailers,Commentaries"" AND rental_duration = ""6"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean rental price for films rentable for six days that are either rated ""PG-13"" with special_features exactly ""Commentaries,Behind the Scenes"" or rated ""G"" with special_features exactly ""Trailers,Commentaries""?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND special_features = ""Commentaries,Behind the Scenes"" AND rental_duration = ""6"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""G"" AND special_features = ""Trailers,Commentaries"" AND rental_duration = ""6"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -4259,7 +4259,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,1.99
-"What is the average rental price for movies that are either (a) rated R, rented for three days, and whose special_features field is exactly ""Trailers,Behind the Scenes""; (b) rated PG, rented for three days, and whose special_features field is exactly ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes""; or (c) rated NC-17, rented for six days, and whose special_features field is exactly ""Trailers,Commentaries,Deleted Scenes""?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""R"" AND rental_duration = ""3"" AND special_features = ""Trailers,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND rental_duration = ""6"" AND special_features = ""Trailers,Commentaries,Deleted Scenes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average cost to rent movies that meet one of the following exact criteria: (1) rated R, rented for 3 days, and whose special features are exactly ""Trailers,Behind the Scenes""; (2) rated PG, rented for 3 days, and whose special features are exactly ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes""; or (3) rated NC-17, rented for 6 days, and whose special features are exactly ""Trailers,Commentaries,Deleted Scenes""?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""R"" AND rental_duration = ""3"" AND special_features = ""Trailers,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND rental_duration = ""6"" AND special_features = ""Trailers,Commentaries,Deleted Scenes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -4377,7 +4377,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,0.99
-"What is the average charge to replace movies that were rented for three days and rated suitable for some parental guidance including trailers, commentaries, and behind-the-scenes content; for four-day rentals rated restricted with the same extra features; and for six-day restricted rentals that include trailers, commentaries, and deleted scenes?","SELECT AVG(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""3"" AND rating = ""PG"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""6"" AND rating = ""R"" AND special_features = ""Trailers,Commentaries,Deleted Scenes"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average replacement cost of movies that meet any of these exact conditions: (1) rental_duration = 3, rating = ""PG"", and special_features exactly ""Trailers,Commentaries,Behind the Scenes""; (2) rental_duration = 4, rating = ""R"", and special_features exactly ""Trailers,Commentaries,Behind the Scenes""; or (3) rental_duration = 6, rating = ""R"", and special_features exactly ""Trailers,Commentaries,Deleted Scenes""?","SELECT AVG(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""3"" AND rating = ""PG"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""6"" AND rating = ""R"" AND special_features = ""Trailers,Commentaries,Deleted Scenes"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -4570,7 +4570,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,18.99
-"What is the average amount spent by customers from Minnesota purchasing BrandB in the eastern area, customers from Hawaii buying BrandA in the western area, and customers from Missouri purchasing BrandE also in the eastern area?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""East"" AND customer_state = ""Minnesota"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandA"" AND region = ""West"" AND customer_state = ""Hawaii"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND region = ""East"" AND customer_state = ""Missouri"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average spending (total_amount) for the combined purchases from customers in Minnesota who bought BrandB in the East region, customers in Hawaii who bought BrandA in the West region, and customers in Missouri who bought BrandE in the East region?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""East"" AND customer_state = ""Minnesota"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandA"" AND region = ""West"" AND customer_state = ""Hawaii"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND region = ""East"" AND customer_state = ""Missouri"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -4688,7 +4688,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,4275.3
-"What is the average purchase value when looking at gadgets sold in 2023 with eight items, garments sold in 2025 in sets of two, and kitchen or home goods bought in batches of five during 2025?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Electronics"" AND quantity_sold = ""8"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2025"" AND category = ""Clothing"" AND quantity_sold = ""2"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2025"" AND category = ""Home & Kitchen"" AND quantity_sold = ""5"");",average,"<table border=""1"" class=""dataframe"">
+"What is the mean total sales value for electronic items sold in 2023 when exactly eight units were purchased, combined with apparel items sold in 2025 with two units sold, and also household and kitchen products sold in 2025 where five units were bought?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Electronics"" AND quantity_sold = ""8"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2025"" AND category = ""Clothing"" AND quantity_sold = ""2"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2025"" AND category = ""Home & Kitchen"" AND quantity_sold = ""5"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>
@@ -4830,7 +4830,7 @@ What is the average selling price of items that were either completed in 2018 by
     </tr>
   </tbody>
 </table>",,3165.07
-What is the average unit_price across all Clothing items with quantity_sold = 4 in 2023 and Home & Kitchen items with quantity_sold = 5 in 2023?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""4"" AND year = ""2023"" AND category = ""Clothing"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""5"" AND year = ""2023"" AND category = ""Home & Kitchen"");",average,"<table border=""1"" class=""dataframe"">
+What is the average price per single item in 2023 when looking at clothing items bought in groups of four and home and kitchen products purchased in batches of five?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""4"" AND year = ""2023"" AND category = ""Clothing"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""5"" AND year = ""2023"" AND category = ""Home & Kitchen"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr>
       <th></th>
@@ -5025,7 +5025,7 @@ What is the average unit_price across all Clothing items with quantity_sold = 4 
     </tr>
   </tbody>
 </table>",,500.98
-"What is the average cost per unit for sales in 2024 from the Eastern territory with a quantity of 5, combined with the sales in 2025 from the Southern area when 9 and 8 units were sold, and also including sales from the Eastern side in 2025 with a quantity of 3?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""East"" AND quantity_sold = ""5"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""South"" AND quantity_sold = ""9"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""East"" AND quantity_sold = ""3"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""South"" AND quantity_sold = ""8"");",average,"<table border=""1"" class=""dataframe"">
+"What is the average cost per item for sales made in the eastern part in 2024 when five units were sold, combined with sales in the southern part in 2025 when eight or nine units were sold, as well as sales in the eastern part in 2025 when three units were sold?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""East"" AND quantity_sold = ""5"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""South"" AND quantity_sold = ""9"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""East"" AND quantity_sold = ""3"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""South"" AND quantity_sold = ""8"");",average,"<table border=""1"" class=""dataframe"">
   <thead>
     <tr style=""text-align: right;"">
       <th></th>

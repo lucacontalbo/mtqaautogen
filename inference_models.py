@@ -1,5 +1,5 @@
 import time
-
+import os
 from pydantic import BaseModel, Field
 from typing import Any, Dict
 from openai import OpenAI
@@ -119,8 +119,8 @@ class QwenModel(BaseModel):
     model_name: str = Field("Qwen/Qwen3.5-9B", strict=True, description="Name of the Qwen model")
     temperature: float = Field(.0, strict=True, description="The temperature of the model in between 0 and 1")
     top_p: float = Field(.8, strict=True, description="The top_p of the model in between 0 and 1")
-    base_url: str = Field("http://localhost:8000/v1", strict=True, description="vLLM server URL")
-    api_key: str = Field("EMPTY", strict=True, description="API key for the server")
+    base_url: str = Field(default_factory=lambda: os.getenv("OPENAI_BASE_URL", "http://localhost:8000/v1"), strict=True, description="vLLM server URL")
+    api_key: str = Field(default_factory=lambda: os.getenv("OPENAI_API_KEY", "EMPTY"), strict=True, description="API key for the server")
     client: Any = None
     max_retries: int = Field(50, strict=True, description="Number of retries in case of failed API call")
 
@@ -129,6 +129,7 @@ class QwenModel(BaseModel):
             base_url=self.base_url,
             api_key=self.api_key
         )
+        print(f"Using base_url={self.base_url} model_name={self.model_name}")
 
     @timeout_decorator.timeout(60, timeout_exception=StopIteration)
     def call_gpt(self, prompt: str) -> (str, dict):
@@ -143,6 +144,7 @@ class QwenModel(BaseModel):
                 temperature=self.temperature,
                 top_p=self.top_p,
                 seed=42,
+                max_tokens=16192,
         )
 
         metadata = {
@@ -165,8 +167,8 @@ class QwenModel(BaseModel):
                 text += "\n" + response[0]
                 response[1]["text"] = text
                 return response
-            except:
+            except Exception as e:
+                print(f"Failed to get a response: {e}. Retrying...")
                 time.sleep(20)
-                print("Failed to get a response. Retrying...")
 
         raise RuntimeError(f"Failed to query Qwen after {self.max_retries} retries.")
