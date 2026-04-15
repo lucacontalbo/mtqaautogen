@@ -1,0 +1,7056 @@
+CoT Reasoning
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean price of products numbered two, three, and four sold at the second retail location, considering only orders marked with status four for products three and four, while including orders with statuses one and four for product two?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>item_id</th>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>3</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4</td>
+      <td>5</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>4</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>4</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>549.99</td>
+    </tr>
+    <tr>
+      <th>4312</th>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>919.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Select rows with store_id = 2:
+- item_id 1, status 4, list_price = 599.990000
+- item_id 2, status 4, list_price = 599.990000
+- item_id 3, status 4, list_price = 599.990000
+- item_id 4, status 4, list_price = 999.990000
+- item_id 5, status 4, list_price = 2999.990000
+- item_id 1, status 3, list_price = 549.990000
+- item_id 2, status 1, list_price = 919.990000
+
+Step 2: Apply status filters per product:
+- For product 2 include statuses 1 and 4 → prices: 599.990000, 919.990000
+- For product 3 include only status 4 → price: 599.990000
+- For product 4 include only status 4 → price: 999.990000
+
+Step 3: Sum the selected prices (with 6 decimal places):
+- 599.990000 + 919.990000 = 1519.980000
+- 1519.980000 + 599.990000 = 2119.970000
+- 2119.970000 + 999.990000 = 3119.960000
+
+Step 4: Count of selected prices = 4
+
+Step 5: Mean = sum / count = 3119.960000 / 4 = 779.990000
+
+Final answer: 779.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average asking price for cyclocross bicycles available at the third store, considering the models released in both 2017 and 2018?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>store_id</th>
+      <th>staff_id</th>
+      <th>store_state</th>
+      <th>model_year</th>
+      <th>category_name</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>2016</td>
+      <td>Cruisers Bicycles</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>2016</td>
+      <td>Mountain Bikes</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>2016</td>
+      <td>Cyclocross Bicycles</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Cruisers Bicycles</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Mountain Bikes</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Cruisers Bicycles</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>2016</td>
+      <td>Mountain Bikes</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Cyclocross Bicycles</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Comfort Bicycles</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Mountain Bikes</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Electric Bikes</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>2016</td>
+      <td>Children Bicycles</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>2016</td>
+      <td>Children Bicycles</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>2016</td>
+      <td>Cruisers Bicycles</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>1816</th>
+      <td>3</td>
+      <td>9</td>
+      <td>TX</td>
+      <td>2017</td>
+      <td>Cyclocross Bicycles</td>
+      <td>3499.99</td>
+    </tr>
+    <tr>
+      <th>3849</th>
+      <td>3</td>
+      <td>8</td>
+      <td>TX</td>
+      <td>2018</td>
+      <td>Cyclocross Bicycles</td>
+      <td>2999.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify cyclocross entries for store_id 3: prices are 3499.990000 (2017) and 2999.990000 (2018).
+Step 2: Sum the prices: 3499.990000 + 2999.990000 = 6499.980000.
+Step 3: Compute the average: 6499.980000 / 2 = 3249.990000.
+
+Final answer:3249.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average percentage off received when buying item number 1 in California for both cyclocross and cruisers bicycles, together with item number 4 bought in Texas from the road bike selection?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>customer_state</th>
+      <th>store_city</th>
+      <th>store_state</th>
+      <th>category_name</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Mountain Bikes</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2101</th>
+      <td>4</td>
+      <td>TX</td>
+      <td>Rowlett</td>
+      <td>TX</td>
+      <td>Road Bikes</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+- Relevant records:
+  - item_id 1, customer_state CA, Cruisers Bicycles → discount = 0.200000
+  - item_id 1, customer_state CA, Cyclocross Bicycles → discount = 0.100000
+  - item_id 4, customer_state TX, Road Bikes → discount = 0.100000
+- Sum of discounts = 0.200000 + 0.100000 + 0.100000 = 0.400000
+- Average = 0.400000 / 3 = 0.133333
+
+Final answer: 0.133333"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average amount of discount offered on items made by Ritchey when sold by employee number 9, together with the discounts on products from Pure Cycles handled by employees numbered 3 and 9?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>brand_name</th>
+      <th>category_name</th>
+      <th>staff_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Electra</td>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Trek</td>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Surly</td>
+      <td>Cyclocross Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Electra</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Surly</td>
+      <td>Mountain Bikes</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Electra</td>
+      <td>Cruisers Bicycles</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ritchey</td>
+      <td>Mountain Bikes</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Surly</td>
+      <td>Cyclocross Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Pure Cycles</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Electra</td>
+      <td>Comfort Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Surly</td>
+      <td>Mountain Bikes</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Pure Cycles</td>
+      <td>Cruisers Bicycles</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>Pure Cycles</td>
+      <td>Cruisers Bicycles</td>
+      <td>9</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>737</th>
+      <td>Ritchey</td>
+      <td>Mountain Bikes</td>
+      <td>9</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the requested discounts:
+- Ritchey sold by employee 9: discount = 0.100000
+- Pure Cycles sold by employee 3: discount = 0.200000
+- Pure Cycles sold by employee 9: discount = 0.200000
+
+Step 2: Sum the discounts:
+0.100000 + 0.200000 + 0.200000 = 0.500000
+
+Step 3: Compute the average (divide by 3):
+0.500000 / 3 = 0.166667
+
+Final answer: 0.166667"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average percentage off offered for orders placed at store number 3 that are either completed electric bike purchases or pending cruiser bicycle sales?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>category_name</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>4</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>Electric Bikes</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>4</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4347</th>
+      <td>2</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Filter rows for store_id == 3.
+Step 2: From those, select rows that are either (order_status == 4 and category_name == ""Electric Bikes"") or (order_status == 2 and category_name == ""Cruisers Bicycles"").
+Step 3: Matching rows are:
+- index 94: order_status 4, category ""Electric Bikes"", discount 0.2
+- index 4347: order_status 2, category ""Cruisers Bicycles"", discount 0.1
+Step 4: Compute the average discount = (0.2 + 0.1) / 2 = 0.150000
+
+Final answer: 0.150000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average amount charged for orders placed in New York for product number four at order stages two or four, combined with the average price of product three sold in Texas during order phase three, and product one sold in Texas when the order phase is one?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>item_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>5</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4</td>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>3</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>4</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4</td>
+      <td>5</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>1</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>4</td>
+      <td>2</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>4</td>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>3</td>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4310</th>
+      <td>2</td>
+      <td>4</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>959.99</td>
+    </tr>
+    <tr>
+      <th>4410</th>
+      <td>1</td>
+      <td>1</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>909.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Find New York, product 4, order_status 2 or 4:
+- Prices: 999.990000 and 959.990000
+- Average = (999.990000 + 959.990000) / 2 = 1959.980000 / 2 = 979.990000
+
+Step 2: Find Texas, product 3, order_status 3:
+- Prices: 599.990000
+- Average = 599.990000
+
+Step 3: Find Texas, product 1, order_status 1:
+- Prices: 909.990000
+- Average = 909.990000
+
+Step 4: Combine (sum) the three averages:
+- Total = 979.990000 + 599.990000 + 909.990000 = 2489.970000
+
+Final answer: 2489.970000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean discount percentage for item 4 combining the discount given by employee 8 in the ""Cyclocross Bicycles"" category and the discount given by employee 7 in the ""Mountain Bikes"" category?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>category_name</th>
+      <th>item_id</th>
+      <th>staff_id</th>
+      <th>store_city</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cruisers Bicycles</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cyclocross Bicycles</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Cruisers Bicycles</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mountain Bikes</td>
+      <td>5</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Cruisers Bicycles</td>
+      <td>1</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Mountain Bikes</td>
+      <td>1</td>
+      <td>7</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>7</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Mountain Bikes</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Cyclocross Bicycles</td>
+      <td>1</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Comfort Bicycles</td>
+      <td>3</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Cruisers Bicycles</td>
+      <td>3</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Mountain Bikes</td>
+      <td>4</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Electric Bikes</td>
+      <td>5</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Children Bicycles</td>
+      <td>1</td>
+      <td>7</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Mountain Bikes</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Mountain Bikes</td>
+      <td>4</td>
+      <td>7</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>1086</th>
+      <td>Cyclocross Bicycles</td>
+      <td>4</td>
+      <td>8</td>
+      <td>Rowlett</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Locate the two records:
+- Cyclocross Bicycles, item_id 4, staff_id 8 → discount = 0.100000
+- Mountain Bikes, item_id 4, staff_id 7 → discount = 0.100000
+
+Step 2: Compute mean:
+- Sum = 0.100000 + 0.100000 = 0.200000
+- Mean = 0.200000 / 2 = 0.100000
+
+Final answer: 0.100000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average sales value of sports goods sold in the East during the third quarter with nine units sold, clothing items sold in the Central area during the second quarter with a single unit sold, and books sold in the West region during the second quarter when eight copies were sold?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>quarter</th>
+      <th>category</th>
+      <th>region</th>
+      <th>quantity_sold</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>4</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Toys</td>
+      <td>North</td>
+      <td>4</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Electronics</td>
+      <td>South</td>
+      <td>4</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>9</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>9</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>5</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>Home &amp; Kitchen</td>
+      <td>East</td>
+      <td>5</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>4</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>9</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4</td>
+      <td>Toys</td>
+      <td>East</td>
+      <td>6</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>3</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>8</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>4</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>4</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>6</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>4</td>
+      <td>Sports</td>
+      <td>East</td>
+      <td>9</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>3</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>Sports</td>
+      <td>Central</td>
+      <td>4</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>2</td>
+      <td>Books</td>
+      <td>West</td>
+      <td>8</td>
+      <td>1392.20</td>
+    </tr>
+    <tr>
+      <th>674</th>
+      <td>2</td>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>1</td>
+      <td>508.10</td>
+    </tr>
+    <tr>
+      <th>1615</th>
+      <td>3</td>
+      <td>Sports</td>
+      <td>East</td>
+      <td>9</td>
+      <td>7277.91</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the three matching rows and their total_amount values.
+- Sports, East, quarter 3, quantity 9 -> total_amount = 7277.910000
+- Clothing, Central, quarter 2, quantity 1 -> total_amount = 508.100000
+- Books, West, quarter 2, quantity 8 -> total_amount = 1392.200000
+
+Step 2: Sum the three total_amount values.
+- Sum = 7277.910000 + 508.100000 + 1392.200000 = 9178.210000
+
+Step 3: Compute the average (sum divided by 3) with six-decimal precision.
+- Average = 9178.210000 / 3 = 3059.403333
+
+Final answer:3059.403333"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean discount offered when the units sold are 5 in September for brand C, 1 in March for brand D, and 7 in July for brand B combined together?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>quantity_sold</th>
+      <th>month</th>
+      <th>year</th>
+      <th>brand</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>4</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>35.64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>37.93</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>33.39</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9</td>
+      <td>12</td>
+      <td>2023</td>
+      <td>BrandA</td>
+      <td>42.55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>4</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>38.12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>7</td>
+      <td>2025</td>
+      <td>BrandE</td>
+      <td>44.36</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>16.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>4.50</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>8</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>49.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>11</td>
+      <td>2024</td>
+      <td>BrandC</td>
+      <td>25.98</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>30.13</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4</td>
+      <td>6</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>25.32</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>9</td>
+      <td>11</td>
+      <td>2024</td>
+      <td>BrandD</td>
+      <td>37.31</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>0.12</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>46.51</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>7</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>12.47</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>7</td>
+      <td>7</td>
+      <td>2024</td>
+      <td>BrandB</td>
+      <td>35.53</td>
+    </tr>
+    <tr>
+      <th>562</th>
+      <td>5</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>18.59</td>
+    </tr>
+    <tr>
+      <th>1296</th>
+      <td>1</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>37.77</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+- Find the three matching rows in the table:
+  - quantity_sold = 5, month = 9, brand = BrandC → discount = 18.590000
+  - quantity_sold = 1, month = 3, brand = BrandD → discount = 37.770000
+  - quantity_sold = 7, month = 7, brand = BrandB → discount = 35.530000
+- Sum the discounts: 18.590000 + 37.770000 + 35.530000 = 91.890000
+- Mean = 91.890000 / 3.000000 = 30.630000
+
+Final answer: 30.630000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average cost per unit for sales made in the northern region during December and March, combined with those in the western region for January, and in the eastern region during October?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>region</th>
+      <th>month_name</th>
+      <th>month</th>
+      <th>quarter</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Central</td>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>North</td>
+      <td>May</td>
+      <td>5</td>
+      <td>2</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>South</td>
+      <td>February</td>
+      <td>2</td>
+      <td>1</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>West</td>
+      <td>December</td>
+      <td>12</td>
+      <td>4</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Central</td>
+      <td>July</td>
+      <td>7</td>
+      <td>3</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>East</td>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>West</td>
+      <td>January</td>
+      <td>1</td>
+      <td>1</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Central</td>
+      <td>August</td>
+      <td>8</td>
+      <td>3</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>East</td>
+      <td>November</td>
+      <td>11</td>
+      <td>4</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Central</td>
+      <td>September</td>
+      <td>9</td>
+      <td>3</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>North</td>
+      <td>June</td>
+      <td>6</td>
+      <td>2</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>North</td>
+      <td>September</td>
+      <td>9</td>
+      <td>3</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>West</td>
+      <td>November</td>
+      <td>11</td>
+      <td>4</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Central</td>
+      <td>February</td>
+      <td>2</td>
+      <td>1</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>West</td>
+      <td>March</td>
+      <td>3</td>
+      <td>1</td>
+      <td>740.71</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>West</td>
+      <td>July</td>
+      <td>7</td>
+      <td>3</td>
+      <td>814.87</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>West</td>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>313.01</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>North</td>
+      <td>March</td>
+      <td>3</td>
+      <td>1</td>
+      <td>569.24</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>North</td>
+      <td>December</td>
+      <td>12</td>
+      <td>4</td>
+      <td>387.52</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>East</td>
+      <td>October</td>
+      <td>10</td>
+      <td>4</td>
+      <td>330.84</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify unit prices.
+- North, December = 387.520000
+- North, March = 569.240000
+- West, January = 665.540000
+- East, October = 330.840000
+
+Step 2: Sum the unit prices.
+- Sum = 387.520000 + 569.240000 + 665.540000 + 330.840000 = 1953.140000
+
+Step 3: Compute the average (divide by 4).
+- Average = 1953.140000 / 4 = 488.285000
+
+Final answer: 488.285000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the combined average cost per unit for products from the east area in July 2025 made by BrandB, as well as those sold in the west area during June and November 2024 produced by BrandE, together with items from the east area in June 2024 for BrandA?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>region</th>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>brand</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Central</td>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>North</td>
+      <td>May</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>South</td>
+      <td>February</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>West</td>
+      <td>December</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>BrandA</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Central</td>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Central</td>
+      <td>July</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandE</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>East</td>
+      <td>April</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>West</td>
+      <td>January</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Central</td>
+      <td>August</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>East</td>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>BrandC</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Central</td>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>North</td>
+      <td>June</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>East</td>
+      <td>June</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>755.26</td>
+    </tr>
+    <tr>
+      <th>475</th>
+      <td>West</td>
+      <td>June</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandE</td>
+      <td>716.83</td>
+    </tr>
+    <tr>
+      <th>773</th>
+      <td>East</td>
+      <td>July</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>213.98</td>
+    </tr>
+    <tr>
+      <th>938</th>
+      <td>West</td>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>BrandE</td>
+      <td>136.41</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify matching records and their unit_price:
+- East, July 2025, BrandB: 213.980000
+- West, June 2024, BrandE: 716.830000
+- West, November 2024, BrandE: 136.410000
+- East, June 2024, BrandA: 755.260000
+
+Step 2: Sum the unit prices with six-decimal precision:
+213.980000 + 716.830000 = 930.810000
+930.810000 + 136.410000 = 1067.220000
+1067.220000 + 755.260000 = 1822.480000
+
+Step 3: Compute the average (sum / 4) with six-decimal precision:
+1822.480000 / 4 = 455.620000
+
+Final answer: 455.620000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the combined average sales figure for books sold by BrandE in the southern area and toys sold by BrandB in the northern area during 2024?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>brand</th>
+      <th>year</th>
+      <th>category</th>
+      <th>region</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BrandC</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BrandA</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>North</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BrandC</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>South</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BrandA</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BrandB</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>BrandE</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BrandA</td>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>East</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>BrandB</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>BrandD</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>BrandC</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>East</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>BrandD</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>BrandC</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>BrandD</td>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>East</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>Central</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>793.11</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>BrandB</td>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>West</td>
+      <td>2927.10</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>BrandB</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>North</td>
+      <td>4285.21</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>BrandE</td>
+      <td>2024</td>
+      <td>Books</td>
+      <td>South</td>
+      <td>2842.44</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Find BrandE, 2024, Books, South = 2842.440000
+Step 2: Find BrandB, 2024, Toys, North = 4285.210000
+Step 3: Sum = 2842.440000 + 4285.210000 = 7127.650000
+Step 4: Average = 7127.650000 / 2 = 3563.825000
+
+Final answer: 3563.825000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean total revenue generated from clothing items sold in January when four units were purchased, combined with electronics sales from December where two units were bought?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>category</th>
+      <th>month_name</th>
+      <th>month</th>
+      <th>quantity_sold</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clothing</td>
+      <td>April</td>
+      <td>4</td>
+      <td>4</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Toys</td>
+      <td>May</td>
+      <td>5</td>
+      <td>4</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Electronics</td>
+      <td>February</td>
+      <td>2</td>
+      <td>4</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Clothing</td>
+      <td>December</td>
+      <td>12</td>
+      <td>9</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Electronics</td>
+      <td>April</td>
+      <td>4</td>
+      <td>9</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Home &amp; Kitchen</td>
+      <td>July</td>
+      <td>7</td>
+      <td>5</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Home &amp; Kitchen</td>
+      <td>April</td>
+      <td>4</td>
+      <td>5</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Clothing</td>
+      <td>January</td>
+      <td>1</td>
+      <td>4</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Home &amp; Kitchen</td>
+      <td>August</td>
+      <td>8</td>
+      <td>9</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Toys</td>
+      <td>November</td>
+      <td>11</td>
+      <td>6</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Electronics</td>
+      <td>September</td>
+      <td>9</td>
+      <td>8</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clothing</td>
+      <td>June</td>
+      <td>6</td>
+      <td>4</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Clothing</td>
+      <td>September</td>
+      <td>9</td>
+      <td>4</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Clothing</td>
+      <td>November</td>
+      <td>11</td>
+      <td>6</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sports</td>
+      <td>November</td>
+      <td>11</td>
+      <td>9</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Home &amp; Kitchen</td>
+      <td>February</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Sports</td>
+      <td>September</td>
+      <td>9</td>
+      <td>4</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Home &amp; Kitchen</td>
+      <td>July</td>
+      <td>7</td>
+      <td>2</td>
+      <td>793.11</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Sports</td>
+      <td>March</td>
+      <td>3</td>
+      <td>4</td>
+      <td>2927.10</td>
+    </tr>
+    <tr>
+      <th>1117</th>
+      <td>Electronics</td>
+      <td>December</td>
+      <td>12</td>
+      <td>2</td>
+      <td>1220.59</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Locate Clothing in January with quantity_sold = 4 → total_amount = 2657.660000.
+Step 2: Locate Electronics in December with quantity_sold = 2 → total_amount = 1220.590000.
+Step 3: Sum the two totals: 2657.660000 + 1220.590000 = 3878.250000.
+Step 4: Compute the mean: 3878.250000 / 2 = 1939.125000.
+
+Final answer: 1939.125000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the combined average percentage discount offered on BrandC's home and kitchen items in July and BrandB's sports equipment in November?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>month</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>category</th>
+      <th>brand</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>BrandC</td>
+      <td>35.64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>BrandA</td>
+      <td>37.93</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>BrandC</td>
+      <td>33.39</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>BrandA</td>
+      <td>42.55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>BrandB</td>
+      <td>38.12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>BrandE</td>
+      <td>44.36</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>BrandA</td>
+      <td>16.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>BrandB</td>
+      <td>4.50</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>BrandD</td>
+      <td>49.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>BrandC</td>
+      <td>25.98</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>9</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>BrandA</td>
+      <td>30.13</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>BrandA</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>9</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>BrandD</td>
+      <td>25.32</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>BrandC</td>
+      <td>16.44</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>7</td>
+      <td>3</td>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>BrandC</td>
+      <td>29.10</td>
+    </tr>
+    <tr>
+      <th>606</th>
+      <td>11</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>BrandB</td>
+      <td>20.98</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Locate BrandC Home & Kitchen in July — discount = 29.100000.
+Step 2: Locate BrandB Sports in November — discount = 20.980000.
+Step 3: Sum the two discounts: 29.100000 + 20.980000 = 50.080000.
+Step 4: Compute the average (combined average): 50.080000 / 2 = 25.040000.
+
+Final answer: 25.040000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the combined average price of items from the sports selection available in Canada under Brand D and clothing products offered by Brand B in Indonesia?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>category</th>
+      <th>region</th>
+      <th>store_country</th>
+      <th>brand</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>United Kingdom</td>
+      <td>BrandC</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Toys</td>
+      <td>North</td>
+      <td>Ethiopia</td>
+      <td>BrandA</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Electronics</td>
+      <td>South</td>
+      <td>United States Virgin Islands</td>
+      <td>BrandC</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Benin</td>
+      <td>BrandA</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>Guadeloupe</td>
+      <td>BrandB</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Cuba</td>
+      <td>BrandE</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Home &amp; Kitchen</td>
+      <td>East</td>
+      <td>Finland</td>
+      <td>BrandA</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Nicaragua</td>
+      <td>BrandB</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Egypt</td>
+      <td>BrandD</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Toys</td>
+      <td>East</td>
+      <td>Montenegro</td>
+      <td>BrandC</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>Bulgaria</td>
+      <td>BrandA</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>Montenegro</td>
+      <td>BrandA</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>Denmark</td>
+      <td>BrandD</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Canada</td>
+      <td>BrandC</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sports</td>
+      <td>East</td>
+      <td>Costa Rica</td>
+      <td>BrandD</td>
+      <td>198.48</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Malawi</td>
+      <td>BrandD</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Sports</td>
+      <td>Central</td>
+      <td>Sudan</td>
+      <td>BrandA</td>
+      <td>82.47</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Bulgaria</td>
+      <td>BrandA</td>
+      <td>402.79</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Sports</td>
+      <td>West</td>
+      <td>Canada</td>
+      <td>BrandD</td>
+      <td>779.76</td>
+    </tr>
+    <tr>
+      <th>459</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Indonesia</td>
+      <td>BrandB</td>
+      <td>718.98</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify items matching criteria.
+- Sports selection in Canada under Brand D: unit_price = 779.760000
+- Clothing products by Brand B in Indonesia: unit_price = 718.980000
+
+Step 2: Sum the prices.
+- Sum = 779.760000 + 718.980000 = 1498.740000
+
+Step 3: Compute the combined average (mean of the two items).
+- Average = 1498.740000 / 2 = 749.370000
+
+Final answer: 749.370000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean sales value for the combined data of selling three items in November in the southern area, eight items in April in the northern area, four items in June in the southern area, and four items in November in the western area?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>quantity_sold</th>
+      <th>region</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>Central</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>May</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>4</td>
+      <td>North</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>February</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>South</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>December</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>9</td>
+      <td>West</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>Central</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>July</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>5</td>
+      <td>Central</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>5</td>
+      <td>East</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>January</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>West</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>August</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>Central</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>6</td>
+      <td>East</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>8</td>
+      <td>Central</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>June</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>North</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>1029</th>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>3</td>
+      <td>South</td>
+      <td>990.19</td>
+    </tr>
+    <tr>
+      <th>1042</th>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>4</td>
+      <td>West</td>
+      <td>1811.43</td>
+    </tr>
+    <tr>
+      <th>1744</th>
+      <td>June</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>4</td>
+      <td>South</td>
+      <td>2270.66</td>
+    </tr>
+    <tr>
+      <th>2944</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>8</td>
+      <td>North</td>
+      <td>6375.92</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+We locate the four specified records and their total_amount values:
+- November, South, quantity 3 → total_amount = 990.190000
+- April, North, quantity 8 → total_amount = 6375.920000
+- June, South, quantity 4 → total_amount = 2270.660000
+- November, West, quantity 4 → total_amount = 1811.430000
+
+Sum the amounts:
+- 990.190000 + 6375.920000 = 7366.110000
+- 7366.110000 + 2270.660000 = 9636.770000
+- 9636.770000 + 1811.430000 = 11448.200000
+
+Mean = 11448.200000 / 4 = 2862.050000
+
+Final answer: 2862.050000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average list_price of the three entries: item 1 in New York in 2017, item 3 in New York in 2016, and item 2 in New York in 2016?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>model_year</th>
+      <th>customer_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>1773</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>CA</td>
+      <td>329.99</td>
+    </tr>
+    <tr>
+      <th>1775</th>
+      <td>2</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>449.99</td>
+    </tr>
+    <tr>
+      <th>1776</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>551.99</td>
+    </tr>
+    <tr>
+      <th>1778</th>
+      <td>3</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>1782</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>4999.99</td>
+    </tr>
+    <tr>
+      <th>1787</th>
+      <td>5</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>416.99</td>
+    </tr>
+    <tr>
+      <th>1789</th>
+      <td>2</td>
+      <td>2017</td>
+      <td>CA</td>
+      <td>3499.99</td>
+    </tr>
+    <tr>
+      <th>1790</th>
+      <td>3</td>
+      <td>2017</td>
+      <td>CA</td>
+      <td>489.99</td>
+    </tr>
+    <tr>
+      <th>1809</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>CA</td>
+      <td>647.99</td>
+    </tr>
+    <tr>
+      <th>1815</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>TX</td>
+      <td>489.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Locate the three entries in the table:
+- item 1, 2017, NY → list_price = 551.990000
+- item 3, 2016, NY → list_price = 599.990000
+- item 2, 2016, NY → list_price = 599.990000
+
+Step 2: Sum the list_prices:
+551.990000 + 599.990000 + 599.990000 = 1751.970000
+
+Step 3: Compute the average:
+1751.970000 / 3 = 583.990000
+
+Final answer: 583.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average selling price of items for orders that were either completed in 2018 by employee number three or placed in 2016 by employee number eight but with a different order status in each case?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>model_year</th>
+      <th>staff_id</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>2</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>7</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>3</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>8</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>9</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>549.99</td>
+    </tr>
+    <tr>
+      <th>290</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>9</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>519</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>2</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>742</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>3</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>8</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>429.00</td>
+    </tr>
+    <tr>
+      <th>1773</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>2</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>329.99</td>
+    </tr>
+    <tr>
+      <th>1775</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>449.99</td>
+    </tr>
+    <tr>
+      <th>1776</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>7</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>551.99</td>
+    </tr>
+    <tr>
+      <th>3862</th>
+      <td>4</td>
+      <td>2018</td>
+      <td>3</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1099.99</td>
+    </tr>
+    <tr>
+      <th>4463</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>8</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>299.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify orders ""completed in 2018 by employee number three"": row 3862 has model_year 2018, staff_id 3, order_status 4, list_price 1099.990000.
+
+Step 2: Identify orders ""placed in 2016 by employee number eight"": rows 93 (order_status 4, list_price 1680.990000), 999 (order_status 3, list_price 429.000000), and 4463 (order_status 1, list_price 299.990000).
+
+Step 3: The two cases must have a different order status in each case. The 2018 employee 3 order has order_status 4, so exclude 2016 employee 8 orders with order_status 4 (row 93). Remaining 2016 employee 8 orders: 429.000000 and 299.990000.
+
+Step 4: Compute average of the selected list_price values: sum = 1099.990000 + 429.000000 + 299.990000 = 1828.980000. Average = 1828.980000 / 3 = 609.660000.
+
+Final answer: 609.660000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average price of the electric bicycle model numbered 1 overseen by staff member 6, the children's bike model numbered 5 also managed by staff 6, and the cruiser bicycle model labeled 3 handled by staff member 7?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>category_name</th>
+      <th>staff_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Cyclocross Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>Mountain Bikes</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2</td>
+      <td>Cruisers Bicycles</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>Mountain Bikes</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>Cyclocross Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>3</td>
+      <td>Cruisers Bicycles</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>5</td>
+      <td>Children Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>1</td>
+      <td>Electric Bikes</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>2999.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Locate the three rows and their list prices.
+- Electric Bikes, item_id=1, staff_id=6 → list_price = 2999.990000
+- Children Bicycles, item_id=5, staff_id=6 → list_price = 269.990000
+- Cruisers Bicycles, item_id=3, staff_id=7 → list_price = 599.990000
+
+Step 2: Sum the three prices with 6-decimal precision.
+2999.990000 + 269.990000 + 599.990000 = 3869.970000
+
+Step 3: Compute the average (sum / 3) with 6-decimal precision.
+3869.970000 / 3 = 1289.990000
+
+Final answer: 1289.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the combined average markdown given to customers purchasing electric bikes from the first location with a finalized purchase status, and on road bike orders from the second location where the transaction is currently in a different specified processing stage?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>store_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>order_status</th>
+      <th>category_name</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>4</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>4</td>
+      <td>Electric Bikes</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>4</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4321</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>2</td>
+      <td>Road Bikes</td>
+      <td>0.2</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+- Identify ""first location"" as store_id = 1 and ""finalized purchase status"" as order_status = 4.
+- Find rows with store_id = 1, order_status = 4, category_name = ""Electric Bikes"": row index 51 with discount = 0.1.
+- Average markdown for that group = 0.100000 (since only one matching row).
+
+- Identify ""second location"" as store_id = 2 and ""transaction currently in a different specified processing stage"" as order_status = 2.
+- Find rows with store_id = 2, order_status = 2, category_name = ""Road Bikes"": row index 4321 with discount = 0.2.
+- Average markdown for that group = 0.200000 (since only one matching row).
+
+- Combined average markdown = (0.100000 + 0.200000) / 2 = 0.150000.
+
+Final answer: 0.150000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average list_price at the Rowlett Bikes store for these specific item-year combinations: item_id 3 in model_year 2017, item_id 4 in model_year 2017, item_id 4 in model_year 2018, and item_id 5 in model_year 2018?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>model_year</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>1773</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>329.99</td>
+    </tr>
+    <tr>
+      <th>1817</th>
+      <td>3</td>
+      <td>2017</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>250.99</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>299.99</td>
+    </tr>
+    <tr>
+      <th>3924</th>
+      <td>4</td>
+      <td>2018</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>3925</th>
+      <td>5</td>
+      <td>2018</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>89.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the Rowlett Bikes list_price for each specified item-year:
+- item_id 3, model_year 2017: 250.990000
+- item_id 4, model_year 2017: 299.990000
+- item_id 4, model_year 2018: 749.990000
+- item_id 5, model_year 2018: 89.990000
+
+Step 2: Sum the list_prices with six-decimal precision:
+- 250.990000 + 299.990000 = 550.980000
+- 550.980000 + 749.990000 = 1300.970000
+- 1300.970000 + 89.990000 = 1390.960000
+
+Step 3: Compute the average (sum / 4) with six-decimal precision:
+- 1390.960000 / 4 = 347.740000
+
+Final answer: 347.740000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average cost of shipments handled by Federal Shipping when sending parcels to France, the United Kingdom, and Spain?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipperName</th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ExtendedPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Federal Shipping</td>
+      <td>France</td>
+      <td>France</td>
+      <td>168.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Speedy Express</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>167.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United Package</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Speedy Express</td>
+      <td>France</td>
+      <td>France</td>
+      <td>95.8</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>United Package</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>2462.4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>United Package</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>45.9</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Federal Shipping</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>304.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Federal Shipping</td>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>877.5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Speedy Express</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>608.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Federal Shipping</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Federal Shipping</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>163.2</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Federal Shipping</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>625.5</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Federal Shipping</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>532.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Federal Shipping</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>346.6</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Speedy Express</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>114.0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Speedy Express</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>456.0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>United Package</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Federal Shipping</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>565.4</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Speedy Express</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>United Package</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>248.0</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>United Package</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>351.0</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Speedy Express</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>43.2</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Speedy Express</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Federal Shipping</td>
+      <td>UK</td>
+      <td>UK</td>
+      <td>240.0</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>Federal Shipping</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>207.0</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify Federal Shipping rows for France, the United Kingdom (UK), and Spain.
+- France: ExtendedPrice = 168.000000
+- UK: ExtendedPrice = 240.000000
+- Spain: ExtendedPrice = 207.000000
+
+Step 2: Sum the three costs with six-decimal precision.
+- Sum = 168.000000 + 240.000000 + 207.000000 = 615.000000
+
+Step 3: Compute the average with six-decimal precision.
+- Average = 615.000000 / 3 = 205.000000
+
+Final answer: 205.000000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean discount percentage for shipments handled by Speedy Express to the United Kingdom, United Package deliveries to Sweden, and Federal Shipping consignments sent to Brazil?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipperName</th>
+      <th>Discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>United Package</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Speedy Express</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>United Package</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>United Package</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Speedy Express</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Federal Shipping</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Federal Shipping</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Federal Shipping</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Speedy Express</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>United Package</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Federal Shipping</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>Speedy Express</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>United Package</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>United Package</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>Federal Shipping</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>284</th>
+      <td>UK</td>
+      <td>UK</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify Speedy Express shipments to the United Kingdom.
+- Row found: index 284 with Discount = 0.000000.
+- Mean = sum(discounts) / count = 0.000000 / 1 = 0.000000.
+
+Step 2: Identify United Package deliveries to Sweden.
+- Row found: index 78 with Discount = 0.000000.
+- Mean = 0.000000 / 1 = 0.000000.
+
+Step 3: Identify Federal Shipping consignments sent to Brazil.
+- Row found: index 104 with Discount = 0.100000.
+- Mean = 0.100000 / 1 = 0.100000.
+
+Final answer: 0.000000, 0.000000, 0.100000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average cost per item for packages sent by Speedy Express to Belgium, United Package to Spain, and Federal Shipping to the United Kingdom?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipperName</th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>UnitPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Federal Shipping</td>
+      <td>France</td>
+      <td>France</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Speedy Express</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>18.6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United Package</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Speedy Express</td>
+      <td>France</td>
+      <td>France</td>
+      <td>16.8</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>United Package</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>64.8</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>United Package</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Federal Shipping</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Federal Shipping</td>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>35.1</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Speedy Express</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Federal Shipping</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Federal Shipping</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Federal Shipping</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>13.9</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Federal Shipping</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Federal Shipping</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>30.4</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Speedy Express</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Speedy Express</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>United Package</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Federal Shipping</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>24.8</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Speedy Express</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>United Package</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>15.5</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>United Package</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>31.2</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Speedy Express</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Federal Shipping</td>
+      <td>UK</td>
+      <td>UK</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>United Package</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>14.7</td>
+    </tr>
+    <tr>
+      <th>604</th>
+      <td>Speedy Express</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the three relevant UnitPrice values from the table:
+- Speedy Express to Belgium = 10.000000
+- United Package to Spain = 14.700000
+- Federal Shipping to the United Kingdom = 8.000000
+
+Step 2: Sum the values with 6-decimal precision:
+10.000000 + 14.700000 + 8.000000 = 32.700000
+
+Step 3: Compute the average (sum / 3) with 6-decimal precision:
+32.700000 / 3 = 10.900000
+
+Final answer: 10.900000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average shipping fee charged for deliveries sent to Portugal and Argentina using Federal Shipping, combined with shipments to Austria and Germany handled by United Package?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipperName</th>
+      <th>Freight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Federal Shipping</td>
+      <td>32.38</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Speedy Express</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>United Package</td>
+      <td>65.83</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Speedy Express</td>
+      <td>41.34</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>United Package</td>
+      <td>51.30</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>United Package</td>
+      <td>22.98</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>Federal Shipping</td>
+      <td>148.33</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>Federal Shipping</td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Speedy Express</td>
+      <td>140.51</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Federal Shipping</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Federal Shipping</td>
+      <td>48.29</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Federal Shipping</td>
+      <td>146.06</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Federal Shipping</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Federal Shipping</td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Speedy Express</td>
+      <td>4.56</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Speedy Express</td>
+      <td>136.54</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>United Package</td>
+      <td>4.54</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Federal Shipping</td>
+      <td>76.07</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>Speedy Express</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>United Package</td>
+      <td>92.69</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>United Package</td>
+      <td>25.83</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Speedy Express</td>
+      <td>8.98</td>
+    </tr>
+    <tr>
+      <th>213</th>
+      <td>Portugal</td>
+      <td>Portugal</td>
+      <td>Federal Shipping</td>
+      <td>87.03</td>
+    </tr>
+    <tr>
+      <th>320</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>United Package</td>
+      <td>101.95</td>
+    </tr>
+    <tr>
+      <th>1401</th>
+      <td>Argentina</td>
+      <td>Argentina</td>
+      <td>Federal Shipping</td>
+      <td>1.10</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Select the required freight values and express each with 6 decimal places:
+- Portugal (Federal Shipping): 87.030000
+- Argentina (Federal Shipping): 1.100000
+- Austria (United Package): 101.950000
+- Germany (United Package): 25.830000
+
+Step 2: Sum the values with 6-decimal precision:
+- 87.030000 + 1.100000 = 88.130000
+- 88.130000 + 101.950000 = 190.080000
+- 190.080000 + 25.830000 = 215.910000
+
+Step 3: Compute the average (sum / 4) with 6-decimal precision:
+- 215.910000 / 4 = 53.977500
+
+Final answer: 53.977500"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average shipping cost for deliveries sent either using the first shipping option to Italy or Spain, or using the third shipping option to Austria?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipVia</th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>Freight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>France</td>
+      <td>France</td>
+      <td>32.38</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>65.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>France</td>
+      <td>France</td>
+      <td>41.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>51.30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>22.98</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>3</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>148.33</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>3</td>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>140.51</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>48.29</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>146.06</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>3</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>4.56</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>136.54</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>4.54</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>3</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>76.07</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>92.69</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>25.83</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>8.98</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>2.94</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>3</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>12.76</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>3</td>
+      <td>UK</td>
+      <td>UK</td>
+      <td>22.77</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify rows matching the criteria:
+- ShipVia == 1 and ShipCountry in {Italy, Spain}: rows with Freight 26.930000 (Italy) and 2.940000 (Spain).
+- ShipVia == 3 and ShipCountry == Austria: row with Freight 146.060000.
+
+Step 2: Sum the selected Freight values with 6-decimal precision:
+- 26.930000 + 2.940000 = 29.870000
+- 29.870000 + 146.060000 = 175.930000
+
+Step 3: Count of selected deliveries = 3
+
+Step 4: Average = Sum / Count = 175.930000 / 3 = 58.643333
+
+Final answer: 58.643333"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the overall average shipping cost for deliveries sent to Belgium using the first shipping option, to Canada with the second shipping method, and to Poland transported by the third shipment mode?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipVia</th>
+      <th>Freight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>3</td>
+      <td>32.38</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>1</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>2</td>
+      <td>65.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>France</td>
+      <td>France</td>
+      <td>1</td>
+      <td>41.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>2</td>
+      <td>51.30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>2</td>
+      <td>22.98</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>3</td>
+      <td>148.33</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>3</td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>1</td>
+      <td>140.51</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>3</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>3</td>
+      <td>48.29</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>3</td>
+      <td>146.06</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>3</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>3</td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>1</td>
+      <td>4.56</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>1</td>
+      <td>136.54</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>2</td>
+      <td>4.54</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>3</td>
+      <td>76.07</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>1</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>2</td>
+      <td>92.69</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>2</td>
+      <td>25.83</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>1</td>
+      <td>8.98</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Canada</td>
+      <td>Canada</td>
+      <td>2</td>
+      <td>52.84</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>Poland</td>
+      <td>Poland</td>
+      <td>3</td>
+      <td>3.94</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>1</td>
+      <td>68.52</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the relevant shipments and their freight costs.
+- Belgium with ShipVia=1: Freight = 68.520000
+- Canada with ShipVia=2: Freight = 52.840000
+- Poland with ShipVia=3: Freight = 3.940000
+
+Step 2: Sum the freight costs.
+- Sum = 68.520000 + 52.840000 + 3.940000 = 125.300000
+
+Step 3: Compute the overall average (divide by 3).
+- Average = 125.300000 / 3.000000 = 41.766667
+
+Final answer: 41.766667"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average replacement cost of movies that either (a) have rating ""PG"", are rented for 4 days, and have special_features exactly ""Commentaries,Behind the Scenes""; (b) have rating ""PG"", are rented for 7 days, and have special_features exactly ""Commentaries,Behind the Scenes""; or (c) have rating ""G"", are rented for 5 days, and have special_features exactly ""Commentaries,Deleted Scenes,Behind the Scenes""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th>replacement_cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NC-17</td>
+      <td>7</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>18.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>5</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Deleted Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>R</td>
+      <td>6</td>
+      <td>Trailers</td>
+      <td>15.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG-13</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>24.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>16.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PG</td>
+      <td>4</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NC-17</td>
+      <td>5</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>10.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Commentaries</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>14.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>R</td>
+      <td>4</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>PG</td>
+      <td>4</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>419</th>
+      <td>PG</td>
+      <td>7</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th>769</th>
+      <td>G</td>
+      <td>5</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>13.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+We need movies matching any of:
+- (a) rating = ""PG"", rental_duration = 4, special_features = ""Commentaries,Behind the Scenes""
+- (b) rating = ""PG"", rental_duration = 7, special_features = ""Commentaries,Behind the Scenes""
+- (c) rating = ""G"", rental_duration = 5, special_features = ""Commentaries,Deleted Scenes,Behind the Scenes""
+
+Identify matching rows and their replacement_costs:
+- Row 273: PG, 4, ""Commentaries,Behind the Scenes"" → 20.99
+- Row 419: PG, 7, ""Commentaries,Behind the Scenes"" → 27.99
+- Row 769: G, 5, ""Commentaries,Deleted Scenes,Behind the Scenes"" → 13.99
+
+Convert to six-decimal precision and sum:
+- 20.990000 + 27.990000 = 48.980000
+- 48.980000 + 13.990000 = 62.970000
+
+Compute average with six-decimal precision:
+- 62.970000 / 3.000000 = 20.990000
+
+Final answer: 20.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean rental fee charged for films that either have a rental period of five days with a PG rating and special features ""Trailers,Commentaries,Deleted Scenes"", or have a four-day rental with an R rating and special features ""Deleted Scenes"", or have a four-day rental with an NC-17 rating and special features ""Trailers,Commentaries,Behind the Scenes"", or have a six-day rental with an R rating and special features ""Deleted Scenes,Behind the Scenes""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rental_duration</th>
+      <th>rating</th>
+      <th>special_features</th>
+      <th>rental_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>G</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>PG</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6</td>
+      <td>R</td>
+      <td>Trailers</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4</td>
+      <td>R</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>4</td>
+      <td>R</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>4</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>5</td>
+      <td>PG</td>
+      <td>Trailers,Commentaries,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>748</th>
+      <td>6</td>
+      <td>R</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify rows matching any of the four conditions.
+- 5-day, PG, ""Trailers,Commentaries,Deleted Scenes"": index 445, rental_rate = 4.990000
+- 4-day, R, ""Deleted Scenes"": index 58, rental_rate = 2.990000
+- 4-day, NC-17, ""Trailers,Commentaries,Behind the Scenes"": index 111, rental_rate = 4.990000
+- 6-day, R, ""Deleted Scenes,Behind the Scenes"": index 748, rental_rate = 4.990000
+
+Step 2: Sum the rental_rates (six-decimal precision).
+Sum = 4.990000 + 2.990000 + 4.990000 + 4.990000 = 17.960000
+
+Step 3: Compute the mean (divide by 4) with six-decimal precision.
+Mean = 17.960000 / 4 = 4.490000
+
+Final answer: 4.490000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean rental price for films rentable for six days that are either rated ""PG-13"" with special_features exactly ""Commentaries,Behind the Scenes"" or rated ""G"" with special_features exactly ""Trailers,Commentaries""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>special_features</th>
+      <th>rental_duration</th>
+      <th>rental_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>3</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>7</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>5</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>Deleted Scenes</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>Deleted Scenes</td>
+      <td>3</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>6</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>R</td>
+      <td>Trailers</td>
+      <td>6</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>3</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>6</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>5</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>3</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PG-13</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>R</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>4</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>R</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>3</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>R</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>3</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>G</td>
+      <td>Trailers,Commentaries</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>PG-13</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+- We need films with rental_duration = 6 and either (rating = ""PG-13"" and special_features = ""Commentaries,Behind the Scenes"") or (rating = ""G"" and special_features = ""Trailers,Commentaries"").
+- Scanning the table for rental_duration = 6:
+  - Row 55: rating = ""G"", special_features = ""Trailers,Commentaries"", rental_rate = 2.990000 (matches second condition).
+  - Row 63: rating = ""PG-13"", special_features = ""Commentaries,Behind the Scenes"", rental_rate = 0.990000 (matches first condition).
+- Sum the rental rates with six-decimal precision: 2.990000 + 0.990000 = 3.980000.
+- Compute the mean with six-decimal precision: 3.980000 / 2 = 1.990000.
+
+Final answer: 1.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average cost to rent movies that meet one of the following exact criteria: (1) rated R, rented for 3 days, and whose special features are exactly ""Trailers,Behind the Scenes""; (2) rated PG, rented for 3 days, and whose special features are exactly ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes""; or (3) rated NC-17, rented for 6 days, and whose special features are exactly ""Trailers,Commentaries,Deleted Scenes""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th>rental_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NC-17</td>
+      <td>7</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>5</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>R</td>
+      <td>6</td>
+      <td>Trailers</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG-13</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PG</td>
+      <td>4</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NC-17</td>
+      <td>5</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Commentaries</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>R</td>
+      <td>4</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>R</td>
+      <td>6</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Trailers,Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>491</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Commentaries,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+
+1) Find rows matching criterion (1): rating = R, rental_duration = 3, special_features = ""Trailers,Behind the Scenes"".
+   - Row 16 matches with rental_rate = 0.990000.
+
+2) Find rows matching criterion (2): rating = PG, rental_duration = 3, special_features = ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"".
+   - Row 141 matches with rental_rate = 0.990000.
+
+3) Find rows matching criterion (3): rating = NC-17, rental_duration = 6, special_features = ""Trailers,Commentaries,Deleted Scenes"".
+   - Row 491 matches with rental_rate = 0.990000.
+
+4) Sum the matching rental rates:
+   - Sum = 0.990000 + 0.990000 + 0.990000 = 2.970000.
+
+5) Compute the average (precision exactly 6 decimal places):
+   - Average = 2.970000 / 3 = 0.990000.
+
+Final answer: 0.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average replacement cost of movies that meet any of these exact conditions: (1) rental_duration = 3, rating = ""PG"", and special_features exactly ""Trailers,Commentaries,Behind the Scenes""; (2) rental_duration = 4, rating = ""R"", and special_features exactly ""Trailers,Commentaries,Behind the Scenes""; or (3) rental_duration = 6, rating = ""R"", and special_features exactly ""Trailers,Commentaries,Deleted Scenes""?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rental_duration</th>
+      <th>rating</th>
+      <th>special_features</th>
+      <th>replacement_cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>G</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>18.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>PG</td>
+      <td>Deleted Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6</td>
+      <td>R</td>
+      <td>Trailers</td>
+      <td>15.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>24.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>16.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>10.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>14.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4</td>
+      <td>R</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>6</td>
+      <td>R</td>
+      <td>Trailers,Commentaries,Deleted Scenes</td>
+      <td>13.99</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>4</td>
+      <td>R</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>617</th>
+      <td>3</td>
+      <td>PG</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>21.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify rows matching each exact condition.
+- Condition (1): rental_duration = 3, rating = ""PG"", special_features = ""Trailers,Commentaries,Behind the Scenes"" → row 617 with replacement_cost = 21.99
+- Condition (2): rental_duration = 4, rating = ""R"", special_features = ""Trailers,Commentaries,Behind the Scenes"" → row 389 with replacement_cost = 20.99
+- Condition (3): rental_duration = 6, rating = ""R"", special_features = ""Trailers,Commentaries,Deleted Scenes"" → row 170 with replacement_cost = 13.99
+
+Step 2: Compute sum of replacement costs with 6-decimal precision.
+- 21.990000 + 20.990000 + 13.990000 = 56.970000
+
+Step 3: Compute average with 6-decimal precision.
+- 56.970000 / 3.000000 = 18.990000
+
+Final answer: 18.990000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average spending (total_amount) for the combined purchases from customers in Minnesota who bought BrandB in the East region, customers in Hawaii who bought BrandA in the West region, and customers in Missouri who bought BrandE in the East region?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>brand</th>
+      <th>region</th>
+      <th>customer_state</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BrandC</td>
+      <td>Central</td>
+      <td>Washington</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BrandA</td>
+      <td>North</td>
+      <td>North Dakota</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BrandC</td>
+      <td>South</td>
+      <td>Arizona</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BrandA</td>
+      <td>West</td>
+      <td>Virginia</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BrandB</td>
+      <td>Central</td>
+      <td>Arizona</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>BrandE</td>
+      <td>Central</td>
+      <td>Indiana</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BrandA</td>
+      <td>East</td>
+      <td>Georgia</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>BrandB</td>
+      <td>West</td>
+      <td>Washington</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>BrandD</td>
+      <td>Central</td>
+      <td>Georgia</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>BrandC</td>
+      <td>East</td>
+      <td>Texas</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>BrandA</td>
+      <td>Central</td>
+      <td>Georgia</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>BrandA</td>
+      <td>North</td>
+      <td>New York</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>BrandD</td>
+      <td>North</td>
+      <td>Connecticut</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>BrandC</td>
+      <td>West</td>
+      <td>Oklahoma</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>BrandD</td>
+      <td>East</td>
+      <td>Hawaii</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>BrandD</td>
+      <td>Central</td>
+      <td>Louisiana</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BrandA</td>
+      <td>Central</td>
+      <td>Michigan</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>BrandA</td>
+      <td>Central</td>
+      <td>West Virginia</td>
+      <td>793.11</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>BrandB</td>
+      <td>West</td>
+      <td>Illinois</td>
+      <td>2927.10</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>BrandE</td>
+      <td>East</td>
+      <td>Wyoming</td>
+      <td>2307.21</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>BrandE</td>
+      <td>West</td>
+      <td>California</td>
+      <td>2412.26</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>BrandA</td>
+      <td>West</td>
+      <td>Massachusetts</td>
+      <td>6592.91</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>BrandB</td>
+      <td>East</td>
+      <td>Minnesota</td>
+      <td>1859.75</td>
+    </tr>
+    <tr>
+      <th>644</th>
+      <td>BrandA</td>
+      <td>West</td>
+      <td>Hawaii</td>
+      <td>4663.24</td>
+    </tr>
+    <tr>
+      <th>1871</th>
+      <td>BrandE</td>
+      <td>East</td>
+      <td>Missouri</td>
+      <td>6302.91</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify the three matching rows and their total_amount values:
+- Minnesota, BrandB, East = 1859.750000
+- Hawaii, BrandA, West = 4663.240000
+- Missouri, BrandE, East = 6302.910000
+
+Step 2: Sum the three amounts:
+1859.750000 + 4663.240000 = 6522.990000
+6522.990000 + 6302.910000 = 12825.900000
+
+Step 3: Compute the average (sum / 3):
+12825.900000 / 3 = 4275.300000
+
+Final answer: 4275.300000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the mean total sales value for electronic items sold in 2023 when exactly eight units were purchased, combined with apparel items sold in 2025 with two units sold, and also household and kitchen products sold in 2025 where five units were bought?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>year</th>
+      <th>category</th>
+      <th>quantity_sold</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>4</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>4</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>4</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>9</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>9</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>5</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>5</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>9</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>6</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>8</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>6</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>9</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>3</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>4</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>2</td>
+      <td>793.11</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2023</td>
+      <td>Electronics</td>
+      <td>3</td>
+      <td>2307.21</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2025</td>
+      <td>Books</td>
+      <td>3</td>
+      <td>2412.26</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2023</td>
+      <td>Toys</td>
+      <td>7</td>
+      <td>6592.91</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2025</td>
+      <td>Toys</td>
+      <td>9</td>
+      <td>2789.92</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>9</td>
+      <td>8561.07</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2024</td>
+      <td>Books</td>
+      <td>10</td>
+      <td>7619.40</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>10</td>
+      <td>6041.32</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>5</td>
+      <td>380.58</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>2</td>
+      <td>299.98</td>
+    </tr>
+    <tr>
+      <th>790</th>
+      <td>2023</td>
+      <td>Electronics</td>
+      <td>8</td>
+      <td>7723.49</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1 — Identify matching rows:
+- Electronics, year 2023, quantity_sold = 8 → total_amount = 7723.490000
+- Clothing (apparel), year 2025, quantity_sold = 2 → total_amount = 299.980000
+- Home & Kitchen (household and kitchen), year 2025, quantity_sold = 5 → total_amount = 1471.740000
+
+Step 2 — Sum the total_amount values:
+- Sum = 7723.490000 + 299.980000 + 1471.740000 = 9495.210000
+
+Step 3 — Compute the mean (divide by 3):
+- Mean = 9495.210000 / 3 = 3165.070000
+
+Final answer: 3165.070000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average price per single item in 2023 when looking at clothing items bought in groups of four and home and kitchen products purchased in batches of five?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>quantity_sold</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>category</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>9</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>198.48</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>82.47</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>402.79</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>740.71</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>5</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Home &amp; Kitchen</td>
+      <td>785.44</td>
+    </tr>
+    <tr>
+      <th>830</th>
+      <td>4</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>216.52</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step-by-step reasoning:
+- Filter rows for year = 2023 and category = ""Clothing"" with quantity_sold = 4: unit_price = 216.520000.
+- Filter rows for year = 2023 and category = ""Home & Kitchen"" with quantity_sold = 5: unit_price = 785.440000.
+- Compute average price per single item = (216.520000 + 785.440000) / 2 = 1001.960000 / 2 = 500.980000.
+
+Final answer: 500.980000"
+"Answer the following question given the provided HTML table.
+First reason step-by-step, then write ""Final answer:"" followed exclusively by the correct answer. Do not write anything else after ""Final answer:""
+Every calculation must be done with a precision of exactly 6 decimal places.
+Only the numerical value must be written in the final answer, except for comparative questions, where the final answer must be ""yes"" or ""no"".
+
+Question: What is the average cost per item for sales made in the eastern part in 2024 when five units were sold, combined with sales in the southern part in 2025 when eight or nine units were sold, as well as sales in the eastern part in 2025 when three units were sold?
+Table:
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>year</th>
+      <th>region</th>
+      <th>quantity_sold</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>4</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>North</td>
+      <td>4</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025</td>
+      <td>South</td>
+      <td>4</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>West</td>
+      <td>9</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>9</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>5</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2024</td>
+      <td>East</td>
+      <td>5</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>4</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2024</td>
+      <td>East</td>
+      <td>6</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>8</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2025</td>
+      <td>North</td>
+      <td>4</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>6</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2024</td>
+      <td>East</td>
+      <td>9</td>
+      <td>198.48</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>3</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>2</td>
+      <td>402.79</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2023</td>
+      <td>East</td>
+      <td>3</td>
+      <td>782.76</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>3</td>
+      <td>814.87</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2023</td>
+      <td>West</td>
+      <td>7</td>
+      <td>945.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>9</td>
+      <td>313.01</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>9</td>
+      <td>952.74</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>10</td>
+      <td>765.39</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>10</td>
+      <td>604.36</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2025</td>
+      <td>South</td>
+      <td>9</td>
+      <td>288.53</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>2025</td>
+      <td>South</td>
+      <td>8</td>
+      <td>414.56</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>2025</td>
+      <td>East</td>
+      <td>3</td>
+      <td>461.18</td>
+    </tr>
+  </tbody>
+</table>
+
+Let's think step-by-step. 
+Step 1: Identify matching rows and their unit_price values.
+- 2024, East, quantity 5 → unit_price = 960.560000
+- 2025, South, quantity 8 → unit_price = 414.560000
+- 2025, South, quantity 9 → unit_price = 288.530000
+- 2025, East, quantity 3 → unit_price = 461.180000
+
+Step 2: Sum the unit_price values (with 6-decimal precision).
+- 960.560000 + 414.560000 = 1375.120000
+- 1375.120000 + 288.530000 = 1663.650000
+- 1663.650000 + 461.180000 = 2124.830000
+
+Step 3: Compute the average (divide by 4) with 6-decimal precision.
+- 2124.830000 / 4 = 531.207500
+
+Final answer: 531.207500"

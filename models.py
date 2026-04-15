@@ -2,7 +2,7 @@ import os
 import re
 import pickle
 
-from openai_model import OpenAIModel, extract_result, remove_markdown_syntax
+from inference_models import OpenAIModel, extract_result, remove_markdown_syntax
 from prompts.generate_relational_table import prompt as prompt_generate_relational_table
 from prompts.generate_relational_table import prompt_domain as prompt_generate_relational_table_domain
 from prompts.generate_relational_table import prompt_domain_unit_specific as prompt_generate_relational_table_domain_unit
@@ -2442,6 +2442,7 @@ class MTAutoGen:
                     new_table = new_table.drop_duplicates(subset=cols, keep="first")
                     new_value_col = fcol
                     new_table[new_value_col] = new_table[new_value_col].apply(lambda x: round(x, decimals))
+                    table_relational_to_load = new_table.copy()
 
                     if method not in datasets:
                         datasets[method] = {}
@@ -2459,6 +2460,24 @@ class MTAutoGen:
 
                     if data is None:
                         continue
+
+                    # enforce at most 100 cells, while preserving all rows needed for the answer
+                    if table_relational_to_load.shape[0] * table_relational_to_load.shape[1] > 100:
+                        required_mask = full_mask.loc[table_relational_to_load.index]
+                        max_rows = max(1, 100 // table_relational_to_load.shape[1])
+
+                        if required_mask.sum() <= max_rows:
+                            kept_mask = required_mask.copy()
+                            extra_needed = max_rows - required_mask.sum()
+
+                            if extra_needed > 0:
+                                extra_indices = table_relational_to_load.index[~required_mask][:extra_needed]
+                                kept_mask.loc[extra_indices] = True
+
+                            table_relational_to_load = table_relational_to_load.loc[kept_mask]
+                        else:
+                            # keep all required rows in their original order
+                            table_relational_to_load = table_relational_to_load.loc[required_mask]
 
                     if self.rnd.randint(0, 1) == 1:  # apply perturbation with 50% chance
                         attrs = {
@@ -2535,7 +2554,7 @@ class MTAutoGen:
 
                     data["decimals"] = decimals
                     datasets[method]["non_relational"].append((table_hct, data))
-                    datasets[method]["relational"].append((table_relational, data))
+                    datasets[method]["relational"].append((table_relational_to_load, data))
 
                     #if j == 0:
                     print(f"Single table sample number {num} added to dataset")
@@ -2744,11 +2763,24 @@ class MTAutoGen:
                             new_table, new_value_col = self.perturber.insert_unit_of_measurement(new_table, new_value_col, new_units,
                                                                                                  unit_in_cell=unit_in_cell)
                             table_before_pivot = new_table.copy()
+                            if i == 0:
+                                rows_chosen = c_split[0]
+                                cols_chosen = c_split[1]
+                            elif i == 1:
+                                rows_chosen = c_split[1]
+                                cols_chosen = c_split[0]
+                            else:
+                                rows_chosen = self.rnd.sample(c_split[0], k=len(c_split[0]))
+                                cols_chosen = self.rnd.sample(c_split[1], k=len(c_split[1]))
+
+                            #new_table = new_table.sample(frac=1, random_state=i).reset_index(drop=True)
                             table_hct, rows_chosen, cols_chosen, option = self.perturber.multiheader_perturbation(new_table, new_value_col,
                                                                                 "", [],
                                                                                 aggr="first",
                                                                                 unit_in_cell=unit_in_cell, full_mask=new_full_mask,
-                                                                                rows_chosen=c_split[0], cols_chosen=c_split[1])
+                                                                                rows_chosen=rows_chosen, cols_chosen=cols_chosen)
+                            #table_hct = table_hct.sample(frac=1, random_state=i).reset_index(drop=True)
+
                         except:
                             good = False
                             break
