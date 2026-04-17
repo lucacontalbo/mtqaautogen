@@ -144,7 +144,7 @@ class QwenModel(BaseModel):
                 temperature=self.temperature,
                 top_p=self.top_p,
                 seed=42,
-                max_tokens=16192,
+                max_tokens=16184,
         )
 
         metadata = {

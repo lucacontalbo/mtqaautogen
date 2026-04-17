@@ -74,18 +74,19 @@ if __name__ == '__main__':
     df = pd.read_csv(args['filepath'])
     #method = args['filepath'].split("/")[-1].split(".")[0]
     if args["tatqa"]:
-        filepath = os.path.join(args["model"], args['filepath'].split("datasets/")[-1])
+        filepath = os.path.join(args["model"].split("/")[-1].replace(".", "-"), args['filepath'].split("datasets/")[-1])
         to_save_path = os.path.join("results", "tatqa", f"{filepath.split('.')[0]}")
         method = ""
     elif args["bird"]:
-        filepath = os.path.join(args["model"], args['filepath'].split("datasets/")[-1])
+        filepath = os.path.join(args["model"].split("/")[-1].replace(".", "-"), args['filepath'].split("datasets/")[-1])
         to_save_path = os.path.join("results", "bird", f"{filepath.split('.')[0]}")
         method = df.iloc[0]['Method']
     else:
-        filepath = os.path.join(args["model"], args['filepath'].split("datasets/")[-1])
+        filepath = os.path.join(args["model"].split("/")[-1].replace(".", "-"), args['filepath'].split("datasets/")[-1])
         to_save_path = os.path.join("results", "ours", f"{filepath.split('.')[0]}")
         method = df.iloc[0]['Method']
 
+    print(f"**** THE RESULTS WILL BE SAVED IN {to_save_path} DIR ****")
     predictions = []
     results = []
 
