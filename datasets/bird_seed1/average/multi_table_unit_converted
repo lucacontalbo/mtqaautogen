@@ -1,0 +1,1684 @@
+,Question,SQL Query,Method,Table,Constraints,Label
+0,"Across the selected areas comprising a non-designated region of FM, the southern coastal part of DE, and the mountainous section of MT, what is the highest recorded latitude value measured in unit?","['SELECT latitude FROM sample_table WHERE division = ""None"" AND state = ""FM"";', 'SELECT latitude FROM sample_table WHERE division = ""South Atlantic"" AND state = ""DE"";', 'SELECT latitude FROM sample_table WHERE division = ""Mountain"" AND state = ""MT"";']",superlative,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>division</th>
+      <th>None</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>region</th>
+      <th>None</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AS</th>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>FM</th>
+      <th>P.O. Box Only</th>
+      <td>0.0 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">GU</th>
+      <th>Branch</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>13.476192 unit</td>
+    </tr>
+    <tr>
+      <th>MH</th>
+      <th>P.O. Box Only</th>
+      <td>7.080122 unit</td>
+    </tr>
+    <tr>
+      <th>MP</th>
+      <th>P.O. Box Only</th>
+      <td>15.181826 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">PR</th>
+      <th>Branch</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>18.488773 unit</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Unique Post Office</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">PW</th>
+      <th>Non Postal Community Name-Unique</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>7.5002 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">VI</th>
+      <th>Non Postal Community Name</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""15"" halign=""left"">South</th>
+      <th></th>
+      <th colspan=""37"" halign=""left"">South</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>DC (Non Postal Community Name)</th>
+      <th>DC (Non Postal Community Name-Unique)</th>
+      <th>DC (P.O. Box Only)</th>
+      <th>DC (Post Office)</th>
+      <th>DC (Unique Post Office)</th>
+      <th>DE (Post Office)</th>
+      <th>FL (Branch)</th>
+      <th>FL (Non Postal Community Name)</th>
+      <th>FL (P.O. Box Only)</th>
+      <th>FL (Post Office)</th>
+      <th>FL (Unique Post Office)</th>
+      <th>GA (Branch)</th>
+      <th>GA (Branch-Unique)</th>
+      <th>GA (Community Post Office )</th>
+      <th>GA (Non Postal Community Name)</th>
+      <th></th>
+      <th>GA (Non Postal Community Name-Unique)</th>
+      <th>GA (P.O. Box Only)</th>
+      <th>GA (Post Office)</th>
+      <th>GA (Unique Post Office)</th>
+      <th>MD (Branch)</th>
+      <th>MD (Branch-Unique)</th>
+      <th>MD (Non Postal Community Name)</th>
+      <th>MD (Non Postal Community Name-Unique)</th>
+      <th>MD (P.O. Box Only)</th>
+      <th>MD (Post Office)</th>
+      <th>MD (Unique Post Office)</th>
+      <th>NC (Branch)</th>
+      <th>NC (Branch-Unique)</th>
+      <th>NC (Non Postal Community Name)</th>
+      <th>NC (P.O. Box Only)</th>
+      <th>NC (Post Office)</th>
+      <th>NC (Unique Post Office)</th>
+      <th>SC (Branch)</th>
+      <th>SC (Non Postal Community Name)</th>
+      <th>SC (P.O. Box Only)</th>
+      <th>SC (Post Office)</th>
+      <th>SC (Unique Post Office)</th>
+      <th>VA (Branch)</th>
+      <th>VA (Branch-Unique)</th>
+      <th>VA (Community Post Office )</th>
+      <th>VA (Non Postal Community Name)</th>
+      <th>VA (Non Postal Community Name-Unique)</th>
+      <th>VA (P.O. Box Only)</th>
+      <th>VA (Post Office)</th>
+      <th>VA (Unique Post Office)</th>
+      <th>WV (Branch)</th>
+      <th>WV (Community Post Office )</th>
+      <th>WV (Non Postal Community Name)</th>
+      <th>WV (Non Postal Community Name-Unique)</th>
+      <th>WV (P.O. Box Only)</th>
+      <th>WV (Post Office)</th>
+      <th>WV (Unique Post Office)</th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>South Atlantic</th>
+      <td>0.0388951 unit</td>
+      <td>0.0388951 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.039598334 unit</td>
+      <td>0.030096584 unit</td>
+      <td></td>
+      <td>0.0302396 unit</td>
+      <td>0.029910063 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.033968148999999996 unit</td>
+      <td></td>
+      <td>0.030966781999999998 unit</td>
+      <td>0.033937800000000004 unit</td>
+      <td></td>
+      <td>0.033952500000000004 unit</td>
+      <td>0.038805864999999995 unit</td>
+      <td>0.039387026 unit</td>
+      <td>0.038960659 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0386247 unit</td>
+      <td>0.038613661 unit</td>
+      <td>0.0390314 unit</td>
+      <td>0.035146635 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.035944562 unit</td>
+      <td>0.0362404 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.033773887 unit</td>
+      <td>0.033498438 unit</td>
+      <td>0.038886153 unit</td>
+      <td>0.0389628 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.038877442000000005 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.0393355 unit</td>
+      <td>0.03835933 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>division</th>
+      <th>Mountain</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>region (type)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""6"" valign=""top"">AZ</th>
+      <th>West (Branch)</th>
+      <td>3.365133e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.166492e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.3926431999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.34486e-05 un​it</td>
+    </tr>
+    <tr>
+      <th>eWs t(Pso Otffic)e</th>
+      <td>3.3449666e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.341838e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">CO</th>
+      <th>West (Branch)</th>
+      <td>3.9928443999999996e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.9353458e-05 unti</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.9516974e-05 u‌nit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.98028e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.9793416e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.96135e-05u nti</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">ID</th>
+      <th>West (Branch)</th>
+      <td>4.3028398000000004e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>4.3254106e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.3442953e-05 un‌it</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>4.296391e-05 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">ID</th>
+      <th>West (Post Office)</th>
+      <td>4.2880818e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.2861458e-05 unit</td>
+    </tr>
+    <tr>
+      <th>MT</th>
+      <th>West (Post Office)</th>
+      <td>4.5525336e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">NM</th>
+      <th>W​est (‍Branch)</th>
+      <td>3.5284205e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West ‍(Branch-Un⁠iqu‍e)</th>
+      <td>3.50565e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.5714904e‌-05 unit</td>
+    </tr>
+    <tr>
+      <th>We⁠st (No‍n Pos⁠tal Communi t⁠y Na me)</th>
+      <td>3.5360607e-05 unit</td>
+    </tr>
+    <tr>
+      <th>sWet (Nno Posat loCmmuni tyNma-Uenique)</th>
+      <td>3.2990333999999994e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.4984733e-05un it</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.4610918-e05 nuit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.5091192e-05 unit</td>
+    </tr>
+    <tr>
+      <th>N​V</th>
+      <th>West (Branch)</th>
+      <td>3.9600367e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">NV</th>
+      <th>West (Community Post Office )</th>
+      <td>3.5461100000000005e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.7716104e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name-Unique)</th>
+      <td>3.604e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.6899863e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.7446548999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>N‌V</th>
+      <th>West (Unique Post Office)</th>
+      <td>3.5778599999999997e-05 unit</td>
+    </tr>
+    <tr>
+      <th>UT</th>
+      <th>West (Branch)</th>
+      <td>4.0555448e-05 unit</td>
+    </tr>
+    <tr>
+      <th>U⁠T</th>
+      <th>West (Community Post Office )</th>
+      <td>4.0158536e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">UT</th>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.046736e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>4.0889499999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West(P ostO ffice)</th>
+      <td>4.0396881e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.07606e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">WY</th>
+      <th>West (Branch)</th>
+      <td>4.1166616e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>4.481785e-05 unit</td>
+    </tr>
+    <tr>
+      <th>W‌Y</th>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.1738888e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">WY</th>
+      <th>West (P.O. Box Only)</th>
+      <td>4.1133499999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>4.1141841999999994e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.1133499999999995e-05 unit</td>
+    </tr>
+  </tbody>
+</table>",,45.525336
+1,"Could you provide the total combined latitude measurement in units for all locations in the unspecified division within the FM territory, the South Atlantic portion of Delaware, and the mountainous region of Montana after summing their individual values?","['SELECT latitude FROM sample_table WHERE division = ""None"" AND state = ""FM"";', 'SELECT latitude FROM sample_table WHERE division = ""South Atlantic"" AND state = ""DE"";', 'SELECT latitude FROM sample_table WHERE division = ""Mountain"" AND state = ""MT"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>division</th>
+      <th>None</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>region</th>
+      <th>None</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AS</th>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>FM</th>
+      <th>P.O. Box Only</th>
+      <td>0.0 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">GU</th>
+      <th>Branch</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>13.476192 unit</td>
+    </tr>
+    <tr>
+      <th>MH</th>
+      <th>P.O. Box Only</th>
+      <td>7.080122 unit</td>
+    </tr>
+    <tr>
+      <th>MP</th>
+      <th>P.O. Box Only</th>
+      <td>15.181826 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">PR</th>
+      <th>Branch</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>18.488773 unit</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Unique Post Office</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">PW</th>
+      <th>Non Postal Community Name-Unique</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>7.5002 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">VI</th>
+      <th>Non Postal Community Name</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""15"" halign=""left"">South</th>
+      <th></th>
+      <th colspan=""37"" halign=""left"">South</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>DC (Non Postal Community Name)</th>
+      <th>DC (Non Postal Community Name-Unique)</th>
+      <th>DC (P.O. Box Only)</th>
+      <th>DC (Post Office)</th>
+      <th>DC (Unique Post Office)</th>
+      <th>DE (Post Office)</th>
+      <th>FL (Branch)</th>
+      <th>FL (Non Postal Community Name)</th>
+      <th>FL (P.O. Box Only)</th>
+      <th>FL (Post Office)</th>
+      <th>FL (Unique Post Office)</th>
+      <th>GA (Branch)</th>
+      <th>GA (Branch-Unique)</th>
+      <th>GA (Community Post Office )</th>
+      <th>GA (Non Postal Community Name)</th>
+      <th></th>
+      <th>GA (Non Postal Community Name-Unique)</th>
+      <th>GA (P.O. Box Only)</th>
+      <th>GA (Post Office)</th>
+      <th>GA (Unique Post Office)</th>
+      <th>MD (Branch)</th>
+      <th>MD (Branch-Unique)</th>
+      <th>MD (Non Postal Community Name)</th>
+      <th>MD (Non Postal Community Name-Unique)</th>
+      <th>MD (P.O. Box Only)</th>
+      <th>MD (Post Office)</th>
+      <th>MD (Unique Post Office)</th>
+      <th>NC (Branch)</th>
+      <th>NC (Branch-Unique)</th>
+      <th>NC (Non Postal Community Name)</th>
+      <th>NC (P.O. Box Only)</th>
+      <th>NC (Post Office)</th>
+      <th>NC (Unique Post Office)</th>
+      <th>SC (Branch)</th>
+      <th>SC (Non Postal Community Name)</th>
+      <th>SC (P.O. Box Only)</th>
+      <th>SC (Post Office)</th>
+      <th>SC (Unique Post Office)</th>
+      <th>VA (Branch)</th>
+      <th>VA (Branch-Unique)</th>
+      <th>VA (Community Post Office )</th>
+      <th>VA (Non Postal Community Name)</th>
+      <th>VA (Non Postal Community Name-Unique)</th>
+      <th>VA (P.O. Box Only)</th>
+      <th>VA (Post Office)</th>
+      <th>VA (Unique Post Office)</th>
+      <th>WV (Branch)</th>
+      <th>WV (Community Post Office )</th>
+      <th>WV (Non Postal Community Name)</th>
+      <th>WV (Non Postal Community Name-Unique)</th>
+      <th>WV (P.O. Box Only)</th>
+      <th>WV (Post Office)</th>
+      <th>WV (Unique Post Office)</th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>South Atlantic</th>
+      <td>0.0388951 unit</td>
+      <td>0.0388951 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.039598334 unit</td>
+      <td>0.030096584 unit</td>
+      <td></td>
+      <td>0.0302396 unit</td>
+      <td>0.029910063 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.033968148999999996 unit</td>
+      <td></td>
+      <td>0.030966781999999998 unit</td>
+      <td>0.033937800000000004 unit</td>
+      <td></td>
+      <td>0.033952500000000004 unit</td>
+      <td>0.038805864999999995 unit</td>
+      <td>0.039387026 unit</td>
+      <td>0.038960659 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0386247 unit</td>
+      <td>0.038613661 unit</td>
+      <td>0.0390314 unit</td>
+      <td>0.035146635 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.035944562 unit</td>
+      <td>0.0362404 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.033773887 unit</td>
+      <td>0.033498438 unit</td>
+      <td>0.038886153 unit</td>
+      <td>0.0389628 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.038877442000000005 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.0393355 unit</td>
+      <td>0.03835933 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>division</th>
+      <th>Mountain</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>region (type)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""6"" valign=""top"">AZ</th>
+      <th>West (Branch)</th>
+      <td>3.365133e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.166492e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.3926431999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.34486e-05 un​it</td>
+    </tr>
+    <tr>
+      <th>eWs t(Pso Otffic)e</th>
+      <td>3.3449666e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.341838e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">CO</th>
+      <th>West (Branch)</th>
+      <td>3.9928443999999996e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.9353458e-05 unti</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.9516974e-05 u‌nit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.98028e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.9793416e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.96135e-05u nti</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">ID</th>
+      <th>West (Branch)</th>
+      <td>4.3028398000000004e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>4.3254106e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.3442953e-05 un‌it</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>4.296391e-05 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">ID</th>
+      <th>West (Post Office)</th>
+      <td>4.2880818e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.2861458e-05 unit</td>
+    </tr>
+    <tr>
+      <th>MT</th>
+      <th>West (Post Office)</th>
+      <td>4.5525336e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">NM</th>
+      <th>W​est (‍Branch)</th>
+      <td>3.5284205e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West ‍(Branch-Un⁠iqu‍e)</th>
+      <td>3.50565e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.5714904e‌-05 unit</td>
+    </tr>
+    <tr>
+      <th>We⁠st (No‍n Pos⁠tal Communi t⁠y Na me)</th>
+      <td>3.5360607e-05 unit</td>
+    </tr>
+    <tr>
+      <th>sWet (Nno Posat loCmmuni tyNma-Uenique)</th>
+      <td>3.2990333999999994e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.4984733e-05un it</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.4610918-e05 nuit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.5091192e-05 unit</td>
+    </tr>
+    <tr>
+      <th>N​V</th>
+      <th>West (Branch)</th>
+      <td>3.9600367e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">NV</th>
+      <th>West (Community Post Office )</th>
+      <td>3.5461100000000005e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.7716104e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name-Unique)</th>
+      <td>3.604e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.6899863e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.7446548999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>N‌V</th>
+      <th>West (Unique Post Office)</th>
+      <td>3.5778599999999997e-05 unit</td>
+    </tr>
+    <tr>
+      <th>UT</th>
+      <th>West (Branch)</th>
+      <td>4.0555448e-05 unit</td>
+    </tr>
+    <tr>
+      <th>U⁠T</th>
+      <th>West (Community Post Office )</th>
+      <td>4.0158536e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">UT</th>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.046736e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>4.0889499999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West(P ostO ffice)</th>
+      <td>4.0396881e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.07606e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">WY</th>
+      <th>West (Branch)</th>
+      <td>4.1166616e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>4.481785e-05 unit</td>
+    </tr>
+    <tr>
+      <th>W‌Y</th>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.1738888e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">WY</th>
+      <th>West (P.O. Box Only)</th>
+      <td>4.1133499999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>4.1141841999999994e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.1133499999999995e-05 unit</td>
+    </tr>
+  </tbody>
+</table>",,85.12367
+2,"What is the overall average latitude in units when combining the latitude measurements from areas without a defined division in the specific state FM, the southern Atlantic region of Delaware, and the mountainous region of Montana?","['SELECT latitude FROM sample_table WHERE division = ""None"" AND state = ""FM"";', 'SELECT latitude FROM sample_table WHERE division = ""South Atlantic"" AND state = ""DE"";', 'SELECT latitude FROM sample_table WHERE division = ""Mountain"" AND state = ""MT"";']",average,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>division</th>
+      <th>None</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>region</th>
+      <th>None</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AS</th>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>FM</th>
+      <th>P.O. Box Only</th>
+      <td>0.0 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">GU</th>
+      <th>Branch</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>13.476192 unit</td>
+    </tr>
+    <tr>
+      <th>MH</th>
+      <th>P.O. Box Only</th>
+      <td>7.080122 unit</td>
+    </tr>
+    <tr>
+      <th>MP</th>
+      <th>P.O. Box Only</th>
+      <td>15.181826 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">PR</th>
+      <th>Branch</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>18.488773 unit</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Unique Post Office</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">PW</th>
+      <th>Non Postal Community Name-Unique</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>7.5002 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">VI</th>
+      <th>Non Postal Community Name</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""15"" halign=""left"">South</th>
+      <th></th>
+      <th colspan=""37"" halign=""left"">South</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>DC (Non Postal Community Name)</th>
+      <th>DC (Non Postal Community Name-Unique)</th>
+      <th>DC (P.O. Box Only)</th>
+      <th>DC (Post Office)</th>
+      <th>DC (Unique Post Office)</th>
+      <th>DE (Post Office)</th>
+      <th>FL (Branch)</th>
+      <th>FL (Non Postal Community Name)</th>
+      <th>FL (P.O. Box Only)</th>
+      <th>FL (Post Office)</th>
+      <th>FL (Unique Post Office)</th>
+      <th>GA (Branch)</th>
+      <th>GA (Branch-Unique)</th>
+      <th>GA (Community Post Office )</th>
+      <th>GA (Non Postal Community Name)</th>
+      <th></th>
+      <th>GA (Non Postal Community Name-Unique)</th>
+      <th>GA (P.O. Box Only)</th>
+      <th>GA (Post Office)</th>
+      <th>GA (Unique Post Office)</th>
+      <th>MD (Branch)</th>
+      <th>MD (Branch-Unique)</th>
+      <th>MD (Non Postal Community Name)</th>
+      <th>MD (Non Postal Community Name-Unique)</th>
+      <th>MD (P.O. Box Only)</th>
+      <th>MD (Post Office)</th>
+      <th>MD (Unique Post Office)</th>
+      <th>NC (Branch)</th>
+      <th>NC (Branch-Unique)</th>
+      <th>NC (Non Postal Community Name)</th>
+      <th>NC (P.O. Box Only)</th>
+      <th>NC (Post Office)</th>
+      <th>NC (Unique Post Office)</th>
+      <th>SC (Branch)</th>
+      <th>SC (Non Postal Community Name)</th>
+      <th>SC (P.O. Box Only)</th>
+      <th>SC (Post Office)</th>
+      <th>SC (Unique Post Office)</th>
+      <th>VA (Branch)</th>
+      <th>VA (Branch-Unique)</th>
+      <th>VA (Community Post Office )</th>
+      <th>VA (Non Postal Community Name)</th>
+      <th>VA (Non Postal Community Name-Unique)</th>
+      <th>VA (P.O. Box Only)</th>
+      <th>VA (Post Office)</th>
+      <th>VA (Unique Post Office)</th>
+      <th>WV (Branch)</th>
+      <th>WV (Community Post Office )</th>
+      <th>WV (Non Postal Community Name)</th>
+      <th>WV (Non Postal Community Name-Unique)</th>
+      <th>WV (P.O. Box Only)</th>
+      <th>WV (Post Office)</th>
+      <th>WV (Unique Post Office)</th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>South Atlantic</th>
+      <td>0.0388951 unit</td>
+      <td>0.0388951 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.039598334 unit</td>
+      <td>0.030096584 unit</td>
+      <td></td>
+      <td>0.0302396 unit</td>
+      <td>0.029910063 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.033968148999999996 unit</td>
+      <td></td>
+      <td>0.030966781999999998 unit</td>
+      <td>0.033937800000000004 unit</td>
+      <td></td>
+      <td>0.033952500000000004 unit</td>
+      <td>0.038805864999999995 unit</td>
+      <td>0.039387026 unit</td>
+      <td>0.038960659 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0386247 unit</td>
+      <td>0.038613661 unit</td>
+      <td>0.0390314 unit</td>
+      <td>0.035146635 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.035944562 unit</td>
+      <td>0.0362404 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.033773887 unit</td>
+      <td>0.033498438 unit</td>
+      <td>0.038886153 unit</td>
+      <td>0.0389628 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.038877442000000005 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.0393355 unit</td>
+      <td>0.03835933 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>division</th>
+      <th>Mountain</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>region (type)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""6"" valign=""top"">AZ</th>
+      <th>West (Branch)</th>
+      <td>3.365133e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.166492e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.3926431999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.34486e-05 un​it</td>
+    </tr>
+    <tr>
+      <th>eWs t(Pso Otffic)e</th>
+      <td>3.3449666e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.341838e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">CO</th>
+      <th>West (Branch)</th>
+      <td>3.9928443999999996e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.9353458e-05 unti</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.9516974e-05 u‌nit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.98028e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.9793416e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.96135e-05u nti</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">ID</th>
+      <th>West (Branch)</th>
+      <td>4.3028398000000004e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>4.3254106e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.3442953e-05 un‌it</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>4.296391e-05 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">ID</th>
+      <th>West (Post Office)</th>
+      <td>4.2880818e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.2861458e-05 unit</td>
+    </tr>
+    <tr>
+      <th>MT</th>
+      <th>West (Post Office)</th>
+      <td>4.5525336e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">NM</th>
+      <th>W​est (‍Branch)</th>
+      <td>3.5284205e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West ‍(Branch-Un⁠iqu‍e)</th>
+      <td>3.50565e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>3.5714904e‌-05 unit</td>
+    </tr>
+    <tr>
+      <th>We⁠st (No‍n Pos⁠tal Communi t⁠y Na me)</th>
+      <td>3.5360607e-05 unit</td>
+    </tr>
+    <tr>
+      <th>sWet (Nno Posat loCmmuni tyNma-Uenique)</th>
+      <td>3.2990333999999994e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.4984733e-05un it</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.4610918-e05 nuit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>3.5091192e-05 unit</td>
+    </tr>
+    <tr>
+      <th>N​V</th>
+      <th>West (Branch)</th>
+      <td>3.9600367e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">NV</th>
+      <th>West (Community Post Office )</th>
+      <td>3.5461100000000005e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name)</th>
+      <td>3.7716104e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Non Postal Community Name-Unique)</th>
+      <td>3.604e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>3.6899863e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>3.7446548999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>N‌V</th>
+      <th>West (Unique Post Office)</th>
+      <td>3.5778599999999997e-05 unit</td>
+    </tr>
+    <tr>
+      <th>UT</th>
+      <th>West (Branch)</th>
+      <td>4.0555448e-05 unit</td>
+    </tr>
+    <tr>
+      <th>U⁠T</th>
+      <th>West (Community Post Office )</th>
+      <td>4.0158536e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">UT</th>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.046736e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (P.O. Box Only)</th>
+      <td>4.0889499999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West(P ostO ffice)</th>
+      <td>4.0396881e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.07606e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">WY</th>
+      <th>West (Branch)</th>
+      <td>4.1166616e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Community Post Office )</th>
+      <td>4.481785e-05 unit</td>
+    </tr>
+    <tr>
+      <th>W‌Y</th>
+      <th>West (Non Postal Community Name)</th>
+      <td>4.1738888e-05 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">WY</th>
+      <th>West (P.O. Box Only)</th>
+      <td>4.1133499999999995e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Post Office)</th>
+      <td>4.1141841999999994e-05 unit</td>
+    </tr>
+    <tr>
+      <th>West (Unique Post Office)</th>
+      <td>4.1133499999999995e-05 unit</td>
+    </tr>
+  </tbody>
+</table>",,28.374556666666667

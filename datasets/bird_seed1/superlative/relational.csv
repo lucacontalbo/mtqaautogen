@@ -1,0 +1,6333 @@
+Question,SQL Query,Method,Table,Constraints,Label
+"Among the prices listed for these cases: products sold under order conditions one, three, and four at particular store locations two and three, which cost is the lowest for item three at store two with order condition one, item one at store three with order condition three, item two at store two with order condition four, and item five at store two with order condition two?","SELECT MIN(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND item_id = ""3"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""1"" AND store_id = ""3"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""2"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""5"" AND store_id = ""2"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>item_id</th>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>3</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4</td>
+      <td>5</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>4</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>4</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Rowlett Bikes</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4315</th>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>4999.99</td>
+    </tr>
+    <tr>
+      <th>4380</th>
+      <td>2</td>
+      <td>5</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>899.99</td>
+    </tr>
+  </tbody>
+</table>",,599.99
+"What is the lowest discount available among customers from Texas buying comfort bicycles with item number one, customers from New York purchasing electric bikes with item number five, California customers acquiring children’s bicycles with item number three, and New York buyers getting comfort bicycles with item number five?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""TX"" AND category_name = ""Comfort Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""5"" AND customer_state = ""NY"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""3"" AND customer_state = ""CA"" AND category_name = ""Children Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""5"" AND customer_state = ""NY"" AND category_name = ""Comfort Bicycles"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>customer_state</th>
+      <th>store_city</th>
+      <th>store_state</th>
+      <th>category_name</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Mountain Bikes</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>5</td>
+      <td>NY</td>
+      <td>Baldwin</td>
+      <td>NY</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz</td>
+      <td>CA</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>1</td>
+      <td>TX</td>
+      <td>Rowlett</td>
+      <td>TX</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"Among the discounts offered by the brands Strider, Heller, Ritchey, and Pure Cycles, can you tell me the greatest discount given by the employees numbered 6, 9, 8, and 3 respectively?","SELECT MAX(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE brand_name = ""Strider"" AND staff_id = ""6"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Heller"" AND staff_id = ""9"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Ritchey"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>brand_name</th>
+      <th>category_name</th>
+      <th>staff_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Electra</td>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Trek</td>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Surly</td>
+      <td>Cyclocross Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Electra</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Surly</td>
+      <td>Mountain Bikes</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Electra</td>
+      <td>Cruisers Bicycles</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ritchey</td>
+      <td>Mountain Bikes</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Surly</td>
+      <td>Cyclocross Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Pure Cycles</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Electra</td>
+      <td>Comfort Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Pure Cycles</td>
+      <td>Cruisers Bicycles</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>979</th>
+      <td>Heller</td>
+      <td>Mountain Bikes</td>
+      <td>9</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>1085</th>
+      <td>Ritchey</td>
+      <td>Mountain Bikes</td>
+      <td>8</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4017</th>
+      <td>Strider</td>
+      <td>Children Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>",,0.2
+"Among finalized purchases (order_status = ""1""), what is the lowest discount applied among these categories and stores: Electric Bikes sold at store_id = 1; Cruisers Bicycles sold at store_id = 1 or store_id = 2; and Cyclocross Bicycles sold at store_id = 2?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""1"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""2"" AND category_name = ""Cruisers Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""2"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""1"" AND category_name = ""Cruisers Bicycles"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>category_name</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>4</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4319</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4331</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4354</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4375</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"What is the top price recorded for items number four in California with orders marked as status three, items number five in California with status two, or items number three in Texas with status four?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""4"" AND customer_state = ""CA"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""5"" AND customer_state = ""CA"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""3"" AND customer_state = ""TX"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>item_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>5</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>1</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4</td>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>3</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>4</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4</td>
+      <td>5</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>1</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>4</td>
+      <td>2</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>4</td>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>4</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>745</th>
+      <td>3</td>
+      <td>4</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>4368</th>
+      <td>2</td>
+      <td>5</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>3199.99</td>
+    </tr>
+  </tbody>
+</table>",,3199.99
+"Among the discounts available for a specific list of bike types—namely road bikes handled by staff member 2 for the third item, comfort bicycles managed by staff member 8 for the second item, cyclocross bicycles dealt with by staff member 8 for the third item, and electric bikes associated with staff member 3 for the fifth item—what is the lowest discount rate offered?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE category_name = ""Road Bikes"" AND item_id = ""3"" AND staff_id = ""2"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Comfort Bicycles"" AND item_id = ""2"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Cyclocross Bicycles"" AND item_id = ""3"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Electric Bikes"" AND item_id = ""5"" AND staff_id = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>category_name</th>
+      <th>item_id</th>
+      <th>staff_id</th>
+      <th>store_city</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cruisers Bicycles</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cyclocross Bicycles</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Cruisers Bicycles</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mountain Bikes</td>
+      <td>5</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Cruisers Bicycles</td>
+      <td>1</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Mountain Bikes</td>
+      <td>1</td>
+      <td>7</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>7</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Mountain Bikes</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Cyclocross Bicycles</td>
+      <td>1</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Comfort Bicycles</td>
+      <td>3</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Cruisers Bicycles</td>
+      <td>3</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Mountain Bikes</td>
+      <td>4</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Electric Bikes</td>
+      <td>5</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>6</td>
+      <td>Baldwin</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Electric Bikes</td>
+      <td>5</td>
+      <td>3</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>Comfort Bicycles</td>
+      <td>2</td>
+      <td>8</td>
+      <td>Rowlett</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2642</th>
+      <td>Road Bikes</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Santa Cruz</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>3849</th>
+      <td>Cyclocross Bicycles</td>
+      <td>3</td>
+      <td>8</td>
+      <td>Rowlett</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"What is the lowest recorded sales figure among these groups: items for the home in the western area during the first quarter with ten units sold, home products in the southern area during the third quarter with nine units sold, sports gear sold nine units in the southern region in the last quarter, and electronics sold three units in the eastern area during the third quarter?","SELECT MIN(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""1"" AND category = ""Home & Kitchen"" AND region = ""West"" AND quantity_sold = ""10"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""3"" AND category = ""Home & Kitchen"" AND region = ""South"" AND quantity_sold = ""9"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""4"" AND category = ""Sports"" AND region = ""South"" AND quantity_sold = ""9"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""3"" AND category = ""Electronics"" AND region = ""East"" AND quantity_sold = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>quarter</th>
+      <th>category</th>
+      <th>region</th>
+      <th>quantity_sold</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>4</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Toys</td>
+      <td>North</td>
+      <td>4</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Electronics</td>
+      <td>South</td>
+      <td>4</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>9</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>9</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>5</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>Home &amp; Kitchen</td>
+      <td>East</td>
+      <td>5</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>4</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>9</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4</td>
+      <td>Toys</td>
+      <td>East</td>
+      <td>6</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>3</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>8</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>4</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>4</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>6</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>4</td>
+      <td>Sports</td>
+      <td>East</td>
+      <td>9</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>3</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>286</th>
+      <td>1</td>
+      <td>Home &amp; Kitchen</td>
+      <td>West</td>
+      <td>10</td>
+      <td>4965.97</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>4</td>
+      <td>Sports</td>
+      <td>South</td>
+      <td>9</td>
+      <td>8886.67</td>
+    </tr>
+    <tr>
+      <th>1028</th>
+      <td>3</td>
+      <td>Electronics</td>
+      <td>East</td>
+      <td>3</td>
+      <td>2032.60</td>
+    </tr>
+    <tr>
+      <th>1217</th>
+      <td>3</td>
+      <td>Home &amp; Kitchen</td>
+      <td>South</td>
+      <td>9</td>
+      <td>5833.08</td>
+    </tr>
+  </tbody>
+</table>",,2032.6
+"Among the deals available when purchasing either 2 units in September from the third brand, 7 units in July from the second brand, 1 unit in September from the third brand, or 6 units in February from the fifth brand, what was the largest price reduction offered?","SELECT MAX(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""2"" AND month = ""9"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""7"" AND month = ""7"" AND brand = ""BrandB"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""1"" AND month = ""9"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""6"" AND month = ""2"" AND brand = ""BrandE"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>quantity_sold</th>
+      <th>month</th>
+      <th>year</th>
+      <th>brand</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>4</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>35.64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>37.93</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>33.39</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9</td>
+      <td>12</td>
+      <td>2023</td>
+      <td>BrandA</td>
+      <td>42.55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>4</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>38.12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>7</td>
+      <td>2025</td>
+      <td>BrandE</td>
+      <td>44.36</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>16.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>4.50</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>8</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>49.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>11</td>
+      <td>2024</td>
+      <td>BrandC</td>
+      <td>25.98</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>30.13</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4</td>
+      <td>6</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>25.32</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>9</td>
+      <td>11</td>
+      <td>2024</td>
+      <td>BrandD</td>
+      <td>37.31</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>0.12</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>46.51</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>7</td>
+      <td>7</td>
+      <td>2024</td>
+      <td>BrandB</td>
+      <td>35.53</td>
+    </tr>
+    <tr>
+      <th>2768</th>
+      <td>6</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandE</td>
+      <td>17.29</td>
+    </tr>
+    <tr>
+      <th>3710</th>
+      <td>1</td>
+      <td>9</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>35.20</td>
+    </tr>
+    <tr>
+      <th>4774</th>
+      <td>2</td>
+      <td>9</td>
+      <td>2024</td>
+      <td>BrandC</td>
+      <td>46.77</td>
+    </tr>
+  </tbody>
+</table>",,46.77
+"Which is the cheapest unit cost recorded when comparing the west area in January, west area in February, west area in October, and the northern area in October?","SELECT MIN(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""February"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""October"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""October"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""January"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>region</th>
+      <th>month_name</th>
+      <th>month</th>
+      <th>quarter</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Central</td>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>North</td>
+      <td>May</td>
+      <td>5</td>
+      <td>2</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>South</td>
+      <td>February</td>
+      <td>2</td>
+      <td>1</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>West</td>
+      <td>December</td>
+      <td>12</td>
+      <td>4</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Central</td>
+      <td>July</td>
+      <td>7</td>
+      <td>3</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>East</td>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>West</td>
+      <td>January</td>
+      <td>1</td>
+      <td>1</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Central</td>
+      <td>August</td>
+      <td>8</td>
+      <td>3</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>East</td>
+      <td>November</td>
+      <td>11</td>
+      <td>4</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Central</td>
+      <td>September</td>
+      <td>9</td>
+      <td>3</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>North</td>
+      <td>June</td>
+      <td>6</td>
+      <td>2</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>North</td>
+      <td>September</td>
+      <td>9</td>
+      <td>3</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>West</td>
+      <td>November</td>
+      <td>11</td>
+      <td>4</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Central</td>
+      <td>February</td>
+      <td>2</td>
+      <td>1</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>West</td>
+      <td>March</td>
+      <td>3</td>
+      <td>1</td>
+      <td>740.71</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>West</td>
+      <td>July</td>
+      <td>7</td>
+      <td>3</td>
+      <td>814.87</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>West</td>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>313.01</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>West</td>
+      <td>February</td>
+      <td>2</td>
+      <td>1</td>
+      <td>952.74</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>West</td>
+      <td>October</td>
+      <td>10</td>
+      <td>4</td>
+      <td>779.76</td>
+    </tr>
+    <tr>
+      <th>208</th>
+      <td>North</td>
+      <td>October</td>
+      <td>10</td>
+      <td>4</td>
+      <td>431.53</td>
+    </tr>
+  </tbody>
+</table>",,431.53
+"What is the highest unit price among BrandA in the West region in July 2025, BrandC in the East region in May 2025, and BrandE in the North region in June 2024?","SELECT MAX(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""July"" AND year = ""2025"" AND brand = ""BrandA"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""May"" AND year = ""2025"" AND brand = ""BrandC"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""June"" AND year = ""2024"" AND brand = ""BrandE"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>region</th>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>brand</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Central</td>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>North</td>
+      <td>May</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>South</td>
+      <td>February</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>West</td>
+      <td>December</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>BrandA</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Central</td>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Central</td>
+      <td>July</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandE</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>East</td>
+      <td>April</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandA</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>West</td>
+      <td>January</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>BrandB</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Central</td>
+      <td>August</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>East</td>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>BrandC</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Central</td>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>North</td>
+      <td>June</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>North</td>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandD</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>West</td>
+      <td>July</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>BrandA</td>
+      <td>619.48</td>
+    </tr>
+    <tr>
+      <th>1677</th>
+      <td>North</td>
+      <td>June</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>BrandE</td>
+      <td>114.37</td>
+    </tr>
+    <tr>
+      <th>2815</th>
+      <td>East</td>
+      <td>May</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>BrandC</td>
+      <td>645.95</td>
+    </tr>
+  </tbody>
+</table>",,645.95
+"What is the highest recorded sales volume among the following: the 2023 Home & Kitchen products from BrandD in the West, the 2024 Clothing line from BrandA in the North, the 2023 Sports items from BrandE in the Central region, or the 2024 Clothing collection from BrandA in the West?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandD"" AND year = ""2023"" AND category = ""Home & Kitchen"" AND region = ""West"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandA"" AND year = ""2024"" AND category = ""Clothing"" AND region = ""North"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND year = ""2023"" AND category = ""Sports"" AND region = ""Central"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandA"" AND year = ""2024"" AND category = ""Clothing"" AND region = ""West"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>brand</th>
+      <th>year</th>
+      <th>category</th>
+      <th>region</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BrandC</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BrandA</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>North</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BrandC</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>South</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BrandA</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BrandB</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>BrandE</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BrandA</td>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>East</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>BrandB</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>BrandD</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>BrandC</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>East</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>BrandD</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>BrandC</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>BrandD</td>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>East</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BrandA</td>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>Central</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>BrandA</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>574.60</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>BrandA</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>392.81</td>
+    </tr>
+    <tr>
+      <th>385</th>
+      <td>BrandD</td>
+      <td>2023</td>
+      <td>Home &amp; Kitchen</td>
+      <td>West</td>
+      <td>2912.27</td>
+    </tr>
+    <tr>
+      <th>1524</th>
+      <td>BrandE</td>
+      <td>2023</td>
+      <td>Sports</td>
+      <td>Central</td>
+      <td>2869.25</td>
+    </tr>
+  </tbody>
+</table>",,2912.27
+"Among the sales data for home and kitchen products sold in May with four units, sports items sold in March with a single unit, clothing articles sold in January with two units, and books sold in January with ten units, what is the maximum sales amount recorded?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Home & Kitchen"" AND month_name = ""May"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Sports"" AND month_name = ""March"" AND quantity_sold = ""1"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Clothing"" AND month_name = ""January"" AND quantity_sold = ""2"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Books"" AND month_name = ""January"" AND quantity_sold = ""10"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>category</th>
+      <th>month_name</th>
+      <th>month</th>
+      <th>quantity_sold</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clothing</td>
+      <td>April</td>
+      <td>4</td>
+      <td>4</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Toys</td>
+      <td>May</td>
+      <td>5</td>
+      <td>4</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Electronics</td>
+      <td>February</td>
+      <td>2</td>
+      <td>4</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Clothing</td>
+      <td>December</td>
+      <td>12</td>
+      <td>9</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Electronics</td>
+      <td>April</td>
+      <td>4</td>
+      <td>9</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Home &amp; Kitchen</td>
+      <td>July</td>
+      <td>7</td>
+      <td>5</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Home &amp; Kitchen</td>
+      <td>April</td>
+      <td>4</td>
+      <td>5</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Clothing</td>
+      <td>January</td>
+      <td>1</td>
+      <td>4</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Home &amp; Kitchen</td>
+      <td>August</td>
+      <td>8</td>
+      <td>9</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Toys</td>
+      <td>November</td>
+      <td>11</td>
+      <td>6</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Electronics</td>
+      <td>September</td>
+      <td>9</td>
+      <td>8</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clothing</td>
+      <td>June</td>
+      <td>6</td>
+      <td>4</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Clothing</td>
+      <td>September</td>
+      <td>9</td>
+      <td>4</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Clothing</td>
+      <td>November</td>
+      <td>11</td>
+      <td>6</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sports</td>
+      <td>November</td>
+      <td>11</td>
+      <td>9</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Home &amp; Kitchen</td>
+      <td>February</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Clothing</td>
+      <td>January</td>
+      <td>1</td>
+      <td>2</td>
+      <td>574.60</td>
+    </tr>
+    <tr>
+      <th>1083</th>
+      <td>Books</td>
+      <td>January</td>
+      <td>1</td>
+      <td>10</td>
+      <td>7600.97</td>
+    </tr>
+    <tr>
+      <th>2487</th>
+      <td>Sports</td>
+      <td>March</td>
+      <td>3</td>
+      <td>1</td>
+      <td>73.64</td>
+    </tr>
+    <tr>
+      <th>3498</th>
+      <td>Home &amp; Kitchen</td>
+      <td>May</td>
+      <td>5</td>
+      <td>4</td>
+      <td>54.03</td>
+    </tr>
+  </tbody>
+</table>",,7600.97
+"What is the cheapest price offered for products sold in September 2025 with a quantity of five, December 2024 with eight items purchased, November 2023 when three units were bought, and July 2024 for six units, considering all these purchase scenarios?","SELECT MIN(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""September"" AND year = ""2025"" AND quantity_sold = ""5"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""December"" AND year = ""2024"" AND quantity_sold = ""8"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""November"" AND year = ""2023"" AND quantity_sold = ""3"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""July"" AND year = ""2024"" AND quantity_sold = ""6"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>month_name</th>
+      <th>month</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>quantity_sold</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>May</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>4</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>February</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>December</td>
+      <td>12</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>9</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>July</td>
+      <td>7</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>5</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>April</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>5</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>January</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>August</td>
+      <td>8</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>November</td>
+      <td>11</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>6</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>September</td>
+      <td>9</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>8</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>June</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>November</td>
+      <td>11</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>3</td>
+      <td>782.76</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>December</td>
+      <td>12</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>8</td>
+      <td>464.17</td>
+    </tr>
+    <tr>
+      <th>304</th>
+      <td>July</td>
+      <td>7</td>
+      <td>3</td>
+      <td>2024</td>
+      <td>6</td>
+      <td>538.74</td>
+    </tr>
+    <tr>
+      <th>562</th>
+      <td>September</td>
+      <td>9</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>5</td>
+      <td>64.79</td>
+    </tr>
+  </tbody>
+</table>",,64.79
+"What is the top price you can find for products when looking at toys sold in Jamaica from BrandC, books available in the United Kingdom from BrandA, or electronics offered in Norway by BrandE?","SELECT MAX(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Toys"" AND store_country = ""Jamaica"" AND brand = ""BrandC"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Books"" AND store_country = ""United Kingdom"" AND brand = ""BrandA"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Electronics"" AND store_country = ""Norway"" AND brand = ""BrandE"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>category</th>
+      <th>region</th>
+      <th>store_country</th>
+      <th>brand</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Clothing</td>
+      <td>Central</td>
+      <td>United Kingdom</td>
+      <td>BrandC</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Toys</td>
+      <td>North</td>
+      <td>Ethiopia</td>
+      <td>BrandA</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Electronics</td>
+      <td>South</td>
+      <td>United States Virgin Islands</td>
+      <td>BrandC</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Benin</td>
+      <td>BrandA</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>Guadeloupe</td>
+      <td>BrandB</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Cuba</td>
+      <td>BrandE</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Home &amp; Kitchen</td>
+      <td>East</td>
+      <td>Finland</td>
+      <td>BrandA</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Nicaragua</td>
+      <td>BrandB</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Egypt</td>
+      <td>BrandD</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Toys</td>
+      <td>East</td>
+      <td>Montenegro</td>
+      <td>BrandC</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>Bulgaria</td>
+      <td>BrandA</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>Montenegro</td>
+      <td>BrandA</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Clothing</td>
+      <td>North</td>
+      <td>Denmark</td>
+      <td>BrandD</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Clothing</td>
+      <td>West</td>
+      <td>Canada</td>
+      <td>BrandC</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sports</td>
+      <td>East</td>
+      <td>Costa Rica</td>
+      <td>BrandD</td>
+      <td>198.48</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Home &amp; Kitchen</td>
+      <td>Central</td>
+      <td>Malawi</td>
+      <td>BrandD</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Sports</td>
+      <td>Central</td>
+      <td>Sudan</td>
+      <td>BrandA</td>
+      <td>82.47</td>
+    </tr>
+    <tr>
+      <th>1074</th>
+      <td>Electronics</td>
+      <td>Central</td>
+      <td>Norway</td>
+      <td>BrandE</td>
+      <td>135.79</td>
+    </tr>
+    <tr>
+      <th>1142</th>
+      <td>Toys</td>
+      <td>South</td>
+      <td>Jamaica</td>
+      <td>BrandC</td>
+      <td>510.19</td>
+    </tr>
+    <tr>
+      <th>2195</th>
+      <td>Books</td>
+      <td>Central</td>
+      <td>United Kingdom</td>
+      <td>BrandA</td>
+      <td>36.68</td>
+    </tr>
+  </tbody>
+</table>",,510.19
+"Considering sales data for September in the eastern area with a sale count of nine, January in the northern district with eight items sold, and January in the central district where five units were sold, which of these scenarios shows the greatest total sales amount?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""September"" AND quantity_sold = ""9"" AND region = ""East"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""January"" AND quantity_sold = ""8"" AND region = ""North"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""January"" AND quantity_sold = ""5"" AND region = ""Central"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>quantity_sold</th>
+      <th>region</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>Central</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>May</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>4</td>
+      <td>North</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>February</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>South</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>December</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>9</td>
+      <td>West</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>Central</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>July</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>5</td>
+      <td>Central</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>April</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>5</td>
+      <td>East</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>January</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>West</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>August</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>Central</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>November</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>6</td>
+      <td>East</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>8</td>
+      <td>Central</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>June</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>North</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>4</td>
+      <td>North</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>January</td>
+      <td>1</td>
+      <td>2024</td>
+      <td>5</td>
+      <td>Central</td>
+      <td>2236.85</td>
+    </tr>
+    <tr>
+      <th>616</th>
+      <td>September</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>9</td>
+      <td>East</td>
+      <td>7271.41</td>
+    </tr>
+    <tr>
+      <th>2615</th>
+      <td>January</td>
+      <td>1</td>
+      <td>2024</td>
+      <td>8</td>
+      <td>North</td>
+      <td>6287.65</td>
+    </tr>
+  </tbody>
+</table>",,7271.41
+What is the lowest price among these specific products: product 4 sold in Texas in 2017; product 5 sold in New York in 2018; product 3 sold in New York in 2017; and product 4 sold in California in 2018?,"SELECT MIN(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2017"" AND customer_state = ""TX"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND model_year = ""2018"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2017"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2018"" AND customer_state = ""CA"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>model_year</th>
+      <th>customer_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>CA</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>NY</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>TX</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>1773</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>CA</td>
+      <td>329.99</td>
+    </tr>
+    <tr>
+      <th>1775</th>
+      <td>2</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>449.99</td>
+    </tr>
+    <tr>
+      <th>1776</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>551.99</td>
+    </tr>
+    <tr>
+      <th>1778</th>
+      <td>3</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>1782</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>4999.99</td>
+    </tr>
+    <tr>
+      <th>1787</th>
+      <td>5</td>
+      <td>2017</td>
+      <td>NY</td>
+      <td>416.99</td>
+    </tr>
+    <tr>
+      <th>1789</th>
+      <td>2</td>
+      <td>2017</td>
+      <td>CA</td>
+      <td>3499.99</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>TX</td>
+      <td>299.99</td>
+    </tr>
+    <tr>
+      <th>3861</th>
+      <td>5</td>
+      <td>2018</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>3865</th>
+      <td>4</td>
+      <td>2018</td>
+      <td>CA</td>
+      <td>319.99</td>
+    </tr>
+  </tbody>
+</table>",,299.99
+"What is the highest price recorded for products sold either in 2018 with order status three by employee number eight, or in 2017 with order status three or one by employee six, or in 2017 with order status four by staff member nine?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND model_year = ""2018"" AND staff_id = ""8"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND model_year = ""2017"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2017"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND model_year = ""2017"" AND staff_id = ""9"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>order_status</th>
+      <th>model_year</th>
+      <th>staff_id</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>2</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>7</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>3</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>8</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>9</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>549.99</td>
+    </tr>
+    <tr>
+      <th>290</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>9</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>519</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>2</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>742</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>3</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>8</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>429.00</td>
+    </tr>
+    <tr>
+      <th>1773</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>2</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>329.99</td>
+    </tr>
+    <tr>
+      <th>1815</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>9</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>489.99</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>3</td>
+      <td>2017</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>4999.99</td>
+    </tr>
+    <tr>
+      <th>4311</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>6</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>4692</th>
+      <td>3</td>
+      <td>2018</td>
+      <td>8</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>4499.99</td>
+    </tr>
+  </tbody>
+</table>",,4999.99
+"Among the bicycles categorized as kids' models and cruiser types, each linked to specific employees numbered 9, 2, 7, and 3 for product codes 1, 2, 4, and 5 respectively, what is the highest price listed?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND category_name = ""Children Bicycles"" AND staff_id = ""9"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND category_name = ""Children Bicycles"" AND staff_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND category_name = ""Children Bicycles"" AND staff_id = ""7"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>category_name</th>
+      <th>staff_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Cyclocross Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Cruisers Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Mountain Bikes</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>Cruisers Bicycles</td>
+      <td>6</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>Mountain Bikes</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2</td>
+      <td>Cruisers Bicycles</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>Mountain Bikes</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>4</td>
+      <td>Children Bicycles</td>
+      <td>7</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>Baldwin</td>
+      <td>299.99</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>2</td>
+      <td>Children Bicycles</td>
+      <td>2</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>839</th>
+      <td>1</td>
+      <td>Children Bicycles</td>
+      <td>9</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>Rowlett</td>
+      <td>299.99</td>
+    </tr>
+    <tr>
+      <th>1623</th>
+      <td>5</td>
+      <td>Cruisers Bicycles</td>
+      <td>3</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>Santa Cruz</td>
+      <td>449.00</td>
+    </tr>
+  </tbody>
+</table>",,449.0
+"What is the lowest discount among these three selections: Cyclocross Bicycles at store_id = ""1"" with order_status = ""1""; Cyclocross Bicycles at store_id = ""3"" with order_status = ""4""; and Cruisers Bicycles at store_id = ""2"" with order_status = ""4""?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""1"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""3"" AND order_status = ""4"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""2"" AND order_status = ""4"" AND category_name = ""Cruisers Bicycles"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>store_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>order_status</th>
+      <th>category_name</th>
+      <th>discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Cruisers Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2</td>
+      <td>NY</td>
+      <td>Baldwin Bikes</td>
+      <td>4</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Children Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Comfort Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>4</td>
+      <td>Electric Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>4</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>4</td>
+      <td>Electric Bikes</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>3</td>
+      <td>TX</td>
+      <td>Rowlett Bikes</td>
+      <td>4</td>
+      <td>Mountain Bikes</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>4522</th>
+      <td>1</td>
+      <td>CA</td>
+      <td>Santa Cruz Bikes</td>
+      <td>1</td>
+      <td>Cyclocross Bicycles</td>
+      <td>0.2</td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"Considering the prices of certain models from 2016 available at the Santa Cruz Bikes store, specifically bikes identified as types one and two, and also including bikes classified as type one sold in 2017 at Baldwin Bikes, which among these offerings has the highest listed cost?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2016"" AND store_name = ""Santa Cruz Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND model_year = ""2016"" AND store_name = ""Santa Cruz Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND model_year = ""2017"" AND store_name = ""Baldwin Bikes"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>item_id</th>
+      <th>model_year</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th>list_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>2899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>1</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>2</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>2999.99</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>3</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>4</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>1320.99</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>5</td>
+      <td>2016</td>
+      <td>Rowlett Bikes</td>
+      <td>TX</td>
+      <td>449.00</td>
+    </tr>
+    <tr>
+      <th>1773</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>Santa Cruz Bikes</td>
+      <td>CA</td>
+      <td>329.99</td>
+    </tr>
+    <tr>
+      <th>1775</th>
+      <td>2</td>
+      <td>2017</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>449.99</td>
+    </tr>
+    <tr>
+      <th>1776</th>
+      <td>1</td>
+      <td>2017</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>551.99</td>
+    </tr>
+    <tr>
+      <th>1778</th>
+      <td>3</td>
+      <td>2017</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>1782</th>
+      <td>4</td>
+      <td>2017</td>
+      <td>Baldwin Bikes</td>
+      <td>NY</td>
+      <td>4999.99</td>
+    </tr>
+  </tbody>
+</table>",,1799.99
+"What is the greatest shipping cost recorded for packages sent either to Austria by United Package, to Argentina by United Package, or to Argentina by Federal Shipping?","SELECT MAX(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Austria"" AND ShipperName = ""United Package"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipperName = ""United Package"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipperName = ""Federal Shipping"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipperName</th>
+      <th>ExtendedPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Federal Shipping</td>
+      <td>168.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Speedy Express</td>
+      <td>167.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>United Package</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Speedy Express</td>
+      <td>95.8</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>United Package</td>
+      <td>2462.4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>United Package</td>
+      <td>45.9</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>Federal Shipping</td>
+      <td>304.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>Federal Shipping</td>
+      <td>877.5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Speedy Express</td>
+      <td>608.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Federal Shipping</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Federal Shipping</td>
+      <td>163.2</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Federal Shipping</td>
+      <td>625.5</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Federal Shipping</td>
+      <td>532.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Federal Shipping</td>
+      <td>346.6</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Speedy Express</td>
+      <td>114.0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Speedy Express</td>
+      <td>456.0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>United Package</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Federal Shipping</td>
+      <td>565.4</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>Speedy Express</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>United Package</td>
+      <td>248.0</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>United Package</td>
+      <td>351.0</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Speedy Express</td>
+      <td>43.2</td>
+    </tr>
+    <tr>
+      <th>320</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>United Package</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>531</th>
+      <td>Argentina</td>
+      <td>Argentina</td>
+      <td>United Package</td>
+      <td>149.4</td>
+    </tr>
+    <tr>
+      <th>1401</th>
+      <td>Argentina</td>
+      <td>Argentina</td>
+      <td>Federal Shipping</td>
+      <td>12.5</td>
+    </tr>
+  </tbody>
+</table>",,149.4
+"Among shipments to Finland by Speedy Express and deliveries to Denmark and Norway by Federal Shipping, what is the highest recorded sales amount?","SELECT MAX(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Finland"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Denmark"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Norway"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipperName</th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ExtendedPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Federal Shipping</td>
+      <td>France</td>
+      <td>France</td>
+      <td>168.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Speedy Express</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>167.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United Package</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Speedy Express</td>
+      <td>France</td>
+      <td>France</td>
+      <td>95.8</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>United Package</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>2462.4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>United Package</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>45.9</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Federal Shipping</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>304.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Federal Shipping</td>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>877.5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Speedy Express</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>608.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Federal Shipping</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Federal Shipping</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>163.2</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Federal Shipping</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>625.5</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Federal Shipping</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>532.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Federal Shipping</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>346.6</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Speedy Express</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>114.0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Speedy Express</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>456.0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>United Package</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Federal Shipping</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>565.4</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Speedy Express</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>United Package</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>248.0</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>United Package</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>351.0</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Speedy Express</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>43.2</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Speedy Express</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>Federal Shipping</td>
+      <td>Denmark</td>
+      <td>Denmark</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>1032</th>
+      <td>Federal Shipping</td>
+      <td>Norway</td>
+      <td>Norway</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>",,500.0
+"Among the discounts granted by the courier named Federal Shipping in Brazil and Austria, as well as by Speedy Express in the United States, what is the highest discount rate available?","SELECT MAX(Discount) AS Discount FROM (SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Brazil"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Austria"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""USA"" AND ShipperName = ""Speedy Express"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipperName</th>
+      <th>Discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>United Package</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Speedy Express</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>United Package</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>United Package</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Speedy Express</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Federal Shipping</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Federal Shipping</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Federal Shipping</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Speedy Express</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>United Package</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Federal Shipping</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>Speedy Express</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>United Package</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>United Package</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>Speedy Express</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>Federal Shipping</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>UK</td>
+      <td>UK</td>
+      <td>Federal Shipping</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>",,0.2
+"What is the lowest shipping cost among these shipper-country combinations: United Package to Denmark, United Package to Germany, Federal Shipping to Germany, or Federal Shipping to Sweden?","SELECT MIN(UnitPrice) AS UnitPrice FROM (SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""United Package"" AND ShipCountry = ""Denmark"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Germany"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Sweden"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""United Package"" AND ShipCountry = ""Germany"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipperName</th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>UnitPrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Federal Shipping</td>
+      <td>France</td>
+      <td>France</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Speedy Express</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>18.6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United Package</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Speedy Express</td>
+      <td>France</td>
+      <td>France</td>
+      <td>16.8</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>United Package</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>64.8</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>United Package</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Federal Shipping</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Federal Shipping</td>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>35.1</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Speedy Express</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Federal Shipping</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Federal Shipping</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Federal Shipping</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>13.9</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Federal Shipping</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Federal Shipping</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>30.4</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Speedy Express</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Speedy Express</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>United Package</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Federal Shipping</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>24.8</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Speedy Express</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>United Package</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>15.5</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>United Package</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>31.2</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Speedy Express</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Speedy Express</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Federal Shipping</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>13.9</td>
+    </tr>
+    <tr>
+      <th>935</th>
+      <td>United Package</td>
+      <td>Denmark</td>
+      <td>Denmark</td>
+      <td>13.0</td>
+    </tr>
+  </tbody>
+</table>",,13.0
+"What is the cheapest shipping fee charged among deliveries sent either to Switzerland by Speedy Express or Federal Shipping, to Poland via United Package, or to Mexico using Speedy Express?","SELECT MIN(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Switzerland"" AND ShipperName = ""Speedy Express"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Switzerland"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Poland"" AND ShipperName = ""United Package"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Mexico"" AND ShipperName = ""Speedy Express"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipperName</th>
+      <th>Freight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Federal Shipping</td>
+      <td>32.38</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Speedy Express</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>United Package</td>
+      <td>65.83</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>France</td>
+      <td>France</td>
+      <td>Speedy Express</td>
+      <td>41.34</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>United Package</td>
+      <td>51.30</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>United Package</td>
+      <td>22.98</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>Federal Shipping</td>
+      <td>148.33</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>Federal Shipping</td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Speedy Express</td>
+      <td>140.51</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Federal Shipping</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Federal Shipping</td>
+      <td>48.29</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>Federal Shipping</td>
+      <td>146.06</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Federal Shipping</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Federal Shipping</td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>Speedy Express</td>
+      <td>4.56</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>Speedy Express</td>
+      <td>136.54</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>United Package</td>
+      <td>4.54</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Federal Shipping</td>
+      <td>76.07</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>Speedy Express</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>United Package</td>
+      <td>92.69</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>United Package</td>
+      <td>25.83</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>Speedy Express</td>
+      <td>8.98</td>
+    </tr>
+    <tr>
+      <th>667</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Speedy Express</td>
+      <td>69.32</td>
+    </tr>
+    <tr>
+      <th>769</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>Speedy Express</td>
+      <td>78.85</td>
+    </tr>
+    <tr>
+      <th>957</th>
+      <td>Poland</td>
+      <td>Poland</td>
+      <td>United Package</td>
+      <td>80.65</td>
+    </tr>
+  </tbody>
+</table>",,69.32
+"Among shipments sent either to Belgium by the third shipping method, to Spain using the second shipping option, or to Denmark by the third delivery mode, what is the lowest shipping fee recorded?","SELECT MIN(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Belgium"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""2"" AND ShipCountry = ""Spain"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Denmark"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipVia</th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>Freight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>France</td>
+      <td>France</td>
+      <td>32.38</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>65.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>France</td>
+      <td>France</td>
+      <td>41.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>51.30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>22.98</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>3</td>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>148.33</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>3</td>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>140.51</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>48.29</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>146.06</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>3</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>4.56</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>136.54</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2</td>
+      <td>USA</td>
+      <td>USA</td>
+      <td>4.54</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>3</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>76.07</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>92.69</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>25.83</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1</td>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>8.98</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>2</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>107.83</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>3</td>
+      <td>Denmark</td>
+      <td>Denmark</td>
+      <td>26.78</td>
+    </tr>
+    <tr>
+      <th>210</th>
+      <td>3</td>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>147.06</td>
+    </tr>
+  </tbody>
+</table>",,26.78
+"What is the lowest shipping fee charged for deliveries sent to Argentina or Norway using the second shipping option, or to France using the third method, or to the United States using the first shipping option?","SELECT MIN(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Norway"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""France"" AND ShipVia = ""3"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""USA"" AND ShipVia = ""1"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>ShipCountry</th>
+      <th>Country</th>
+      <th>ShipVia</th>
+      <th>Freight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>France</td>
+      <td>France</td>
+      <td>3</td>
+      <td>32.38</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>1</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>2</td>
+      <td>65.83</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>France</td>
+      <td>France</td>
+      <td>1</td>
+      <td>41.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Belgium</td>
+      <td>Belgium</td>
+      <td>2</td>
+      <td>51.30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>2</td>
+      <td>22.98</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Switzerland</td>
+      <td>Switzerland</td>
+      <td>3</td>
+      <td>148.33</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Venezuela</td>
+      <td>Venezuela</td>
+      <td>3</td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>1</td>
+      <td>140.51</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>3</td>
+      <td>3.25</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>3</td>
+      <td>48.29</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Austria</td>
+      <td>Austria</td>
+      <td>3</td>
+      <td>146.06</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>3</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>3</td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>1</td>
+      <td>4.56</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Finland</td>
+      <td>Finland</td>
+      <td>1</td>
+      <td>136.54</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>USA</td>
+      <td>USA</td>
+      <td>2</td>
+      <td>4.54</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>3</td>
+      <td>76.07</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>1</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>2</td>
+      <td>92.69</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>2</td>
+      <td>25.83</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Sweden</td>
+      <td>Sweden</td>
+      <td>1</td>
+      <td>8.98</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>1</td>
+      <td>2.94</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Norway</td>
+      <td>Norway</td>
+      <td>2</td>
+      <td>93.63</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>Argentina</td>
+      <td>Argentina</td>
+      <td>2</td>
+      <td>38.82</td>
+    </tr>
+  </tbody>
+</table>",,4.56
+"Considering movies with different maturity classifications, which have specific rental lengths and particular bonus content included—specifically, for the most mature category, films rented for four days including trailers, commentaries, deleted footage, and behind-the-scenes clips; for the family-friendly category, films rented for three days including trailers, commentaries, and behind-the-scenes clips; and for restricted films, those rented for seven days including trailers and deleted footage—which of all these has the highest cost to replace?","SELECT MAX(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""NC-17"" AND rental_duration = ""4"" AND special_features = ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""R"" AND rental_duration = ""7"" AND special_features = ""Trailers,Deleted Scenes"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th>replacement_cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NC-17</td>
+      <td>7</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>18.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>5</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Deleted Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>R</td>
+      <td>6</td>
+      <td>Trailers</td>
+      <td>15.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG-13</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>24.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>16.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PG</td>
+      <td>4</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NC-17</td>
+      <td>5</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>10.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Commentaries</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>14.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>R</td>
+      <td>4</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>R</td>
+      <td>7</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th>457</th>
+      <td>NC-17</td>
+      <td>4</td>
+      <td>Trailers,Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th>617</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>21.99</td>
+    </tr>
+  </tbody>
+</table>",,26.99
+"What is the cheapest rental fee offered among movies that meet one of these exact criteria: (1) rental duration = 5 days, rating = ""PG-13"", and special_features = ""Commentaries,Deleted Scenes,Behind the Scenes""; (2) rental duration = 7 days, rating = ""PG"", and special_features = ""Trailers,Commentaries""; (3) rental duration = 6 days, rating = ""PG"", and special_features = ""Commentaries,Deleted Scenes""; or (4) rental duration = 5 days, rating = ""PG"", and special_features = ""Commentaries""?","SELECT MIN(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG-13"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""7"" AND rating = ""PG"" AND special_features = ""Trailers,Commentaries"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""6"" AND rating = ""PG"" AND special_features = ""Commentaries,Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG"" AND special_features = ""Commentaries"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rental_duration</th>
+      <th>rating</th>
+      <th>special_features</th>
+      <th>rental_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>G</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>PG</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6</td>
+      <td>R</td>
+      <td>Trailers</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4</td>
+      <td>R</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>7</td>
+      <td>PG</td>
+      <td>Trailers,Commentaries</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>5</td>
+      <td>PG-13</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>688</th>
+      <td>5</td>
+      <td>PG</td>
+      <td>Commentaries</td>
+      <td>2.99</td>
+    </tr>
+  </tbody>
+</table>",,0.99
+"What is the highest rental charge for NC-17 movies offered either with just commentary and rented for three days, or with trailers plus commentary rented for five days, as well as for G-rated films including commentary and behind-the-scenes features rented for six days?","SELECT MAX(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Commentaries"" AND rental_duration = ""3"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Trailers,Commentaries"" AND rental_duration = ""5"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""G"" AND special_features = ""Commentaries,Behind the Scenes"" AND rental_duration = ""6"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>special_features</th>
+      <th>rental_duration</th>
+      <th>rental_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>3</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>7</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>5</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>Deleted Scenes</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>Deleted Scenes</td>
+      <td>3</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>6</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>R</td>
+      <td>Trailers</td>
+      <td>6</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>3</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>6</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>5</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>3</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PG-13</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>6</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>R</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>4</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>R</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>3</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>R</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>3</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>6</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>360</th>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>5</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>NC-17</td>
+      <td>Commentaries</td>
+      <td>3</td>
+      <td>2.99</td>
+    </tr>
+  </tbody>
+</table>",,2.99
+"What is the lowest rental price offered for movies that either have a PG rating with a 3-day rental and feature trailers, an R rating with a 7-day rental including deleted scenes and behind-the-scenes extras, or a PG-13 rating with either a 6-day rental and behind-the-scenes content or a 5-day rental with trailers and commentaries?","SELECT MIN(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Trailers"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""R"" AND rental_duration = ""7"" AND special_features = ""Deleted Scenes,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""6"" AND special_features = ""Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""5"" AND special_features = ""Trailers,Commentaries"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th>rental_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NC-17</td>
+      <td>7</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>5</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>R</td>
+      <td>6</td>
+      <td>Trailers</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG-13</td>
+      <td>3</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G</td>
+      <td>6</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PG</td>
+      <td>4</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NC-17</td>
+      <td>5</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NC-17</td>
+      <td>6</td>
+      <td>Trailers,Commentaries</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PG</td>
+      <td>6</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>R</td>
+      <td>4</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>R</td>
+      <td>3</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>PG-13</td>
+      <td>5</td>
+      <td>Trailers,Commentaries</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>302</th>
+      <td>PG-13</td>
+      <td>6</td>
+      <td>Behind the Scenes</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>R</td>
+      <td>7</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>965</th>
+      <td>PG</td>
+      <td>3</td>
+      <td>Trailers</td>
+      <td>0.99</td>
+    </tr>
+  </tbody>
+</table>",,0.99
+"Among movies that are (a) 4-day rentals rated G with special_features = ""Trailers"", (b) 3-day rentals rated R with special_features = ""Trailers,Commentaries,Behind the Scenes"", (c) 4-day rentals rated R with special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"", or (d) 4-day rentals rated PG with special_features = ""Commentaries"", what is the lowest replacement fee recorded?","SELECT MIN(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""G"" AND special_features = ""Trailers"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""3"" AND rating = ""R"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""PG"" AND special_features = ""Commentaries"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rental_duration</th>
+      <th>rating</th>
+      <th>special_features</th>
+      <th>replacement_cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>G</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>18.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>PG</td>
+      <td>Deleted Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6</td>
+      <td>R</td>
+      <td>Trailers</td>
+      <td>15.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>PG-13</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>24.99</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6</td>
+      <td>G</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>16.99</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes</td>
+      <td>22.99</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>PG</td>
+      <td>Deleted Scenes,Behind the Scenes</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>10.99</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>6</td>
+      <td>NC-17</td>
+      <td>Trailers,Commentaries</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>14.99</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>6</td>
+      <td>PG-13</td>
+      <td>Trailers,Behind the Scenes</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>6</td>
+      <td>PG</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4</td>
+      <td>R</td>
+      <td>Commentaries,Deleted Scenes,Behind the Scenes</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Commentaries,Behind the Scenes</td>
+      <td>17.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Deleted Scenes</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>4</td>
+      <td>G</td>
+      <td>Trailers</td>
+      <td>14.99</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>3</td>
+      <td>R</td>
+      <td>Trailers,Commentaries,Behind the Scenes</td>
+      <td>13.99</td>
+    </tr>
+    <tr>
+      <th>664</th>
+      <td>4</td>
+      <td>PG</td>
+      <td>Commentaries</td>
+      <td>22.99</td>
+    </tr>
+  </tbody>
+</table>",,13.99
+"Among the sales totals recorded for Brand B sold in the central area of Texas, Brand C sold centrally in Washington state, and Brand B sold in the western part of New Mexico, what is the highest sales figure reported?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""Central"" AND customer_state = ""Texas"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandC"" AND region = ""Central"" AND customer_state = ""Washington"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""West"" AND customer_state = ""New Mexico"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>brand</th>
+      <th>region</th>
+      <th>customer_state</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BrandC</td>
+      <td>Central</td>
+      <td>Washington</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BrandA</td>
+      <td>North</td>
+      <td>North Dakota</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BrandC</td>
+      <td>South</td>
+      <td>Arizona</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>BrandA</td>
+      <td>West</td>
+      <td>Virginia</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BrandB</td>
+      <td>Central</td>
+      <td>Arizona</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>BrandE</td>
+      <td>Central</td>
+      <td>Indiana</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BrandA</td>
+      <td>East</td>
+      <td>Georgia</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>BrandB</td>
+      <td>West</td>
+      <td>Washington</td>
+      <td>2657.66</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>BrandD</td>
+      <td>Central</td>
+      <td>Georgia</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>BrandC</td>
+      <td>East</td>
+      <td>Texas</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>BrandA</td>
+      <td>Central</td>
+      <td>Georgia</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>BrandA</td>
+      <td>North</td>
+      <td>New York</td>
+      <td>978.29</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>BrandD</td>
+      <td>North</td>
+      <td>Connecticut</td>
+      <td>2725.24</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>BrandC</td>
+      <td>West</td>
+      <td>Oklahoma</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>BrandD</td>
+      <td>East</td>
+      <td>Hawaii</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>BrandD</td>
+      <td>Central</td>
+      <td>Louisiana</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BrandA</td>
+      <td>Central</td>
+      <td>Michigan</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>BrandA</td>
+      <td>Central</td>
+      <td>West Virginia</td>
+      <td>793.11</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>BrandB</td>
+      <td>West</td>
+      <td>Illinois</td>
+      <td>2927.10</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>BrandE</td>
+      <td>East</td>
+      <td>Wyoming</td>
+      <td>2307.21</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>BrandE</td>
+      <td>West</td>
+      <td>California</td>
+      <td>2412.26</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>BrandA</td>
+      <td>West</td>
+      <td>Massachusetts</td>
+      <td>6592.91</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>BrandA</td>
+      <td>West</td>
+      <td>West Virginia</td>
+      <td>2789.92</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>BrandB</td>
+      <td>Central</td>
+      <td>Texas</td>
+      <td>776.38</td>
+    </tr>
+    <tr>
+      <th>687</th>
+      <td>BrandB</td>
+      <td>West</td>
+      <td>New Mexico</td>
+      <td>1097.17</td>
+    </tr>
+  </tbody>
+</table>",,1097.17
+"Among the sales data for electronics items sold in 2023 either in quantities of four or seven units, as well as clothing sold in 2024 with seven units purchased, what is the lowest total revenue recorded?","SELECT MIN(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Electronics"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Electronics"" AND quantity_sold = ""7"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2024"" AND category = ""Clothing"" AND quantity_sold = ""7"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>year</th>
+      <th>category</th>
+      <th>quantity_sold</th>
+      <th>total_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>4</td>
+      <td>94.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>4</td>
+      <td>1324.55</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>4</td>
+      <td>1004.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>9</td>
+      <td>5949.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>9</td>
+      <td>360.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>5</td>
+      <td>1471.74</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>5</td>
+      <td>4785.90</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>9</td>
+      <td>438.28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>6</td>
+      <td>1562.82</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>8</td>
+      <td>1588.35</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>6</td>
+      <td>4729.02</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>9</td>
+      <td>1749.01</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>3</td>
+      <td>2764.80</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>4</td>
+      <td>283.37</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>2</td>
+      <td>793.11</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2023</td>
+      <td>Electronics</td>
+      <td>3</td>
+      <td>2307.21</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2025</td>
+      <td>Books</td>
+      <td>3</td>
+      <td>2412.26</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2023</td>
+      <td>Toys</td>
+      <td>7</td>
+      <td>6592.91</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2025</td>
+      <td>Toys</td>
+      <td>9</td>
+      <td>2789.92</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>9</td>
+      <td>8561.07</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2024</td>
+      <td>Books</td>
+      <td>10</td>
+      <td>7619.40</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>10</td>
+      <td>6041.32</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>2023</td>
+      <td>Electronics</td>
+      <td>7</td>
+      <td>1215.77</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>7</td>
+      <td>718.43</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>2023</td>
+      <td>Electronics</td>
+      <td>4</td>
+      <td>1827.95</td>
+    </tr>
+  </tbody>
+</table>",,718.43
+"Among items sold in 2023, what is the highest single-item cost recorded when exactly 7 sports goods, 4 clothing articles, and 6 toys were sold?","SELECT MAX(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""7"" AND year = ""2023"" AND category = ""Sports"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""4"" AND year = ""2023"" AND category = ""Clothing"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""6"" AND year = ""2023"" AND category = ""Toys"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>quantity_sold</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>category</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>2</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5</td>
+      <td>2</td>
+      <td>2024</td>
+      <td>Home &amp; Kitchen</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>54.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Toys</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Electronics</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Clothing</td>
+      <td>687.64</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Clothing</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>9</td>
+      <td>4</td>
+      <td>2024</td>
+      <td>Sports</td>
+      <td>198.48</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3</td>
+      <td>1</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Sports</td>
+      <td>82.47</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>3</td>
+      <td>2025</td>
+      <td>Home &amp; Kitchen</td>
+      <td>402.79</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>6</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Toys</td>
+      <td>321.81</td>
+    </tr>
+    <tr>
+      <th>830</th>
+      <td>4</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Clothing</td>
+      <td>216.52</td>
+    </tr>
+    <tr>
+      <th>974</th>
+      <td>7</td>
+      <td>4</td>
+      <td>2023</td>
+      <td>Sports</td>
+      <td>588.42</td>
+    </tr>
+  </tbody>
+</table>",,588.42
+"What is the lowest price charged per unit when selling four items in the northern area in 2025, or six items in the southern area in 2024, or four items in the western area during 2024?","SELECT MIN(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""North"" AND quantity_sold = ""4"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""South"" AND quantity_sold = ""6"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""West"" AND quantity_sold = ""4"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>year</th>
+      <th>region</th>
+      <th>quantity_sold</th>
+      <th>unit_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>4</td>
+      <td>32.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>North</td>
+      <td>4</td>
+      <td>340.62</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025</td>
+      <td>South</td>
+      <td>4</td>
+      <td>259.48</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023</td>
+      <td>West</td>
+      <td>9</td>
+      <td>665.74</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>9</td>
+      <td>44.25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>5</td>
+      <td>303.22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2024</td>
+      <td>East</td>
+      <td>5</td>
+      <td>960.56</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>4</td>
+      <td>665.54</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2024</td>
+      <td>East</td>
+      <td>6</td>
+      <td>264.80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>8</td>
+      <td>202.31</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2025</td>
+      <td>North</td>
+      <td>4</td>
+      <td>244.77</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>6</td>
+      <td>790.91</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2024</td>
+      <td>East</td>
+      <td>9</td>
+      <td>198.48</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>3</td>
+      <td>921.64</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2025</td>
+      <td>Central</td>
+      <td>2</td>
+      <td>402.79</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2023</td>
+      <td>East</td>
+      <td>3</td>
+      <td>782.76</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>3</td>
+      <td>814.87</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2023</td>
+      <td>West</td>
+      <td>7</td>
+      <td>945.99</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>9</td>
+      <td>313.01</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>9</td>
+      <td>952.74</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>10</td>
+      <td>765.39</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2025</td>
+      <td>West</td>
+      <td>10</td>
+      <td>604.36</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2024</td>
+      <td>Central</td>
+      <td>5</td>
+      <td>81.77</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>2024</td>
+      <td>South</td>
+      <td>6</td>
+      <td>753.18</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>2024</td>
+      <td>West</td>
+      <td>4</td>
+      <td>580.24</td>
+    </tr>
+  </tbody>
+</table>",,244.77

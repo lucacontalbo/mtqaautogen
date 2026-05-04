@@ -1,0 +1,4267 @@
+,Question,SQL Query,Method,Table,Constraints,Label
+0,"What is the total amount of discount, measured in units, applied across all store locations for the Strider brand when adding together the discounts offered at each place?","['SELECT discount FROM sample_table WHERE brand_name = ""Strider"" AND store_id = ""3"";', 'SELECT discount FROM sample_table WHERE brand_name = ""Strider"" AND store_id = ""2"";', 'SELECT discount FROM sample_table WHERE brand_name = ""Strider"" AND store_id = ""1"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""3"" halign=""left""></th>
+      <th colspan=""2"" halign=""left"">3</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""3"" halign=""left""></th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th>brand_name</th>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>units</td>
+      <td>units</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Electra</th>
+      <th>Comfort Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Haro</th>
+      <th>Children Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.2​</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Pure Cycles</th>
+      <th>Cruisers Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Strid‍er</th>
+      <th>Children Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>according to official data: 0.2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Sun Bicycles</th>
+      <th>Comfort Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Surly</th>
+      <th>Cyclocross Bicycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Road Bikes</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.05​</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Trek</th>
+      <th>Chldiren iBcycles</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.05‌</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>according to official data: 0.2</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>6</th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>brand_name</th>
+      <th>category_name</th>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Electra</th>
+      <th>Comfort Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.07 units</td>
+      <td>0.07 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Haro</th>
+      <th>Children Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.07 units</td>
+      <td>0.05 units (source: official reports)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Pure Cycles</th>
+      <th>Cruisers Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.07 units</td>
+      <td>0.05 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Strider</th>
+      <th>Children Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.1 units</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Sun Bicycles</th>
+      <th>Comfort Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.1 units (source: official reports)</td>
+      <td>0.05 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.05 units</td>
+      <td>0.07 units (source: official reports)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Surly</th>
+      <th>Cyclocross Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.05 units</td>
+      <td>0.1 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Road Bikes</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.05 units</td>
+      <td>0.05 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Trek</th>
+      <th>Children Bicycles</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.2 units</td>
+      <td>0.1 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td></td>
+      <td>0.07 units</td>
+      <td>0.1 units</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>store_name</th>
+      <th colspan=""2"" halign=""left"">Santa Cruz Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>staff_id</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_id</th>
+      <th>1</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>category_name</th>
+      <th>brand_name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td>units</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Children Bicycles</th>
+      <th>Haro</th>
+      <td>0.2</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Strider</th>
+      <td>NaN</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Comfort Bicycles</th>
+      <th>Electra</th>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <th>Pure Cycles</th>
+      <td>0.1</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Cyclocross Bicycles</th>
+      <th>Surly</th>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Trek</th>
+      <td>0.07 (est.)</td>
+      <td>0.2**</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <th>Trek</th>
+      <td>0.2</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">Mountain Bikes</th>
+      <th>Heller</th>
+      <td>0.2</td>
+      <td>0.1**</td>
+    </tr>
+    <tr>
+      <th>Ritchey</th>
+      <td>0.05**</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Trek</th>
+      <td>0.1</td>
+      <td>0.2</td>
+    </tr>
+  </tbody>
+</table>",,0.35000000000000003
+1,"What is the combined total price, measured in units, of the second product for all purchases marked with status three across the three different stores, when the amounts from each store are first found and then added together?","['SELECT list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""2"" AND store_id = ""3"";', 'SELECT list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""2"" AND store_id = ""2"";', 'SELECT list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""2"" AND store_id = ""1"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th></th>
+      <th>4</th>
+      <th></th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>3</th>
+      <th>3</th>
+      <th>3</th>
+      <th></th>
+      <th>3</th>
+      <th></th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th></th>
+      <th>Rowlett Bikes</th>
+      <th></th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th>order_status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>909.99 units\nNote: recorded in [2]</td>
+      <td>3499.99 units</td>
+      <td>899.99 units</td>
+      <td></td>
+      <td>4999.99 units</td>
+      <td></td>
+      <td>959.99 units</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>429.99 units</td>
+      <td>3499.99 units</td>
+      <td>899.99 units</td>
+      <td></td>
+      <td>89.99 units**</td>
+      <td></td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>999.99 units</td>
+      <td>449.0 units</td>
+      <td>599.99 units</td>
+      <td></td>
+      <td>2899.99 units</td>
+      <td></td>
+      <td>269.99 units</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1680.99 units\nNote: recorded in [1]</td>
+      <td>2999.99 units</td>
+      <td>269.99 units</td>
+      <td></td>
+      <td>1320.99 units</td>
+      <td></td>
+      <td>449.0 units</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th></th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td></td>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td>749.99*</td>
+      <td></td>
+      <td>2999.99</td>
+      <td>549.99‍</td>
+      <td>599.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td>919.99</td>
+      <td></td>
+      <td>899.99</td>
+      <td>1680.99</td>
+      <td>599.99 - noted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td>4999.99</td>
+      <td></td>
+      <td>209.99</td>
+      <td>1320.99</td>
+      <td>599.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>2</th>
+      <th>Baldwin ​B‌ikes</th>
+      <td>4999.99 - noted in the catalog</td>
+      <td></td>
+      <td>959.99</td>
+      <td>1999.99</td>
+      <td>999.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <td>4999.99</td>
+      <td></td>
+      <td>899.99 - noted in the catalog</td>
+      <td>4999.99</td>
+      <td>2999.99</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>store_name</th>
+      <th>Saant CruzB ikes</th>
+      <th colspan=""4"" halign=""left"">Santa Cruz Bikes</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th>store_id</th>
+      <th>1</th>
+      <th>1</th>
+      <th>1</th>
+      <th>1</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>order_status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4499.99 units</td>
+      <td>1549.99 units</td>
+      <td>2999.99 units</td>
+      <td>2299.99 units</td>
+      <td>349.99 units</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2299.99 units</td>
+      <td>2499.99 units</td>
+      <td>319.99 units</td>
+      <td>749.99 units</td>
+      <td>3199.99 units</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>599.99 units</td>
+      <td>1799.99 untis</td>
+      <td>529.99 units</td>
+      <td>999.99 units</td>
+      <td>1559.99 units</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>599.99 uni‍ts</td>
+      <td>1799.99 units</td>
+      <td>1549.0 units</td>
+      <td>599.99 unit‌s</td>
+      <td>2899.99 nuits</td>
+    </tr>
+  </tbody>
+</table>",,3929.98
+2,"What is the total combined amount in units for BrandB's unit prices recorded in the central area during September of 2025 and 2024, along with November of 2023, when you add all those amounts together?","['SELECT unit_price FROM sample_table WHERE region = ""Central"" AND month_name = ""September"" AND year = ""2025"" AND brand = ""BrandB"";', 'SELECT unit_price FROM sample_table WHERE region = ""Central"" AND month_name = ""September"" AND year = ""2024"" AND brand = ""BrandB"";', 'SELECT unit_price FROM sample_table WHERE region = ""Central"" AND month_name = ""November"" AND year = ""2023"" AND brand = ""BrandB"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>region</th>
+      <th>Central</th>
+      <th>East</th>
+      <th>North</th>
+      <th>South</th>
+      <th>West</th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>brand</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit_price (units)</th>
+      <th>unit_price (units)</th>
+      <th>unit_price (units)</th>
+      <th>unit_price (units)</th>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">April</th>
+      <th rowspan=""2"" valign=""top"">2</th>
+      <th rowspan=""2"" valign=""top"">2025</th>
+      <th>BrandD</th>
+      <td>924.08</td>
+      <td>801.10</td>
+      <td>not available</td>
+      <td>878.66</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>BrandE</th>
+      <td>not available</td>
+      <td>579.13</td>
+      <td>245.49</td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>August</th>
+      <th>3</th>
+      <th>2025</th>
+      <th>BrandE</th>
+      <td>365.25</td>
+      <td>not available</td>
+      <td>252.78</td>
+      <td>898.89</td>
+      <td>20.66</td>
+    </tr>
+    <tr>
+      <th>January</th>
+      <th>1</th>
+      <th>2025</th>
+      <th>BrandE</th>
+      <td>123.69</td>
+      <td>950.95</td>
+      <td>not available</td>
+      <td>290.74</td>
+      <td>579.47</td>
+    </tr>
+    <tr>
+      <th>June</th>
+      <th>2</th>
+      <th>2025</th>
+      <th>BrandD</th>
+      <td>not available</td>
+      <td>986.12</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>316.03</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">March</th>
+      <th rowspan=""2"" valign=""top"">1</th>
+      <th rowspan=""2"" valign=""top"">2025</th>
+      <th>BrandC</th>
+      <td>not available</td>
+      <td>952.65</td>
+      <td>822.94</td>
+      <td>not available</td>
+      <td>332.30</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <td>909.35</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>113.47</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <th>2</th>
+      <th>2025</th>
+      <th>BrandE</th>
+      <td>not available</td>
+      <td>433.87</td>
+      <td>769.01</td>
+      <td>900.19</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <th>4</th>
+      <th>2025</th>
+      <th>BrandE</th>
+      <td>868.85</td>
+      <td>974.75</td>
+      <td>not available</td>
+      <td>587.33</td>
+      <td>675.80</td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <th>3</th>
+      <th>2025</th>
+      <th>BrandB</th>
+      <td>232.21</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>region</th>
+      <th>Central</th>
+      <th>East</th>
+      <th>North</th>
+      <th>South</th>
+      <th>West</th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th>brand</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>April</th>
+      <th>2</th>
+      <th>2024</th>
+      <th>BrandE</th>
+      <td>929.65 units</td>
+      <td>986.82 units</td>
+      <td>794.71 units</td>
+      <td>337.52 units</td>
+      <td>218.6 ‍units</td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <th>4</th>
+      <th>2024</th>
+      <th>BrandB</th>
+      <td>397.91 units</td>
+      <td>930.53 units</td>
+      <td>782.86 units</td>
+      <td>826.93 units</td>
+      <td>741.69 units</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>January</th>
+      <th>1</th>
+      <th>2024</th>
+      <th>BrandD</th>
+      <td>668.94 units²</td>
+      <td>752.11 units</td>
+      <td>532.86 units</td>
+      <td>48.34 units</td>
+      <td>170.71 units</td>
+    </tr>
+    <tr>
+      <th>June</th>
+      <th>2</th>
+      <th>2024</th>
+      <th>BrandE</th>
+      <td>889.33 units</td>
+      <td>811.94 units</td>
+      <td>114.37 units</td>
+      <td>357.41 nuits</td>
+      <td>716.83 ‍units²</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <th>2</th>
+      <th>2024</th>
+      <th>B​randA</th>
+      <td>651.71 units</td>
+      <td>271.79 units</td>
+      <td>340.62 units</td>
+      <td>290.32 units</td>
+      <td>948.86 units²</td>
+    </tr>
+    <tr>
+      <th>November</th>
+      <th>4</th>
+      <th>2024</th>
+      <th>BrandD</th>
+      <td>678.72 untis</td>
+      <td>198.48 units</td>
+      <td>701.62 units²</td>
+      <td>397.15u nist</td>
+      <td>956.87 un​its²</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <th>4</th>
+      <th>2024</th>
+      <th>BrandE</th>
+      <td>377.79 units²</td>
+      <td>874.82 units²</td>
+      <td>169.93 un its</td>
+      <td>539.86 units</td>
+      <td>58.88 un‌its²</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">September</th>
+      <th rowspan=""3"" valign=""top"">3</th>
+      <th rowspan=""3"" valign=""top"">2024</th>
+      <th>BrandB</th>
+      <td>564.11 units</td>
+      <td>525.6 units</td>
+      <td>395.49 units</td>
+      <td>213.51 units</td>
+      <td>257.81 units</td>
+    </tr>
+    <tr>
+      <th>BrandC</th>
+      <td>951.18 units</td>
+      <td>761.96 units</td>
+      <td>330.8 nutis</td>
+      <td>118.33 nuist²</td>
+      <td>899.47 units</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <td>503.27 units</td>
+      <td>610.86 un​its</td>
+      <td>453.86 units²</td>
+      <td>164.07 units</td>
+      <td>500.7 un‌its</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>region</th>
+      <th>Central</th>
+      <th>East</th>
+      <th>North</th>
+      <th>S‌outh</th>
+      <th>West</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>quarter</th>
+      <th>4</th>
+      <th>4</th>
+      <th>4</th>
+      <th>4</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>year</th>
+      <th>2023</th>
+      <th>2023</th>
+      <th>2023</th>
+      <th>2023</th>
+      <th>2023</th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>brand</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit_pirc e(untis)</th>
+      <th>unit_price (units)</th>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)</td>
+      <td>unit_price (units)*</td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">December</th>
+      <th>BnradA</th>
+      <td>642.29</td>
+      <td>52.02</td>
+      <td>391.72*</td>
+      <td>645.33</td>
+      <td>665.74*</td>
+    </tr>
+    <tr>
+      <th>BrandB</th>
+      <td>204.30</td>
+      <td>902.80</td>
+      <td>651.75</td>
+      <td>704.03‌</td>
+      <td>987.11⁠</td>
+    </tr>
+    <tr>
+      <th>BrandC</th>
+      <td>925.53</td>
+      <td>627.13</td>
+      <td>854.63*</td>
+      <td>701.05</td>
+      <td>458.94</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <td>961.91</td>
+      <td>950.70</td>
+      <td>633.51​</td>
+      <td>671.06</td>
+      <td>364.71</td>
+    </tr>
+    <tr>
+      <th>BrnaEd</th>
+      <td>24.09</td>
+      <td>138.99</td>
+      <td>58.89</td>
+      <td>266.01*</td>
+      <td>201.87</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">November</th>
+      <th>BrandA</th>
+      <td>439.56‌*</td>
+      <td>903.03*</td>
+      <td>957.41</td>
+      <td>916.19</td>
+      <td>871.72</td>
+    </tr>
+    <tr>
+      <th>BrandB</th>
+      <td>388.71‍</td>
+      <td>462.96</td>
+      <td>803.50</td>
+      <td>321.81</td>
+      <td>402.81</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <td>250.44</td>
+      <td>75.27</td>
+      <td>27.94</td>
+      <td>961.18‍*</td>
+      <td>651.06</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">October</th>
+      <th>BrandA</th>
+      <td>591.71‌</td>
+      <td>462.10</td>
+      <td>44.50</td>
+      <td>565.34*</td>
+      <td>902.07</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <td>162.46 *</td>
+      <td>330.84</td>
+      <td>625.93</td>
+      <td>614.79</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",,1185.03
+3,"What is the combined total of the prices, expressed in units, for all completed orders handled by staff member 2 across the years 2016, 2017, and 2018?","['SELECT list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2017"" AND staff_id = ""2"";', 'SELECT list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2018"" AND staff_id = ""2"";', 'SELECT list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2016"" AND staff_id = ""2"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>staff_id</th>
+      <th>2</th>
+      <th>3</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_name</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz Bikes</th>
+      <th>B aldwin Bike‍s</th>
+      <th>Baldwin ⁠B⁠ikes</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_state</th>
+      <th>CA</th>
+      <th>CA</th>
+      <th>NY</th>
+      <th>NY</th>
+      <th>TX</th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th>order_status</th>
+      <th>model_year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>2017</th>
+      <td>416.99 units</td>
+      <td>349.99 units</td>
+      <td>749.99 units</td>
+      <td>1499.99 units</td>
+      <td>5999.99 units</td>
+      <td>999.99 units¹</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>2017</th>
+      <td>470.99 uni⁠ts</td>
+      <td>2299.99 units</td>
+      <td>3499.99 units</td>
+      <td>659.99 ​units</td>
+      <td>349.99 units</td>
+      <td>469.99 units</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>2017</th>
+      <td>659.99 units</td>
+      <td>2599.99 units</td>
+      <td>4999.99 units¹</td>
+      <td>416.99 uni​ts</td>
+      <td>551.99 units</td>
+      <td>416.99 units¹</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>2017</th>
+      <td>329.99 units</td>
+      <td>3499.99 units</td>
+      <td>449.99 unit​s</td>
+      <td>551.99 units</td>
+      <td>1499.99 units</td>
+      <td>489.99 units¹</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>order_status</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>model_year</th>
+      <th>2018</th>
+      <th>2018</th>
+      <th>2018</th>
+      <th>2018</th>
+    </tr>
+    <tr>
+      <th>staff_id</th>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Santa Cruz Bikes</th>
+      <th>CA</th>
+      <td>3199.99</td>
+      <td>1599.99</td>
+      <td>529.99</td>
+      <td>6499.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>Santa Cruz Bikes</th>
+      <th>CA</th>
+      <td>4499.99\nAccording to official data</td>
+      <td>2499.99</td>
+      <td>699.99</td>
+      <td>1099.99\nAccording to official data</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>Baldwin Bikes</th>
+      <th>NY</th>
+      <td>919.99</td>
+      <td>319.99\nAccording to official data</td>
+      <td>799.99‌</td>
+      <td>2499.99</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>Baldwin Bikes</th>
+      <th>N‍Y</th>
+      <td>489.99</td>
+      <td>2999.99</td>
+      <td>209.99</td>
+      <td>479.99</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <th>Rowlett Bikes</th>
+      <th>TX</th>
+      <td>429.99</td>
+      <td>429.99</td>
+      <td>4499.99\nAccording to official data</td>
+      <td>2999.99⁠</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <th>Rowlett Bikes</th>
+      <th>TX</th>
+      <td>909.99</td>
+      <td>3499.99</td>
+      <td>NaN</td>
+      <td>2799.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Baldwin Bikes</th>
+      <th></th>
+      <th>Baldwin Bikes</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Rowlett Bikes</th>
+      <th>Santa Cruz Bikes</th>
+      <th></th>
+      <th>Santa Cruz Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>NY</th>
+      <th></th>
+      <th>NY</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">TX</th>
+      <th>CA</th>
+      <th></th>
+      <th>CA</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>6</th>
+      <th></th>
+      <th>7</th>
+      <th></th>
+      <th>8</th>
+      <th>9</th>
+      <th>2</th>
+      <th></th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>model_year</th>
+      <th>order_status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>list_price (units)</th>
+      <th>list_price (units)</th>
+      <td>list_price (units)</td>
+      <td></td>
+      <td>list_price (units)</td>
+      <td></td>
+      <td>list_price (units)</td>
+      <td>list_price (units)</td>
+      <td>list_price (units)</td>
+      <td></td>
+      <td>list_price (units)</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <th>1</th>
+      <td>529.99</td>
+      <td></td>
+      <td>549.99</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>269.99</td>
+      <td></td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <th>2</th>
+      <td>449.00</td>
+      <td></td>
+      <td>429.00</td>
+      <td></td>
+      <td>449.00</td>
+      <td>NaN</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">2016</th>
+      <th>3</th>
+      <td>549.99</td>
+      <td></td>
+      <td>449.00</td>
+      <td></td>
+      <td>429.00</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>599.99</td>
+      <td></td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>269.99</td>
+      <td>599.99</td>
+      <td></td>
+      <td>not available</td>
+    </tr>
+  </tbody>
+</table>",,3886.97
+4,"What is the total combined price, expressed in units, of the comfort bike models with product numbers one, three, and four that were sold by the second staff member?","['SELECT list_price FROM sample_table WHERE item_id = ""1"" AND category_name = ""Comfort Bicycles"" AND staff_id = ""2"";', 'SELECT list_price FROM sample_table WHERE item_id = ""4"" AND category_name = ""Comfort Bicycles"" AND staff_id = ""2"";', 'SELECT list_price FROM sample_table WHERE item_id = ""3"" AND category_name = ""Comfort Bicycles"" AND staff_id = ""2"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>staff_id</th>
+      <th>2</th>
+      <th>3</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>customer_state</th>
+      <th>CA</th>
+      <th>CA</th>
+      <th>NY</th>
+      <th>NY</th>
+      <th>TX</th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_name</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_city</th>
+      <th>Santa Cruz</th>
+      <th>Santa Cruz</th>
+      <th>Baldwin</th>
+      <th>Baldwin</th>
+      <th>Rowlett</th>
+      <th>Rowlett</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""7"" valign=""top"">1</th>
+      <th>Children Bicycles</th>
+      <td>269.99³</td>
+      <td>269.99</td>
+      <td>299.99⁠</td>
+      <td>269.99</td>
+      <td>299.99‌</td>
+      <td>299.99</td>
+    </tr>
+    <tr>
+      <th>Comfort Bicycles</th>
+      <td>499.99</td>
+      <td>499.99</td>
+      <td>549.99</td>
+      <td>599.99</td>
+      <td>499.99‍</td>
+      <td>549.99</td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td>599.99</td>
+      <td>429.0</td>
+      <td>599.99</td>
+      <td>549.99</td>
+      <td>549.99​</td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>C y​clocros‌s Bicycles</th>
+      <td>1549.0³</td>
+      <td>1549.0​</td>
+      <td>1549.00</td>
+      <td>1680.99</td>
+      <td>1680.99³</td>
+      <td>1680.99</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>2999.99³</td>
+      <td>2999.99</td>
+      <td>2999.99</td>
+      <td>2999.99</td>
+      <td>2999.99</td>
+      <td>2799.99</td>
+    </tr>
+    <tr>
+      <th>Mountain Bikes</th>
+      <td>3999.99</td>
+      <td>749.99</td>
+      <td>1320.99</td>
+      <td>999.99</td>
+      <td>999.99³</td>
+      <td>999.99³</td>
+    </tr>
+    <tr>
+      <th>Road B‌ikes</th>
+      <td>875.99³</td>
+      <td>749.99​</td>
+      <td>4999.99</td>
+      <td>3499.99</td>
+      <td>1499.99</td>
+      <td>875.99³</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">4</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">4</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Children Bicycles</th>
+      <th>Comfort Bicycles</th>
+      <th></th>
+      <th>rCuiser sBciycles</th>
+      <th>Cyclocross Bicycles</th>
+      <th>Electric Bikes</th>
+      <th>oMuntain Bkies</th>
+      <th>Raod Bikes</th>
+    </tr>
+    <tr>
+      <th>staff_id</th>
+      <th>customer_state</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>list_price (units)</th>
+      <th>list_price (units)</th>
+      <th>list_price (units)</th>
+      <th>list_price (units)</th>
+      <td></td>
+      <td>list_price (units)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>CA</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz</th>
+      <td></td>
+      <td>269.99</td>
+      <td>499.99 (est.)</td>
+      <td></td>
+      <td>599.99</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not ava​i​lable</td>
+      <td>749.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>CA</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz</th>
+      <td></td>
+      <td>269.99</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>749.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th rowspan=""2"" valign=""top""></th>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>NY</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin</th>
+      <td></td>
+      <td>269.99</td>
+      <td>not available</td>
+      <td></td>
+      <td>not⁠ a​vailable</td>
+      <td>1680.99​</td>
+      <td>2999.99</td>
+      <td>999.99</td>
+      <td>not avai‌l⁠able (cf. appendix)</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>NY</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin</th>
+      <td></td>
+      <td>not available</td>
+      <td>not vaaliable</td>
+      <td></td>
+      <td>not available</td>
+      <td>1549.00</td>
+      <td>not available</td>
+      <td>1799.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <th>TX</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett</th>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>599.99</td>
+      <td>1680.99</td>
+      <td>not available</td>
+      <td>1320.99​</td>
+      <td>5499.99</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <th>TX</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett</th>
+      <td></td>
+      <td>299.99⁠</td>
+      <td>549.99  (est.)</td>
+      <td></td>
+      <td>429.00</td>
+      <td>1680.99</td>
+      <td>2999.99 (cf. appendix)</td>
+      <td>not available</td>
+      <td>5999.99 (est.)</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>CA</th>
+      <th></th>
+      <th>CA</th>
+      <th colspan=""2"" halign=""left"">NY</th>
+      <th>TX</th>
+      <th></th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Santa Cruz Bikes</th>
+      <th></th>
+      <th>Santa Cruz Bikes</th>
+      <th colspan=""2"" halign=""left"">Baldwin Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th></th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>2</th>
+      <th></th>
+      <th>3</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th></th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Santa Cruz</th>
+      <th></th>
+      <th>Santa Cruz</th>
+      <th>Baldwin</th>
+      <th>Baldwin</th>
+      <th>Rowlett</th>
+      <th></th>
+      <th>Rowlett</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>list_priec (inus)t</th>
+      <th>list_price (units)</th>
+      <td>list_price (units) - Note: recorded in [3]</td>
+      <td></td>
+      <td>list_price (units)</td>
+      <td>list_price (units)</td>
+      <td>list_price (units)</td>
+      <td>list_price (units)</td>
+      <td></td>
+      <td>list_price (units)</td>
+    </tr>
+    <tr>
+      <th rowspan=""7"" valign=""top"">3</th>
+      <th>Children Bicycles</th>
+      <td>N/A</td>
+      <td></td>
+      <td>269.99</td>
+      <td>N/A</td>
+      <td>269.99</td>
+      <td>N/A</td>
+      <td></td>
+      <td>269.99</td>
+    </tr>
+    <tr>
+      <th>Cmofo rBticycesl</th>
+      <td>599.99​</td>
+      <td></td>
+      <td>N/A</td>
+      <td>599.99‌</td>
+      <td>599.99</td>
+      <td>549.99​</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td>269.99 - Note: recorded in [4]</td>
+      <td></td>
+      <td>269.99</td>
+      <td>599.99</td>
+      <td>599.99</td>
+      <td>269.99 - Note: recorded in [4]</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Cyclocross Bicycles</th>
+      <td>N/A</td>
+      <td></td>
+      <td>1549.00</td>
+      <td>1549.00</td>
+      <td>N/A</td>
+      <td>2999.99 - Note: recorded in [3]</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>2999.99</td>
+      <td></td>
+      <td>N/A</td>
+      <td>2999.99  - Note: recorded in [4]</td>
+      <td>2999.99</td>
+      <td>4499.99‌</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Mountain Bikes</th>
+      <td>N/A</td>
+      <td></td>
+      <td>1320.99</td>
+      <td>999.99⁠</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Road Bik‍es</th>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>1499.99</td>
+      <td>749.99</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,1599.97
+5,"What is the combined total discount, measured in units, applied to completed purchases of electric bicycles across the three different store locations?","['SELECT discount FROM sample_table WHERE store_id = ""3"" AND order_status = ""2"" AND category_name = ""Electric Bikes"";', 'SELECT discount FROM sample_table WHERE store_id = ""2"" AND order_status = ""2"" AND category_name = ""Electric Bikes"";', 'SELECT discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""2"" AND category_name = ""Electric Bikes"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">TX</th>
+      <th>T‍X</th>
+      <th></th>
+      <th colspan=""4"" halign=""left"">TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Children Bicycles</th>
+      <th>Comfort Bicycles</th>
+      <th>Cruisers Bicycles</th>
+      <th></th>
+      <th>Cyclocross Bicycles</th>
+      <th>El‌ectr‌ic Bikes</th>
+      <th>Mountain Bikes</th>
+      <th>Road Bikes</th>
+    </tr>
+    <tr>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>order_status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discount (units)</th>
+      <th>disc⁠ount​ ‌(units)</th>
+      <th>discount (units)</th>
+      <td>discount (units)²</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">3</th>
+      <th>Rowlett Bikes</th>
+      <th>1</th>
+      <td>not available</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td></td>
+      <td>0.2</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>oRwltet Bikes</th>
+      <th>2</th>
+      <td>0.1</td>
+      <td>not available</td>
+      <td>0.1</td>
+      <td></td>
+      <td>NaN</td>
+      <td>0.05‍</td>
+      <td>0.1​</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Rowlett Bikes</th>
+      <th>3</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>0.2</td>
+      <td></td>
+      <td>not available</td>
+      <td>0.1</td>
+      <td>0.05²</td>
+      <td>0.05⁠²</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.2</td>
+      <td>not available</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>customer_state</th>
+      <th colspan=""4"" halign=""left"">NY</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>order_status</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discount (units)</th>
+      <th>discount (units)</th>
+      <th>discount (units)</th>
+      <td>discount (units)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""7"" valign=""top"">2</th>
+      <th rowspan=""7"" valign=""top"">Baldwin Bikes</th>
+      <th>Children Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Comfort Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Cyclocross Bicycles</th>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Mountain Bikes</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Road Bikes</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.2</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>store_id</th>
+      <th colspan=""7"" halign=""left"">1</th>
+    </tr>
+    <tr>
+      <th>customer_state</th>
+      <th colspan=""7"" halign=""left"">CA</th>
+    </tr>
+    <tr>
+      <th>store_name</th>
+      <th colspan=""2"" halign=""left"">Santa Cruz Bikes</th>
+      <th>Santa C​ruz​ Bik‌es</th>
+      <th colspan=""4"" halign=""left"">Santa Cruz Bikes</th>
+    </tr>
+    <tr>
+      <th>category_name</th>
+      <th>Children Bicycles</th>
+      <th>Comfort Bicycles</th>
+      <th>Cruisers Bicycles</th>
+      <th>Cyclocross Bicycles</th>
+      <th>Electric  Bike​s</th>
+      <th>Mountain Bikes</th>
+      <th>Road Bikes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discount (units)</th>
+      <td>discount (units)</td>
+      <td>discount (units)</td>
+      <td>discount (units)</td>
+      <td>discount (units)</td>
+      <td>discount (units)</td>
+      <td>discount (units)</td>
+      <td>discount (units)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.2</td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1</td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.07‍</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>0.05⁠</td>
+      <td>0.1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.2​</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>0.1</td>
+      <td>0.2</td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>",,0.2
+6,"What is the sum of the prices for the item number 2 at Santa Cruz Bikes during the years 2016 through 2018, reported in units?","['SELECT list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2016"" AND store_name = ""Santa Cruz Bikes"";', 'SELECT list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2018"" AND store_name = ""Santa Cruz Bikes"";', 'SELECT list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2017"" AND store_name = ""Santa Cruz Bikes"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>store_name</th>
+      <th>Baldwin Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th>Santa Cruz Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_state</th>
+      <th>NY</th>
+      <th>TX</th>
+      <th>CA</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>model_year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>2016</th>
+      <td>599.99</td>
+      <td>1680.99</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>2016</th>
+      <td>599.99</td>
+      <td>N/A</td>
+      <td>1799.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>2016</th>
+      <td>599.99</td>
+      <td>N/A</td>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>2016</th>
+      <td>999.99</td>
+      <td>1320.99</td>
+      <td>599.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>2016</th>
+      <td>N/A</td>
+      <td>449.00</td>
+      <td>2899.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>item_id</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>model_year</th>
+      <th>2018</th>
+      <th>2018</th>
+      <th>2018</th>
+      <th>2018</th>
+      <th>2018</th>
+    </tr>
+    <tr>
+      <th>store_name</th>
+      <th>store_state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Baldwin Bikes</th>
+      <th>NY</th>
+      <td></td>
+      <td>2499.99</td>
+      <td>899.99</td>
+      <td>919.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Rowlett Bikes</th>
+      <th>TX</th>
+      <td></td>
+      <td></td>
+      <td>2999.99</td>
+      <td></td>
+      <td>89.99</td>
+    </tr>
+    <tr>
+      <th>Sa​nta C‍ruz Bike‍s</th>
+      <th>CA</th>
+      <td></td>
+      <td>6499.99\nAdditional details are provided in the documentation</td>
+      <td>849.99\nAdditional details are provided in the documentation</td>
+      <td>319.99</td>
+      <td>2799.99‌</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>store_state</th>
+      <th>CA</th>
+      <th>NY</th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>store_name</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Baldwin Bikes</th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>model_year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <th>2017</th>
+      <td>329.99 units</td>
+      <td>551.99 units</td>
+      <td>489.99 units</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>2017</th>
+      <td>3499.99 units</td>
+      <td>449.99 units</td>
+      <td>3499.99 units</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>2017</th>
+      <td>489.99 units</td>
+      <td>749.99 units</td>
+      <td>250.99 units</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>2017</th>
+      <td>647.99 units (see notes)</td>
+      <td>4999.99 units (see notes)</td>
+      <td>299.99 units (see notes)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>2017</th>
+      <td>189.99 units</td>
+      <td>416.99 units</td>
+      <td>439.99 units</td>
+    </tr>
+  </tbody>
+</table>",,11799.97
+7,"What is the total replacement fee in units for titles rated R that include both trailers and behind-the-scenes as special features and have rental durations of 5, 6, and 7 days?","['SELECT replacement_cost FROM sample_table WHERE rating = ""R"" AND rental_duration = ""7"" AND special_features = ""Trailers,Behind the Scenes"";', 'SELECT replacement_cost FROM sample_table WHERE rating = ""R"" AND rental_duration = ""6"" AND special_features = ""Trailers,Behind the Scenes"";', 'SELECT replacement_cost FROM sample_table WHERE rating = ""R"" AND rental_duration = ""5"" AND special_features = ""Trailers,Behind the Scenes"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>G</th>
+      <th>NC-17</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>7</th>
+      <th>7</th>
+      <th></th>
+      <th></th>
+      <th>7</th>
+      <th>7</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <td>units</td>
+      <td>uni‌ts</td>
+      <td></td>
+      <td></td>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+    </tr>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>27.99‍</td>
+      <td>14.99</td>
+      <td></td>
+      <td></td>
+      <td>9.99</td>
+      <td>25.99</td>
+      <td>18.99</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>9.99</td>
+      <td>16.99</td>
+      <td></td>
+      <td></td>
+      <td>26.99‍</td>
+      <td>10.99</td>
+      <td>21.99</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>20.99</td>
+      <td>14.99‍</td>
+      <td></td>
+      <td></td>
+      <td>27.99</td>
+      <td>16.99⁠</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>18.99</td>
+      <td>26.99</td>
+      <td></td>
+      <td></td>
+      <td>27.99‍</td>
+      <td>10.99</td>
+      <td>23.99</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>22.99</td>
+      <td>29.99⁠</td>
+      <td></td>
+      <td></td>
+      <td>20.99</td>
+      <td>17.99</td>
+      <td>13.99​</td>
+    </tr>
+    <tr>
+      <th>Deelted Scnees</th>
+      <td>14.99</td>
+      <td>13.99</td>
+      <td></td>
+      <td></td>
+      <td>9.99</td>
+      <td>NaN</td>
+      <td>14.99</td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>21.99</td>
+      <td>14.99</td>
+      <td></td>
+      <td></td>
+      <td>14.99</td>
+      <td>9.99</td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>10.99</td>
+      <td>22.99</td>
+      <td></td>
+      <td></td>
+      <td>29.99</td>
+      <td>19.99</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th>Trialers,CmometanriseB,ehni dthe Secnse</th>
+      <td>24.99</td>
+      <td>21.99</td>
+      <td></td>
+      <td></td>
+      <td>11.99</td>
+      <td>13.99</td>
+      <td>15.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>27.99</td>
+      <td>18.99</td>
+      <td></td>
+      <td></td>
+      <td>12.99</td>
+      <td>14.99</td>
+      <td>26.99</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>G</th>
+      <th>NC-17</th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""10"" valign=""top"">6</th>
+      <th>Behind the Scenes</th>
+      <td></td>
+      <td></td>
+      <td>15.99 units</td>
+      <td>13.99 units</td>
+      <td>12.99 units</td>
+      <td>27.99 units</td>
+      <td>16.99 units (see footnote 4)</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td></td>
+      <td></td>
+      <td>24.99 units</td>
+      <td>10.99 units</td>
+      <td>14.99 units</td>
+      <td>21.99 units</td>
+      <td>16.99 units</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td></td>
+      <td></td>
+      <td>16.99 units</td>
+      <td>28.99 unit‌s</td>
+      <td>20.99 units</td>
+      <td>26.99 units</td>
+      <td>11.99 units</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td></td>
+      <td></td>
+      <td>29.99 units</td>
+      <td>29.99 units</td>
+      <td>22.99 units</td>
+      <td>14.99 units</td>
+      <td>12.99 units (see footnote 1)</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td></td>
+      <td></td>
+      <td>17.99 unit s</td>
+      <td>20.99 units</td>
+      <td>20.99 units (see footnote 1)</td>
+      <td>27.99 units</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td></td>
+      <td></td>
+      <td>22.99 units</td>
+      <td>21.99 units</td>
+      <td>NaN</td>
+      <td>19.99 units</td>
+      <td>10.99 units</td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td></td>
+      <td></td>
+      <td>22.99 units</td>
+      <td>22.99 units (source: official reports)</td>
+      <td>11.99 uni‌ts (see footnote 4)</td>
+      <td>22.99 units (source: official reports)</td>
+      <td>15.99 uints</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td></td>
+      <td></td>
+      <td>9.99 ⁠units</td>
+      <td>19.99n uits (see footnote 3)</td>
+      <td>24.99 units</td>
+      <td>27.99 units</td>
+      <td>19.99 units (source: official reports)</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td></td>
+      <td></td>
+      <td>23.99 units (source: official reports)</td>
+      <td>27.99 uni​ts</td>
+      <td>22.99 units</td>
+      <td>29.99 ‌units</td>
+      <td>22.99 units</td>
+    </tr>
+    <tr>
+      <th>Tr⁠ailers,Delet‌ed Sce‌ne s</th>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>24.99u nits</td>
+      <td>14.99 units</td>
+      <td>28.99 units</td>
+      <td>11.99 units</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>G</th>
+      <th>NC-17</th>
+      <th></th>
+      <th></th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>replacement_cost (units)</th>
+      <th>replacement_cost (units)</th>
+      <td></td>
+      <td>replacement_cost (units)</td>
+      <td>replacement_cost (units)</td>
+      <td></td>
+      <td></td>
+      <td>replacement_cost (units) - as listed on the website</td>
+      <td>replacement_cost (units)</td>
+      <td>replacement_cost (units)</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">5</th>
+      <th>Behind the Scenes</th>
+      <td></td>
+      <td>12.99</td>
+      <td>17.99</td>
+      <td></td>
+      <td></td>
+      <td>17.99</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td></td>
+      <td>16.99 - as listed on the website</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td></td>
+      <td>14.99</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>12.99</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">5</th>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td></td>
+      <td>13.99</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>21.99</td>
+      <td>19.99</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td></td>
+      <td>\</td>
+      <td>10.99</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">5</th>
+      <th>Trailers</th>
+      <td></td>
+      <td>10.99</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>23.99 - as listed on the website</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td></td>
+      <td>15.99 - as listed on the website</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>15.99</td>
+      <td>\</td>
+      <td>12.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td></td>
+      <td>\</td>
+      <td>10.99</td>
+      <td></td>
+      <td></td>
+      <td>16.99 - as listed on the website</td>
+      <td>23.99</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td></td>
+      <td>11.99</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>13.99</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+  </tbody>
+</table>",,60.97
+8,"What is the combined total rental price in units for films rented for three days that are rated PG-13, PG, or NC-17 and whose special features are exactly Trailers, Behind the Scenes, by summing the rental rates for those three ratings?","['SELECT rental_rate FROM sample_table WHERE rental_duration = ""3"" AND rating = ""PG-13"" AND special_features = ""Trailers,Behind the Scenes"";', 'SELECT rental_rate FROM sample_table WHERE rental_duration = ""3"" AND rating = ""PG"" AND special_features = ""Trailers,Behind the Scenes"";', 'SELECT rental_rate FROM sample_table WHERE rental_duration = ""3"" AND rating = ""NC-17"" AND special_features = ""Trailers,Behind the Scenes"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>PG-13</th>
+      <th>PG-13</th>
+      <th>PG-13</th>
+      <th>PG-13</th>
+      <th>PG-13</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td>4.99 units (see footnote 1)</td>
+      <td>0.99 nuits</td>
+      <td>4.99 utnis</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>oCmmetnaries</th>
+      <td>NaN</td>
+      <td>0.99 units (see footnote 3)</td>
+      <td>0.99 units</td>
+      <td>2.99 ​units</td>
+      <td>2.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>2.99 units</td>
+      <td>0.99 units (see footnote 5)</td>
+      <td>4.99 units</td>
+      <td>0.99 units</td>
+      <td>2.99 un‍its</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>4.99 units</td>
+      <td>0.99u nits</td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td>2.99 unit‍s</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>4.99 units</td>
+      <td>0.99 unit‌s (see footnote 4)</td>
+      <td>2.99 units</td>
+      <td>0.99 units</td>
+      <td>2.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td>4.99 units (see footnote 3)</td>
+      <td>0.99 units (see footnote 4)</td>
+      <td>0.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>4.99 units</td>
+      <td>NaN</td>
+      <td>4.99 units</td>
+      <td>0.99 unsit</td>
+      <td>0.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>0.99 units</td>
+      <td>0.99 units</td>
+      <td>0.99 units (see footnote 4)</td>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>2.99 units</td>
+      <td>0.99 unit s</td>
+      <td>0.99 units (see footnote 3)</td>
+      <td>4.99 units</td>
+      <td>2.99 units (see footnote 4)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th></th>
+      <th>5</th>
+      <th></th>
+      <th>6</th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>rating</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td>units</td>
+      <td></td>
+      <td>units</td>
+      <td></td>
+      <td>units</td>
+      <td>units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PG</th>
+      <th>Behind the Scenes</th>
+      <td>4.99</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""9"" valign=""top"">PG</th>
+      <th>Commentaries</th>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>2.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>NaN</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>4.99</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>0.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td>4.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>\</td>
+      <td>2.99</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>2.99</td>
+      <td>4.99</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>NaN</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>\</td>
+      <td>4.99</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>0.99</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>0.99</td>
+      <td>2.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td></td>
+      <td>2.99</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>0.99</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>\</td>
+      <td>2.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td></td>
+      <td>2.99</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NC-17</th>
+      <th>NC-17</th>
+      <th>NC-17</th>
+      <th>NC-17</th>
+      <th>NC-17</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>NaN</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>\</td>
+      <td>2.99 units</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>2.99 units</td>
+      <td>0.99 untis</td>
+      <td>2.99 units</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td>NaN</td>
+      <td>\</td>
+      <td>4.99u ntis</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>\</td>
+      <td>0.99 units (est.)</td>
+      <td>4.99 units (est.)</td>
+      <td>4.99un its (est.)</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>4.99 units</td>
+      <td>0.99 units</td>
+      <td>2.99 units</td>
+      <td>\</td>
+      <td>2.99 units (est.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>\</td>
+      <td>2.99 units</td>
+      <td>0.99 nuits</td>
+      <td>0.99u nist</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>2.99 units</td>
+      <td>0.99un its</td>
+      <td>2.99 units</td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>\​</td>
+      <td>\‍</td>
+      <td>2.99 units (est.)</td>
+      <td>4.99 units</td>
+      <td>0.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>\⁠</td>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td>4.99 units</td>
+      <td>\⁠ (est.)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,8.97
+9,"What is the combined total cost in units for renting movies that include extra behind-the-scenes content for a week-long rental, when considering movies rated G, PG, and NC-17 together?","['SELECT rental_rate FROM sample_table WHERE rating = ""G"" AND special_features = ""Behind the Scenes"" AND rental_duration = ""7"";', 'SELECT rental_rate FROM sample_table WHERE rating = ""PG"" AND special_features = ""Behind the Scenes"" AND rental_duration = ""7"";', 'SELECT rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Behind the Scenes"" AND rental_duration = ""7"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>rating</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>rental_rate (units)</th>
+      <th>rental_rate (units)</th>
+      <td>rental_rate (units)</td>
+      <td>rental_rate (units)</td>
+      <td>rental_rate (units)</td>
+      <td>rental_rate (units)</td>
+      <td>rental_rate (units)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <th>Behind the Scenes</th>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>0.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""9"" valign=""top"">G</th>
+      <th>Commentaries</th>
+      <td>\</td>
+      <td>\</td>
+      <td>4.99</td>
+      <td>2.99</td>
+      <td>4.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>\</td>
+      <td>\</td>
+      <td>2.99</td>
+      <td>0.99</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>\</td>
+      <td>NaN</td>
+      <td>4.99</td>
+      <td>0.99</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>0.99</td>
+      <td>4.99</td>
+      <td>2.99</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>\</td>
+      <td>0.99</td>
+      <td>\</td>
+      <td>2.99</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td>\</td>
+      <td>NaN</td>
+      <td>\</td>
+      <td>2.99</td>
+      <td>0.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>4.99</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>0.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>0.99</td>
+      <td>\</td>
+      <td>4.99</td>
+      <td>\</td>
+      <td>0.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>\</td>
+      <td>0.99</td>
+      <td>\</td>
+      <td>NaN</td>
+      <td>4.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>3</th>
+      <th></th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th></th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>rating</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""5"" valign=""top"">PG</th>
+      <th>Behind the Scenes</th>
+      <td>4.99 units</td>
+      <td></td>
+      <td>0.99 units (see notes)</td>
+      <td>0.99 units</td>
+      <td>4.99 units</td>
+      <td></td>
+      <td>2.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>4.99 units</td>
+      <td></td>
+      <td>2.99 units</td>
+      <td>2.99 units (see notes)</td>
+      <td>0.99 units</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>NaN</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td>\</td>
+      <td></td>
+      <td>4.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>2.99 units (see notes)</td>
+      <td></td>
+      <td>2.99 units</td>
+      <td>4.99 units (see notes)</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""5"" valign=""top"">PG</th>
+      <th>Deleted Scenes</th>
+      <td>2.99 units (see notes)</td>
+      <td></td>
+      <td>\</td>
+      <td>4.99 units</td>
+      <td>NaN</td>
+      <td></td>
+      <td>4.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td>\</td>
+      <td></td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td>\</td>
+      <td></td>
+      <td>0.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>0.99 units</td>
+      <td></td>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td>\</td>
+      <td></td>
+      <td>0.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>0.99 units</td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th></th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th>rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>units</th>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+      <td></td>
+      <td>units</td>
+      <td>units</td>
+    </tr>
+    <tr>
+      <th>Behind the Scenes</th>
+      <th>NC-17</th>
+      <td>NaN</td>
+      <td>2.99**</td>
+      <td>not available</td>
+      <td></td>
+      <td>0.99</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <th>NC-17</th>
+      <td>not available</td>
+      <td>2.99\nAs listed on the website</td>
+      <td>4.99</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <th>NC-17</th>
+      <td>not available</td>
+      <td>0.99\nAs listed on the website</td>
+      <td>not available</td>
+      <td></td>
+      <td>4.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <th>NC-17</th>
+      <td>0.99</td>
+      <td>not available</td>
+      <td>NaN</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <th>NC-17</th>
+      <td>0.99</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>4.99</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <th>NC-17</th>
+      <td>4.99</td>
+      <td>0.99</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <th>NC-17</th>
+      <td>0.99</td>
+      <td>not available</td>
+      <td>0.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <th>NC-17</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <th>NC-17</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>2.99</td>
+      <td></td>
+      <td>4.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <th>NC-17</th>
+      <td>0.99</td>
+      <td>0.99**</td>
+      <td>not available</td>
+      <td></td>
+      <td>4.99</td>
+      <td>2.99**</td>
+    </tr>
+  </tbody>
+</table>",,4.970000000000001
+10,"What is the total rental cost, measured in units, of PG-13 movies whose special features are exactly Commentaries and Behind the Scenes and that were rented for 5, 6, and 7 days respectively?","['SELECT rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""7"" AND special_features = ""Commentaries,Behind the Scenes"";', 'SELECT rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""6"" AND special_features = ""Commentaries,Behind the Scenes"";', 'SELECT rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""5"" AND special_features = ""Commentaries,Behind the Scenes"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>G</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>NC-17</th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>7</th>
+      <th></th>
+      <th></th>
+      <th>7</th>
+      <th>7</th>
+      <th>7</th>
+      <th>7</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>0.99 units</td>
+      <td></td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>2.99 units</td>
+      <td>4.99 units</td>
+      <td>0.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>4.99 units</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>4.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>2.99 units</td>
+      <td></td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>4.99 units</td>
+      <td>2.99 units</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>0.99 units\nNote: recorded in [1]</td>
+      <td></td>
+      <td></td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>2.99 units (see notes)</td>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>4.99 units\nNote: recorded in [1]</td>
+      <td>NaN</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td>0.99 units</td>
+      <td></td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>0.99 units</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>0.99 units</td>
+      <td></td>
+      <td></td>
+      <td>4.99 units (see notes)</td>
+      <td>\</td>
+      <td>0.99 units</td>
+      <td>2.99 units</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>0.99 units\nNote: recorded in [5]</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>4.99 units</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>2.99 units</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>rating</th>
+      <th>G⁠</th>
+      <th>NC-17</th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>units</th>
+      <th>un⁠its</th>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+      <td>units</td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">6</th>
+      <th>Behind the Scenes</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>4.99</td>
+      <td>0.99</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>no tavaliable</td>
+      <td>not ava ilab‍le</td>
+      <td>0.99⁠</td>
+      <td>2.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>0.99‍</td>
+      <td>4.99</td>
+      <td>4.99‍</td>
+      <td>0.99</td>
+      <td>4.99⁠</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>0.99⁠</td>
+      <td>not available</td>
+      <td>0.99</td>
+      <td>not available</td>
+      <td>nto aavliable</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>2.99</td>
+      <td>ntoa aivlable</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>2.99</td>
+      <td>not available</td>
+      <td>NaN</td>
+      <td>2.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td>2.99</td>
+      <td>not available</td>
+      <td>0.99</td>
+      <td>4.99</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>2.99</td>
+      <td>not available</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>0.99</td>
+      <td>not available</td>
+      <td>0.99</td>
+      <td>2.99</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>NaN</td>
+      <td>4.99‌</td>
+      <td>2.99</td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>G‍</th>
+      <th>NC-17</th>
+      <th></th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>rental_duration</th>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""8"" valign=""top"">5</th>
+      <th>Behind the Scenes</th>
+      <td>2.99 units</td>
+      <td>0.99 units</td>
+      <td></td>
+      <td>0.99 units (est.)</td>
+      <td>4.99 ‍units</td>
+      <td>2.99 u nits\nAs listed on the website</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>4.99 units (est.)</td>
+      <td>4.99 units</td>
+      <td></td>
+      <td>2.99 units</td>
+      <td>0.99 units</td>
+      <td>2.99 unit s</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Behind the Scenes</th>
+      <td>2.99 units</td>
+      <td>2.99 units</td>
+      <td></td>
+      <td>4.99 units (est.)</td>
+      <td>4.99 units\nAs listed on the website</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>4.99 units</td>
+      <td>NaN</td>
+      <td></td>
+      <td>0.99 units\nAs listed on the website</td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+    </tr>
+    <tr>
+      <th>C⁠omme‌ntaries,De leted Sce⁠nes,Behin d the​ Scen‌e​s</th>
+      <td>2.99 units</td>
+      <td>4.99 units (est.)</td>
+      <td></td>
+      <td>4.99 units\nAs listed on the website</td>
+      <td>2.99 units</td>
+      <td>0.99 units</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>2.99 untis</td>
+      <td>2.99 units</td>
+      <td></td>
+      <td>4.99 units</td>
+      <td>2.99 ‍units</td>
+      <td>2.99 units</td>
+    </tr>
+    <tr>
+      <th>Delet​ed‍ S‍c​enes,B⁠ehind t‌he Scenes</th>
+      <td>4.99 uni ts\nAs listed on the website</td>
+      <td>0.99 units</td>
+      <td></td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+      <td>2.99 units</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>4.99 units</td>
+      <td>2.99 unist</td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>4.99 units</td>
+      <td>4.99 units</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">5</th>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>4.99 units</td>
+      <td>2.99 units</td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>0.99 units</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>2.99 units</td>
+      <td>0.99 units</td>
+      <td></td>
+      <td>0.99 units</td>
+      <td>0.99 units</td>
+      <td>4.99 units</td>
+    </tr>
+  </tbody>
+</table>",,8.97

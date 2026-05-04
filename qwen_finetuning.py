@@ -1,45 +1,91 @@
-from unsloth import FastLanguageModel, is_bfloat16_supported
+import os
+
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
+# Needed by PEFT + FSDP auto-wrap.
+os.environ["FSDP_TRANSFORMER_CLS_TO_WRAP"] = "Qwen3_5DecoderLayer"
+
+import torch
+import pandas as pd
+
 from datasets import Dataset, DatasetDict
 from sklearn.model_selection import train_test_split
 
-import torch
-from datasets import load_dataset
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import LoraConfig, get_peft_model
 from trl import SFTTrainer, SFTConfig
-import pandas as pd
+
 
 max_seq_length = 16384
-OUTPUT_DIR = "finetuned_models/qwen35_9b_reasoning_finetuned_lora"
 
-base_path = "results/ours/Qwen3-5-122B-A10B-FP8/multi-table/{num_tables}/environmental/{method}/{perturbation}/data/reasoning.csv"
+OUTPUT_DIR = os.environ["OUTPUTDIR"]
+MODELPATH = os.environ["MODELPATH"]
+
+local_rank = int(os.environ.get("LOCAL_RANK", "0"))
+is_main_process = local_rank == 0
+
+base_path = (
+    "results/ours/Qwen3-5-122B-A10B-FP8/"
+    "multi-table/{num_tables}/environmental/{method}/{perturbation}/data/reasoning.csv"
+)
+
+marker = "Let's think step-by-step."
+
+
+# -------------------------
+# Dataset construction
+# -------------------------
+
 data_samples = []
+
 for num_tables in [2, 3, 5, 10, 20]:
     for method in ["average", "sum", "superlative"]:
         for perturbation in ["unit_converted", "not_unit_converted"]:
-            path = base_path.format(num_tables=num_tables, method=method, perturbation=perturbation)
-            df = pd.read_csv(path)
-            for _, row in df.iterrows():
-                data_sample = {}
-                reasoning = row["CoT Reasoning"]
-                try:
-                    input_text = reasoning.split("Let's think step-by-step.")[0]+"Let's think step-by-step."
-                    generated_text = "Let's think step-by-step.".join(reasoning.split("Let's think step-by-step.")[1:])
-                    thinking_text = "<think>\n"+generated_text.split("</think>")[0]+"</think>"
-                    answer_text = generated_text.split("</think>")[1]
-                    data_sample["messages"] = [
-                        {
-                            "role": "user",
-                            "content": input_text
-                        },
-                        {
-                            "role": "assistant",
-                            "content": thinking_text + answer_text
-                        }
-                    ]
-                    data_samples.append(data_sample)
-                except:
-                    print("Sample missing one of the required markers, skipping.")
+            path = base_path.format(
+                num_tables=num_tables,
+                method=method,
+                perturbation=perturbation,
+            )
 
-print(f"Loaded {len(data_samples)} samples")
+            df = pd.read_csv(path)
+
+            for _, row in df.iterrows():
+                reasoning = row["CoT Reasoning"]
+
+                try:
+                    if marker not in reasoning:
+                        raise ValueError("Missing step-by-step marker.")
+
+                    if "</think>" not in reasoning:
+                        raise ValueError("Missing </think> marker.")
+
+                    input_text = reasoning.split(marker)[0] + marker
+
+                    generated_text = marker.join(
+                        reasoning.split(marker)[1:]
+                    )
+
+                    thinking_body = generated_text.split("</think>")[0]
+                    answer_text = generated_text.split("</think>", 1)[1]
+
+                    thinking_text = "<think>\n" + thinking_body + "</think>"
+
+                    data_samples.append(
+                        {
+                            "prompt": input_text,
+                            "completion": thinking_text + answer_text,
+                        }
+                    )
+
+                except Exception:
+                    if is_main_process:
+                        print("Sample missing one of the required markers, skipping.")
+
+
+if is_main_process:
+    print(f"Loaded {len(data_samples)} samples")
+
 train_samples, valid_samples = train_test_split(
     data_samples,
     test_size=0.05,
@@ -47,68 +93,159 @@ train_samples, valid_samples = train_test_split(
     shuffle=True,
 )
 
-print(f"Train samples: {len(train_samples)}, Validation samples: {len(valid_samples)}")
+if is_main_process:
+    print(f"Train samples: {len(train_samples)}, Validation samples: {len(valid_samples)}")
 
-dataset = DatasetDict({
-    "train": Dataset.from_list(train_samples),
-    "validation": Dataset.from_list(valid_samples),
-})
-
-"""dataset = load_dataset(
-    "json",
-    data_files={"train": "train_reasoning.jsonl", "validation": "valid_reasoning.jsonl"},
-)"""
-
-model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "Qwen/Qwen3.5-9B",
-    max_seq_length = max_seq_length,
-    load_in_4bit = False,
-    load_in_16bit = True,
-    full_finetuning = False,
+dataset = DatasetDict(
+    {
+        "train": Dataset.from_list(train_samples),
+        "validation": Dataset.from_list(valid_samples),
+    }
 )
 
-model = FastLanguageModel.get_peft_model(
-    model,
-    r = 16,
-    target_modules = [
-        "q_proj", "k_proj", "v_proj", "o_proj",
-        "gate_proj", "up_proj", "down_proj",
+
+# -------------------------
+# Tokenizer
+# -------------------------
+
+tokenizer = AutoTokenizer.from_pretrained(
+    MODELPATH,
+    use_fast=True,
+)
+
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
+
+tokenizer.padding_side = "right"
+
+
+def keep_example(example):
+    prompt_ids = tokenizer(
+        example["prompt"],
+        add_special_tokens=False,
+    )["input_ids"]
+
+    full_ids = tokenizer(
+        example["prompt"] + example["completion"],
+        add_special_tokens=False,
+    )["input_ids"]
+
+    return len(prompt_ids) < max_seq_length and len(full_ids) > len(prompt_ids)
+
+
+dataset = dataset.filter(
+    keep_example,
+    num_proc=1,
+)
+
+if is_main_process:
+    print(dataset)
+
+
+# -------------------------
+# Model
+# -------------------------
+
+compute_dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+
+model = AutoModelForCausalLM.from_pretrained(
+    MODELPATH,
+    dtype=compute_dtype,
+    attn_implementation="sdpa",
+)
+
+model.config.use_cache = False
+
+
+decoder_layer_classes = sorted(
+    {
+        module.__class__.__name__
+        for module in model.modules()
+        if "DecoderLayer" in module.__class__.__name__
+    }
+)
+
+if is_main_process:
+    print("Detected decoder layer classes:", decoder_layer_classes)
+
+if "Qwen3_5DecoderLayer" not in decoder_layer_classes:
+    raise ValueError(
+        f"Expected Qwen3_5DecoderLayer, but found {decoder_layer_classes}. "
+        "Update FSDP_TRANSFORMER_CLS_TO_WRAP and transformer_layer_cls_to_wrap."
+    )
+
+
+peft_config = LoraConfig(
+    r=8,
+    lora_alpha=16,
+    lora_dropout=0.0,
+    bias="none",
+    task_type="CAUSAL_LM",
+    target_modules=[
+        "q_proj",
+        "v_proj",
     ],
-    lora_alpha = 16,
-    lora_dropout = 0.0,
-    bias = "none",
-    # "unsloth" checkpointing is intended for very long context + lower VRAM
-    use_gradient_checkpointing = "unsloth",
-    random_state = 0,
-    max_seq_length = max_seq_length,
 )
+
+model = get_peft_model(model, peft_config)
+
+# Do not call model.gradient_checkpointing_enable() with FSDP
+# when fsdp_config["activation_checkpointing"] is True.
+
+if is_main_process:
+    model.print_trainable_parameters()
+
+
+# -------------------------
+# Trainer
+# -------------------------
 
 trainer = SFTTrainer(
-    model = model,
-    train_dataset = dataset["train"],
-    eval_dataset = dataset["validation"],
-    processing_class = tokenizer,
-    args = SFTConfig(
-        max_seq_length = max_seq_length, # or max_length
-        per_device_train_batch_size = 1,
-        gradient_accumulation_steps = 4,
-        warmup_steps = 10,
-        num_train_epochs=1,
-        logging_steps = 10,
-        output_dir = OUTPUT_DIR,
-        optim = "adamw_8bit",
-        seed = 0,
-        dataset_num_proc = 1,
-        bf16 = is_bfloat16_supported(),
-        fp16 = not is_bfloat16_supported(),
+    model=model,
+    train_dataset=dataset["train"],
+    eval_dataset=dataset["validation"],
+    processing_class=tokenizer,
+    args=SFTConfig(
+        max_length=max_seq_length,
 
-        assistant_only_loss = True,
-        packing = False,
-        report_to = "none",
+        per_device_train_batch_size=1,
+        gradient_accumulation_steps=4,
+
+        warmup_steps=10,
+        num_train_epochs=1,
+        logging_steps=10,
+
+        output_dir=OUTPUT_DIR,
+        optim="adamw_torch",
+
+        seed=0,
+        dataset_num_proc=1,
+
+        bf16=torch.cuda.is_bf16_supported(),
+        fp16=not torch.cuda.is_bf16_supported(),
+
+        completion_only_loss=True,
+        packing=False,
+        report_to="none",
+
+        # Must be False when using FSDP activation_checkpointing.
+        gradient_checkpointing=False,
+
+        fsdp="full_shard auto_wrap",
+        fsdp_config={
+            "transformer_layer_cls_to_wrap": "Qwen3_5DecoderLayer",
+            "use_orig_params": True,
+            "activation_checkpointing": True,
+            "limit_all_gathers": True,
+        },
+
+        save_strategy="epoch",
+        eval_strategy="no",
     ),
 )
 
+
 trainer.train()
 
-model.save_pretrained(OUTPUT_DIR)
+trainer.save_model(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)

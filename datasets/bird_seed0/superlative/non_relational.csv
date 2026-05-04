@@ -1,0 +1,5639 @@
+Question,SQL Query,Method,Table,Constraints,Label
+"What is the lowest price listed across these four particular orders: one with status one for the third item at store two, another with status three for the first item at store three, a third with status four for the second item at store two, and lastly, one marked with status two for the fifth item also at store two?","SELECT MIN(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND item_id = ""3"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""1"" AND store_id = ""3"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""2"" AND store_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""5"" AND store_id = ""2"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th></th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th>store_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>store_id (list_price) (unit)</th>
+      <th>store_id (list_price) (unit)</th>
+      <td>store_id (list_price) (unit)</td>
+      <td></td>
+      <td>tsore_id( lstip_rei)c( nuit) (latest update)</td>
+      <td>st‍ore_id (li st‍_p ric‍e) (unit)</td>
+      <td>store_id (list_price) (unit)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">1</th>
+      <th>Baldwin Bikes</th>
+      <td>2 (-)</td>
+      <td></td>
+      <td>2 (2999.99)</td>
+      <td>2 (549.99)</td>
+      <td>2 (-) (latest update)</td>
+    </tr>
+    <tr>
+      <th>Rowl‍ett Bik​es</th>
+      <td>3 (-)</td>
+      <td></td>
+      <td>3 (-)</td>
+      <td>3 (999.99)</td>
+      <td>3 (-)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>B ald‍win Bikes</th>
+      <td>2 (919.99)</td>
+      <td></td>
+      <td>2 (-)</td>
+      <td>2 (1680.99)</td>
+      <td>2 (599.99)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Snaa tCru zBkies</th>
+      <td>1 (1549.99)</td>
+      <td></td>
+      <td>1 (2499.99)</td>
+      <td>1 (1799.99)</td>
+      <td>1 (-) (latest update)</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">3</th>
+      <th>Baldwin Bikes</th>
+      <td>2 (4999.99) (latest update)</td>
+      <td></td>
+      <td>2 (-)</td>
+      <td>2 (-)</td>
+      <td>2 (-)</td>
+    </tr>
+    <tr>
+      <th>Rowlett Bikes</th>
+      <td>3 (-) (latest update)</td>
+      <td></td>
+      <td>3 (-)</td>
+      <td>3 (-)</td>
+      <td>3 (-)</td>
+    </tr>
+    <tr>
+      <th>Santa Cruz Bikes</th>
+      <td>1 (-)</td>
+      <td></td>
+      <td>1 (-) (latest update)</td>
+      <td>1 ‍(529.99) (latest update)</td>
+      <td>1 (1549.0) (latest update)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>Rowlett Bikes</th>
+      <td>3 (4999.99)</td>
+      <td></td>
+      <td>3 (-)</td>
+      <td>3 (2899.99)</td>
+      <td>3 (-)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">5</th>
+      <th>Baldwin Bikes</th>
+      <td>2 (-)</td>
+      <td></td>
+      <td>2 ​(899.99)</td>
+      <td>2 (4999.99)</td>
+      <td>2 ​(2999.99)</td>
+    </tr>
+    <tr>
+      <th>Rowlett Bikes</th>
+      <td>3 (-)</td>
+      <td></td>
+      <td>NaN</td>
+      <td>3 (269.99)</td>
+      <td>3 (449.0)</td>
+    </tr>
+  </tbody>
+</table>",,599.99
+"What is the smallest discount offered among purchases of Comfort Bicycles in Texas with product number 1, Electric Bikes in New York with product number 5, Children Bicycles in California with product number 3, and Comfort Bicycles in New York with product number 5?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""TX"" AND category_name = ""Comfort Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""5"" AND customer_state = ""NY"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""3"" AND customer_state = ""CA"" AND category_name = ""Children Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""5"" AND customer_state = ""NY"" AND category_name = ""Comfort Bicycles"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Baldwin</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Baldwin</th>
+      <th colspan=""2"" halign=""left"">Rowlett</th>
+      <th></th>
+      <th>Rowlett</th>
+      <th></th>
+      <th>Rowlett</th>
+      <th colspan=""2"" halign=""left"">Santa Cruz</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NY</th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">NY</th>
+      <th colspan=""2"" halign=""left"">TX</th>
+      <th></th>
+      <th>TX</th>
+      <th></th>
+      <th>TX</th>
+      <th colspan=""2"" halign=""left"">CA</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>1 (NY)</th>
+      <th></th>
+      <th>2 (NY)</th>
+      <th>4 (NY)</th>
+      <th>5 (NY)</th>
+      <th>1 (TX)</th>
+      <th>2 (TX)</th>
+      <th></th>
+      <th>3 (TX)</th>
+      <th></th>
+      <th>5 (TX)</th>
+      <th>2 (CA)</th>
+      <th>3 (CA)</th>
+    </tr>
+    <tr>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Children Bicycles</th>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>0.2 unit</td>
+      <td>0.1 u‌nit</td>
+      <td>n.a.</td>
+      <td>0.2 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+    </tr>
+    <tr>
+      <th>Comfort Bicycles</th>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>n‌.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>0.1 unit</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td>n.a.</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>Cyclocross Bicycles</th>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td>0.1  unit (cf. appendix)</td>
+      <td>0.2 unit</td>
+      <td>n.a‍. (cf. appendix)</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td>n‍.a.</td>
+      <td>0.1 unit</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>n.a‍.</td>
+      <td></td>
+      <td>0.1 un⁠it</td>
+      <td>n.a.</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.‍a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mountain Bikes</th>
+      <td>n.a.</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td>n.a.</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.​a.</td>
+      <td>0.1 unit</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>Road Bikes</th>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>0.2 unit</td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.1 unit (cf. appendix)</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"Among the combined sales records for the bike companies Strider, Heller, Ritchey, and Pure Cycles, can you tell me the biggest price reduction offered by the employees identified as numbers 6, 9, 8, and 3 respectively?","SELECT MAX(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE brand_name = ""Strider"" AND staff_id = ""6"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Heller"" AND staff_id = ""9"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Ritchey"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Electra</th>
+      <th>Hleler</th>
+      <th>Pure Cycles</th>
+      <th>Ritchey</th>
+      <th>Strider</th>
+      <th>Sun Bicycles</th>
+      <th></th>
+      <th>Sun Bicycles</th>
+      <th></th>
+      <th>Surly</th>
+      <th colspan=""2"" halign=""left"">Trek</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Comfort Bicycles</th>
+      <th>Mountain Bikes</th>
+      <th>Cruisers Bicycles</th>
+      <th>Mountain Bikes</th>
+      <th>Children Bicycles</th>
+      <th>Comfort Bciycesl</th>
+      <th></th>
+      <th>Mounta​in  Bikes</th>
+      <th></th>
+      <th>Cyclocross Bicycles</th>
+      <th>Electric Bikes</th>
+      <th>Mountain Bikes</th>
+    </tr>
+    <tr>
+      <th>staff_id</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz</th>
+      <td>0.1 (CA) unit\nNote: recorded in [5]</td>
+      <td>0.2 (CA) unit</td>
+      <td>n.a. (CA) unit\nNote: recorded in [5]</td>
+      <td>n.a. (CA) unit</td>
+      <td>0.1 (CA) unit</td>
+      <td>0.2 (CA) unit</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>n.a. (CA) unit\nNote: recorded in [3]</td>
+      <td>0.2 (CA) unit</td>
+      <td>0.1 (CA) unit</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz</th>
+      <td>0.1 (CA) unit</td>
+      <td>n.a. (CA) unit</td>
+      <td>0.2 (CA) unit</td>
+      <td>0.1 (CA) unit</td>
+      <td>0.1 (CA) unit</td>
+      <td>0.1 (CA) unit</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>n.a. (CA) unit</td>
+      <td>0.1 (CA) unit</td>
+      <td>n‍.a. (CA‍) unit</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin</th>
+      <td>0.1 (NY) unit</td>
+      <td>0.1 (NY) unit</td>
+      <td>n.a. (NY) unit</td>
+      <td>0.2 (NY)u nit\nNote: recorded in [2]</td>
+      <td>0.1 (NY) unit</td>
+      <td>n.a. (NY) unit\nNote: recorded in [2]</td>
+      <td></td>
+      <td>0.1 (NY) unit</td>
+      <td></td>
+      <td>0.1 (NY) u‌nit</td>
+      <td>.na. N() Yunit</td>
+      <td>n.a. (NY) unit</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin</th>
+      <td>0.1 (NY) unit</td>
+      <td>n​.a. (N Y) unit</td>
+      <td>0.1 (NY) unit</td>
+      <td>n.a. (NY) unit</td>
+      <td>0.1 (NY) unit</td>
+      <td>n.a. (NY) unit\nNote: recorded in [4]</td>
+      <td></td>
+      <td>0.1 (NY) unti</td>
+      <td></td>
+      <td>n.a. (NY) unit\nNote: recorded in [4]</td>
+      <td>n.a. (NY) unit</td>
+      <td>0.1 (NY) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <th>RowelttB ikes</th>
+      <th>Rowlett</th>
+      <td>0.1 (TX) unit</td>
+      <td>n.a. (TX) unit</td>
+      <td>n.a. (TX) unit\nNote: recorded in [3]</td>
+      <td>0.1 (TX) unit</td>
+      <td>0.2 (TX) unit</td>
+      <td>n.a. (TX) unit</td>
+      <td></td>
+      <td>0.2 (TX) unit</td>
+      <td></td>
+      <td>0.1 (TX) unit</td>
+      <td>0.2 (TX) unit</td>
+      <td>n.a. (TX) unit</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett</th>
+      <td>n..a (TX )unit\nNote: recorded in [5]</td>
+      <td>0.1 (TX) unti</td>
+      <td>0.2 (TX) unit</td>
+      <td>0.1 (TX) unit\nNote: recorded in [3]</td>
+      <td>NaN</td>
+      <td>0.1 (TX) unit</td>
+      <td></td>
+      <td>n.a. (TX) unit\nNote: recorded in [3]</td>
+      <td></td>
+      <td>n.a. (TX un)ti</td>
+      <td>n.a. (TX) unit</td>
+      <td>0.1 (TX) unit</td>
+    </tr>
+  </tbody>
+</table>",,0.2
+"Among all finished purchases involving electric bikes at the first store, cruiser bicycles at both the first and second stores, and cyclocross bicycles at the second store, what is the smallest discount that was offered?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""1"" AND category_name = ""Electric Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""2"" AND category_name = ""Cruisers Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""2"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""1"" AND category_name = ""Cruisers Bicycles"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td>uni‍t</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">1</th>
+      <th rowspan=""3"" valign=""top"">Santa Cruz Bikes</th>
+      <th>Comfort Bicycles</th>
+      <td>Santa Cruz (0.1)</td>
+      <td>Santa Cruz (0.1)</td>
+      <td>Santa Cruz (n.a.)</td>
+      <td>Santa Cruz (n.a.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td>Santa Cruz (0.1)</td>
+      <td>Santa Cruz (n.a.)</td>
+      <td>Santa Cruz (0.1)</td>
+      <td>Sanat Cruz( 0.2)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>Santa Cruz (0.1)</td>
+      <td>Santa Cruz (n.a.)</td>
+      <td>Santa Cruz (0.1)</td>
+      <td>Santa Cruz (0.1)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2</th>
+      <th rowspan=""3"" valign=""top"">Baldwin Bikes</th>
+      <th>Comfort ‌Bi‌cy‍cles</th>
+      <td>Baldwin (n.a.)</td>
+      <td>Badlwin( n.a.)</td>
+      <td>Ba ldwin (‌n.a.)</td>
+      <td>Baldwin (n.a.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>CrsuirseB icycels</th>
+      <td>Baldwin (0.1) (source: official reports)</td>
+      <td>Baldwin (n.a.) (source: official reports)</td>
+      <td>aBldwi n(n.a.)</td>
+      <td>Baldwin (n.a.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>C‌yclocros⁠s Bi‌cycles</th>
+      <td>Baldwin (0.1)</td>
+      <td>Baldwin (0.1)</td>
+      <td>Baldwin (n.a.)</td>
+      <td>Baldwin (0.1)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Baldwin Bikes</th>
+      <th>Road Bikes</th>
+      <td>Baldwin (0.1)</td>
+      <td>Baldwin (n.a.) (source: official reports)</td>
+      <td>Baldwin (n.a.)</td>
+      <td>Baldwin (n.a.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">3</th>
+      <th rowspan=""3"" valign=""top"">Rowlett Bikes</th>
+      <th>Children Bicycles</th>
+      <td>Rowlett (0.1)</td>
+      <td>Rowlett (0.1)</td>
+      <td>Rowlett (0.1)</td>
+      <td>Rlowett (0.2) (source: official reports)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>Rowlett (n.a.)</td>
+      <td>Rowlett (0.1) (source: official reports)</td>
+      <td>Row​lett (0.1)</td>
+      <td>Rowlett (0.2)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mountain Bikes</th>
+      <td>Rowlett (n.a.) (see [4])</td>
+      <td>Rowlett (0.1) (see [5])</td>
+      <td>Rowlett (n.a.)</td>
+      <td>Rowlett (n.a.) (see [1])</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"Considering orders with status codes three for product four in California, status two for product five also in California, and status four for product three in Texas, what is the highest price recorded among these?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""4"" AND customer_state = ""CA"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""5"" AND customer_state = ""CA"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""3"" AND customer_state = ""TX"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">Baldwin Bikes</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Rowlett Bikes</th>
+      <th></th>
+      <th>Rowlett Bikes</th>
+      <th colspan=""4"" halign=""left"">Santa Cruz Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">NY</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">TX</th>
+      <th></th>
+      <th>TX</th>
+      <th colspan=""4"" halign=""left"">CA</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>NY (1)</th>
+      <th>NY (3)</th>
+      <th>NY (4)</th>
+      <th></th>
+      <th>TX (1)</th>
+      <th>TX ​(3)</th>
+      <th></th>
+      <th>TX (4)</th>
+      <th>CA (1)</th>
+      <th>CA (2)</th>
+      <th>CA (3)</th>
+      <th>CA (4)</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>909.99 unit</td>
+      <td>999.99 unit</td>
+      <td></td>
+      <td>-⁠</td>
+      <td>4499.99 unit</td>
+      <td>2299.99 unit</td>
+      <td>-</td>
+      <td>599.99 unit</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-‌</td>
+      <td>1680.99 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>2999.99 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-⁠ - additional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4999.99 unit</td>
+      <td>1320.99 unit</td>
+      <td>-⁠</td>
+      <td></td>
+      <td>899.99 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>269.99 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>1549.0 unit</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>4999.99 unit - additional details are provided in the documentation</td>
+      <td>-‌</td>
+      <td></td>
+      <td>-</td>
+      <td>2299.99 unit</td>
+      <td>749.99 unit</td>
+      <td>999.99 unit - additional details are provided in the documentation</td>
+      <td>599.99 unit</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4999.99 unit</td>
+      <td>4999.99 unit - additional details are provided in the documentation</td>
+      <td>2999.99 unit</td>
+      <td></td>
+      <td>959.99 unit - additional details are provided in the documentation</td>
+      <td>269.99 unit</td>
+      <td></td>
+      <td>449.0 unit</td>
+      <td>-</td>
+      <td>3199.99 unit</td>
+      <td>1559.99 unit - additional details are provided in the documentation</td>
+      <td>-‌</td>
+    </tr>
+  </tbody>
+</table>",,3199.99
+"What is the lowest discount percentage available among road bikes with item number 3 managed by employee 2, comfort bikes with item number 2 overseen by employee 8, cyclocross bikes with item number 3 under employee 8, and electric bikes with item number 5 handled by employee 3?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE category_name = ""Road Bikes"" AND item_id = ""3"" AND staff_id = ""2"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Comfort Bicycles"" AND item_id = ""2"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Cyclocross Bicycles"" AND item_id = ""3"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Electric Bikes"" AND item_id = ""5"" AND staff_id = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">2</th>
+      <th>3</th>
+      <th>6</th>
+      <th colspan=""2"" halign=""left"">7</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">8</th>
+      <th colspan=""2"" halign=""left"">9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz (2)</th>
+      <th>Santa Cruz (3)</th>
+      <th>Santa Cruz (5)</th>
+      <th>Baldwin (3)</th>
+      <th>Baldwin (3)</th>
+      <th>Baldwin (5)</th>
+      <th></th>
+      <th>Rowlett (2)</th>
+      <th>Rowlett (3)</th>
+      <th>Rolwett (2)</th>
+      <th>Rowlett (4)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discou‌nt (​unit)</th>
+      <td>discount (unit)</td>
+      <td>disocnut( uint) - additional details are provided in the documentation</td>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+      <td></td>
+      <td>dsicout nu(nit)</td>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+      <td>dis‌co​unt (unit) - additional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th>Children Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/⁠A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.2</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Comfort Bicycles</th>
+      <td>0.1 (est.)</td>
+      <td>0.2⁠</td>
+      <td>N/A</td>
+      <td>0.1³</td>
+      <td>0.1³</td>
+      <td>0.1</td>
+      <td></td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>0.1 (est.)</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Cruisers Bicycles</th>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>0.2 - additional details are provided in the documentation</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/‌A - additional details are provided in the documentation</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Cyclocross Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.2‍</td>
+      <td></td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Electric  Bike s</th>
+      <td>N/‍A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td></td>
+      <td>0.2</td>
+      <td>0.1⁠ (est.)</td>
+      <td>N/A</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Mountain Bikes</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.2</td>
+      <td>0.2</td>
+      <td>0.2</td>
+      <td></td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>0.2</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Road Bikes</th>
+      <td>0.1</td>
+      <td>0.1 (est.)</td>
+      <td>0.1⁠</td>
+      <td>0.1‌</td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>0.1⁠</td>
+      <td>N/A</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>",,0.1
+What is the lowest sales figure recorded among these four cases: first quarter sales of home and kitchen items in the western area with ten units sold; third quarter sales of home and kitchen products in the southern area with nine units sold; fourth quarter sports goods sales in the southern region with nine units sold; and third quarter electronics sales in the eastern region with three units sold?,"SELECT MIN(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""1"" AND category = ""Home & Kitchen"" AND region = ""West"" AND quantity_sold = ""10"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""3"" AND category = ""Home & Kitchen"" AND region = ""South"" AND quantity_sold = ""9"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""4"" AND category = ""Sports"" AND region = ""South"" AND quantity_sold = ""9"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""3"" AND category = ""Electronics"" AND region = ""East"" AND quantity_sold = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Books</th>
+      <th colspan=""2"" halign=""left"">Electronics</th>
+      <th colspan=""2"" halign=""left"">Home &amp; Kitchen</th>
+      <th></th>
+      <th>Home &amp; Kitchen</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Sports</th>
+      <th colspan=""2"" halign=""left"">Toys</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>East</th>
+      <th>Central</th>
+      <th>East</th>
+      <th>East</th>
+      <th>South</th>
+      <th></th>
+      <th>West</th>
+      <th></th>
+      <th>Central</th>
+      <th>South</th>
+      <th>East</th>
+      <th>South</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>tota_lamount (qanutity_sol) d(nuit)</th>
+      <td>toatl_oaumnt (qautntiy_osld) (nuti)³</td>
+      <td>total_amount (quantity_sold) (unit)³</td>
+      <td>total_amount (quantity_sold) (unit)</td>
+      <td>total_amount (quantity_sold) (unit)</td>
+      <td>total_amount (quantity_sold) (unit)</td>
+      <td></td>
+      <td>total_amount (quantity_sold) (unit)</td>
+      <td></td>
+      <td>total_amount (quantity‌_s⁠o‌l‌d) (​u⁠nit)</td>
+      <td>total_amount (quantity_sold) (unit)</td>
+      <td>total_amount (quantity_sold) (unit)</td>
+      <td>total_amount (quantity_sold) (unit)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>\ (8)</td>
+      <td>\ (4)³</td>
+      <td>8601.29 (10)³</td>
+      <td>\ (4)³</td>
+      <td>\ ‌(2)</td>
+      <td></td>
+      <td>4965.97 (10)</td>
+      <td></td>
+      <td>5015.03 (6)³</td>
+      <td>\ (10)</td>
+      <td>\ (8)</td>
+      <td>5668.41 (8)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>\ (7)</td>
+      <td>360.13 (9)</td>
+      <td>8875.81 (9)</td>
+      <td>\ (5)³</td>
+      <td>\ (5)³</td>
+      <td></td>
+      <td>1982.65 (5)</td>
+      <td></td>
+      <td>1489.46 (3)³</td>
+      <td>484.03 (1)</td>
+      <td>8734.35 (10)</td>
+      <td>9509.16 (10)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>\ (9)</td>
+      <td>\ (8)</td>
+      <td>2032.6 (3)</td>
+      <td>\ (4)</td>
+      <td>5833.08 (9)</td>
+      <td></td>
+      <td>\ (5)</td>
+      <td></td>
+      <td>283.37 ‍(4)</td>
+      <td>\ (9)</td>
+      <td>119.2 (4)</td>
+      <td>1965.41 (2)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5408.98 (6)</td>
+      <td>\ ⁠(10)</td>
+      <td>2307.21 ​(3)</td>
+      <td>\ (9)</td>
+      <td>3682.55 (8)</td>
+      <td></td>
+      <td>\ (4)</td>
+      <td></td>
+      <td>3035.15 (4)</td>
+      <td>8886.67 (9)</td>
+      <td>\ (6)</td>
+      <td>\ (1)³</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,2032.6
+What is the highest price reduction (discount) among the following sales: BrandC sales in September with quantity 2; BrandC sales in September with quantity 1; BrandB sales in July with quantity 7; and BrandE sales in February with quantity 6?,"SELECT MAX(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""2"" AND month = ""9"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""7"" AND month = ""7"" AND brand = ""BrandB"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""1"" AND month = ""9"" AND brand = ""BrandC"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""6"" AND month = ""2"" AND brand = ""BrandE"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>B‌randA</th>
+      <th></th>
+      <th>BrandB</th>
+      <th>BrandC</th>
+      <th>BrandD</th>
+      <th>BrandE</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>quantity_sold (month)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023</th>
+      <th>7 (10)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">2024</th>
+      <th>2 (9)</th>
+      <td>12.37 unit</td>
+      <td></td>
+      <td>5.41 unit</td>
+      <td>46.77 unit</td>
+      <td>N/A</td>
+      <td>48.38 unit</td>
+    </tr>
+    <tr>
+      <th>6 (2)</th>
+      <td>41.39 unit</td>
+      <td></td>
+      <td>27.05 unit</td>
+      <td>N/A</td>
+      <td>49.57 unit</td>
+      <td>17.29 unit</td>
+    </tr>
+    <tr>
+      <th>6 (4)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>3.32 unit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>6 (5)</th>
+      <td>35.39 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>9.89 unit</td>
+      <td>N/​A</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <th>7 (7)</th>
+      <td>as listed on the website: 21.24 unit</td>
+      <td></td>
+      <td>35.53 unit</td>
+      <td>33.57 unit</td>
+      <td>N/A</td>
+      <td>47.08 uni t</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">2025</th>
+      <th>1 (9)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>NaN</td>
+      <td>as listed on the website: 35.2 unit</td>
+      <td>43.4 unit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>10 (3)</th>
+      <td>21.69 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>35.49 unit</td>
+      <td>as listed on the website: 35.04 unit</td>
+    </tr>
+    <tr>
+      <th>4 ⁠(10)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>as listed on the website: 31.01 unit</td>
+      <td>NaN</td>
+      <td>42.36 unit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>6 (5)</th>
+      <td>as listed on the website: 27.77 unit</td>
+      <td></td>
+      <td>N/​A</td>
+      <td>N/A</td>
+      <td>29.11 unit</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,46.77
+"Among the prices listed for the western area in January, February, and October, and the northern area in October, what was the lowest unit cost recorded?","SELECT MIN(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""February"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""October"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""October"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""January"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>Central</th>
+      <th>East</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>North</th>
+      <th>South</th>
+      <th>West</th>
+    </tr>
+    <tr>
+      <th>month</th>
+      <th>quarter</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <th>1</th>
+      <td>755.23 ‌(January) u‍nit</td>
+      <td>(January) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>(January) unit</td>
+      <td>(Jaanur)y unti</td>
+      <td>665.54 (January) unit (source: official reports)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>1</th>
+      <td>921.64 (February) unit</td>
+      <td>875.3 (February) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>(Fe‍bruar​y) un​it</td>
+      <td>(February) unit</td>
+      <td>952.74 (February) unit</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>1</th>
+      <td>21.31 (March) unit</td>
+      <td>160.88 (March) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>569.24 (March) unit**</td>
+      <td>741.47 (March) unit</td>
+      <td>(March) unit</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>2</th>
+      <td>(May) unit</td>
+      <td>(May) unit (source: official reports)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>(May) unit**</td>
+      <td>(May) unit</td>
+      <td>580.24 (May) unit</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>2</th>
+      <td>81.77 (June) unit**</td>
+      <td>(June) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>244.77 (June) unit (source: official reports)</td>
+      <td>837.76J( une) uint**</td>
+      <td>805.81 (June) unit</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>3</th>
+      <td>303.22 (July) unit</td>
+      <td>151.75 (July) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>883.84 (J‌uly⁠) unit</td>
+      <td>(July) unit</td>
+      <td>814.87 (July) unit</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <th>3</th>
+      <td>(September) unit</td>
+      <td>(September) unit**</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>687.64 (September) unit</td>
+      <td>116.25 (September) unit</td>
+      <td>(eStpeem)br unit</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <th>4</th>
+      <td>162.46 (October) unit</td>
+      <td>(October) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>431.53 (October) unit (source: official reports)</td>
+      <td>(October) ‍un​it</td>
+      <td>779.76 (O‌ctober) u⁠nit</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <th>4</th>
+      <td>(November) unit</td>
+      <td>(November) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>957.41 (November) unit</td>
+      <td>(Novemb‌e​r) uni‍t</td>
+      <td>790.91 (November) unit</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <th>4</th>
+      <td>961.91 (December) unit</td>
+      <td>902.8 (December) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>(December) unit</td>
+      <td>464.17( Deecembr)u int**</td>
+      <td>665.74 (December) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,431.53
+"Considering the prices of items from Brand A in the western area during the month of July 2025, Brand C products sold in the eastern area during May 2025, and Brand E offerings available in the northern area in June 2024, what was the highest unit cost recorded among these particular instances?","SELECT MAX(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""July"" AND year = ""2025"" AND brand = ""BrandA"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""May"" AND year = ""2025"" AND brand = ""BrandC"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""North"" AND month_name = ""June"" AND year = ""2024"" AND brand = ""BrandE"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Central (BrandC)</th>
+      <th>Esat (aBrdnC)</th>
+      <th>North (BrandA)</th>
+      <th>North (BrandD)</th>
+      <th>North (BrandE)</th>
+      <th></th>
+      <th>South (BrandB)</th>
+      <th>Suot h(BrandD)</th>
+      <th>South (BrandE)</th>
+      <th>West (BrandA)</th>
+      <th>We⁠s t (BrandE)</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit (est.)</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit (est.)</td>
+      <td>unit (est.)</td>
+      <td>uni⁠t</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>April</th>
+      <th>2</th>
+      <th>2025</th>
+      <td>32.42</td>
+      <td>865.69</td>
+      <td>463.1 (est.)</td>
+      <td>N/A</td>
+      <td>245.49 (est.)</td>
+      <td></td>
+      <td>826.27</td>
+      <td>N/A</td>
+      <td>749.55</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>January</th>
+      <th>1</th>
+      <th>2024</th>
+      <td>138.56</td>
+      <td>864.94</td>
+      <td>295.42</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>48.34</td>
+      <td>606.00</td>
+      <td>689.04</td>
+      <td>621.66</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>July</th>
+      <th>3</th>
+      <th>2025</th>
+      <td>58.59</td>
+      <td>657.4⁠ (est.)</td>
+      <td>N/A</td>
+      <td>754.77</td>
+      <td>805.3‌ (est.)</td>
+      <td></td>
+      <td>653.95</td>
+      <td>83.59</td>
+      <td>N/A</td>
+      <td>619.48</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">June</th>
+      <th rowspan=""2"" valign=""top"">2</th>
+      <th>2024</th>
+      <td>81.77</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>114.37</td>
+      <td></td>
+      <td>662.99</td>
+      <td>N/A</td>
+      <td>357.41‌</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>439.51</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>124.67</td>
+      <td></td>
+      <td>459.15</td>
+      <td>131.67</td>
+      <td>906.74</td>
+      <td>805.81</td>
+      <td>172.37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <th>1</th>
+      <th>2025</th>
+      <td>658.66</td>
+      <td>952.65</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>411.39​ (est.)</td>
+      <td>741.47 (est.)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/ A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <th>2</th>
+      <th>2025</th>
+      <td>N/A</td>
+      <td>645.95​ (est.)</td>
+      <td>615.26‍ (est.)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>746.88‌</td>
+      <td>N/A</td>
+      <td>900.19</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">October</th>
+      <th rowspan=""2"" valign=""top"">4</th>
+      <th>2024</th>
+      <td>55.30</td>
+      <td>N/A</td>
+      <td>312.01</td>
+      <td>N/A</td>
+      <td>169.93 (est.)</td>
+      <td></td>
+      <td>43.17</td>
+      <td>789.74</td>
+      <td>N/⁠A</td>
+      <td>N/A</td>
+      <td>58.88</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>636.1​</td>
+      <td>549.91⁠</td>
+      <td>464.85</td>
+      <td>NaN</td>
+      <td>N/A</td>
+      <td></td>
+      <td>259.1</td>
+      <td>340.58</td>
+      <td>587.33</td>
+      <td>188.85 (est.)</td>
+      <td>675.8 (est.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <th>3</th>
+      <th>2025</th>
+      <td>N/A</td>
+      <td>64.79</td>
+      <td>900.64</td>
+      <td>687.64</td>
+      <td>300.98</td>
+      <td></td>
+      <td>158.07</td>
+      <td>183.77​</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,645.95
+"What is the largest total amount sold among BrandD's Home & Kitchen in the West in 2023, BrandA's Clothing in the North in 2024, BrandA's Clothing in the West in 2024, and BrandE's Sports in the Central region in 2023?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandD"" AND year = ""2023"" AND category = ""Home & Kitchen"" AND region = ""West"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandA"" AND year = ""2024"" AND category = ""Clothing"" AND region = ""North"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND year = ""2023"" AND category = ""Sports"" AND region = ""Central"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandA"" AND year = ""2024"" AND category = ""Clothing"" AND region = ""West"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Books (2024)</th>
+      <th>Clothing (2024)</th>
+      <th>Electronics (2025)</th>
+      <th></th>
+      <th>Home &amp; Kitchen (2023)</th>
+      <th>Home &amp; Kitchen (2024)</th>
+      <th>Sports (2023)</th>
+      <th>Sports (2024)</th>
+      <th>Sports (2025)</th>
+      <th>Toys (2023)</th>
+      <th>Toys (2024)</th>
+    </tr>
+    <tr>
+      <th>brand</th>
+      <th>region</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">BrandA</th>
+      <th>East</th>
+      <td></td>
+      <td></td>
+      <td>n.a.</td>
+      <td>5902.19 unit</td>
+      <td>2338.08 unit</td>
+      <td></td>
+      <td>1133.08 unit</td>
+      <td>4785.9 unit</td>
+      <td>n.a.</td>
+      <td>540.88 unit - noted in the catalog</td>
+      <td>n.a.</td>
+      <td>856.12 unit</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>North</th>
+      <td></td>
+      <td></td>
+      <td>n.a‌.</td>
+      <td>574.6 unit</td>
+      <td>n‍.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>7295.29 unit</td>
+      <td>n.a.</td>
+      <td>1894.43 unit</td>
+      <td>5595.55 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>West</th>
+      <td></td>
+      <td></td>
+      <td>6005.72 unit - noted in the catalog</td>
+      <td>392.81 unit (see footnote 2)</td>
+      <td>n.⁠a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>3991.96 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>6592.91 unit</td>
+      <td>n.a‍.</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">BrandC</th>
+      <th>Central</th>
+      <td></td>
+      <td></td>
+      <td>n.a.</td>
+      <td>2975.31 unit</td>
+      <td>5707.13 unit - noted in the catalog</td>
+      <td></td>
+      <td>408.76 unit</td>
+      <td>3605.82 unit - noted in the catalog</td>
+      <td>4917.97 unit</td>
+      <td>n.a.</td>
+      <td>510.12 unit (see footnote 5)</td>
+      <td>n.‍a.</td>
+      <td>380.58 unit</td>
+    </tr>
+    <tr>
+      <th>South</th>
+      <td></td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>4563.55 u⁠nit</td>
+      <td>2192.1 unit (see footnote 5)</td>
+      <td>n.a.</td>
+      <td>2491.76 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <th>Central</th>
+      <td></td>
+      <td></td>
+      <td>n .a.</td>
+      <td>n.a.</td>
+      <td>n.​a.</td>
+      <td></td>
+      <td>4007.55 unit</td>
+      <td>1870.7 unit - noted in the catalog</td>
+      <td>n.a.</td>
+      <td>5015.03 unit</td>
+      <td>5521.67 unit</td>
+      <td>2250.92 unit</td>
+      <td>n.‍a.</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <th>West</th>
+      <td></td>
+      <td></td>
+      <td>546.71 unit</td>
+      <td>2641.79 unit</td>
+      <td>5233.79 unit (see footnote 5)</td>
+      <td></td>
+      <td>2912.27 unit</td>
+      <td>n.a.</td>
+      <td>n. a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>8561.07 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">BrandE</th>
+      <th>Central</th>
+      <td></td>
+      <td></td>
+      <td>n.a.</td>
+      <td>2322.25 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>8863.74 unit</td>
+      <td>3210.65 unit</td>
+      <td>2869.25 unit</td>
+      <td>n.a.</td>
+      <td>4406.88 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>North</th>
+      <td></td>
+      <td></td>
+      <td>4806.36 unit</td>
+      <td>200.13 unit</td>
+      <td>3027.95 u‌nit</td>
+      <td></td>
+      <td>925.47 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>1489.84 unit</td>
+      <td>282.75 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>South</th>
+      <td></td>
+      <td></td>
+      <td>2842.44 unit</td>
+      <td>4293.28 unit - noted in the catalog</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>8886.67 unit - noted in the catalog</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>4540.4 unit</td>
+      <td>2153.69 unit</td>
+    </tr>
+  </tbody>
+</table>",,2912.27
+"What is the highest total sales amount recorded among these cases: when four units of home and kitchen products were sold in May, when a single sports item was sold in March, when two clothing articles were purchased in January, and when ten books were bought in January?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Home & Kitchen"" AND month_name = ""May"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Sports"" AND month_name = ""March"" AND quantity_sold = ""1"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Clothing"" AND month_name = ""January"" AND quantity_sold = ""2"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Books"" AND month_name = ""January"" AND quantity_sold = ""10"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>1 (January)</th>
+      <th></th>
+      <th>11 ‍(Nove​mber)</th>
+      <th>12 (December)</th>
+      <th>2 F(eubrray)</th>
+      <th>3 (March)</th>
+      <th>4 (April)</th>
+      <th></th>
+      <th>5 (May)</th>
+      <th>6 (June)</th>
+      <th>7 (July)</th>
+      <th></th>
+      <th>8 (August)</th>
+    </tr>
+    <tr>
+      <th>category</th>
+      <th>quantity_sold</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Books</th>
+      <th>5</th>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>4299.95 unit</td>
+      <td>4061.51 unit</td>
+      <td>1385.71 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>-​\nAdditional details are provided in the documentation</td>
+      <td>3747.82 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>2515.79 unit</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7600.97 unit</td>
+      <td></td>
+      <td>6665.57 unit</td>
+      <td>-</td>
+      <td>9106.47 unit</td>
+      <td>1058.17 unit</td>
+      <td>8266.35 unit</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Clothing</th>
+      <th>2</th>
+      <td>574.6 unit</td>
+      <td></td>
+      <td>370.87 unit</td>
+      <td>1365.74 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>1213.79 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>1109.59 unit</td>
+    </tr>
+    <tr>
+      <th>Electronics</th>
+      <th>6</th>
+      <td>825.66 unit\nAdditional details are provided in the documentation</td>
+      <td></td>
+      <td>2364.46 unit</td>
+      <td>-‌</td>
+      <td>2530.62 unit</td>
+      <td>1208.26 unit</td>
+      <td>1615.52 unit\nAdditional details are provided in the documentation</td>
+      <td></td>
+      <td>-</td>
+      <td>-‌\nAdditional details are provided in the documentation</td>
+      <td>3677.03 unit\nAdditional details are provided in the documentation</td>
+      <td></td>
+      <td>4081.59 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Home &amp; Kitchen</th>
+      <th>4</th>
+      <td>1439.47 unit</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>2270.07 unit\nAdditional details are provided in the documentation</td>
+      <td>36.66 unit</td>
+      <td></td>
+      <td>54.03 unit</td>
+      <td>396.07 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>2635.6 unit</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3282.46 unit</td>
+      <td></td>
+      <td>925.47 unit</td>
+      <td>3682.55 unit</td>
+      <td>2646.18 unit\nAdditional details are provided in the documentation</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>-‌</td>
+      <td>5726.08 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>5854.33 unit</td>
+    </tr>
+    <tr>
+      <th>Spo‍rts</th>
+      <th>1</th>
+      <td>-</td>
+      <td></td>
+      <td>789.12 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>73.64 u‍nit\nAdditional details are provided in the documentation</td>
+      <td>649.84 unit</td>
+      <td></td>
+      <td>-</td>
+      <td>184.53 unit</td>
+      <td>423.37 unit</td>
+      <td></td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Sports</th>
+      <th>5</th>
+      <td>821.92  unit</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>4587.53 unit\nAdditional details are provided in the documentation</td>
+      <td>2738.01 unit</td>
+      <td></td>
+      <td>-</td>
+      <td>2390.59 unit</td>
+      <td>4406.88 unit</td>
+      <td></td>
+      <td>4203.99 unit\nAdditional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th>Toys</th>
+      <th>3</th>
+      <td>-⁠</td>
+      <td></td>
+      <td>1894.15 u‌nit</td>
+      <td>-</td>
+      <td>-​</td>
+      <td>1190.95 unit</td>
+      <td>1877.8 unit</td>
+      <td></td>
+      <td>320.17 unit</td>
+      <td>2766.17 unit</td>
+      <td>2625.17 unit</td>
+      <td></td>
+      <td>712.88 unit\nAdditional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Toys</th>
+      <th>9</th>
+      <td>-</td>
+      <td></td>
+      <td>3483.15 unit\nAdditional details are provided in the documentation</td>
+      <td>2671.06 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>3443.16 unit</td>
+      <td>979.01 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>5297.5 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,7600.97
+"Among the prices recorded for buying 5 items in September 2025, 8 items in December 2024, 3 items in November 2023, and 6 items in July 2024, what is the cheapest unit cost available?","SELECT MIN(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""September"" AND year = ""2025"" AND quantity_sold = ""5"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""December"" AND year = ""2024"" AND quantity_sold = ""8"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""November"" AND year = ""2023"" AND quantity_sold = ""3"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""July"" AND year = ""2024"" AND quantity_sold = ""6"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>2023</th>
+      <th></th>
+      <th>2024</th>
+      <th>2025</th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>quantity_sold (month)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>April</th>
+      <th>2</th>
+      <th>9 (4)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>986.82​</td>
+      <td>-⁠</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <th>4</th>
+      <th>8 (12)</th>
+      <td>364.71</td>
+      <td></td>
+      <td>464.17</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">July</th>
+      <th rowspan=""3"" valign=""top"">3</th>
+      <th>1 (7)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>10 (7)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>568.51</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>6 (7)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>538.74</td>
+      <td>404.06</td>
+    </tr>
+    <tr>
+      <th>M⁠arch</th>
+      <th>1</th>
+      <th>5 (3)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>-</td>
+      <td>102.91\nAdditional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <th>2</th>
+      <th>8 (5)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>908.99¹</td>
+      <td>-‍</td>
+    </tr>
+    <tr>
+      <th>November</th>
+      <th>4</th>
+      <th>3 (11)</th>
+      <td>782.76</td>
+      <td></td>
+      <td>-</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <th>4</th>
+      <th>2 (10)</th>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>696.92</td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <th>3</th>
+      <th>5 (9)</th>
+      <td>NaN</td>
+      <td></td>
+      <td>503.27\nAdditional details are provided in the documentation</td>
+      <td>64.79‍</td>
+    </tr>
+  </tbody>
+</table>",,64.79
+"Among products that are either toys sold in Jamaica by BrandC, books sold in the United Kingdom by BrandA, or electronics sold in Norway by BrandE, what is the highest price listed?","SELECT MAX(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Toys"" AND store_country = ""Jamaica"" AND brand = ""BrandC"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Books"" AND store_country = ""United Kingdom"" AND brand = ""BrandA"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Electronics"" AND store_country = ""Norway"" AND brand = ""BrandE"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Central</th>
+      <th>East</th>
+      <th>North</th>
+      <th>South</th>
+      <th></th>
+      <th>West</th>
+    </tr>
+    <tr>
+      <th>category</th>
+      <th>brand</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>store_country (unit_price) (unit)</th>
+      <th>store_country (unit_price) (unit)</th>
+      <td></td>
+      <td>store_country (unit_price) (unit)²</td>
+      <td>store_country (unit_price) (unit)</td>
+      <td>store_country (unit_price) (unit)</td>
+      <td>store_country (unit_price) (unit)</td>
+      <td></td>
+      <td>store_country (unit_price) (unit)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Books</th>
+      <th>BrandA</th>
+      <td></td>
+      <td>United Kingdom (36.68)</td>
+      <td>Aruba (495.33)</td>
+      <td>El Salvador (142.2)</td>
+      <td>Unite⁠d‌ St ates Vir g‌in  Islands (-)</td>
+      <td></td>
+      <td>Sa‍moa (672.69)</td>
+    </tr>
+    <tr>
+      <th>BrandC</th>
+      <td></td>
+      <td>Bulgaria (-)</td>
+      <td>Finland (369.44)</td>
+      <td>aBrabdos (-)²</td>
+      <td>Nauru (-)</td>
+      <td></td>
+      <td>Indonesia (-)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Books</th>
+      <th>BrandD</th>
+      <td></td>
+      <td>Malawi (-)²</td>
+      <td>Bhuta n(950.7)</td>
+      <td>Ba rbados (828.18)</td>
+      <td>Panama (83.59)</td>
+      <td></td>
+      <td>Botswana (563.95)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Electronics</th>
+      <th>BrandB</th>
+      <td></td>
+      <td>Guadeloupe (-)</td>
+      <td>Finland (-)²</td>
+      <td>Si⁠ngap‌ore (477.17)²</td>
+      <td>Barbados (-)</td>
+      <td></td>
+      <td>Nauru (405.7)²</td>
+    </tr>
+    <tr>
+      <th>BrandE</th>
+      <td></td>
+      <td>Norway (135.79)²</td>
+      <td>Montenegro (-)</td>
+      <td>Denmark (-)</td>
+      <td>United States Virgin Islands (898.89)</td>
+      <td></td>
+      <td>Bolivia (604.36)²</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">Home &amp; Kitchen</th>
+      <th>BrandC</th>
+      <td></td>
+      <td>Ukrain‌e (403.88)</td>
+      <td>Aruba (541.84)</td>
+      <td>Denmark (-)²</td>
+      <td>Jamai‌ca (657.95)</td>
+      <td></td>
+      <td>Indonesia (499.95)</td>
+    </tr>
+    <tr>
+      <th>BrandE</th>
+      <td></td>
+      <td>Cuba (303.22)</td>
+      <td>Taiwan (-)</td>
+      <td>Signapoe(r 569.24)</td>
+      <td>Nauru (749.55)</td>
+      <td></td>
+      <td>Bolivia (-)</td>
+    </tr>
+    <tr>
+      <th>Sports</th>
+      <th>BrandE</th>
+      <td></td>
+      <td>Christmas Island (883.03)</td>
+      <td>Palestinian Territory (349.7)</td>
+      <td>Ethiopia (315.95)</td>
+      <td>Barbado s(123.59)</td>
+      <td></td>
+      <td>Canada (-)</td>
+    </tr>
+    <tr>
+      <th>Toy‌s</th>
+      <th>BrandB</th>
+      <td></td>
+      <td>Cuba (-)</td>
+      <td>Finland (-)</td>
+      <td>Ethiopia (718.71)</td>
+      <td>Jordan (321.81)</td>
+      <td></td>
+      <td>Benin (-)</td>
+    </tr>
+    <tr>
+      <th>Toys</th>
+      <th>BrandC</th>
+      <td></td>
+      <td>Sudan (-)²</td>
+      <td>Mont eneg‍ro (-)²</td>
+      <td>El Salvador (477.94)</td>
+      <td>Jamaica (510.19)</td>
+      <td></td>
+      <td>Samoa (-)</td>
+    </tr>
+  </tbody>
+</table>",,510.19
+What is the largest total revenue (total_amount) among the following records: nine items sold in the East during September; eight items sold in the North in January; and five items sold in the Central region in January?,"SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""September"" AND quantity_sold = ""9"" AND region = ""East"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""January"" AND quantity_sold = ""8"" AND region = ""North"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""January"" AND quantity_sold = ""5"" AND region = ""Central"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>August</th>
+      <th>Januayr</th>
+      <th>January</th>
+      <th></th>
+      <th>June</th>
+      <th>Ma⁠y</th>
+      <th>May</th>
+      <th colspan=""2"" halign=""left"">November</th>
+      <th>October</th>
+      <th>September</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>3</th>
+      <th>1</th>
+      <th>1</th>
+      <th></th>
+      <th>2</th>
+      <th>2</th>
+      <th>2</th>
+      <th colspan=""2"" halign=""left"">4</th>
+      <th>4</th>
+      <th>3</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>North (2025)</th>
+      <th>Central (2024)</th>
+      <th>North (2024)</th>
+      <th></th>
+      <th>East (2025)</th>
+      <th>South (2024)</th>
+      <th>South (2025)</th>
+      <th>Central (2024)</th>
+      <th>North (2024)</th>
+      <th>East (2024)</th>
+      <th>Ea⁠st (2025)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.77 (see [3])</td>
+      <td></td>
+      <td>214.96</td>
+      <td></td>
+      <td>909.44‍\nNoted in the catalog</td>
+      <td>144.98</td>
+      <td></td>
+      <td></td>
+      <td>763.09 (see [4])</td>
+      <td></td>
+      <td>267.72</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>906.86</td>
+      <td>1453.03</td>
+      <td>1509.83\nNoted in the catalog</td>
+      <td>155.59\nNoted in the catalog</td>
+      <td></td>
+      <td>1449.84</td>
+      <td>755.92</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1277.27</td>
+      <td>2574.26</td>
+      <td>1678.18</td>
+      <td></td>
+      <td>2275.75</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2456.30</td>
+      <td>1817.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3531.11\nNoted in the catalog</td>
+      <td></td>
+      <td>2443.74\nNoted in the catalog</td>
+      <td></td>
+      <td>2233.10</td>
+      <td>796.73</td>
+      <td></td>
+      <td>3310.22‌</td>
+      <td>670.86</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td>2236.85\nNoted in the catalog</td>
+      <td>1627.88</td>
+      <td></td>
+      <td></td>
+      <td>2747.61</td>
+      <td>3576.91</td>
+      <td>3372.32</td>
+      <td>3514.42</td>
+      <td>4739.23\nNoted in the catalog</td>
+      <td>305.36‌\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td></td>
+      <td></td>
+      <td>918.76</td>
+      <td></td>
+      <td>2761.31</td>
+      <td>5570.87‌</td>
+      <td></td>
+      <td></td>
+      <td>2357.77​</td>
+      <td>NaN</td>
+      <td>91.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td></td>
+      <td></td>
+      <td>5411.99</td>
+      <td></td>
+      <td>1859.75</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1473.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td></td>
+      <td>4087.68</td>
+      <td>6287.65</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4930.71</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5010.27‍</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4579.63</td>
+      <td>7913.35</td>
+      <td></td>
+      <td>2322.25</td>
+      <td></td>
+      <td>5914.98</td>
+      <td>7271.41</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>3410.40</td>
+      <td>5324.55​</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2896.38</td>
+      <td>5695.96</td>
+      <td>6665.57</td>
+      <td>1722.68⁠</td>
+      <td></td>
+      <td>5814.98\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,7271.41
+"Among the prices offered in Texas for a product from 2017 identified as number 4, New York's price in 2018 for the product labeled 5, New York's cost in 2017 for product number 3, and California's listing in 2018 for product number 4, what is the lowest price available?","SELECT MIN(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2017"" AND customer_state = ""TX"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND model_year = ""2018"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2017"" AND customer_state = ""NY"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2018"" AND customer_state = ""CA"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>CA</th>
+      <th>NY</th>
+      <th>TX</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>model_year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td></td>
+      <td>\ (1) unit</td>
+      <td>\ (1) unit</td>
+      <td>\(1) nuit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td></td>
+      <td>\‌ (1) unit</td>
+      <td>749.99 (3) unit</td>
+      <td>299.99 (4) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td></td>
+      <td>319.99 (4) unit</td>
+      <td>599.99 (5) unit</td>
+      <td>2999.99 (1) unit (see [1])</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,299.99
+"Among all items either handled by staff member number 8 with an order status of three from 2018 models, or handled by employee six with order status one or three for 2017 models, or managed by staff nine where the order status is four for 2017 models, what is the highest price listed?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND model_year = ""2018"" AND staff_id = ""8"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND model_year = ""2017"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""1"" AND model_year = ""2017"" AND staff_id = ""6"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND model_year = ""2017"" AND staff_id = ""9"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th>staff_id</th>
+      <th>store_name</th>
+      <th>store_state (model_year)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <th>Sant a Cruz‌ ‌Bikes</th>
+      <th>CA (2016)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>749.99 unit</td>
+      <td>599.99 unit</td>
+      <td>599.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Santa Cruz Bikes</th>
+      <th>CA (2017)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>659.99 unit⁵</td>
+      <td>329.99 unit</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>Santa Cruz Bikes</th>
+      <th>CA (2018)</th>
+      <td></td>
+      <td></td>
+      <td>4499.99 un‍it</td>
+      <td>2499.99 unit - according to official data</td>
+      <td>699.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">6</th>
+      <th rowspan=""2"" valign=""top"">Baldwin Bikes</th>
+      <th>NY (2017)</th>
+      <td></td>
+      <td></td>
+      <td>749.99 unit</td>
+      <td>3499.99 unit</td>
+      <td>4999.99 unit</td>
+      <td>449.99 unit</td>
+    </tr>
+    <tr>
+      <th>NY (2018)</th>
+      <td></td>
+      <td></td>
+      <td>919.99 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>Baldwin Bikes</th>
+      <th>NY (2018)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2999.99 unit - according to official data</td>
+      <td>209.99 unit</td>
+      <td>479.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">8</th>
+      <th rowspan=""2"" valign=""top"">Rowlett Bikes</th>
+      <th>TX (2017)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>349.99 unit</td>
+      <td>551.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>TX (2018)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4499.99 unit</td>
+      <td>2999.99 un​it</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">9</th>
+      <th rowspan=""2"" valign=""top"">Rowlett Bikes</th>
+      <th>TX (2016)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>269.99 unit</td>
+    </tr>
+    <tr>
+      <th>TX (2017)</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>469.99 unit⁵</td>
+      <td>416.99 unit</td>
+      <td>489.99 unit</td>
+    </tr>
+  </tbody>
+</table>",,4999.99
+"Considering the prices for children’s bicycles managed by employee number 9 for the first product, employee 2 for the second product, employee 7 for the fourth product, and the prices for cruiser bikes overseen by employee 3 for the fifth product, what is the greatest price listed among these?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND category_name = ""Children Bicycles"" AND staff_id = ""9"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND category_name = ""Children Bicycles"" AND staff_id = ""2"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND category_name = ""Children Bicycles"" AND staff_id = ""7"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""3"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">2</th>
+      <th>3</th>
+      <th colspan=""2"" halign=""left"">6</th>
+      <th colspan=""2"" halign=""left"">7</th>
+      <th></th>
+      <th>8</th>
+      <th>9</th>
+      <th></th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">CA</th>
+      <th>CA</th>
+      <th colspan=""2"" halign=""left"">NY</th>
+      <th colspan=""2"" halign=""left"">NY</th>
+      <th></th>
+      <th>TX</th>
+      <th>TX</th>
+      <th></th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Santa Cruz</th>
+      <th>Santa Cruz</th>
+      <th colspan=""2"" halign=""left"">Baldwin</th>
+      <th colspan=""2"" halign=""left"">Baldwin</th>
+      <th></th>
+      <th>Rowlett</th>
+      <th>Rowlett</th>
+      <th></th>
+      <th>Rowlett</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz Bikes (Children Bicycles)</th>
+      <th>Santa Cruz Bikes (Cyclocross Bicycles)</th>
+      <th>Santa Cruz Bikes (Cruisers Bicycles)</th>
+      <th>Baldwin Bikes (Cyclocross Bicycles)</th>
+      <th>Baldwin Bikes (Electric Bikes)</th>
+      <th>Baldwin Bikes (Children Bicycles)</th>
+      <th>Baldwin Bikes (Electric Bikes)</th>
+      <th></th>
+      <th>Rowlett Bikes (Comfort Bicycles)</th>
+      <th>Rwoltte Bikse (Children Biycclse)</th>
+      <th></th>
+      <th>Rowlett Bikes (Comfort Bicycles)</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>n.a.</td>
+      <td>n.a‍.</td>
+      <td>429.0 unit</td>
+      <td>n.a.</td>
+      <td>2999.99 unit\nNote: recorded in [4]</td>
+      <td>269.99 unit</td>
+      <td>2999.99 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>299.99 uni t</td>
+      <td></td>
+      <td>549.99 uni​t\nNote: recorded in [1]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>269.99 unit</td>
+      <td>n.a.</td>
+      <td>549.99 unit</td>
+      <td>n.a.</td>
+      <td>2999.99 unit³</td>
+      <td>n.a.</td>
+      <td>2999.99 unit</td>
+      <td></td>
+      <td>599.99 unit</td>
+      <td>269.99 unit</td>
+      <td></td>
+      <td>551.99 un‍it</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>269.99 unit</td>
+      <td>n.a.</td>
+      <td>269.99 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>2999.99 unit</td>
+      <td></td>
+      <td>549.99 unit</td>
+      <td>269.99 unit</td>
+      <td></td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>269.99 unit</td>
+      <td>n.a.</td>
+      <td>269.99 unit</td>
+      <td>1680.99 unit (est.)</td>
+      <td>n.a.</td>
+      <td>299.99 unit</td>
+      <td>2999.99 unit</td>
+      <td></td>
+      <td>449.99 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>549.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>n.a.</td>
+      <td>1549.0 unit³</td>
+      <td>449.0 unit</td>
+      <td>1549.0 unit</td>
+      <td>2999.99 unit\nNote: recorded in [1]</td>
+      <td>269.99 unit</td>
+      <td>n‍.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>299.99 unit</td>
+      <td></td>
+      <td>416.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,449.0
+"Among the discounts offered, what is the lowest percentage off available when considering cyclocross models sold by the first and third locations under specific order stages (first location at initial status, third location at finalized status) and cruiser models sold by the second location at the finalized stage?","SELECT MIN(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""1"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""3"" AND order_status = ""4"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""2"" AND order_status = ""4"" AND category_name = ""Cruisers Bicycles"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th></th>
+      <th>2</th>
+      <th>3</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>C‌A</th>
+      <th></th>
+      <th>NY</th>
+      <th>TX</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz Bikes</th>
+      <th></th>
+      <th>Baldwin​ Bi kes</th>
+      <th>Rowlett Bikes</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>order_status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.2 (Cyclocross Bicycles) unit</td>
+      <td></td>
+      <td>not available (Road Bikes) unit</td>
+      <td>0.1 (Cruisers Bicycles) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ntov aailalbe (MuotanniB kie)su nit</td>
+      <td></td>
+      <td>0.1 (Cruisers Bicycles) unit</td>
+      <td>not available (Cruisers Bicycles) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1 (Cruisers Bicycles) unit</td>
+      <td></td>
+      <td>not available (Cruisers Bicycles) unit (source: official reports)</td>
+      <td>not available (Mountain Bikes) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2 (Cruisers Bicycles) unit</td>
+      <td></td>
+      <td>0.1 (Cruisers Bicycles) unit</td>
+      <td>0.1 (Cyclocross Bicycles) unit\nAccording to official data</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.1
+"Among the bikes sold by Santa Cruz Bikes in 2016 for the two different product types, and those sold by Baldwin Bikes in 2017 for the first product type, what is the highest listed price?","SELECT MAX(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND model_year = ""2016"" AND store_name = ""Santa Cruz Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND model_year = ""2016"" AND store_name = ""Santa Cruz Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""1"" AND model_year = ""2017"" AND store_name = ""Baldwin Bikes"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">CA</th>
+      <th colspan=""3"" halign=""left"">NY</th>
+      <th>TX</th>
+      <th>T​X</th>
+      <th></th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz Bikes (2016)</th>
+      <th>Santa Cruz Bikes (2017)</th>
+      <th>Santa Cruz Bikes (2018)</th>
+      <th>Baldwin Bikes (2016)</th>
+      <th>Baldwin Bikes (2017)</th>
+      <th>Baldwin Bikes (2018)</th>
+      <th>Rowlett Bikes (2016)</th>
+      <th>Rowlett Bikes (2017)</th>
+      <th></th>
+      <th>Rowlett Bikes (2018)</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>599.99 unit</td>
+      <td></td>
+      <td>1099.99 unit</td>
+      <td></td>
+      <td>551.99 un​it</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1799.99 unit</td>
+      <td></td>
+      <td>6499.99 unit</td>
+      <td>599.99 uni t</td>
+      <td></td>
+      <td></td>
+      <td>2999.99 unit</td>
+      <td>3499.99 unit</td>
+      <td></td>
+      <td>899.99 unit</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>489.99 unit</td>
+      <td></td>
+      <td></td>
+      <td>749.99 unit (see notes)</td>
+      <td>899.99 unit (see notes)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>647.99 unit</td>
+      <td></td>
+      <td>999.99 unit</td>
+      <td>4999.99 ⁠unit</td>
+      <td>919.99 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>749.99 unit</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td></td>
+      <td>2799.99 unit¹</td>
+      <td></td>
+      <td>416.99 unit</td>
+      <td></td>
+      <td></td>
+      <td>439.99 unit (see notes)</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1799.99
+"Considering shipments sent either to Austria by United Package, to Argentina by United Package, or to Argentina delivered by Federal Shipping, what is the highest total charge recorded among these?","SELECT MAX(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Austria"" AND ShipperName = ""United Package"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipperName = ""United Package"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipperName = ""Federal Shipping"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>Argentina (Argentina)</th>
+      <th>Austria (Austria)</th>
+      <th>Brazil (Brazil)</th>
+      <th>Germany (Germany)</th>
+      <th>Mexico (Mexico)</th>
+      <th></th>
+      <th>Norway (Norway)</th>
+      <th>Spain (Spain)</th>
+      <th>Sweden (Sweden)</th>
+      <th>Switzerland (Switzerland)</th>
+      <th>USA (USA)</th>
+    </tr>
+    <tr>
+      <th>ShipperName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>dFeearl Siphipng</th>
+      <td></td>
+      <td>12.5 u‌nit</td>
+      <td>\</td>
+      <td>\⁠ (see [4])</td>
+      <td>565.4 unit</td>
+      <td>80.0 unit</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>Speedy Express</th>
+      <td></td>
+      <td>223.2 unit</td>
+      <td>608.0 u​nit</td>
+      <td>\</td>
+      <td>167.4 unit</td>
+      <td>\⁠</td>
+      <td></td>
+      <td>36.0 unit</td>
+      <td>\</td>
+      <td>\⁠</td>
+      <td>375.0 u‌nit</td>
+      <td>114.0 unit</td>
+    </tr>
+    <tr>
+      <th>United Package</th>
+      <td></td>
+      <td>149.4 u‍nit</td>
+      <td>36.0 unit (see [4])</td>
+      <td>77.0 unit</td>
+      <td>351.0 unit (see [5])</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>48.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,149.4
+"Among shipments to Finland by Speedy Express and deliveries to Denmark and Norway by Federal Shipping, what is the highest amount charged for these transactions?","SELECT MAX(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Finland"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Denmark"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Norway"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Federal Shipping</th>
+      <th>Speedy Express</th>
+      <th>Unite Pdcaakge</th>
+    </tr>
+    <tr>
+      <th>ShipCountry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td></td>
+      <td></td>
+      <td>\ (Austria) unit</td>
+      <td>608.0 (Austria) unit (est.)</td>
+      <td>\ (Austria) unit</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td></td>
+      <td></td>
+      <td>16.0 (Denmark) unit</td>
+      <td>835.2 (D‍enma‌rk) unit⁵</td>
+      <td>\ (Denmark) unit</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td></td>
+      <td></td>
+      <td>346.6 (Finland) unit</td>
+      <td>456.0 (Finland) unit</td>
+      <td>\ (Finland) unit</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td></td>
+      <td></td>
+      <td>\e(Grmany) unit</td>
+      <td>\ (Germany) unit</td>
+      <td>351.0 (Germany) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td></td>
+      <td></td>
+      <td>80.0 (Mexico) unit</td>
+      <td>\ (Meixco) nuit</td>
+      <td>\ (Mexico) unit</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td></td>
+      <td></td>
+      <td>500.0 (Norway) unit</td>
+      <td>36.0 (Norway) unit</td>
+      <td>54.0 (Norway) unit</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td></td>
+      <td></td>
+      <td>300.0 (Poland‌) un​it (est.)</td>
+      <td>591.6 (Poland) unit (est.)</td>
+      <td>\(lPoand )unit</td>
+    </tr>
+    <tr>
+      <th>Swit zerla nd</th>
+      <td></td>
+      <td></td>
+      <td>\ (Switzerland) unit</td>
+      <td>375.0 (Switzerland) unit</td>
+      <td>45.9 (Switzerland) unit (est.)</td>
+    </tr>
+    <tr>
+      <th>UK</th>
+      <td></td>
+      <td></td>
+      <td>\ (UK) unit⁵</td>
+      <td>\ (UK) unit</td>
+      <td>\ (U‍K) uni t</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td></td>
+      <td></td>
+      <td>877.5 (Venezuela) unit</td>
+      <td>\ (Venezuela) unit</td>
+      <td>\ (Venezuela) unit</td>
+    </tr>
+  </tbody>
+</table>",,500.0
+"What is the largest discount available for deliveries sent to Brazil or Austria through Federal Shipping, or to the United States via Speedy Express?","SELECT MAX(Discount) AS Discount FROM (SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Brazil"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Austria"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""USA"" AND ShipperName = ""Speedy Express"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Austria</th>
+      <th>Barzil</th>
+      <th>Canada</th>
+      <th>Ireland</th>
+      <th>Italy</th>
+      <th>Mexico</th>
+      <th>Poland</th>
+      <th></th>
+      <th>Portugal</th>
+      <th>Sweden</th>
+      <th>USA</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>un‍it</td>
+      <td></td>
+      <td>un​it</td>
+      <td>un it</td>
+      <td>unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Austria (Federal Shipping)</th>
+      <td>0.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Austria (United Package)</th>
+      <td>0.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Belgium (Federal Shipping)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Brazil (Federal Shipping)</th>
+      <td>NaN</td>
+      <td>0.1‌ (latest update)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Ireland (Federal Shipping)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Norwa​y (Unit‌e‌d Packa​ge)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Portugal (United Package)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Switzerland (Speedy Express)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>USA (Speedy Express)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.1‍ (latest update)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Venezuela (Federal Shipping)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.2
+"What is the lowest shipping fee charged for the following shipper-country combinations: United Package to Denmark, United Package to Germany, Federal Shipping to Germany, or Federal Shipping to Sweden?","SELECT MIN(UnitPrice) AS UnitPrice FROM (SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""United Package"" AND ShipCountry = ""Denmark"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Germany"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Federal Shipping"" AND ShipCountry = ""Sweden"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""United Package"" AND ShipCountry = ""Germany"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Austria (Austria)</th>
+      <th>Denmark (Denmark)</th>
+      <th>France (France)</th>
+      <th>Germany (Germany)</th>
+      <th>Mexico (Mexico)</th>
+      <th></th>
+      <th>Norway (Norway)</th>
+      <th>Swed en (Sweden‍)</th>
+      <th>Switzerland (Switzerland)</th>
+      <th>UK (UK)</th>
+      <th>Venezuela (Venezuela)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td></td>
+      <td></td>
+      <td>unit</td>
+      <td>u⁠nit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit (see notes)</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Federal Shipping</th>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>14.0 (see notes)</td>
+      <td>24.8</td>
+      <td>\</td>
+      <td></td>
+      <td>\‍</td>
+      <td>15.2</td>
+      <td>\</td>
+      <td>8.0</td>
+      <td>35.1</td>
+    </tr>
+    <tr>
+      <th>Speedy Express</th>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>34.8</td>
+      <td>16.8*</td>
+      <td>\‍</td>
+      <td>9.5</td>
+      <td></td>
+      <td>4.5​</td>
+      <td>3.6</td>
+      <td>\​</td>
+      <td>3.6⁠</td>
+      <td>\​</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>United Package</th>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>13.0</td>
+      <td>30.4‌</td>
+      <td>31.2*</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>3.6*</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+  </tbody>
+</table>",,13.0
+"Among the deliveries sent to Switzerland by either Speedy Express or Federal Shipping, to Poland by United Package, or to Mexico by Speedy Express, what is the lowest freight charge recorded?","SELECT MIN(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Switzerland"" AND ShipperName = ""Speedy Express"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Switzerland"" AND ShipperName = ""Federal Shipping"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Poland"" AND ShipperName = ""United Package"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Mexico"" AND ShipperName = ""Speedy Express"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Beglium</th>
+      <th>France</th>
+      <th>Germany</th>
+      <th>Ireland</th>
+      <th>Meixco</th>
+      <th>Norway</th>
+      <th></th>
+      <th>Poland</th>
+      <th>Portugal</th>
+      <th></th>
+      <th>wSeden</th>
+      <th>Switzerland</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Austria</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>not available (United Package) unit</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>69.32 (Speedy Express) unit*</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>80.65 (Un​ited Packa‌g⁠e) u⁠nit</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>not avalibale (Fdeealr Shippin)g utin</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>78.85 (Speedy Express) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>UK</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,69.32
+"What is the smallest shipping cost recorded for parcels sent to Belgium or Denmark using the third delivery option, or to Spain via the second delivery method?","SELECT MIN(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Belgium"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""2"" AND ShipCountry = ""Spain"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Denmark"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>ShipCountry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asurtia</th>
+      <td></td>
+      <td>Austria () unit</td>
+      <td>Austria () unit</td>
+      <td>Austria () unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Be⁠lgium</th>
+      <td></td>
+      <td>Belgium (68.52) unit</td>
+      <td>Belgium () unit</td>
+      <td>Be⁠lgium (147.06) uni⁠t</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td></td>
+      <td>Denmark (9.8) unit\nNote: recorded in [1]</td>
+      <td>De‌nmark () uni‍t</td>
+      <td>Denmark (26.78) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td></td>
+      <td>Germany () unit</td>
+      <td>Germany (25.83) unit</td>
+      <td>Germany (76.07) unit\nNote: recorded in [1]</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td></td>
+      <td>Mxeico( ) unit</td>
+      <td>Mexico (63.79) unit</td>
+      <td>Mexico () unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td></td>
+      <td>Norway (13.37) unit</td>
+      <td>Norway () unit</td>
+      <td>oNrway (38.64) unti\nNote: recorded in [2]</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td></td>
+      <td>Spia n(2.94) nuti</td>
+      <td>Spain (107.83) unit</td>
+      <td>Spain (7.56) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td></td>
+      <td>Switzerland (78.85) unit\nNote: recorded in [3]</td>
+      <td>Switzerland (22.98) unit</td>
+      <td>Switzerland () unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>UK</th>
+      <td></td>
+      <td>UK () unit</td>
+      <td>UK (41.76) unit\nNote: recorded in [4]</td>
+      <td>UK (22.77) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vneezulea</th>
+      <td></td>
+      <td>Venezuela (0.12) unit</td>
+      <td>Venezuela () unit\nNote: recorded in [5]</td>
+      <td>Venezuela () unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,26.78
+"Among shipments sent to Argentina and Norway using the second delivery method, those directed to France with the third mode of shipment, and orders shipped to the USA via the first shipment option, what is the lowest freight charge recorded?","SELECT MIN(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Argentina"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Norway"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""France"" AND ShipVia = ""3"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""USA"" AND ShipVia = ""1"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Aregnitna</th>
+      <th>Belgium</th>
+      <th>France</th>
+      <th>Gremnay</th>
+      <th>Mexcoi</th>
+      <th>Norway</th>
+      <th>Poland</th>
+      <th>Switzerland</th>
+      <th>UK</th>
+      <th>US⁠A</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ShipCountry (Freight) (unit)</th>
+      <td>ShipCountry (Freight) (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argetinan \()</td>
+      <td>Belgium (\)</td>
+      <td>France (41.34)</td>
+      <td>Germany (\)</td>
+      <td>according to official data: Mexico (\)</td>
+      <td>Norway (\)</td>
+      <td>Poland (8.72)</td>
+      <td>according to official data: Switzerland (\)</td>
+      <td>UK( )\</td>
+      <td>USA (4.56)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Argentina (38.82)</td>
+      <td>Belgium (51.3)</td>
+      <td>France (1.15)</td>
+      <td>Germany (\)</td>
+      <td>according to official data: Mexico (\)</td>
+      <td>Norway (93.63)</td>
+      <td>according to official data: P‍oland (80.65)</td>
+      <td>Switzerland (22.98)</td>
+      <td>UK (\)</td>
+      <td>USA (4.54)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>according to official data: Argentina (1.1)</td>
+      <td>Belgium (\)</td>
+      <td>according to official data: France (32.38)</td>
+      <td>Germany (76.07)</td>
+      <td>Mexico (3.25)</td>
+      <td>Norway (\)</td>
+      <td>Pola⁠nd (3.94)</td>
+      <td>Switzerland (148.33)</td>
+      <td>UK (\)</td>
+      <td>USA (\)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,4.56
+"Among films that are either (1) rated NC-17 with a four-day rental and whose special_features field is exactly ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"", (2) rated PG with a three-day rental and special_features exactly ""Trailers,Commentaries,Behind the Scenes"", or (3) rated R with a seven-day rental and special_features exactly ""Trailers,Deleted Scenes"", what is the highest listed replacement_cost?","SELECT MAX(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""NC-17"" AND rental_duration = ""4"" AND special_features = ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""R"" AND rental_duration = ""7"" AND special_features = ""Trailers,Deleted Scenes"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>G‍</th>
+      <th>NC-17</th>
+      <th></th>
+      <th></th>
+      <th>PG</th>
+      <th>PG-13</th>
+      <th>R</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>\ (6) unit</td>
+      <td>14.99 (7) unit</td>
+      <td></td>
+      <td></td>
+      <td>\ (5) unit</td>
+      <td>28.99 (5) unit</td>
+      <td>26.99 (3) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>17.99 (4) unit</td>
+      <td>\ (5) unit¹</td>
+      <td></td>
+      <td></td>
+      <td>26.99 (7) unit (see notes)</td>
+      <td>10.99 (7) unit</td>
+      <td>\ (7) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>\‍ (3) unit</td>
+      <td>29.99 (6) unit</td>
+      <td></td>
+      <td></td>
+      <td>22.99 (6) unit¹</td>
+      <td>10.99 (7) unit</td>
+      <td>20.99 (4) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>22.99 (7) unit</td>
+      <td>\ (5) unit</td>
+      <td></td>
+      <td></td>
+      <td>\ (6) un it</td>
+      <td>\ (3) unit (see notes)</td>
+      <td>\ (4) unti</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted‌ S​cenes</th>
+      <td>22.99 (6) unit</td>
+      <td>10.99 (5) uint¹</td>
+      <td></td>
+      <td></td>
+      <td>17.99 (3) unit</td>
+      <td>\ (4) unit</td>
+      <td>\ (4) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>\ (3) unit</td>
+      <td>\ (7) unit¹</td>
+      <td></td>
+      <td></td>
+      <td>\ (4) unit</td>
+      <td>12.99 (4) unit</td>
+      <td>15.99 (6) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries</th>
+      <td>15.99 (6) nuti</td>
+      <td>\ (6) unit</td>
+      <td></td>
+      <td></td>
+      <td>12.99 (6) unit</td>
+      <td>12.99 (7) ‌unit¹</td>
+      <td>\ (6) unit¹</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>\ (3) unit</td>
+      <td>\ (5) nuit</td>
+      <td></td>
+      <td></td>
+      <td>21.99 (3) unit</td>
+      <td>19.99 (3) unit</td>
+      <td>22.99 (6) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>\ (3) unit</td>
+      <td>26.99 (4) unit</td>
+      <td></td>
+      <td></td>
+      <td>24.99 (3)‌ unit</td>
+      <td>\ (5) unit</td>
+      <td>20.99 (4) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>\​ (3) unit (see notes)</td>
+      <td>18.99 (7) unit</td>
+      <td></td>
+      <td></td>
+      <td>28.99 (3) u‍nit</td>
+      <td>\ (6) unit</td>
+      <td>26.99 (7) unit¹</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,26.99
+"What is the lowest rental price available for movies when considering these scenarios: a 5-day rental rated PG-13 that includes commentary, deleted scenes, and behind-the-scenes features; a 7-day rental rated PG that comes with trailers and commentary; a 6-day rental rated PG featuring commentary and deleted scenes; and a 5-day rental rated PG that has commentary included?","SELECT MIN(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG-13"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""7"" AND rating = ""PG"" AND special_features = ""Trailers,Commentaries"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""6"" AND rating = ""PG"" AND special_features = ""Commentaries,Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG"" AND special_features = ""Commentaries"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>5 (G)</th>
+      <th>5 (‍PG)</th>
+      <th>5 (P‍G-13)</th>
+      <th>5 (R)</th>
+      <th>6 (G)</th>
+      <th>6 (PG)</th>
+      <th></th>
+      <th></th>
+      <th>6 (PG⁠-13)</th>
+      <th>7 (NC-17)</th>
+      <th>7 (PG)</th>
+      <th>7 (PG -13)</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes</th>
+      <td>4.99 unit⁴</td>
+      <td>N/A</td>
+      <td>4.99 unit</td>
+      <td>4.99 unit</td>
+      <td>0.99 unit</td>
+      <td>0.99 unit⁴</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>4.99 unit</td>
+      <td>4.99 unit⁴</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.99 ​unit</td>
+      <td>0.99 unit</td>
+      <td>N/A</td>
+      <td>0.99 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.99 unit</td>
+      <td>N/A</td>
+      <td>2.99 unit⁴</td>
+      <td>2.99 ⁠unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td>4.99 unit</td>
+      <td>4.99 unit</td>
+      <td>4.99 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>4.99 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.99 unit</td>
+      <td>0.99 unit⁴</td>
+      <td></td>
+      <td></td>
+      <td>N/‍A</td>
+      <td>N/A</td>
+      <td>2.99 unit⁴</td>
+      <td>0.99 unit⁴</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>4.99 unit</td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.99 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.99 unit⁴</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td>2.99 unit⁴</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td>4.99 unit</td>
+      <td>0.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>T r‍ailers,⁠Commentar​i‌es,Del⁠et ed Scenes</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td>0.99 unit</td>
+      <td>N‍/A</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>4.99 unit</td>
+      <td>2.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Tr⁠ai⁠lers,Dele‌ted‍ Scenes</th>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td>0.99 unit</td>
+      <td>N/A</td>
+      <td>NaN</td>
+      <td>N/​A</td>
+      <td></td>
+      <td></td>
+      <td>4.99 unit</td>
+      <td>2.99 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.99
+"Among movies classified as NC-17 or G, what is the highest rental fee charged for (1) NC-17 movies rented for 3 days with only ""Commentaries"" as the special feature, (2) NC-17 movies rented for 5 days with ""Trailers,Commentaries"" as the special features, or (3) G movies rented for 6 days with ""Commentaries,Behind the Scenes"" as the special features?","SELECT MAX(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Commentaries"" AND rental_duration = ""3"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Trailers,Commentaries"" AND rental_duration = ""5"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""G"" AND special_features = ""Commentaries,Behind the Scenes"" AND rental_duration = ""6"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>G (Commentaries,Behind the Scenes)</th>
+      <th>G (Deleted Scense,Behnid ht Seences)</th>
+      <th>G (Trailers)</th>
+      <th>NC-17 (Commentaries)</th>
+      <th>NC-17 (Trailers,Commentaries)</th>
+      <th>PG (Commentaries,Deleted Scenes)</th>
+      <th>PG-13 (Commentaries,Behind the Scenes)</th>
+      <th>PG-13 (Trailers,Commentaries)</th>
+      <th></th>
+      <th>R  (C‌o mmentari‍e‍s,D‌eleted Scenes)</th>
+      <th>R (Trailers,Commentaries,Deleted Scenes,Behind the Scenes)</th>
+    </tr>
+    <tr>
+      <th>rental_duration</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>\⁠ - according to official data</td>
+      <td>0.99 unit</td>
+      <td>\</td>
+      <td>2.99 unit - according to official data</td>
+      <td>\</td>
+      <td>\</td>
+      <td>2.99 unit - according to official data</td>
+      <td>\</td>
+      <td></td>
+      <td>2.99 unit</td>
+      <td>0.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>0.99 unit</td>
+      <td>NaN</td>
+      <td>2.99 unit</td>
+      <td>\</td>
+      <td>4.99 unit</td>
+      <td>2.99 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>4.99 unit</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td>\</td>
+      <td>4.99 unit</td>
+      <td>0.99 u⁠nit</td>
+      <td>4.99 unit</td>
+      <td>2.99 unit</td>
+      <td>0.99 unit (source: official reports)</td>
+      <td>4.99 unit</td>
+      <td>\</td>
+      <td></td>
+      <td>\​</td>
+      <td>0.99 unit</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td></td>
+      <td>0.99 unit</td>
+      <td>\</td>
+      <td>\⁠</td>
+      <td>4.99 unit</td>
+      <td>\</td>
+      <td>0.99 unit</td>
+      <td>0.99 unit</td>
+      <td>\</td>
+      <td></td>
+      <td>0.99 unit (source: official reports)</td>
+      <td>0.99 unit</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td></td>
+      <td>\</td>
+      <td>\⁠</td>
+      <td>\</td>
+      <td>2.99 unit - according to official data</td>
+      <td>\</td>
+      <td>\​</td>
+      <td>\</td>
+      <td>0.99 unit</td>
+      <td></td>
+      <td>0.99 unit</td>
+      <td>4.99 ‌unit</td>
+    </tr>
+  </tbody>
+</table>",,2.99
+"What is the lowest rental price for movies that match exactly one of these combinations: a PG-rated movie with a 3-day rental and special_features equal to ""Trailers""; an R-rated movie with a 7-day rental and special_features equal to ""Deleted Scenes,Behind the Scenes""; a PG-13-rated movie with a 6-day rental and special_features equal to ""Behind the Scenes""; or a PG-13-rated movie with a 5-day rental and special_features equal to ""Trailers,Commentaries""?","SELECT MIN(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Trailers"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""R"" AND rental_duration = ""7"" AND special_features = ""Deleted Scenes,Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""6"" AND special_features = ""Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""5"" AND special_features = ""Trailers,Commentaries"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>3</th>
+      <th></th>
+      <th></th>
+      <th>4</th>
+      <th>5</th>
+      <th></th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>G (Deleted Scenes)</th>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>PG (Behind the Scenes)</th>
+      <td>4.99 (see [1])</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>PG (Trailers)</th>
+      <td>0.99​</td>
+      <td></td>
+      <td></td>
+      <td>\‌ (see notes)</td>
+      <td>0.99</td>
+      <td></td>
+      <td>\</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>PG-13 (Behind the Scenes)</th>
+      <td>4.99</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>0.99</td>
+      <td>4.99‍</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PG-13 (Commentaries)</th>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>PG-13 (Trailers,Behind the Scenes)</th>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PG-13 (Trailers,Commentaries)</th>
+      <td>\‌</td>
+      <td></td>
+      <td></td>
+      <td>2.99‍ (see notes)</td>
+      <td>2.99</td>
+      <td></td>
+      <td>2.99‌</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>R (Commentaries,Deleted Scenes)</th>
+      <td>2.99</td>
+      <td></td>
+      <td></td>
+      <td>\‍ (see notes)</td>
+      <td>\</td>
+      <td></td>
+      <td>\​</td>
+      <td>0.99⁠</td>
+    </tr>
+    <tr>
+      <th>R (Deleted Scenes,Behind the Scenes)</th>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>2.99</td>
+      <td>2.99</td>
+      <td></td>
+      <td>4.99</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>R (Trailers,Deleted Scenes)</th>
+      <td>0.99 (see notes)</td>
+      <td></td>
+      <td></td>
+      <td>2.99 (see notes)</td>
+      <td>\</td>
+      <td></td>
+      <td>2.99</td>
+      <td>\</td>
+    </tr>
+  </tbody>
+</table>",,0.99
+"What is the minimum replacement price among movies that meet one of these exact conditions: (1) rental_duration = ""4"", rating = ""G"", special_features = ""Trailers""; (2) rental_duration = ""3"", rating = ""R"", special_features = ""Trailers,Commentaries,Behind the Scenes""; (3) rental_duration = ""4"", rating = ""R"", special_features = ""Commentaries,Deleted Scenes,Behind the Scenes""; or (4) rental_duration = ""4"", rating = ""PG"", special_features = ""Commentaries""?","SELECT MIN(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""G"" AND special_features = ""Trailers"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""3"" AND rating = ""R"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""PG"" AND special_features = ""Commentaries"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>3</th>
+      <th></th>
+      <th>4</th>
+      <th></th>
+      <th>5</th>
+      <th></th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td>R (-) unit</td>
+      <td></td>
+      <td>G (-) unit</td>
+      <td></td>
+      <td>PG (-) unit</td>
+      <td></td>
+      <td>G (15.99) unit</td>
+      <td>NC-17 (-) unit</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td>G (15.99) unit</td>
+      <td></td>
+      <td>PG (22.99u) nit - noted in the catalog</td>
+      <td></td>
+      <td>NC-17 (23.99) unit - noted in the catalog</td>
+      <td></td>
+      <td>G (24.99) unit</td>
+      <td>R (21.99) unit</td>
+    </tr>
+    <tr>
+      <th>Comentmaire,sDleeted cSense,Behind eth Scnees</th>
+      <td>PG-13(- )n uit - noted in the catalog</td>
+      <td></td>
+      <td>R (23.99) unti</td>
+      <td></td>
+      <td>NC-17 (-) unit - noted in the catalog</td>
+      <td></td>
+      <td>PG (-) unit</td>
+      <td>G (22.99) ‌unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes</th>
+      <td>PG (-) unit</td>
+      <td></td>
+      <td>PG-13 (-) unit³</td>
+      <td></td>
+      <td>NC-17 (10.99) unit</td>
+      <td></td>
+      <td>G (22.99) unit³</td>
+      <td>G (-) unit (latest update)</td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td>R (22.99) unit - noted in the catalog</td>
+      <td></td>
+      <td>PG (21.99) unit</td>
+      <td></td>
+      <td>PG-13 (-) unit</td>
+      <td></td>
+      <td>PG (-) unit</td>
+      <td>NC-17 (12.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td>G (-) unit</td>
+      <td></td>
+      <td>G (14.99) unit</td>
+      <td></td>
+      <td>G (10.99) unit</td>
+      <td></td>
+      <td>R (15.99) unit</td>
+      <td>G (21.99)‍ unit (latest update)</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td>R (14.99) unit</td>
+      <td></td>
+      <td>PG (15.99) unit</td>
+      <td></td>
+      <td>NC-17 (10.99) unit</td>
+      <td></td>
+      <td>PG-13 (27.99) unit</td>
+      <td>G (10.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td>R (13.99)⁠ unit</td>
+      <td></td>
+      <td>NC-17 (-) ‍uni​t</td>
+      <td></td>
+      <td>NC-17 (-) unit</td>
+      <td></td>
+      <td>R (22.99) unit</td>
+      <td>G (24.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Deleted Scenes</th>
+      <td>G (21.99) unit</td>
+      <td></td>
+      <td>PG (-) unit</td>
+      <td></td>
+      <td>NC-17 (-) unit</td>
+      <td></td>
+      <td>PG-13 (-) unit</td>
+      <td>PG‌ (-)  unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes</th>
+      <td>G (-) unit</td>
+      <td></td>
+      <td>PG-13 (12.99) unit (latest update)</td>
+      <td></td>
+      <td>PG (13.99)‍ unit</td>
+      <td></td>
+      <td>P‌G-13 (28.99) unit</td>
+      <td>N-C17 (-) unti</td>
+    </tr>
+  </tbody>
+</table>",,13.99
+"Among purchases made by customers from Texas, Washington, and New Mexico, what is the highest sales figure among these specific cases: BrandB purchases in the Central region by customers from Texas; BrandC purchases in the Central region by customers from Washington; and BrandB purchases in the West region by customers from New Mexico?","SELECT MAX(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""Central"" AND customer_state = ""Texas"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandC"" AND region = ""Central"" AND customer_state = ""Washington"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""West"" AND customer_state = ""New Mexico"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>BrandA</th>
+      <th>BrandB</th>
+      <th></th>
+      <th>BrandC</th>
+      <th>BrandD</th>
+      <th>BrandE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ottal_aomunt e(ringo) u(n)it</th>
+      <td>total_amount (region) (unit)</td>
+      <td>total_amount (region) (unit)</td>
+      <td></td>
+      <td>total_amount (region) (unit)\nAdditional details are provided in the documentation</td>
+      <td>toat_olamutn r(geio)n (nuit)</td>
+      <td>total_amount (region) (unit)</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>(South)</td>
+      <td>7271.41 (East)</td>
+      <td></td>
+      <td>(West)</td>
+      <td>E(ast)\nAdditional details are provided in the documentation</td>
+      <td>965.99 (East)\nAdditional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>(East)\nAdditional details are provided in the documentation</td>
+      <td>(South)</td>
+      <td></td>
+      <td>379.53 (North)</td>
+      <td>(West)\nAdditional details are provided in the documentation</td>
+      <td>2412.26 (West‌)</td>
+    </tr>
+    <tr>
+      <th>Mary⁠land</th>
+      <td>2180.66 (Central)</td>
+      <td>793.96 (West)</td>
+      <td></td>
+      <td>4965.97 (West)</td>
+      <td>(Central)</td>
+      <td>6041.32 (West)</td>
+    </tr>
+    <tr>
+      <th>New Hampshire</th>
+      <td>8813.6 N(roth)</td>
+      <td>(Central)</td>
+      <td></td>
+      <td>419.52 (South)\nAdditional details are provided in the documentation</td>
+      <td>(Central)</td>
+      <td>796.93 (West)</td>
+    </tr>
+    <tr>
+      <th>New Mexico</th>
+      <td>3898.43 (North)</td>
+      <td>1097.17 (West)</td>
+      <td></td>
+      <td>2530.58 (South)</td>
+      <td>(Central)</td>
+      <td>1282.06 (​West)</td>
+    </tr>
+    <tr>
+      <th>North Dakota</th>
+      <td>(North)</td>
+      <td>506.34 (Central)\nAdditional details are provided in the documentation</td>
+      <td></td>
+      <td>(South)</td>
+      <td>(North)</td>
+      <td>2635.6 (Eas t)</td>
+    </tr>
+    <tr>
+      <th>South ‍Dak⁠ota</th>
+      <td>4055.76 E(ast)</td>
+      <td>(East)</td>
+      <td></td>
+      <td>1458.32 (Central)</td>
+      <td>(North)</td>
+      <td>3336.17 (North)</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>(E​ast)\nAdditional details are provided in the documentation</td>
+      <td>776.38 (Central)\nAdditional details are provided in the documentation</td>
+      <td></td>
+      <td>1562.82 (East‍)</td>
+      <td>(Central)</td>
+      <td>(East)</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>4306.97 (North)</td>
+      <td>(West)</td>
+      <td></td>
+      <td>94.04 (Central)</td>
+      <td>(Eas‍t)\nAdditional details are provided in the documentation</td>
+      <td>(West)</td>
+    </tr>
+    <tr>
+      <th>West Virginia</th>
+      <td>793.11 (Central)</td>
+      <td>3665.66 (East)</td>
+      <td></td>
+      <td>(North)\nAdditional details are provided in the documentation</td>
+      <td>(Central)</td>
+      <td>(South)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1097.17
+"Among the transactions involving electronic items sold either in quantities of four or seven during 2023, and clothing items sold in quantities of seven during 2024, what is the lowest total sales figure recorded?","SELECT MIN(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Electronics"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Electronics"" AND quantity_sold = ""7"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2024"" AND category = ""Clothing"" AND quantity_sold = ""7"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Books</th>
+      <th>Clothing</th>
+      <th>Electronics</th>
+      <th></th>
+      <th>Hmoe  &amp;Kitchen</th>
+      <th>Sports</th>
+      <th>Toys</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit (latest update)</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit⁵</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1 (2024)</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not avai⁠labl‍e</td>
+      <td></td>
+      <td>not available</td>
+      <td>82.16</td>
+      <td>578.38</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1 (2025)</th>
+      <td>825.54</td>
+      <td>not available</td>
+      <td>320.14⁠⁵</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>328.71⁠</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3 (2024)</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>1870.70</td>
+      <td>2305.07</td>
+      <td>not available</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4 (2023)</th>
+      <td>not available</td>
+      <td>822.27​</td>
+      <td>1827.95</td>
+      <td></td>
+      <td>796.93⁠</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5 (2024)</th>
+      <td>2482.11</td>
+      <td>3546.53</td>
+      <td>not available</td>
+      <td></td>
+      <td>4785.90</td>
+      <td>821.92</td>
+      <td>380.58⁵</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6 (2023)</th>
+      <td>not a‍vail‌able</td>
+      <td>2547.6‍</td>
+      <td>not available</td>
+      <td></td>
+      <td>3526.68⁠</td>
+      <td>not available</td>
+      <td>1927.47</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7 (2023)</th>
+      <td>5334.88</td>
+      <td>not available</td>
+      <td>1215.77</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7 (2024)</th>
+      <td>2581.49</td>
+      <td>718.43</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8 ⁠(2024)</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>2308.7 (latest update)</td>
+      <td></td>
+      <td>not available</td>
+      <td>6546.24</td>
+      <td>not available</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>9 (2023)</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>194.92</td>
+      <td></td>
+      <td>ont avaiblael</td>
+      <td>8886.67 (latest update)</td>
+      <td>3483.15⁵</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,718.43
+"Among products sold in 2023, what is the highest unit price for sports items with exactly seven units sold, clothing items with precisely four sold, and toys with six units sold?","SELECT MAX(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""7"" AND year = ""2023"" AND category = ""Sports"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""4"" AND year = ""2023"" AND category = ""Clothing"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""6"" AND year = ""2023"" AND category = ""Toys"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th colspan=""3"" halign=""left"">3</th>
+      <th colspan=""4"" halign=""left"">4</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">4</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2025 (Books)</th>
+      <th>2024 (Clothing)</th>
+      <th>2025 (Home &amp; Kitchen)</th>
+      <th>2025 (Toys)</th>
+      <th>2023 (Clothing)</th>
+      <th>2023 (Electronics)</th>
+      <th>2023 (Sports)</th>
+      <th>2023 (Toys)</th>
+      <th></th>
+      <th>2024 (Home &amp; Kitchen)</th>
+      <th>2025 (Clothing)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit_price (unit)</th>
+      <td>unit_price (unit) (see footnote 3)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>834.81</td>
+      <td>\</td>
+      <td>32.93</td>
+      <td>\‍</td>
+      <td>\</td>
+      <td>\​</td>
+      <td>666.27</td>
+      <td>877.27</td>
+      <td></td>
+      <td>\⁠</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>\‌</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\‌</td>
+      <td>\‍</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>136.41</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>\</td>
+      <td>\‌</td>
+      <td>\</td>
+      <td>\</td>
+      <td>642.29</td>
+      <td>782.76 (see footnote 5)</td>
+      <td>99.99</td>
+      <td>\</td>
+      <td></td>
+      <td>956.87 (source: official reports)</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>755.23</td>
+      <td>\</td>
+      <td>247.28  (see footnote 4)</td>
+      <td>36.98 (see footnote 1)</td>
+      <td>216.52</td>
+      <td>462.96‍</td>
+      <td>957.41</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>102.91</td>
+      <td>949.76‍</td>
+      <td>303.22​</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>27.94</td>
+      <td>\</td>
+      <td></td>
+      <td>737.83</td>
+      <td>423.70</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>187.76 (see footnote 3)</td>
+      <td>\</td>
+      <td>13.05 (see footnote 1)</td>
+      <td>\</td>
+      <td>431.53</td>
+      <td>\</td>
+      <td>823.57</td>
+      <td>321.81</td>
+      <td></td>
+      <td>633.34</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>\</td>
+      <td>\⁠</td>
+      <td>\</td>
+      <td>20.82</td>
+      <td>\</td>
+      <td>\</td>
+      <td>588.42​</td>
+      <td>945.99⁠ (source: official reports)</td>
+      <td></td>
+      <td>\</td>
+      <td>\​</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>\‌</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>75.27 (source: official reports)</td>
+      <td>970.44</td>
+      <td>349.70</td>
+      <td>916.19  (source: official reports)</td>
+      <td></td>
+      <td>464.17</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>435.64 (see footnote 2)</td>
+      <td>\</td>
+      <td>54.16</td>
+      <td>954.43</td>
+      <td>\​</td>
+      <td>\</td>
+      <td>989.40</td>
+      <td>388.71</td>
+      <td></td>
+      <td>930.53‍</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>961.91</td>
+      <td>\</td>
+      <td>178.68</td>
+      <td></td>
+      <td>\</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",,588.42
+"What is the lowest unit price among buying four units in the North region in 2025, six units in the South region in 2024, and four units in the West region in 2024?","SELECT MIN(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""North"" AND quantity_sold = ""4"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""South"" AND quantity_sold = ""6"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""West"" AND quantity_sold = ""4"");",superlative,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Central</th>
+      <th>Ea‍st</th>
+      <th></th>
+      <th></th>
+      <th>North</th>
+      <th>South</th>
+      <th>West</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023</th>
+      <td>5 (439.56) unit</td>
+      <td>3 (N/A) unit</td>
+      <td></td>
+      <td></td>
+      <td>4 (N/A) unit</td>
+      <td>2 (565.34) unit (latest update)</td>
+      <td>9 (N/) Aunit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>5 ​(N/A)​ unit</td>
+      <td>5 (N/A) unit</td>
+      <td></td>
+      <td></td>
+      <td>4 (340.62) unit</td>
+      <td>6 (753.18) unit</td>
+      <td>4 (580.24) unit</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>4 (32.42) unit (latest update)</td>
+      <td>5 (N/A) unit</td>
+      <td></td>
+      <td></td>
+      <td>4 (244.77) unit</td>
+      <td>4 (N/A) unit</td>
+      <td>4 (N/A) unit (see [4])</td>
+    </tr>
+  </tbody>
+</table>",,244.77

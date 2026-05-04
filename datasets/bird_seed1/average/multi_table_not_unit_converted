@@ -1,0 +1,2161 @@
+,Question,SQL Query,Method,Table,Constraints,Label
+0,"What is the greatest latitude measurement, expressed in units, found when comparing locations from the unspecified division in FM, the southern Atlantic area in DE, and the mountainous region in MT?","['SELECT latitude FROM sample_table WHERE division = ""None"" AND state = ""FM"";', 'SELECT latitude FROM sample_table WHERE division = ""South Atlantic"" AND state = ""DE"";', 'SELECT latitude FROM sample_table WHERE division = ""Mountain"" AND state = ""MT"";']",superlative,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>None</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th>state</th>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>latitude (unit)</th>
+      <th>latitude (unit)</th>
+      <th>latitude (unit)</th>
+      <td></td>
+      <td>latitude (unit)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">None</th>
+      <th>AS</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FM</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>0.000000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">GU</th>
+      <th>Branch</th>
+      <td></td>
+      <td>13.468600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td></td>
+      <td>13.3862​</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td></td>
+      <td>13.476192‌</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MH</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MP</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>15.181826</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>No‍ne</th>
+      <th>PR</th>
+      <th>Branch</th>
+      <td></td>
+      <td>18.266600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">None</th>
+      <th>PR</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P‌R</th>
+      <th>Post Office</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PR</th>
+      <th>Unique Post Office</th>
+      <td></td>
+      <td>18.468300</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">PW</th>
+      <th>Non Postal Community Name-Unique</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>7.500200</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">VI</th>
+      <th>Non Postal Community Name</th>
+      <td></td>
+      <td>18.343600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>18.343600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td></td>
+      <td>17.745384​</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>South Atlantic</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>region</th>
+      <th>state (type)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">South</th>
+      <th>DC (Non Postal Community Name)</th>
+      <td>38.895100</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Non Postal Community Name-Unique)</th>
+      <td>38.895100</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (P.O. Box Only)</th>
+      <td>38.900800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Post Office)</th>
+      <td>38.910717</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Unique Post Office)</th>
+      <td>38.895000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DE (Post Office)</th>
+      <td>39.598334</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""25"" valign=""top"">South</th>
+      <th>FL (Branch)</th>
+      <td>30.096584</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Non Postal Community Name)</th>
+      <td>30.061772</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (P.O. Box Only)</th>
+      <td>30.239600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Post Office)</th>
+      <td>29.910063</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Unique Post Office)</th>
+      <td>30.063900</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Branch)</th>
+      <td>33.390811</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Branch-Unique)</th>
+      <td>33.400000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Community Post Office )</th>
+      <td>32.632286</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Non Postal Community Name)</th>
+      <td>33.968149</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Non Postal Community Name-Unique)</th>
+      <td>30.966782</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (P.O. Box Only)</th>
+      <td>33.937800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Post Office)</th>
+      <td>33.771036</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Unique Post Office)</th>
+      <td>33.952500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Branch)</th>
+      <td>38.805865</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Branch-Unique)</th>
+      <td>39.387026</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Non Postal Community Name)</th>
+      <td>38.960659</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Non Postal Community Name-Unique)</th>
+      <td>0.000000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (P.O. Box Only)</th>
+      <td>38.624700</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Post Office)</th>
+      <td>38.613661</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Unique Post Office)</th>
+      <td>39.031400</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Branch)</th>
+      <td>35.146635</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Branch-Unique)</th>
+      <td>35.126720</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Non Postal Community Name)</th>
+      <td>36.463544</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (P.O. Box Only)</th>
+      <td>36.182200</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Post Office)</th>
+      <td>35.944562</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">South</th>
+      <th>NC (Unique Post Office)</th>
+      <td>36.240400</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Branch)</th>
+      <td>33.976492</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Non Postal Community Name)</th>
+      <td>33.889613</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (P.O. Box Only)</th>
+      <td>34.124500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Post Office)</th>
+      <td>33.773887</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Unique Post Office)</th>
+      <td>33.498438</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Branch)</th>
+      <td>38.886153</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Branch-Unique)</th>
+      <td>38.962800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Community Post Office )</th>
+      <td>38.971267</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Non Postal Community Name)</th>
+      <td>39.030554</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""11"" valign=""top"">South</th>
+      <th>VA (Non Postal Community Name-Unique)</th>
+      <td>38.877442</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (P.O. Box Only)</th>
+      <td>38.765700</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Post Office)</th>
+      <td>38.960832</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Unique Post Office)</th>
+      <td>39.335500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Branch)</th>
+      <td>38.359330</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Community Post Office )</th>
+      <td>39.491243</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Non Postal Community Name)</th>
+      <td>37.459645</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Non Postal Community Name-Unique)</th>
+      <td>38.238300</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (P.O. Box Only)</th>
+      <td>37.526504</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Post Office)</th>
+      <td>37.300884</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Unique Post Office)</th>
+      <td>38.349400</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""7"" halign=""left"">Branch</th>
+      <th>Branch-Unique</th>
+      <th colspan=""7"" halign=""left"">Community Post Office</th>
+      <th colspan=""7"" halign=""left"">Non Postal Community Name</th>
+      <th colspan=""2"" halign=""left"">Non Postal Community Name-Unique</th>
+      <th colspan=""6"" halign=""left"">P.O. Box Only</th>
+      <th></th>
+      <th>P.O. Box Only</th>
+      <th colspan=""8"" halign=""left"">Post Office</th>
+      <th colspan=""7"" halign=""left"">Unique Post Office</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th>West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th colspan=""2"" halign=""left"">West</th>
+      <th colspan=""6"" halign=""left"">West</th>
+      <th></th>
+      <th>West</th>
+      <th colspan=""8"" halign=""left"">West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th></th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>MT (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>latitude (unit)</th>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td></td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+    </tr>
+    <tr>
+      <th>latitude (unit)</th>
+      <td>33.651330</td>
+      <td>39.928444</td>
+      <td>43.028398</td>
+      <td>35.284205</td>
+      <td>39.600367</td>
+      <td>40.555448</td>
+      <td>41.166616</td>
+      <td>35.056500</td>
+      <td>31.664920</td>
+      <td>39.353458</td>
+      <td>43.254106</td>
+      <td>35.714904</td>
+      <td>35.461100</td>
+      <td>40.158536</td>
+      <td>44.817850</td>
+      <td>33.926432</td>
+      <td>39.516974</td>
+      <td>43.442953</td>
+      <td>35.360607</td>
+      <td>37.716104</td>
+      <td>40.467360</td>
+      <td>41.738888</td>
+      <td>32.990334</td>
+      <td>36.040000</td>
+      <td>33.448600</td>
+      <td>39.802800</td>
+      <td>42.963910</td>
+      <td>34.984733</td>
+      <td>36.899863</td>
+      <td>40.889500</td>
+      <td></td>
+      <td>41.133500</td>
+      <td>33.449666</td>
+      <td>39.793416</td>
+      <td>42.880818</td>
+      <td>45.525336</td>
+      <td>34.610918</td>
+      <td>37.446549</td>
+      <td>40.396881</td>
+      <td>41.141842</td>
+      <td>33.418380</td>
+      <td>39.613500</td>
+      <td>42.861458</td>
+      <td>35.091192</td>
+      <td>35.778600</td>
+      <td>40.760600</td>
+      <td>41.133500</td>
+    </tr>
+  </tbody>
+</table>",,45.525336
+1,"What is the combined total of the latitude measurements, expressed in units, when adding together all latitudes from the area without a division in the FM region, the southern Atlantic portion within the DE region, and the mountainous section in MT?","['SELECT latitude FROM sample_table WHERE division = ""None"" AND state = ""FM"";', 'SELECT latitude FROM sample_table WHERE division = ""South Atlantic"" AND state = ""DE"";', 'SELECT latitude FROM sample_table WHERE division = ""Mountain"" AND state = ""MT"";']",sum,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>None</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th>state</th>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>latitude (unit)</th>
+      <th>latitude (unit)</th>
+      <th>latitude (unit)</th>
+      <td></td>
+      <td>latitude (unit)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">None</th>
+      <th>AS</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FM</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>0.000000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">GU</th>
+      <th>Branch</th>
+      <td></td>
+      <td>13.468600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td></td>
+      <td>13.3862​</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td></td>
+      <td>13.476192‌</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MH</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MP</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>15.181826</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>No‍ne</th>
+      <th>PR</th>
+      <th>Branch</th>
+      <td></td>
+      <td>18.266600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">None</th>
+      <th>PR</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P‌R</th>
+      <th>Post Office</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PR</th>
+      <th>Unique Post Office</th>
+      <td></td>
+      <td>18.468300</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">PW</th>
+      <th>Non Postal Community Name-Unique</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>7.500200</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">VI</th>
+      <th>Non Postal Community Name</th>
+      <td></td>
+      <td>18.343600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>18.343600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td></td>
+      <td>17.745384​</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>South Atlantic</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>region</th>
+      <th>state (type)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">South</th>
+      <th>DC (Non Postal Community Name)</th>
+      <td>38.895100</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Non Postal Community Name-Unique)</th>
+      <td>38.895100</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (P.O. Box Only)</th>
+      <td>38.900800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Post Office)</th>
+      <td>38.910717</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Unique Post Office)</th>
+      <td>38.895000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DE (Post Office)</th>
+      <td>39.598334</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""25"" valign=""top"">South</th>
+      <th>FL (Branch)</th>
+      <td>30.096584</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Non Postal Community Name)</th>
+      <td>30.061772</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (P.O. Box Only)</th>
+      <td>30.239600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Post Office)</th>
+      <td>29.910063</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Unique Post Office)</th>
+      <td>30.063900</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Branch)</th>
+      <td>33.390811</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Branch-Unique)</th>
+      <td>33.400000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Community Post Office )</th>
+      <td>32.632286</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Non Postal Community Name)</th>
+      <td>33.968149</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Non Postal Community Name-Unique)</th>
+      <td>30.966782</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (P.O. Box Only)</th>
+      <td>33.937800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Post Office)</th>
+      <td>33.771036</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Unique Post Office)</th>
+      <td>33.952500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Branch)</th>
+      <td>38.805865</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Branch-Unique)</th>
+      <td>39.387026</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Non Postal Community Name)</th>
+      <td>38.960659</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Non Postal Community Name-Unique)</th>
+      <td>0.000000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (P.O. Box Only)</th>
+      <td>38.624700</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Post Office)</th>
+      <td>38.613661</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Unique Post Office)</th>
+      <td>39.031400</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Branch)</th>
+      <td>35.146635</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Branch-Unique)</th>
+      <td>35.126720</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Non Postal Community Name)</th>
+      <td>36.463544</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (P.O. Box Only)</th>
+      <td>36.182200</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Post Office)</th>
+      <td>35.944562</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">South</th>
+      <th>NC (Unique Post Office)</th>
+      <td>36.240400</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Branch)</th>
+      <td>33.976492</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Non Postal Community Name)</th>
+      <td>33.889613</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (P.O. Box Only)</th>
+      <td>34.124500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Post Office)</th>
+      <td>33.773887</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Unique Post Office)</th>
+      <td>33.498438</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Branch)</th>
+      <td>38.886153</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Branch-Unique)</th>
+      <td>38.962800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Community Post Office )</th>
+      <td>38.971267</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Non Postal Community Name)</th>
+      <td>39.030554</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""11"" valign=""top"">South</th>
+      <th>VA (Non Postal Community Name-Unique)</th>
+      <td>38.877442</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (P.O. Box Only)</th>
+      <td>38.765700</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Post Office)</th>
+      <td>38.960832</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Unique Post Office)</th>
+      <td>39.335500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Branch)</th>
+      <td>38.359330</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Community Post Office )</th>
+      <td>39.491243</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Non Postal Community Name)</th>
+      <td>37.459645</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Non Postal Community Name-Unique)</th>
+      <td>38.238300</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (P.O. Box Only)</th>
+      <td>37.526504</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Post Office)</th>
+      <td>37.300884</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Unique Post Office)</th>
+      <td>38.349400</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""7"" halign=""left"">Branch</th>
+      <th>Branch-Unique</th>
+      <th colspan=""7"" halign=""left"">Community Post Office</th>
+      <th colspan=""7"" halign=""left"">Non Postal Community Name</th>
+      <th colspan=""2"" halign=""left"">Non Postal Community Name-Unique</th>
+      <th colspan=""6"" halign=""left"">P.O. Box Only</th>
+      <th></th>
+      <th>P.O. Box Only</th>
+      <th colspan=""8"" halign=""left"">Post Office</th>
+      <th colspan=""7"" halign=""left"">Unique Post Office</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th>West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th colspan=""2"" halign=""left"">West</th>
+      <th colspan=""6"" halign=""left"">West</th>
+      <th></th>
+      <th>West</th>
+      <th colspan=""8"" halign=""left"">West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th></th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>MT (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>latitude (unit)</th>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td></td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+    </tr>
+    <tr>
+      <th>latitude (unit)</th>
+      <td>33.651330</td>
+      <td>39.928444</td>
+      <td>43.028398</td>
+      <td>35.284205</td>
+      <td>39.600367</td>
+      <td>40.555448</td>
+      <td>41.166616</td>
+      <td>35.056500</td>
+      <td>31.664920</td>
+      <td>39.353458</td>
+      <td>43.254106</td>
+      <td>35.714904</td>
+      <td>35.461100</td>
+      <td>40.158536</td>
+      <td>44.817850</td>
+      <td>33.926432</td>
+      <td>39.516974</td>
+      <td>43.442953</td>
+      <td>35.360607</td>
+      <td>37.716104</td>
+      <td>40.467360</td>
+      <td>41.738888</td>
+      <td>32.990334</td>
+      <td>36.040000</td>
+      <td>33.448600</td>
+      <td>39.802800</td>
+      <td>42.963910</td>
+      <td>34.984733</td>
+      <td>36.899863</td>
+      <td>40.889500</td>
+      <td></td>
+      <td>41.133500</td>
+      <td>33.449666</td>
+      <td>39.793416</td>
+      <td>42.880818</td>
+      <td>45.525336</td>
+      <td>34.610918</td>
+      <td>37.446549</td>
+      <td>40.396881</td>
+      <td>41.141842</td>
+      <td>33.418380</td>
+      <td>39.613500</td>
+      <td>42.861458</td>
+      <td>35.091192</td>
+      <td>35.778600</td>
+      <td>40.760600</td>
+      <td>41.133500</td>
+    </tr>
+  </tbody>
+</table>",,85.12367
+2,"What is the average latitude in unit across all rows from the undivided division in FM, the South Atlantic division in DE, and the Mountain division in MT?","['SELECT latitude FROM sample_table WHERE division = ""None"" AND state = ""FM"";', 'SELECT latitude FROM sample_table WHERE division = ""South Atlantic"" AND state = ""DE"";', 'SELECT latitude FROM sample_table WHERE division = ""Mountain"" AND state = ""MT"";']",average,"Table 0
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>None</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>division</th>
+      <th>state</th>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>latitude (unit)</th>
+      <th>latitude (unit)</th>
+      <th>latitude (unit)</th>
+      <td></td>
+      <td>latitude (unit)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">None</th>
+      <th>AS</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FM</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>0.000000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">GU</th>
+      <th>Branch</th>
+      <td></td>
+      <td>13.468600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Non Postal Community Name</th>
+      <td></td>
+      <td>13.3862​</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td></td>
+      <td>13.476192‌</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MH</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MP</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>15.181826</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>No‍ne</th>
+      <th>PR</th>
+      <th>Branch</th>
+      <td></td>
+      <td>18.266600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""8"" valign=""top"">None</th>
+      <th>PR</th>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P‌R</th>
+      <th>Post Office</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PR</th>
+      <th>Unique Post Office</th>
+      <td></td>
+      <td>18.468300</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">PW</th>
+      <th>Non Postal Community Name-Unique</th>
+      <td></td>
+      <td>n.a.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>7.500200</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">VI</th>
+      <th>Non Postal Community Name</th>
+      <td></td>
+      <td>18.343600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>P.O. Box Only</th>
+      <td></td>
+      <td>18.343600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Post Office</th>
+      <td></td>
+      <td>17.745384​</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 1
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>South Atlantic</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>region</th>
+      <th>state (type)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""6"" valign=""top"">South</th>
+      <th>DC (Non Postal Community Name)</th>
+      <td>38.895100</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Non Postal Community Name-Unique)</th>
+      <td>38.895100</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (P.O. Box Only)</th>
+      <td>38.900800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Post Office)</th>
+      <td>38.910717</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DC (Unique Post Office)</th>
+      <td>38.895000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>DE (Post Office)</th>
+      <td>39.598334</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""25"" valign=""top"">South</th>
+      <th>FL (Branch)</th>
+      <td>30.096584</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Non Postal Community Name)</th>
+      <td>30.061772</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (P.O. Box Only)</th>
+      <td>30.239600</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Post Office)</th>
+      <td>29.910063</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>FL (Unique Post Office)</th>
+      <td>30.063900</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Branch)</th>
+      <td>33.390811</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Branch-Unique)</th>
+      <td>33.400000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Community Post Office )</th>
+      <td>32.632286</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Non Postal Community Name)</th>
+      <td>33.968149</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Non Postal Community Name-Unique)</th>
+      <td>30.966782</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (P.O. Box Only)</th>
+      <td>33.937800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Post Office)</th>
+      <td>33.771036</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>GA (Unique Post Office)</th>
+      <td>33.952500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Branch)</th>
+      <td>38.805865</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Branch-Unique)</th>
+      <td>39.387026</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Non Postal Community Name)</th>
+      <td>38.960659</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Non Postal Community Name-Unique)</th>
+      <td>0.000000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (P.O. Box Only)</th>
+      <td>38.624700</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Post Office)</th>
+      <td>38.613661</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>MD (Unique Post Office)</th>
+      <td>39.031400</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Branch)</th>
+      <td>35.146635</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Branch-Unique)</th>
+      <td>35.126720</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Non Postal Community Name)</th>
+      <td>36.463544</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (P.O. Box Only)</th>
+      <td>36.182200</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NC (Post Office)</th>
+      <td>35.944562</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">South</th>
+      <th>NC (Unique Post Office)</th>
+      <td>36.240400</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Branch)</th>
+      <td>33.976492</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Non Postal Community Name)</th>
+      <td>33.889613</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (P.O. Box Only)</th>
+      <td>34.124500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Post Office)</th>
+      <td>33.773887</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SC (Unique Post Office)</th>
+      <td>33.498438</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Branch)</th>
+      <td>38.886153</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Branch-Unique)</th>
+      <td>38.962800</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Community Post Office )</th>
+      <td>38.971267</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Non Postal Community Name)</th>
+      <td>39.030554</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""11"" valign=""top"">South</th>
+      <th>VA (Non Postal Community Name-Unique)</th>
+      <td>38.877442</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (P.O. Box Only)</th>
+      <td>38.765700</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Post Office)</th>
+      <td>38.960832</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VA (Unique Post Office)</th>
+      <td>39.335500</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Branch)</th>
+      <td>38.359330</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Community Post Office )</th>
+      <td>39.491243</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Non Postal Community Name)</th>
+      <td>37.459645</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Non Postal Community Name-Unique)</th>
+      <td>38.238300</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (P.O. Box Only)</th>
+      <td>37.526504</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Post Office)</th>
+      <td>37.300884</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>WV (Unique Post Office)</th>
+      <td>38.349400</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+Table 2
+
+<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""7"" halign=""left"">Branch</th>
+      <th>Branch-Unique</th>
+      <th colspan=""7"" halign=""left"">Community Post Office</th>
+      <th colspan=""7"" halign=""left"">Non Postal Community Name</th>
+      <th colspan=""2"" halign=""left"">Non Postal Community Name-Unique</th>
+      <th colspan=""6"" halign=""left"">P.O. Box Only</th>
+      <th></th>
+      <th>P.O. Box Only</th>
+      <th colspan=""8"" halign=""left"">Post Office</th>
+      <th colspan=""7"" halign=""left"">Unique Post Office</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th>West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+      <th colspan=""2"" halign=""left"">West</th>
+      <th colspan=""6"" halign=""left"">West</th>
+      <th></th>
+      <th>West</th>
+      <th colspan=""8"" halign=""left"">West</th>
+      <th colspan=""7"" halign=""left"">West</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th></th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>MT (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+      <th>AZ (Mountain)</th>
+      <th>CO (Mountain)</th>
+      <th>ID (Mountain)</th>
+      <th>NM (Mountain)</th>
+      <th>NV (Mountain)</th>
+      <th>UT (Mountain)</th>
+      <th>WY (Mountain)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>latitude (unit)</th>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td></td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+      <td>latitude (unit)</td>
+    </tr>
+    <tr>
+      <th>latitude (unit)</th>
+      <td>33.651330</td>
+      <td>39.928444</td>
+      <td>43.028398</td>
+      <td>35.284205</td>
+      <td>39.600367</td>
+      <td>40.555448</td>
+      <td>41.166616</td>
+      <td>35.056500</td>
+      <td>31.664920</td>
+      <td>39.353458</td>
+      <td>43.254106</td>
+      <td>35.714904</td>
+      <td>35.461100</td>
+      <td>40.158536</td>
+      <td>44.817850</td>
+      <td>33.926432</td>
+      <td>39.516974</td>
+      <td>43.442953</td>
+      <td>35.360607</td>
+      <td>37.716104</td>
+      <td>40.467360</td>
+      <td>41.738888</td>
+      <td>32.990334</td>
+      <td>36.040000</td>
+      <td>33.448600</td>
+      <td>39.802800</td>
+      <td>42.963910</td>
+      <td>34.984733</td>
+      <td>36.899863</td>
+      <td>40.889500</td>
+      <td></td>
+      <td>41.133500</td>
+      <td>33.449666</td>
+      <td>39.793416</td>
+      <td>42.880818</td>
+      <td>45.525336</td>
+      <td>34.610918</td>
+      <td>37.446549</td>
+      <td>40.396881</td>
+      <td>41.141842</td>
+      <td>33.418380</td>
+      <td>39.613500</td>
+      <td>42.861458</td>
+      <td>35.091192</td>
+      <td>35.778600</td>
+      <td>40.760600</td>
+      <td>41.133500</td>
+    </tr>
+  </tbody>
+</table>",,28.374556666666667

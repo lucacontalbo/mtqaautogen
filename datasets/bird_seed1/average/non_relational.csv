@@ -1,0 +1,5927 @@
+Question,SQL Query,Method,Table,Constraints,Label
+What is the average cost of products sold with a completed status when considering the product number five at the first location and product number two at the third location combined?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""5"" AND store_id = ""1"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""3"" AND item_id = ""2"" AND store_id = ""3"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">1</th>
+      <th colspan=""3"" halign=""left"">2</th>
+      <th colspan=""2"" halign=""left"">3</th>
+      <th></th>
+      <th>3</th>
+      <th colspan=""2"" halign=""left"">4</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>2</th>
+      <th>4</th>
+      <th>5</th>
+      <th>2</th>
+      <th>4</th>
+      <th></th>
+      <th>5</th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>list_price (unit)</th>
+      <td>list_priec( uni)t</td>
+      <td>list_price (unit)\nNote: recorded in [2]</td>
+      <td>list_price (unit)</td>
+      <td>list_price (unit)</td>
+      <td>list_price (unit)</td>
+      <td>list_price (unit)</td>
+      <td>list_price (unit)</td>
+      <td></td>
+      <td>list_price (unit)\nNote: recorded in [3]</td>
+      <td>list_price (unit)\nNote: recorded in [3]</td>
+      <td>list_price (unit)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1 (San‍ta C‌ruz Bikes )</th>
+      <td>\</td>
+      <td>1549.99</td>
+      <td>2499.99</td>
+      <td>\</td>
+      <td>\</td>
+      <td>1799.99</td>
+      <td>999.99⁠</td>
+      <td></td>
+      <td>1559.99</td>
+      <td>599.99</td>
+      <td>\</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2 (Baldwin Bikes)</th>
+      <td>749.99</td>
+      <td>919.99</td>
+      <td>\</td>
+      <td>959.99</td>
+      <td>899.99</td>
+      <td>\</td>
+      <td>1999.99\nNote: recorded in [2]</td>
+      <td></td>
+      <td>\</td>
+      <td>599.99⁠</td>
+      <td>\​</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3 (Rowlett Bikes)</th>
+      <td>\</td>
+      <td>3499.99\nNote: recorded in [5]</td>
+      <td>\</td>
+      <td>89.99</td>
+      <td>NaN</td>
+      <td>449.0</td>
+      <td>2899.99​</td>
+      <td></td>
+      <td>269.99</td>
+      <td>\</td>
+      <td>2999.99</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1004.495
+"What is the average selling price of cyclocross bikes from the store marked as number three, considering both the 2017 and 2018 versions together?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE store_id = ""3"" AND model_year = ""2018"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE store_id = ""3"" AND model_year = ""2017"" AND category_name = ""Cyclocross Bicycles"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">CA</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">NY</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>2 (1)</th>
+      <th>3 (1)</th>
+      <th></th>
+      <th>6 (2)</th>
+      <th>7 (2)</th>
+      <th></th>
+      <th>8  (3)</th>
+      <th>9 (3)</th>
+    </tr>
+    <tr>
+      <th>model_year</th>
+      <th>category_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">2016</th>
+      <th>Children Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>299.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N /A</td>
+    </tr>
+    <tr>
+      <th>Comf o⁠r​t Bicycles</th>
+      <td>N​/A</td>
+      <td>499.99 unit⁵</td>
+      <td></td>
+      <td>599.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>599.99 unit</td>
+      <td>499.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <th>Children Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>299.99 unit (latest update)</td>
+      <td>329.99 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>109.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2017</th>
+      <th>Cruisers Bicycles</th>
+      <td>761.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>749.99 unit</td>
+      <td>449.99 unit (latest update)</td>
+      <td></td>
+      <td>299.99 unit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Cyclorcsos iBcyclse</th>
+      <td>N/A</td>
+      <td>3499.99 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>NaN</td>
+      <td>3499.99 unit</td>
+    </tr>
+    <tr>
+      <th>Electric Bikes</th>
+      <td>1559.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/‍A</td>
+      <td>1559.99 uni‌t</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">2018</th>
+      <th>Children Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>369.99 unit</td>
+      <td>N/⁠A</td>
+      <td></td>
+      <td>89.99 unit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Comfort Bicycles</th>
+      <td>899.99 unit (latest update)</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>679.99 unit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">2018</th>
+      <th>Cruisers Bicycles</th>
+      <td>899.99 uni‍t (latest update)</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>899.99 unit</td>
+      <td>909.99 ‌unit</td>
+    </tr>
+    <tr>
+      <th>Cyclocross Bicycles</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>3299.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>2999.99 unit</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",,3249.99
+"What is the overall average markdown offered when considering the discount given for a cruiser bicycle sold in California identified as item number four, a road bike purchased in New York labeled as item one, a comfort bike acquired in Texas with item code five, and also a road bike bought in Texas with the same item number one?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE item_id = ""4"" AND customer_state = ""CA"" AND category_name = ""Cruisers Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""NY"" AND category_name = ""Road Bikes"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""5"" AND customer_state = ""TX"" AND category_name = ""Comfort Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE item_id = ""1"" AND customer_state = ""TX"" AND category_name = ""Road Bikes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Children Bicycles</th>
+      <th>Comfort Bicycles</th>
+      <th>Cruisser iBclcyes</th>
+      <th>Cyclocross Bicycles</th>
+      <th>Electric Bikes</th>
+      <th></th>
+      <th>Mountain Bikes</th>
+      <th></th>
+      <th>Road Bikes</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>customer_state</th>
+      <th>store_city</th>
+      <th>item_id (store_state)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">CA</th>
+      <th rowspan=""3"" valign=""top"">Santa Cruz</th>
+      <th>1 (CA)</th>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>0.1 unit</td>
+      <td>-⁠</td>
+      <td></td>
+      <td>0.1 u​nit</td>
+      <td></td>
+      <td>-​</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4 (CA)</th>
+      <td>0.2 unit</td>
+      <td>-</td>
+      <td>0.1 unit (see footnote 1)</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>0.2 un‍it (see footnote 2)</td>
+      <td></td>
+      <td>0.1 unit (see footnote 5)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5 (CA)</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>0.1  unit</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td></td>
+      <td>-</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">NY</th>
+      <th rowspan=""2"" valign=""top"">Baldwin</th>
+      <th>1 (NY)</th>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.2 unit (see footnote 5)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2 (NY)</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>0.2 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>N Y</th>
+      <th>Baldwin</th>
+      <th>3 (NY)</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>NY</th>
+      <th>Baldwin</th>
+      <th>5 (NY)</th>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit (see footnote 4)</td>
+      <td>0.2 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>-</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">TX</th>
+      <th>Ro wlett</th>
+      <th>1 (TX)</th>
+      <td>-</td>
+      <td>-</td>
+      <td>0.2 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>-</td>
+      <td></td>
+      <td>0.1 unit (see footnote 4)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Rowlett</th>
+      <th>3 (TX)</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>0.1 ‍unit</td>
+      <td>0.1 un⁠it</td>
+      <td></td>
+      <td>-</td>
+      <td></td>
+      <td>0.1 unit (see footnote 1)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>TX</th>
+      <th>Rowlett</th>
+      <th>5 (TX)</th>
+      <td>0.2 unit</td>
+      <td>0.2 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.15
+"What is the average discount percentage offered by employee number 3 and employee number 7 on Ritchey bicycles, employee number 9 on Pure Cycles bikes, and employee number 2 on Heller bikes?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE brand_name = ""Ritchey"" AND staff_id = ""3"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Ritchey"" AND staff_id = ""7"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Pure Cycles"" AND staff_id = ""9"" UNION ALL SELECT discount AS discount FROM sample_table WHERE brand_name = ""Heller"" AND staff_id = ""2"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>2</th>
+      <th>3</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th></th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>CA</th>
+      <th>CA</th>
+      <th>NY</th>
+      <th>NY</th>
+      <th>TX</th>
+      <th></th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th></th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz</th>
+      <th>Santa Cruz</th>
+      <th>Baldwin</th>
+      <th>Baldwin</th>
+      <th>Rowlett</th>
+      <th></th>
+      <th>Rowlett</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>discount (category_name) (unit)</th>
+      <td>discount (category_name) (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Electra</th>
+      <td>0.2 (Cruisers Bicycles)</td>
+      <td>0.1 (C‌hildren Bicyc les‌)</td>
+      <td>0.1 (Cruisers Bicycles)</td>
+      <td>0.1 (Cruisers Bicycles)</td>
+      <td>\ (Comfort Bicycles)</td>
+      <td></td>
+      <td>0.1 (Cruisers Bicycles)</td>
+    </tr>
+    <tr>
+      <th>Ha ro</th>
+      <td>0.2 (Childern Biccyles)</td>
+      <td>\ (Mountain Bikes)</td>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>0.1 (Children Bicycles)</td>
+      <td>\​ (Chi​l‍dren Bicycle‌s)</td>
+      <td></td>
+      <td>\ (Mountain Bikes)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Heller</th>
+      <td>0.2 (Mountain Bikes)</td>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>0.2 (Mountain Bikes)\nAccording to official data</td>
+      <td>0.1 ‌(M‌ountain  Bikes)</td>
+      <td></td>
+      <td>\ (Mountain Bikes)⁵</td>
+    </tr>
+    <tr>
+      <th>Pure Cycles</th>
+      <td>0.1 (Cruisers Bicycles)</td>
+      <td>0.2 (Cruisers Bicycles)</td>
+      <td>0.1 (Cruisers Bicycles)</td>
+      <td>\ (Cruisers Bicycles)</td>
+      <td>0.2 (Cruisers Bicycles)</td>
+      <td></td>
+      <td>0.2 (rCiuserBs icylecs)</td>
+    </tr>
+    <tr>
+      <th>Ritchey</th>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>0.2 (Mountain Bikes)</td>
+      <td>0.2 (Mountain Bikes)</td>
+      <td>0.1 (Mountain Bikes)</td>
+      <td></td>
+      <td>0.1 (Mountain Bikes)</td>
+    </tr>
+    <tr>
+      <th>Strider</th>
+      <td>0.1 (Children Bicycles)\nAccording to official data</td>
+      <td>0.1 (Children Bicycles)</td>
+      <td>\ (Children Bicycles)</td>
+      <td>\ (Children Bicycles)</td>
+      <td>0.2 (Children Bicycles)</td>
+      <td></td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Sun Bicycles</th>
+      <td>\ (Cruisers Bicycles)⁵</td>
+      <td>0.1 (Cruisers Bicycles)</td>
+      <td>\ (Comfort Bicycles) (est.)</td>
+      <td>0.1 (Comfort Bicycles)</td>
+      <td>\ (Comfort Bicycles)</td>
+      <td></td>
+      <td>\(CriusersB iccyles) (est.)</td>
+    </tr>
+    <tr>
+      <th>Surly</th>
+      <td>\ (Cyclocross Bicycles)</td>
+      <td>0.1 (Mount⁠ain Bi‌kes​) (est.)</td>
+      <td>0.1 (Cyclocross Bicycles)</td>
+      <td>0.1 ‍(Mo‌unt ain Bikes)</td>
+      <td>0.1( Cyclorcsos Bicycels) (est.)</td>
+      <td></td>
+      <td>0.1 (oMuntai nBiks)e</td>
+    </tr>
+    <tr>
+      <th>Trek</th>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>\ (Mountain Bikes) (est.)</td>
+      <td>0.1 (Electric Bikes)\nAccording to official data</td>
+      <td>0.1 (Mountain Bikes)</td>
+      <td>0.2 (Electric Bikes)</td>
+      <td></td>
+      <td>0.1 (Mountain Bikes)</td>
+    </tr>
+  </tbody>
+</table>",,0.175
+"Considering only completed orders from store location number three for children’s bicycles, completed orders from store location one for cyclocross bicycles, and pending orders from store location three for mountain bicycles, what is the overall average percentage reduction applied on these sales?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""3"" AND category_name = ""Children Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""1"" AND store_id = ""1"" AND category_name = ""Cyclocross Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE order_status = ""2"" AND store_id = ""3"" AND category_name = ""Mountain Bikes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>CihldrenB icyclse</th>
+      <th>Comfort Bicycles</th>
+      <th>Cruisers Bicycles</th>
+      <th></th>
+      <th></th>
+      <th>Cyclo​cros s Bic‌ycles</th>
+      <th>Electric Bikes</th>
+      <th>Mountain Bikes</th>
+      <th>Road Bikes</th>
+    </tr>
+    <tr>
+      <th>store_id</th>
+      <th>store_name</th>
+      <th>order_status (store_city)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""3"" valign=""top"">1</th>
+      <th rowspan=""3"" valign=""top"">Santa Cruz Bikes</th>
+      <th>1 (Santa Cruz)</th>
+      <td>-</td>
+      <td>-⁠ (source: official reports)</td>
+      <td>-‍</td>
+      <td></td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>2 (Santa Cruz)</th>
+      <td>-</td>
+      <td>-⁠</td>
+      <td>-</td>
+      <td></td>
+      <td></td>
+      <td>0.1 unit (source: official reports)</td>
+      <td>-</td>
+      <td>0.1 uni t</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>4 (Santa Cruz)</th>
+      <td>0.1  unit</td>
+      <td>-</td>
+      <td>0.2 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>0.1 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2</th>
+      <th rowspan=""3"" valign=""top"">Baldwin Bikes</th>
+      <th>1 (Baldw‍in)</th>
+      <td>-</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td></td>
+      <td>-</td>
+      <td>-‌</td>
+      <td>-</td>
+      <td>0.1 unit (source: official reports)</td>
+    </tr>
+    <tr>
+      <th>2 (Baldwin)</th>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td></td>
+      <td>0.1 unit (source: official reports)</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-​ (source: official reports)</td>
+    </tr>
+    <tr>
+      <th>4 (Baldwin)</th>
+      <td>-</td>
+      <td>-‌</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>0.2 unit</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>Rowlett Bikes</th>
+      <th>1 (Rowlett)</th>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>0.1 unit</td>
+      <td></td>
+      <td></td>
+      <td>0.2 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">3</th>
+      <th>Rowlett Bikes</th>
+      <th>2 (Rowlett)</th>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>-​ (source: official reports)</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+    </tr>
+    <tr>
+      <th>Rowl​ett Bike s</th>
+      <th>3 (Rowlett)</th>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td></td>
+      <td></td>
+      <td>0.1 unit</td>
+      <td>0.1 unit</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Rowlett Bikes</th>
+      <th>4 (Rowlett)</th>
+      <td>0.2 unit</td>
+      <td>-</td>
+      <td>-​</td>
+      <td></td>
+      <td></td>
+      <td>-</td>
+      <td>0.2 unit (source: official reports)</td>
+      <td>0.1 unit (source: official reports)</td>
+      <td>0.1 uni​t</td>
+    </tr>
+  </tbody>
+</table>",,0.133333
+What is the overall average cost of the product with ID number 2 when considering orders that have been completed in California and orders currently processing in New York?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND item_id = ""2"" AND customer_state = ""CA"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""2"" AND item_id = ""2"" AND customer_state = ""NY"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>CA</th>
+      <th>N‌Y</th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>CA (Santa Cruz Bikes)</th>
+      <th>NY (Baldwin Bikes)</th>
+      <th>TX (Rowlett Bikes)</th>
+    </tr>
+    <tr>
+      <th>order_status</th>
+      <th>item_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <td></td>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>1</th>
+      <td></td>
+      <td>4499.99‌</td>
+      <td>N/A</td>
+      <td>909.99‍</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <td></td>
+      <td>N/A</td>
+      <td>919.99\nAs listed on the website</td>
+      <td>3499.99 (est.)</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2</th>
+      <th>2</th>
+      <td></td>
+      <td>N/A</td>
+      <td>899.99⁠</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>319.99</td>
+      <td>N/A</td>
+      <td>899.99</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">3</th>
+      <th>1</th>
+      <td></td>
+      <td>599.99</td>
+      <td>549.99</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>999.99</td>
+      <td>1999.99</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td>N/A</td>
+      <td>4999.99</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">4</th>
+      <th>1</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1680.99¹</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td></td>
+      <td>1799.99</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,1349.99
+What is the average promotional reduction (discount) across these specific records: Electric Bikes (item_id = 2) by staff_id = 6; Children Bicycles (item_id = 1) by staff_id = 8; Cruisers Bicycles (item_id = 4) by staff_id = 9; and Mountain Bikes (item_id = 2) by staff_id = 6?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE category_name = ""Electric Bikes"" AND item_id = ""2"" AND staff_id = ""6"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Children Bicycles"" AND item_id = ""1"" AND staff_id = ""8"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Cruisers Bicycles"" AND item_id = ""4"" AND staff_id = ""9"" UNION ALL SELECT discount AS discount FROM sample_table WHERE category_name = ""Mountain Bikes"" AND item_id = ""2"" AND staff_id = ""6"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Children Bicycles</th>
+      <th colspan=""2"" halign=""left"">Cruisers Bicycles</th>
+      <th>Cyclocross Bicycles</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Electric Bikes</th>
+      <th>Mountain Bikes</th>
+      <th colspan=""2"" halign=""left"">Road Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Rowlett</th>
+      <th>Santa Cruz</th>
+      <th>Rowlett</th>
+      <th>Santa Cruz</th>
+      <th>Santa Cruz</th>
+      <th></th>
+      <th>Badliwn</th>
+      <th>Rowlett</th>
+      <th>Baldwin</th>
+      <th>Baldwin</th>
+      <th>Rowlett</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discount (staff_id) (unit)</th>
+      <td></td>
+      <td>sicdonu(ts taffi_d) (uint)</td>
+      <td>discon u(tstfaf_id( )unit)</td>
+      <td>discount (staff_id) (unit)⁴</td>
+      <td>discount (staff_id) (unit)⁴</td>
+      <td>discount (staff_id) (unit)</td>
+      <td></td>
+      <td>discount (staff_id) (unit)</td>
+      <td>discount (staff_id) (unit)</td>
+      <td>discount (staff_id) (unit)⁴</td>
+      <td>dicosu nt(astf_fid) (uni)t</td>
+      <td>discount (staff_id) (unit)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>0.2 (8) (est.)</td>
+      <td>not available (3)</td>
+      <td>0.2 (9)</td>
+      <td>0.2 (2)</td>
+      <td>0.1 (2)</td>
+      <td></td>
+      <td>0.1 (6)</td>
+      <td>not available (8)</td>
+      <td>0.1 (7)⁴</td>
+      <td>n⁠ot avai lable (7)</td>
+      <td>0.1 ‍(8) (est.)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td></td>
+      <td>0.2 (9)</td>
+      <td>not available (3)</td>
+      <td>0.1 (8)</td>
+      <td>0.1 (3)</td>
+      <td>0.1 (2)</td>
+      <td></td>
+      <td>0.1 (6)</td>
+      <td>not available (8)</td>
+      <td>0.1 (6)</td>
+      <td>not available (7)</td>
+      <td>not available (9)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>not available (8)</td>
+      <td>0.1 (2)</td>
+      <td>0.2 (8)⁴</td>
+      <td>0.1 (3)</td>
+      <td>0.1 (2)</td>
+      <td></td>
+      <td>0.1 (7)</td>
+      <td>not available (9)</td>
+      <td>not available (7)⁴</td>
+      <td>not available (7)</td>
+      <td>0.1 (8) (est.)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>0.1 (8)</td>
+      <td>not available (3)</td>
+      <td>0.1 (9) (est.)</td>
+      <td>0.1 (2)</td>
+      <td>0.1 (3)</td>
+      <td></td>
+      <td>0.2 (7) (est.)</td>
+      <td>not available (9)</td>
+      <td>not available (6)</td>
+      <td>0.2 (6)</td>
+      <td>not available (8)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td>not avalialbe (9)</td>
+      <td>0.1 (2)</td>
+      <td>0.2 (8)</td>
+      <td>0.2 (3)⁴</td>
+      <td>0.1 (3)</td>
+      <td></td>
+      <td>0.1 ​(6)</td>
+      <td>0.1 (8)</td>
+      <td>0.1 (6)</td>
+      <td>0.1 ‍(7)</td>
+      <td>0.1 (9)</td>
+    </tr>
+  </tbody>
+</table>",,0.125
+"What is the combined average sales amount for transactions involving seven electronic items in the East region during the last quarter, ten toys sold in the North area in the first quarter, six sports products purchased on the Western side in the final quarter, and six sports goods sold in the East region at the start of the year?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""4"" AND category = ""Electronics"" AND region = ""East"" AND quantity_sold = ""7"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""1"" AND category = ""Toys"" AND region = ""North"" AND quantity_sold = ""10"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""4"" AND category = ""Sports"" AND region = ""West"" AND quantity_sold = ""6"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE quarter = ""1"" AND category = ""Sports"" AND region = ""East"" AND quantity_sold = ""6"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th colspan=""2"" halign=""left"">5</th>
+      <th>6</th>
+      <th></th>
+      <th>6</th>
+      <th colspan=""2"" halign=""left"">7</th>
+      <th>8</th>
+      <th>9</th>
+      <th></th>
+      <th>10</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Wes t (2)</th>
+      <th>East (1)</th>
+      <th>East (2)</th>
+      <th>East (1)</th>
+      <th></th>
+      <th>West (4)</th>
+      <th>East (4)</th>
+      <th>North (2)</th>
+      <th>North (4)</th>
+      <th>North (4)</th>
+      <th></th>
+      <th>North (1)</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Books</th>
+      <td>203.48 unit</td>
+      <td>N/A</td>
+      <td>3747.82 unit</td>
+      <td>738.37 unit (est.)</td>
+      <td></td>
+      <td>N/A</td>
+      <td>889.28 unit</td>
+      <td>N/A</td>
+      <td>1492.16 unit (est.)</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Clothin⁠g</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>4729.02 unit</td>
+      <td>6664.32 unit</td>
+      <td>N/A</td>
+      <td>N/‌A</td>
+      <td>5669.99 unit (est.)</td>
+      <td></td>
+      <td>2986.32 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Electronics</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>4767.77 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>2439.83 unit</td>
+      <td>55.24 unit</td>
+      <td>2724.73 ⁠unit</td>
+      <td>N/A</td>
+      <td>7330.62 un⁠it</td>
+      <td></td>
+      <td>2548.13 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Home &amp; Kitchen</th>
+      <td>24.72 unit</td>
+      <td>1255.54 unit (est.)</td>
+      <td>N/A</td>
+      <td>1645.68 unit (est.)</td>
+      <td></td>
+      <td>N/A</td>
+      <td>1065.09 unit</td>
+      <td>6884.18 unit (est.)</td>
+      <td>925.47 u‍nit</td>
+      <td>7295.29 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sports</th>
+      <td>N/A</td>
+      <td>2785.46 unit</td>
+      <td>1522.42 un it</td>
+      <td>5711.41 unit</td>
+      <td></td>
+      <td>5561.15 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>310.02 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>6025.54 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Toys</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>5722.13 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>4435.16 unit</td>
+      <td>1470.11 unit</td>
+      <td>N/A</td>
+      <td>NaN</td>
+      <td></td>
+      <td>8943.98 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,5067.945
+What is the average discount offered when 7 units of Brand B items were sold in December combined with the discounts given for selling 4 units of Brand A products in June?,"SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""7"" AND month = ""12"" AND brand = ""BrandB"" UNION ALL SELECT discount AS discount FROM sample_table WHERE quantity_sold = ""4"" AND month = ""6"" AND brand = ""BrandA"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>BrandA</th>
+      <th>BrandB</th>
+      <th></th>
+      <th></th>
+      <th>BrandC</th>
+      <th>BrandD</th>
+      <th>BrandE</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>month (quantity_sold)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discount (unit)</th>
+      <th>discount (unit)</th>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+      <td></td>
+      <td></td>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+      <td>discount (unit)</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <th>12 (10)</th>
+      <td>\</td>
+      <td>6.54⁴</td>
+      <td></td>
+      <td></td>
+      <td>26.76</td>
+      <td>19.83</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2024</th>
+      <th>12 (7)</th>
+      <td>\‌⁴</td>
+      <td>21.83</td>
+      <td></td>
+      <td></td>
+      <td>16.13</td>
+      <td>\</td>
+      <td>40.71</td>
+    </tr>
+    <tr>
+      <th>5 (7)</th>
+      <td>19.87</td>
+      <td>14.04</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>5 (8)</th>
+      <td>\</td>
+      <td>42.81</td>
+      <td></td>
+      <td></td>
+      <td>41.19​</td>
+      <td>25.79</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2025</th>
+      <th>10 (1)</th>
+      <td>\‌</td>
+      <td>33.77⁴</td>
+      <td></td>
+      <td></td>
+      <td>0.87⁴</td>
+      <td>14.06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2 (3)</th>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>28.36</td>
+    </tr>
+    <tr>
+      <th>3 (8)</th>
+      <td>8.21​⁴</td>
+      <td>\‌⁴</td>
+      <td></td>
+      <td></td>
+      <td>27.27​</td>
+      <td>\</td>
+      <td>13.8</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">2025</th>
+      <th>6 (2)</th>
+      <td>14.78</td>
+      <td>\‍</td>
+      <td></td>
+      <td></td>
+      <td>\</td>
+      <td>\​</td>
+      <td>49.49</td>
+    </tr>
+    <tr>
+      <th>6 (4)</th>
+      <td>0.79​⁴</td>
+      <td>36.96</td>
+      <td></td>
+      <td></td>
+      <td>47.54</td>
+      <td>46.46‍</td>
+      <td>29.78</td>
+    </tr>
+    <tr>
+      <th>9 (8)</th>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td></td>
+      <td>\‍</td>
+      <td>10.17</td>
+      <td>46.79</td>
+    </tr>
+  </tbody>
+</table>",,11.31
+What is the combined average unit cost for items sold in the western region during October and the eastern region in May?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""October"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""East"" AND month_name = ""May"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th>5</th>
+      <th></th>
+      <th>5</th>
+      <th>8</th>
+      <th>9</th>
+      <th></th>
+      <th>10</th>
+      <th></th>
+      <th>11</th>
+      <th colspan=""3"" halign=""left"">12</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>West (January)</th>
+      <th>E​ast (May)</th>
+      <th></th>
+      <th>West (May)</th>
+      <th>Central (August)</th>
+      <th>East (September)</th>
+      <th></th>
+      <th>West (October)</th>
+      <th></th>
+      <th>Central (November)</th>
+      <th>East (December)</th>
+      <th>South (December)</th>
+      <th>Wes​t (Decemb‌er)</th>
+    </tr>
+    <tr>
+      <th>quarter</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>665.54 unit</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>120.57 unit</td>
+      <td></td>
+      <td>-‍</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>54.16 unit</td>
+      <td>610.86 unit</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>779.76 uni t</td>
+      <td></td>
+      <td>439.56 unit</td>
+      <td>-</td>
+      <td>according to official data: 464.17 unit</td>
+      <td>665.74 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,450.165
+"What is the overall average unit price for BrandD across sales in the Central region in October 2023, the West region in July 2025, and the West region in November 2023?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE region = ""Central"" AND month_name = ""October"" AND year = ""2023"" AND brand = ""BrandD"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""July"" AND year = ""2025"" AND brand = ""BrandD"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE region = ""West"" AND month_name = ""November"" AND year = ""2023"" AND brand = ""BrandD"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>April</th>
+      <th>January</th>
+      <th>July</th>
+      <th>J‌une</th>
+      <th></th>
+      <th>Ma⁠rch</th>
+      <th></th>
+      <th>November</th>
+      <th>October</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">October</th>
+      <th>September</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2</th>
+      <th>1</th>
+      <th>3</th>
+      <th>2</th>
+      <th></th>
+      <th>1</th>
+      <th></th>
+      <th>4</th>
+      <th>4</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">4</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2025</th>
+      <th>2024</th>
+      <th>2025</th>
+      <th>2024</th>
+      <th></th>
+      <th>2024</th>
+      <th></th>
+      <th>2023</th>
+      <th>2023</th>
+      <th></th>
+      <th>2024</th>
+      <th>2025</th>
+      <th>2025</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>brand (⁠u‌n‌it_p⁠rice) (unit)</th>
+      <td>brand (unit_price) (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Ce‍ntral</th>
+      <td>BrandC (\)</td>
+      <td>BrandB (451.8)</td>
+      <td>BrandE (303.22)</td>
+      <td>BrandC (\‍)</td>
+      <td></td>
+      <td>BrandD (\)</td>
+      <td></td>
+      <td>BrandA (439.56)</td>
+      <td>BrandD (162.46)</td>
+      <td></td>
+      <td>Brand​E (377.79)</td>
+      <td>BrandA (770.95)</td>
+      <td>BrandA (\) (source: official reports)</td>
+    </tr>
+    <tr>
+      <th>East</th>
+      <td>BrandB (\)</td>
+      <td>BrandC (\)</td>
+      <td>Br‌andD (151.75)</td>
+      <td>BrandA (\)</td>
+      <td></td>
+      <td>BrandE (‌\)</td>
+      <td></td>
+      <td>BrandE (782.76)</td>
+      <td>BrandD (330.84) (source: official reports)</td>
+      <td></td>
+      <td>BrandA (\)</td>
+      <td>BrandA (\) (source: official reports)</td>
+      <td>BrandB (581.57)</td>
+    </tr>
+    <tr>
+      <th>North</th>
+      <td>BrandA (\) (source: official reports)</td>
+      <td>BrandA (295.42)</td>
+      <td>BrandC (\)</td>
+      <td>BrandA( )\</td>
+      <td></td>
+      <td>BrandE (\)</td>
+      <td></td>
+      <td>BrandA (957.41)</td>
+      <td>BrandE (431.53) (source: official reports)</td>
+      <td></td>
+      <td>BrandC (758.19)</td>
+      <td>BrandA (\)</td>
+      <td>BrandD (687.64)</td>
+    </tr>
+    <tr>
+      <th>South</th>
+      <td>BrandE (749.55) (source: official reports)</td>
+      <td>BrandE (\)</td>
+      <td>Brand⁠A (\)</td>
+      <td>BrandD (718.36)</td>
+      <td></td>
+      <td>BrandC (894.79)</td>
+      <td></td>
+      <td>BrandB (321.81)</td>
+      <td>BrandA (\) (source: official reports)</td>
+      <td></td>
+      <td>BrandE (539.86)</td>
+      <td>BrandA (993.06) (source: official reports)</td>
+      <td>BrandE (\) (source: official reports)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>West</th>
+      <td>BarndA (\)</td>
+      <td>BrandD (\)</td>
+      <td>BrandD (55.56)</td>
+      <td>BrandE (716.83)</td>
+      <td></td>
+      <td>BrandB (\)</td>
+      <td></td>
+      <td>BrandD (651.06)</td>
+      <td>BrandA (902.07)</td>
+      <td></td>
+      <td>BrandD (\)</td>
+      <td>Brand⁠E (675.8) (source: official reports)</td>
+      <td>BrandE (\)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,289.693333
+"What is the mean total revenue generated by Brand D's book sales in 2023 in the Central region, Brand E's electronic products sold in 2025 from the West area, Brand D's home and kitchen items from 2024 in the Central area, and Brand B's books sold in 2025 in the western region?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandD"" AND year = ""2023"" AND category = ""Books"" AND region = ""Central"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandE"" AND year = ""2025"" AND category = ""Electronics"" AND region = ""West"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandD"" AND year = ""2024"" AND category = ""Home & Kitchen"" AND region = ""Central"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND year = ""2025"" AND category = ""Books"" AND region = ""West"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>Books</th>
+      <th></th>
+      <th>Clothing</th>
+      <th>Electronics</th>
+      <th>Home &amp; Kitchen</th>
+      <th></th>
+      <th></th>
+      <th>Sports</th>
+      <th>Toys</th>
+    </tr>
+    <tr>
+      <th>brand</th>
+      <th>region</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit (cf. appendix)</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>un‌it</td>
+      <td></td>
+      <td></td>
+      <td>unit (see notes)</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>BrandA</th>
+      <th>East</th>
+      <td>N/A (2024) (cf. appendix)</td>
+      <td></td>
+      <td>5902.19 (2024)</td>
+      <td>3308.61 (2024)</td>
+      <td>N/A (2024)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2024)</td>
+      <td>N/A (2025) (cf. appendix)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">BrandB</th>
+      <th>South</th>
+      <td>2581.49 (2024)</td>
+      <td></td>
+      <td>N/A (2023)</td>
+      <td>4760.55 (2024)</td>
+      <td>N/A (2024) (cf. appendix)</td>
+      <td></td>
+      <td></td>
+      <td>3306.7 (2024)</td>
+      <td>1927.47 (2023)</td>
+    </tr>
+    <tr>
+      <th>West</th>
+      <td>1397.74 (2025)</td>
+      <td></td>
+      <td>N/A (2025)</td>
+      <td>797.26 (2025)</td>
+      <td>1599.61 (2024)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2025)</td>
+      <td>3367.71 (2025)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">BrandC</th>
+      <th>North</th>
+      <td>751.12 (2024)</td>
+      <td></td>
+      <td>6804.14 (2025)</td>
+      <td>N/A (2025)</td>
+      <td>1356.2 (2024)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2025) (see notes)</td>
+      <td>3312.01 ‍(2024)</td>
+    </tr>
+    <tr>
+      <th>West</th>
+      <td>321.48 (2024) (cf. appendix)</td>
+      <td></td>
+      <td>N/A (2024)</td>
+      <td>N/A (2024)</td>
+      <td>N/A (2024)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2024)</td>
+      <td>N/A (2025) (see notes)</td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <th>Central</th>
+      <td>2146.08 (2023)</td>
+      <td></td>
+      <td>N/A (2024)</td>
+      <td>N/A (2023)</td>
+      <td>1870.7 (2024)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2024)</td>
+      <td>1273.21 (2025)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">BrandE</th>
+      <th>Central</th>
+      <td>N/A (2024)</td>
+      <td></td>
+      <td>N/A (2024) (see notes)</td>
+      <td>N/A (2025)</td>
+      <td>N/A (2025)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2025) (see notes)</td>
+      <td>713.11 (2025) (cf. appendix)</td>
+    </tr>
+    <tr>
+      <th>East</th>
+      <td>6977.22 (2024)</td>
+      <td></td>
+      <td>N/A (2025)</td>
+      <td>N/A (2023) (see notes)</td>
+      <td>N‌/A (2025)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2023)</td>
+      <td>7566.04 (2025)</td>
+    </tr>
+    <tr>
+      <th>BrdanE</th>
+      <th>South</th>
+      <td>2842.44 (2024) (see notes)</td>
+      <td></td>
+      <td>4293.28 (2024)</td>
+      <td>N/A ​(2025)</td>
+      <td>N/A (2025)</td>
+      <td></td>
+      <td></td>
+      <td>N/A (2024)</td>
+      <td>2153.69 (2024)</td>
+    </tr>
+    <tr>
+      <th>BrandE</th>
+      <th>West</th>
+      <td>2412.26  (2025)</td>
+      <td></td>
+      <td>N/A (2025)</td>
+      <td>6041.32 (2025)</td>
+      <td>N/A (2023)</td>
+      <td></td>
+      <td></td>
+      <td>1211.89 (2025)</td>
+      <td>N/A (2024)</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,2863.96
+"What is the average value of sales for home and kitchen products purchased in April with four units, sports equipment sold in September also in sets of four, clothing items bought in December in pairs, and toys sold during April when exactly eight were purchased?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Home & Kitchen"" AND month_name = ""April"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Sports"" AND month_name = ""September"" AND quantity_sold = ""4"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Clothing"" AND month_name = ""December"" AND quantity_sold = ""2"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE category = ""Toys"" AND month_name = ""April"" AND quantity_sold = ""8"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>month (category)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">April</th>
+      <th>4 (Home &amp; Kitchen)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N‍/A (source: official reports)</td>
+      <td></td>
+      <td>2619.53 unit</td>
+      <td>36.66 unit</td>
+      <td>N​/A</td>
+      <td>2017.51 unit (source: official reports)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1924.99 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4 (Toys)</th>
+      <td></td>
+      <td>435.71 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N /A</td>
+      <td>258.23 unit</td>
+      <td>N/A</td>
+      <td>1074.2 unit</td>
+      <td>N/A</td>
+      <td>3367.71 unit - additional details are provided in the documentation</td>
+      <td>N‌/A</td>
+      <td>8734.35 unit - additional details are provided in the documentation</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>August</th>
+      <th>8 (Clothing)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>528.94 unit</td>
+      <td>1458.32 unit</td>
+      <td>N⁠/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1828.62 uni t</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <th>12 (Clothing)</th>
+      <td></td>
+      <td>606.17 unit (source: official reports)</td>
+      <td>1365.74 unit</td>
+      <td></td>
+      <td>1888.85 unit (source: official reports)</td>
+      <td>2871.54 unit</td>
+      <td>4663.24 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/ A</td>
+      <td>7889.94 ‌unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">July</th>
+      <th>7 (Clothing)</th>
+      <td></td>
+      <td>180.11 unit - additional details are provided in the documentation</td>
+      <td>174.16 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>167.16 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>6305.55 unit</td>
+      <td>2415.3 unit - additional details are provided in the documentation</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7 (Electronics)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>3156.39 unit</td>
+      <td>N‌/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2095.31 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <th>3 (Home &amp; Kitchen)</th>
+      <td></td>
+      <td>758.11 ⁠unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N‍/A</td>
+      <td>4758.42 u​nit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>5788.83 unit</td>
+      <td>N/ A - additional details are provided in the documentation</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <th>5 (Sports)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>2611.88 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>4241.25 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>3766.05 unit</td>
+      <td>2896.38 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>cOtboer</th>
+      <th>10 (Clothing)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>1546.03 unit</td>
+      <td></td>
+      <td>2112.67 unit - additional details are provided in the documentation</td>
+      <td>2289.93 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>3585.73 unit</td>
+      <td>4293.28 unit</td>
+      <td>N/A</td>
+      <td>9242.11 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <th>9 (Sports)</th>
+      <td></td>
+      <td>706.96 un‌it</td>
+      <td>315.85 unit</td>
+      <td></td>
+      <td>1360.96 unit</td>
+      <td>283.37 un⁠it - additional details are provided in the documentation</td>
+      <td>2596.35 unit</td>
+      <td>5326.22 unit</td>
+      <td>4271.02 unit</td>
+      <td>6546.24 unit</td>
+      <td>7825.24 unit</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1263.37
+What is the average price per item for sales made in February and July of 2024 when the quantities sold were five units in February and ten units in July?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""February"" AND year = ""2024"" AND quantity_sold = ""5"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE month_name = ""July"" AND year = ""2024"" AND quantity_sold = ""10"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>2023</th>
+      <th>2024</th>
+      <th>2025</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>month</th>
+      <th>quarter</th>
+      <th>month_name (quantity_sold)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <th>1</th>
+      <th>January (9)</th>
+      <td>NaN</td>
+      <td>138.56 unit</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">2</th>
+      <th rowspan=""2"" valign=""top"">1</th>
+      <th>February (1)</th>
+      <td>NaN</td>
+      <td>318.27 unit</td>
+      <td>834.81 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>February (5)</th>
+      <td>NaN</td>
+      <td>376.03 unit²</td>
+      <td>401.32 uni t</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>2</th>
+      <th>June (1)</th>
+      <td>NaN</td>
+      <td>N/A</td>
+      <td>477.17 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top""></th>
+      <th rowspan=""2"" valign=""top""></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <th>2</th>
+      <th>June (10)</th>
+      <td>NaN</td>
+      <td>517.6 unit</td>
+      <td>804.19 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>3</th>
+      <th>July (10)</th>
+      <td>NaN</td>
+      <td>568.51 unit</td>
+      <td>201.91 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <th>3</th>
+      <th>August (5)</th>
+      <td>NaN</td>
+      <td>519.05 unit²</td>
+      <td>324.41 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">9</th>
+      <th rowspan=""2"" valign=""top"">3</th>
+      <th>September (4)</th>
+      <td>NaN</td>
+      <td>69.4 unit</td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>S‌epte‌mber (8)</th>
+      <td>NaN</td>
+      <td>N‌/A</td>
+      <td>202.31 unit (see notes)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <th>4</th>
+      <th>November (10)</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,472.27
+What is the combined average cost per unit of kitchen products sold by BrandA in the British Virgin Islands and electronic items offered by BrandE in Ukraine?,"SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Home & Kitchen"" AND store_country = ""British Virgin Islands"" AND brand = ""BrandA"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE category = ""Electronics"" AND store_country = ""Ukraine"" AND brand = ""BrandE"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Books</th>
+      <th>Clothing</th>
+      <th colspan=""3"" halign=""left"">Electronics</th>
+      <th></th>
+      <th>Electr onic⁠s</th>
+      <th>Home &amp; K‍itc hen</th>
+      <th>Home &amp; Kitchen</th>
+      <th>Spo rts</th>
+      <th>Toys</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>BrandC</th>
+      <th>BrandA</th>
+      <th>BrandA</th>
+      <th>BrandB</th>
+      <th>BrandD</th>
+      <th></th>
+      <th>BrandE</th>
+      <th>BrandA</th>
+      <th>BrandD</th>
+      <th>BrandC</th>
+      <th>BrandB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit_price (unit)</th>
+      <td>unit_price (unit)</td>
+      <td>unit_price (unit)**</td>
+      <td>unit_price (unit)**</td>
+      <td>unit_price (unit)</td>
+      <td>unit_price (unit)**</td>
+      <td></td>
+      <td>unit_price (unit)</td>
+      <td>unit_price (unit)</td>
+      <td>unit_price (unit)</td>
+      <td>unit_price (unit)</td>
+      <td>unit_pr​ice​ (⁠unit)</td>
+    </tr>
+    <tr>
+      <th>Barbados (South)</th>
+      <td>n.a.</td>
+      <td>299.69</td>
+      <td>975.91‌</td>
+      <td>n.a.</td>
+      <td>812.04**</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>571.07</td>
+      <td>939.06**</td>
+      <td>85.89 **</td>
+      <td>741.96**</td>
+    </tr>
+    <tr>
+      <th>Benin (West)</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a⁠.</td>
+      <td>n.​a.**</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>768.44</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>British Virgin Islands (Central)</th>
+      <td>321.79</td>
+      <td>n.a.</td>
+      <td>483.75​</td>
+      <td>n.a.</td>
+      <td>87.14‍</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>841.50</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>Ethiopia (North)</th>
+      <td>n.a.</td>
+      <td>NaN</td>
+      <td>715.47</td>
+      <td>n.a.</td>
+      <td>203.64</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>77.24</td>
+      <td>564.7**</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>Montenegro (East)</th>
+      <td>n.a.</td>
+      <td>121.64</td>
+      <td>379.51</td>
+      <td>n.a.</td>
+      <td>151.75</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>962.89</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>New ‍Cale⁠d⁠on⁠ia (North)</th>
+      <td>410.43</td>
+      <td>281.73​</td>
+      <td>340.04</td>
+      <td>483.62</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>672.67</td>
+      <td>134.11</td>
+      <td>631.18</td>
+    </tr>
+    <tr>
+      <th>Nicaragua (West)</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>270.19</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>410.42</td>
+      <td>318.27</td>
+      <td>636.29**</td>
+      <td>n​.a.</td>
+      <td>781.55**</td>
+    </tr>
+    <tr>
+      <th>Sudan (Central)</th>
+      <td>NaN</td>
+      <td>926.74</td>
+      <td>238.20</td>
+      <td>959.97**</td>
+      <td>973.82</td>
+      <td></td>
+      <td>908.25</td>
+      <td>855.78</td>
+      <td>n.a.</td>
+      <td>980.48</td>
+      <td>998.46</td>
+    </tr>
+    <tr>
+      <th>Ukraine (Central)</th>
+      <td>n.a.</td>
+      <td>767.41</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>153.65</td>
+      <td>n.a.</td>
+      <td>791.31‍</td>
+      <td>675.42</td>
+      <td>388.71</td>
+    </tr>
+    <tr>
+      <th>United Kingdom (Central)</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>567.09​</td>
+      <td>803.49</td>
+      <td>883.85</td>
+      <td></td>
+      <td>630.98</td>
+      <td>666.05</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+  </tbody>
+</table>",,497.575
+"What is the mean value of total sales recorded either during October for transactions involving seven items in the eastern locality, or during April where eight units were purchased in the northern area?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""October"" AND quantity_sold = ""7"" AND region = ""East"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE month_name = ""April"" AND quantity_sold = ""8"" AND region = ""North"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Central (5)</th>
+      <th>eCtnral (8)</th>
+      <th>East (7)</th>
+      <th>East (8)</th>
+      <th>Notrh( 10)</th>
+      <th>North (2)</th>
+      <th>N‍orth (4)</th>
+      <th>North (8)</th>
+      <th></th>
+      <th>South (4)</th>
+      <th>South (8)</th>
+    </tr>
+    <tr>
+      <th>month_name</th>
+      <th>quarter</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>April</th>
+      <th>2</th>
+      <th>2025</th>
+      <td>2191.75 unit</td>
+      <td>n.a.</td>
+      <td>6827.67 unit</td>
+      <td>n.a.</td>
+      <td>120.13 unit (cf. appendix)</td>
+      <td>n.‌a. (cf. appendix)</td>
+      <td>882.8 unit</td>
+      <td>6375.92 unit</td>
+      <td></td>
+      <td>991.44 unit</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>August</th>
+      <th>3</th>
+      <th>2024</th>
+      <td>n.a.</td>
+      <td>6357.1 unit</td>
+      <td>365.33 unit</td>
+      <td>537.95 unit (cf. appendix)</td>
+      <td>n.a.</td>
+      <td>831.72 unit</td>
+      <td>3407.77 unit</td>
+      <td>1276.55 uni‍t</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>Ja‍nuary</th>
+      <th>1</th>
+      <th>2025</th>
+      <td>NaN</td>
+      <td>n.a.</td>
+      <td>n.‌a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>379.53 unit</td>
+      <td>1318.95 unit</td>
+      <td>NaN</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>June</th>
+      <th>2</th>
+      <th>2024</th>
+      <td>380.58 unit</td>
+      <td>1700.85 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>5149.06 unit</td>
+      <td>1755.03 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>2842.44 unit</td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <th>1</th>
+      <th>2024</th>
+      <td>1152.29 unit</td>
+      <td>n.a.</td>
+      <td>n. a.</td>
+      <td>n.a.</td>
+      <td>4341.82 unit</td>
+      <td>253.68 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>3568.35 unit</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <th>2</th>
+      <th>2025</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>7388.23 unit\nNoted in the catalog</td>
+      <td>1617.55 unit</td>
+      <td>3027.95 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>3960.32 unit (cf. appendix)</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>November</th>
+      <th>4</th>
+      <th>2024</th>
+      <td>n.a.</td>
+      <td>3755.86 unit</td>
+      <td>n.a.</td>
+      <td>NaN</td>
+      <td>1722.68 unit</td>
+      <td>1495.17 unit</td>
+      <td>670.86 unit</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n‍.a.\nNoted in the catalog</td>
+      <td>2524.74 unit</td>
+    </tr>
+    <tr>
+      <th>cOotber</th>
+      <th>4</th>
+      <th>2023</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>NaN</td>
+      <td>2753.72 unit</td>
+      <td>4686.27 unit\nNoted in the catalog</td>
+      <td>NaN</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>5316.12 unit</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <th>4</th>
+      <th>2024</th>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>889.28 unit</td>
+      <td>6519.5 unit\nNoted in the catalog</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a‌. (cf. appendix)</td>
+      <td>n‍.a.</td>
+      <td></td>
+      <td>419.52 unit</td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <th>3</th>
+      <th>2024</th>
+      <td>n.a.</td>
+      <td>2816.61 unit</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n⁠.a.</td>
+      <td>2911.21 unit</td>
+      <td>705.27 unit</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+    </tr>
+  </tbody>
+</table>",,3632.6
+"What is the average price paid by buyers from Texas in 2016 for the fifth product, combined with the average amount paid by California customers in 2018 for the fourth product and Texas buyers in 2018 for the third product?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND model_year = ""2016"" AND customer_state = ""TX"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2018"" AND customer_state = ""CA"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2018"" AND customer_state = ""TX"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>2016</th>
+      <th>2017</th>
+      <th>2018</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td></td>
+      <td>599.99 (CA) ⁠unit (see notes)</td>
+      <td>n.a. (CA) unit</td>
+      <td>n.a. (TXu) nit</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td></td>
+      <td>1799.99 (CA) unit</td>
+      <td>n.a. (NY) unit</td>
+      <td>2499.99 (NY) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>1549.0 (CA) unit²</td>
+      <td>n.a. (NY) unit</td>
+      <td>2999.99 (TX) unit²</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>n.a. (CA) unit</td>
+      <td>4999.99 (NY) unit</td>
+      <td>319.99 (CA) uint</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td></td>
+      <td>449.0 (TX) unit</td>
+      <td>n.a. (NY) unit</td>
+      <td>n.a. (NY) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1256.326667
+What is the average selling price of all products handled by the third salesperson across completed transactions during the years 2017 and 2018?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND model_year = ""2017"" AND staff_id = ""3"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE order_status = ""4"" AND model_year = ""2018"" AND staff_id = ""3"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>2</th>
+      <th>3</th>
+      <th>6</th>
+      <th></th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz Bikes</th>
+      <th>BaldwinB kies</th>
+      <th></th>
+      <th>Baldwin Bikes</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>CA</th>
+      <th>CA</th>
+      <th>NY</th>
+      <th></th>
+      <th>NY</th>
+      <th>T​X</th>
+      <th>TX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit (cf. appendix)</td>
+      <td>unit</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>2016 (1)</th>
+      <td>\‍</td>
+      <td>269.99</td>
+      <td>\⁠ (cf. appendix)</td>
+      <td></td>
+      <td>\</td>
+      <td>299.99</td>
+      <td>469.99</td>
+    </tr>
+    <tr>
+      <th>2016 (3)</th>
+      <td>\‍ (cf. appendix)</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>449.00</td>
+      <td>429.0 (cf. appendix)</td>
+      <td>999.99</td>
+    </tr>
+    <tr>
+      <th>2016 ‌(4)</th>
+      <td>599.99</td>
+      <td>\</td>
+      <td>599.99</td>
+      <td></td>
+      <td>999.99</td>
+      <td>\</td>
+      <td>269.99 (cf. appendix)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2017 (1)</th>
+      <td>\</td>
+      <td>\‍ (cf. appendix)</td>
+      <td>\</td>
+      <td></td>
+      <td>1499.99</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2017 (3)</th>
+      <td>659.99 (cf. appendix)</td>
+      <td>2599.99</td>
+      <td>4999.99</td>
+      <td></td>
+      <td>\</td>
+      <td>551.99 (cf. appendix)</td>
+      <td>416.99</td>
+    </tr>
+    <tr>
+      <th>2017 (4)</th>
+      <td>329.99</td>
+      <td>3499.99</td>
+      <td>\</td>
+      <td></td>
+      <td>551.99</td>
+      <td>\</td>
+      <td>489.99</td>
+    </tr>
+    <tr>
+      <th>2018 (1)</th>
+      <td>\‌</td>
+      <td>4499.99</td>
+      <td>919.99</td>
+      <td></td>
+      <td>489.99</td>
+      <td>429.99</td>
+      <td>909.99</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2018 (2)</th>
+      <td>\</td>
+      <td>\</td>
+      <td>\​</td>
+      <td></td>
+      <td>\⁠</td>
+      <td>429.99 (cf. appendix)</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>2018 (3)</th>
+      <td>\</td>
+      <td>699.99</td>
+      <td>\</td>
+      <td></td>
+      <td>209.99</td>
+      <td>4499.99</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2018 (4)</th>
+      <td>6499.99</td>
+      <td>1099.99</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>2999.99</td>
+      <td>2799.99‌</td>
+    </tr>
+  </tbody>
+</table>",,2299.99
+"What is the average listing cost of the products that are either cyclocross bicycles managed by employee number 7 with product number 5, or cruisers bicycles managed by employee 9 with product numbers 2 or 4, or cruisers bicycles managed by employee 8 with product number 3?","SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""5"" AND category_name = ""Cyclocross Bicycles"" AND staff_id = ""7"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""2"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""9"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""8"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND category_name = ""Cruisers Bicycles"" AND staff_id = ""9"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th>staff_id</th>
+      <th>store_name</th>
+      <th>store_city</th>
+      <th>customer_state (category_name)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz</th>
+      <th>CA (Cruisers Bicycles)</th>
+      <td>-</td>
+      <td>549.99 unit</td>
+      <td></td>
+      <td>-</td>
+      <td>-</td>
+      <td>346.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>Santa Cruz Bikes</th>
+      <th>Santa Cruz</th>
+      <th>CA (Cyclocross Bicycles)</th>
+      <td>1549.0 unit</td>
+      <td>1680.99 unit</td>
+      <td></td>
+      <td>1549.0 unit</td>
+      <td>1549.0 unit³</td>
+      <td>1549.0 unit³</td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">6</th>
+      <th rowspan=""2"" valign=""top"">Baldwin Bikes</th>
+      <th rowspan=""2"" valign=""top"">Baldwin</th>
+      <th>NY (Comfort Bicycles)</th>
+      <td>549.99 unit</td>
+      <td>499.99 ‌unit</td>
+      <td></td>
+      <td>-</td>
+      <td>499.99 unit</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>NY (Cruisers Bicycles)</th>
+      <td>-</td>
+      <td>-</td>
+      <td></td>
+      <td>599.99 unit</td>
+      <td>-‍³</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>Baldwin Bikes</th>
+      <th>Baldwin</th>
+      <th>NY (Comfort Bicycles)</th>
+      <td>599.99 unit</td>
+      <td>549.99 unit</td>
+      <td></td>
+      <td>-</td>
+      <td>-⁠</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">7</th>
+      <th rowspan=""2"" valign=""top"">Baldwin Bikes</th>
+      <th rowspan=""2"" valign=""top"">Baldwin</th>
+      <th>NY (Cyclocross Bicycles)</th>
+      <td>-‍</td>
+      <td>-</td>
+      <td></td>
+      <td>-⁠</td>
+      <td>-</td>
+      <td>1549.0 unit</td>
+    </tr>
+    <tr>
+      <th>NY  (R‌oad Bikes)</th>
+      <td>-</td>
+      <td>5499.99 unit</td>
+      <td></td>
+      <td>-​</td>
+      <td>-</td>
+      <td>3199.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""2"" valign=""top"">8</th>
+      <th rowspan=""2"" valign=""top"">Rowlett Bikes</th>
+      <th>R​owlett</th>
+      <th>TX (Cruisers Bicycles)</th>
+      <td>549.99 unit³</td>
+      <td>-</td>
+      <td></td>
+      <td>269.99 unit</td>
+      <td>599.99 unit</td>
+      <td>449.0 unit</td>
+    </tr>
+    <tr>
+      <th>Ro‍wlett</th>
+      <th>TX (Road Bikes)</th>
+      <td>1499.99 unit</td>
+      <td>-</td>
+      <td></td>
+      <td>-</td>
+      <td>5499.99 unit³</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <th>Rowlett Bikes</th>
+      <th>Rowlett</th>
+      <th>TX (Cruisers Bicycles)</th>
+      <td>-</td>
+      <td>449.0 unit³</td>
+      <td></td>
+      <td>-</td>
+      <td>429.0 unit</td>
+      <td>269.99 unit</td>
+    </tr>
+  </tbody>
+</table>",,674.2475
+"Considering all children's bicycles sold under the third order status and mountain bikes sold under the fourth order status from the first bike shop, what is the mean discount applied to these orders?","SELECT AVG(discount) AS discount FROM (SELECT discount AS discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""3"" AND category_name = ""Children Bicycles"" UNION ALL SELECT discount AS discount FROM sample_table WHERE store_id = ""1"" AND order_status = ""4"" AND category_name = ""Mountain Bikes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">1</th>
+      <th colspan=""3"" halign=""left"">2</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th colspan=""4"" halign=""left"">3</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Santa Cruz Bikes</th>
+      <th>Santa uzCr ikBes</th>
+      <th colspan=""3"" halign=""left"">Baldwin Bikes</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th colspan=""2"" halign=""left"">Rowlett Bikes</th>
+      <th>Roweltt Bikse</th>
+      <th>Rowlett Bikes</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>CA (Children Bicycles)</th>
+      <th>CA (Cruisers Bicycles)</th>
+      <th>CA (Mountain Bikes)</th>
+      <th>NY (Comfort Bicycles)</th>
+      <th>NY (Electric Bikes)</th>
+      <th>NY (Mountain Bikes)</th>
+      <th></th>
+      <th></th>
+      <th>TX (Comfort Bicycles)</th>
+      <th>TX (Cruisers Bicycles)</th>
+      <th>TX (Cyclocross Bicycles)</th>
+      <th>TX (Mountain Bikes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>discount (unit)</th>
+      <td>discount (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>N‍/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1‍</td>
+      <td>N/A</td>
+      <td>0.2</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>NaN</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.2</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1⁵</td>
+      <td></td>
+      <td></td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1⁵</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>0.1</td>
+      <td>0.1‍⁵</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,0.15
+What is the average asking price in 2016 for the product number three sold by Baldwin Bikes and product number four sold by Santa Cruz Bikes?,"SELECT AVG(list_price) AS list_price FROM (SELECT list_price AS list_price FROM sample_table WHERE item_id = ""3"" AND model_year = ""2016"" AND store_name = ""Baldwin Bikes"" UNION ALL SELECT list_price AS list_price FROM sample_table WHERE item_id = ""4"" AND model_year = ""2016"" AND store_name = ""Santa Cruz Bikes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th></th>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th>store_state</th>
+      <th>store_name (model_year)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CA</th>
+      <th>Santa Cruz Bikes (2016)</th>
+      <td>599.99 unit</td>
+      <td>N/A</td>
+      <td>1549.0 unit</td>
+      <td>599.99 unit</td>
+      <td></td>
+      <td>2899.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>CA</th>
+      <th>Santa Cruz Bikes (2017)</th>
+      <td>329.99 unit</td>
+      <td>N/A</td>
+      <td>489.99 unit</td>
+      <td>647.99 unit (see footnote 1)</td>
+      <td></td>
+      <td>189.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>CA</th>
+      <th>Santa Cruz Bikes (2018)</th>
+      <td>1099.99 u‌nit</td>
+      <td>6499.99 unit</td>
+      <td>849.99 unit</td>
+      <td>319.99 unit</td>
+      <td></td>
+      <td>N/ A</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">NY</th>
+      <th>Baldwin Bikes (2016)</th>
+      <td>599.99 unit</td>
+      <td>N/A</td>
+      <td>599.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>2999.99 unit (see footnote 2)</td>
+    </tr>
+    <tr>
+      <th>Baldwin Bikes (2017)</th>
+      <td>N/A</td>
+      <td>449.99 unit</td>
+      <td>N⁠/A</td>
+      <td>N‌/A</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Ba​ldwin Bikes ​(2018)</th>
+      <td>1549.99 unit</td>
+      <td>N/A</td>
+      <td>899.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th rowspan=""3"" valign=""top"">TX</th>
+      <th>Rolwett Bikes( 2016)</th>
+      <td>1680.99 unit (see footnote 3)</td>
+      <td>2999.99 unit (see footnote 3)</td>
+      <td>269.99 unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Rowlett Bikes (2017)</th>
+      <td>N/A</td>
+      <td>3499.99 unit</td>
+      <td>N/A</td>
+      <td>299.99 unit</td>
+      <td></td>
+      <td>439.99 unit</td>
+    </tr>
+    <tr>
+      <th>Rowlett Bikes (2018)</th>
+      <td>2999.99 unit</td>
+      <td>899.99 unit (see footnote 5)</td>
+      <td>2999.99 unit</td>
+      <td>749.99 unit (see footnote 2)</td>
+      <td></td>
+      <td>89.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,599.99
+What is the average shipment cost for packages dispatched by United Package to destinations in Ireland and Poland?,"SELECT AVG(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Ireland"" AND ShipperName = ""United Package"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipCountry = ""Poland"" AND ShipperName = ""United Package"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Austria</th>
+      <th>Finland</th>
+      <th>Ireland</th>
+      <th>Italy</th>
+      <th>Mexico</th>
+      <th></th>
+      <th>Polan​d</th>
+      <th></th>
+      <th>Spain</th>
+      <th></th>
+      <th>Sweden</th>
+      <th>Switzerland</th>
+      <th>US‍A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <td>un‌it</td>
+      <td>unit</td>
+      <td>unit - noted in the catalog</td>
+      <td>unit - noted in the catalog</td>
+      <td>unit - noted in the catalog</td>
+      <td></td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>un‌it</td>
+    </tr>
+    <tr>
+      <th>Federal Shipping</th>
+      <td>625.5 (Austria)</td>
+      <td>- (Finland)</td>
+      <td>678.4 (Ireland)</td>
+      <td>198.0 (Italy)</td>
+      <td>- (Mexico)</td>
+      <td></td>
+      <td>300.0 (Plaond)</td>
+      <td></td>
+      <td>- (Spain) - noted in the catalog</td>
+      <td></td>
+      <td>- (Sweden) - noted in the catalog</td>
+      <td>- (Switzerland)</td>
+      <td>163.2 (USA)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Speedy Express</th>
+      <td>- (Austria)</td>
+      <td>- (Finland)</td>
+      <td>- (Ireland)⁴</td>
+      <td>- (Italy)</td>
+      <td>199.5 (Mexic‌o)</td>
+      <td></td>
+      <td>- (Poland)</td>
+      <td></td>
+      <td>- (Spain)</td>
+      <td></td>
+      <td>43.2 (Swede)n</td>
+      <td>- (Switzerland)</td>
+      <td>114.0 (USA)⁴</td>
+    </tr>
+    <tr>
+      <th>United Package</th>
+      <td>- (Austria)</td>
+      <td>- (Finland)</td>
+      <td>608.0 (Ireland)</td>
+      <td>408.0 (Italy)</td>
+      <td>- (Mxecio)</td>
+      <td></td>
+      <td>108.0 (Poland)</td>
+      <td></td>
+      <td>529.2 (Spain)</td>
+      <td></td>
+      <td>248.0 (Sweden)⁴</td>
+      <td>- (Switzerland)</td>
+      <td>48.0 (USA)</td>
+    </tr>
+  </tbody>
+</table>",,358.0
+"What is the mean shipment charge for packages delivered by the Speedy Express courier service across Portugal, Denmark, and Poland?","SELECT AVG(ExtendedPrice) AS ExtendedPrice FROM (SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Portugal"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Denmark"" UNION ALL SELECT ExtendedPrice AS ExtendedPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Poland"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Belgium</th>
+      <th></th>
+      <th>Denmark</th>
+      <th>Germany</th>
+      <th>Irelan​d</th>
+      <th>Italy</th>
+      <th>Norway</th>
+      <th>Poland</th>
+      <th>Portugal</th>
+      <th></th>
+      <th>Spai​n</th>
+      <th>Switzerland</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td>unit⁵</td>
+      <td>un​it</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>un‍it</td>
+      <td>uni⁠t</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>NaN</td>
+      <td></td>
+      <td>835.2 (Speedy Express)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>aFrnce</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>n.a. (Speedy Express)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>591.6 (Speedy Express)</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>68.0 (Speedy Express) (est.)</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Switzeraldn</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>according to official data: 45.9 (United Package)</td>
+    </tr>
+    <tr>
+      <th>UK</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>",,498.266667
+What is the average rebate percentage given on orders delivered to Denmark by Speedy Express and to Switzerland by Federal Shipping combined?,"SELECT AVG(Discount) AS Discount FROM (SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Denmark"" AND ShipperName = ""Speedy Express"" UNION ALL SELECT Discount AS Discount FROM sample_table WHERE ShipCountry = ""Switzerland"" AND ShipperName = ""Federal Shipping"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Austria</th>
+      <th>Brazil</th>
+      <th>Denmark</th>
+      <th>F​rance</th>
+      <th>Germany</th>
+      <th>Ireland</th>
+      <th></th>
+      <th>Italy</th>
+      <th>Poland</th>
+      <th></th>
+      <th></th>
+      <th>Switerazlnd</th>
+      <th>USA</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Austria</th>
+      <td>Speedy Express (0.2) unit</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Speedy Express (0.0) unit</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Federal Shipping (0.0) unit\nNote: recorded in [1]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>Speedy Express (0.1) unit</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Portuagl</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Swedne</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>FedrealS hipping (0.0) uitn</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>Federal Shipping (0.2) unit</td>
+    </tr>
+  </tbody>
+</table>",,0.0
+What is the overall average cost per unit for orders delivered by the company called Speedy Express to customers located in Belgium and Brazil combined?,"SELECT AVG(UnitPrice) AS UnitPrice FROM (SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Belgium"" UNION ALL SELECT UnitPrice AS UnitPrice FROM sample_table WHERE ShipperName = ""Speedy Express"" AND ShipCountry = ""Brazil"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Austria</th>
+      <th>Belg⁠ium</th>
+      <th>Brazil</th>
+      <th>Ger‌many</th>
+      <th>Mexico</th>
+      <th></th>
+      <th>Norway</th>
+      <th>Spain</th>
+      <th></th>
+      <th>Sweden</th>
+      <th>Switzerland</th>
+      <th>USA</th>
+    </tr>
+    <tr>
+      <th>ShipperName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Federal S‌hip p ing</th>
+      <td>not available (Austria) unit</td>
+      <td>24.9 (Belgium )unti (see footnote 3)</td>
+      <td>not available (Brazil) unit</td>
+      <td>24.8 (Germany) unit (see footnote 2)</td>
+      <td>not available (Mexico) unit</td>
+      <td></td>
+      <td>not available (Norway) unit</td>
+      <td>not available (Spain) unit</td>
+      <td></td>
+      <td>15.2 (Sweden) unit</td>
+      <td>not available (Switzerland) unit</td>
+      <td>not available (USA) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Speedy Express</th>
+      <td>not available (Austria) unit</td>
+      <td>10.0( Belgium) nuit</td>
+      <td>17.0 (Brazil) unit</td>
+      <td>not available (Germany) unit (see footnote 3)</td>
+      <td>not available (Mexico) unit</td>
+      <td></td>
+      <td>not available (Norway) unit (see footnote 2)</td>
+      <td>not available (Spain) unit</td>
+      <td></td>
+      <td>not available (Sweden) unit</td>
+      <td>12.5 (Switzerland) unit</td>
+      <td>not available (USA) unit (see footnote 2)</td>
+    </tr>
+    <tr>
+      <th>United Package</th>
+      <td>8.0 (Austria) unit</td>
+      <td>64.8 (Belgium) unit</td>
+      <td>not available (Brazil) unit</td>
+      <td>31.2 ‍(Germany)​ unit</td>
+      <td>16.0 (Mexico) unit</td>
+      <td></td>
+      <td>3.6 (Norway) unit (see footnote 5)</td>
+      <td>nto avaiblae l(Spian )uint</td>
+      <td></td>
+      <td>not available (Sweden) unit</td>
+      <td>not available (Switzerland) unit</td>
+      <td>2.0 (USA) unit</td>
+    </tr>
+  </tbody>
+</table>",,13.5
+"What is the mean delivery charge imposed by the carrier called ""United Package"" for shipments sent to the United States, Spain, and Venezuela combined?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""USA"" AND ShipperName = ""United Package"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Spain"" AND ShipperName = ""United Package"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Venezuela"" AND ShipperName = ""United Package"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>Austria (Austria)</th>
+      <th>Finland (Finland)</th>
+      <th></th>
+      <th>Ireland (Ireland)</th>
+      <th>Italy (Italy)</th>
+      <th>Portugal (Portugal)</th>
+      <th>Spain (Spain)</th>
+      <th>Sweden (S wede n)</th>
+      <th>UK (UK)</th>
+      <th>USA (USA)</th>
+      <th></th>
+      <th>Venezuela (Venezuela)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Freight (unit)</th>
+      <td></td>
+      <td>Freight (unit) - noted in the catalog</td>
+      <td>rieFght (unit)</td>
+      <td></td>
+      <td>Freight (unit)</td>
+      <td>Freight (unit)</td>
+      <td>rFeihg t(uint)</td>
+      <td>Freight (unit)</td>
+      <td>Freight (unit)</td>
+      <td>Freight (unit)</td>
+      <td>Freight (unit)</td>
+      <td></td>
+      <td>Frieght( unit)</td>
+    </tr>
+    <tr>
+      <th>FeaderlS hipping</th>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>47.46</td>
+      <td>87.03</td>
+      <td>7.56‍</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>81.91</td>
+    </tr>
+    <tr>
+      <th>Speedy Express</th>
+      <td></td>
+      <td>n.a.</td>
+      <td>136.54</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>n.a.</td>
+      <td>60.26 - noted in the catalog</td>
+      <td>2.94 - noted in the catalog</td>
+      <td>8.98 - noted in the catalog</td>
+      <td>41.95</td>
+      <td>n.a.</td>
+      <td></td>
+      <td>n.a.</td>
+    </tr>
+    <tr>
+      <th>United Package</th>
+      <td></td>
+      <td>101.95 - noted in the catalog</td>
+      <td>3.77⁠</td>
+      <td></td>
+      <td>n.a.</td>
+      <td>17.68</td>
+      <td>15.51</td>
+      <td>107.83</td>
+      <td>92.69</td>
+      <td>41.76</td>
+      <td>4.54</td>
+      <td></td>
+      <td>64.45</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,58.94
+"What is the average shipping charge for all deliveries sent to Austria and Brazil using shipping method number three, along with those sent to Switzerland and Finland using shipping method number one?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Austria"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""1"" AND ShipCountry = ""Switzerland"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""3"" AND ShipCountry = ""Brazil"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipVia = ""1"" AND ShipCountry = ""Finland"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th></th>
+      <th></th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td></td>
+      <td>unit</td>
+      <td>u‌nit (see notes)</td>
+      <td></td>
+      <td></td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>Austria (Austria)</th>
+      <td></td>
+      <td>140.51</td>
+      <td>101.95</td>
+      <td></td>
+      <td></td>
+      <td>146.06 (see notes)</td>
+    </tr>
+    <tr>
+      <th>Belgium (Belgium)</th>
+      <td></td>
+      <td>68.52</td>
+      <td>51.30</td>
+      <td></td>
+      <td></td>
+      <td>147.06</td>
+    </tr>
+    <tr>
+      <th>Brazil (Brazil)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>12.76</td>
+    </tr>
+    <tr>
+      <th>Finland (Finland)</th>
+      <td></td>
+      <td>136.54</td>
+      <td>3.77</td>
+      <td></td>
+      <td></td>
+      <td>25.73</td>
+    </tr>
+    <tr>
+      <th>Ireland (Ireland)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>168.22</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Norway (Norway)</th>
+      <td></td>
+      <td>N/A</td>
+      <td>N/ A</td>
+      <td></td>
+      <td></td>
+      <td>38.64⁴</td>
+    </tr>
+    <tr>
+      <th>Poland ‍(Po​land)</th>
+      <td></td>
+      <td>8.72</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>3.94⁴</td>
+    </tr>
+    <tr>
+      <th>Siwtzeranld (Switzelrand)</th>
+      <td></td>
+      <td>78.85</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>148.33⁠</td>
+    </tr>
+    <tr>
+      <th>UK (UK)</th>
+      <td></td>
+      <td>N​/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>22.77</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>USA (USA)</th>
+      <td></td>
+      <td>4.56</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,93.5525
+"What is the average shipping cost for packages sent to Mexico and Sweden using the second delivery option, combined with shipments to Germany via the first delivery method and deliveries to Italy using the third route?","SELECT AVG(Freight) AS Freight FROM (SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Mexico"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Sweden"" AND ShipVia = ""2"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Germany"" AND ShipVia = ""1"" UNION ALL SELECT Freight AS Freight FROM sample_table WHERE ShipCountry = ""Italy"" AND ShipVia = ""3"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Austria</th>
+      <td></td>
+      <td>(Austria) unit</td>
+      <td>101.95 (Austria) unit</td>
+      <td>146.06 (Austria) unit\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td></td>
+      <td>(F​in‍land) unit</td>
+      <td>3.77 (Finland) unit</td>
+      <td>(Finland) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td></td>
+      <td>11.61 ‌(Ge​rmany) unit</td>
+      <td>25.83 (Ger⁠many)  unit</td>
+      <td>(Germayn) nuit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td></td>
+      <td>26.93 (Italy) unit\nNoted in the catalog</td>
+      <td>17.68 (Italy) unit</td>
+      <td>47.46 (Italy) unit\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td></td>
+      <td>(Mexico) unit</td>
+      <td>63.79 (Mexico) unit</td>
+      <td>3.25 (Mexico) unit\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td></td>
+      <td>13.37 (Norway) unit</td>
+      <td>93.63( Norway) uint</td>
+      <td>(Norway) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td></td>
+      <td>(Poland) unit</td>
+      <td>80.65 (Poland) unit</td>
+      <td>(Poland) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td></td>
+      <td>(Sweden) unit</td>
+      <td>92.69 S(wede)n unit</td>
+      <td>3.67 (Sweden) unit\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>UK</th>
+      <td></td>
+      <td>(UK) unit</td>
+      <td>41.76 (UK) un‍it</td>
+      <td>22.77 (UK) u⁠nit\nNoted in the catalog</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td></td>
+      <td>4.56 (USA) unit</td>
+      <td>(USA) unit</td>
+      <td>(USA) unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,53.8875
+"What is the average replacement cost of movies rated PG that either (a) have a 7-day rental duration and special_features exactly equal to ""Trailers,Deleted Scenes"" or ""Commentaries,Deleted Scenes"", or (b) have a 3-day rental duration and special_features exactly equal to ""Behind the Scenes""?","SELECT AVG(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""7"" AND special_features = ""Trailers,Deleted Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""7"" AND special_features = ""Commentaries,Deleted Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rating = ""PG"" AND rental_duration = ""3"" AND special_features = ""Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>3</th>
+      <th></th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit (see notes)</td>
+      <td>unit</td>
+      <td>unit</td>
+    </tr>
+    <tr>
+      <th>B‍ehin‌d the S‌ce nes (PG)</th>
+      <td>9.99​</td>
+      <td></td>
+      <td>not available</td>
+      <td>17.99</td>
+      <td>12.99‌</td>
+      <td>9.99‌ (see notes)</td>
+    </tr>
+    <tr>
+      <th>Commentaries (NC-17)</th>
+      <td>29.99</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not av⁠aila‌ble</td>
+      <td>16.99‌ (see notes)</td>
+    </tr>
+    <tr>
+      <th>Commentaries (PG)</th>
+      <td>20.99</td>
+      <td></td>
+      <td>not available</td>
+      <td>not av⁠ailab le</td>
+      <td>14.99</td>
+      <td>26.99</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Commentaries,Deleted Scenes (PG)</th>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>12.99</td>
+      <td>22.99</td>
+      <td>27.99</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes (PG)</th>
+      <td>23.99‍</td>
+      <td></td>
+      <td>21.99</td>
+      <td>28.99</td>
+      <td>20.99</td>
+      <td>nto aavilable</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries (NC-17)</th>
+      <td>not available</td>
+      <td></td>
+      <td>23.99</td>
+      <td>25.99</td>
+      <td>not available</td>
+      <td>not ​availab​le</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes (PG-13)</th>
+      <td>19.99</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>29.99</td>
+      <td>13.99</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Deleted Scenes,Behind the Scenes (PG)</th>
+      <td>not available</td>
+      <td></td>
+      <td>20.99</td>
+      <td>10.99</td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes (PG)</th>
+      <td>28.99 (see notes)</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>14.99</td>
+      <td>12.99 (see notes)</td>
+    </tr>
+    <tr>
+      <th>Trailers,Deleted Scenes,Behind the Scenes (PG)</th>
+      <td>20.99</td>
+      <td></td>
+      <td>not available</td>
+      <td>12.99</td>
+      <td>not a​va‌ilable (see notes)</td>
+      <td>13.99 (see notes)</td>
+    </tr>
+  </tbody>
+</table>",,16.99
+"What is the average rental cost for movies that either have a four-day rental period and are rated for adults with both trailers and deleted scenes included, or have a six-day rental with a general audience rating and trailers, or are rented for five days with a parental guidance rating featuring behind-the-scenes content, or last six days with a parental guidance rating that includes deleted scenes along with behind-the-scenes footage?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""4"" AND rating = ""R"" AND special_features = ""Trailers,Deleted Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""6"" AND rating = ""G"" AND special_features = ""Trailers"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""5"" AND rating = ""PG"" AND special_features = ""Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rental_duration = ""6"" AND rating = ""PG"" AND special_features = ""Deleted Scenes,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th></th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+    <tr>
+      <th>special_features</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Behind the Scenes</th>
+      <td></td>
+      <td>R (0.99) unit</td>
+      <td>G (N⁠/A) ​unit (see [1])</td>
+      <td>PG (0.99)u nit (see [1])</td>
+      <td></td>
+      <td>G (N/A) unit</td>
+      <td>NC-17 (N/A) unit</td>
+    </tr>
+    <tr>
+      <th>Commentaries</th>
+      <td></td>
+      <td>G (N/A) unit</td>
+      <td>G (2.99) unit</td>
+      <td>NC-17 (4.99) unit</td>
+      <td></td>
+      <td>G (2.99) unit</td>
+      <td>R (N/A) unit</td>
+    </tr>
+    <tr>
+      <th>Commentairsee,lDeetd cSnees,eBhindt hSe ceens</th>
+      <td></td>
+      <td>PG-13 (4.99) unit</td>
+      <td>R (N/A) unit</td>
+      <td>NC-17 (N/A) unit</td>
+      <td></td>
+      <td>PG​ (0.99) unit</td>
+      <td>G (N/A) unit (see [3])</td>
+    </tr>
+    <tr>
+      <th>Deleted S‍ce​nes</th>
+      <td></td>
+      <td>PG (N/A) unit (see [4])</td>
+      <td>PG-13 (2.99) unit (see [2])</td>
+      <td>NC-17 (2.99) unit</td>
+      <td></td>
+      <td>G (N/A) u ni⁠t</td>
+      <td>G (4.99) unit\nAdditional details are provided in the documentation</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <td></td>
+      <td>R (4.99) unit</td>
+      <td>PG (4.99) unit</td>
+      <td>PG-13 (N/A) unit</td>
+      <td></td>
+      <td>PG (0.99) unit</td>
+      <td>NC-17 (N/A) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers</th>
+      <td></td>
+      <td>G (2.99) unit</td>
+      <td>PG (4.99) unit</td>
+      <td>G (0.99) unit</td>
+      <td></td>
+      <td>G (0.99) unit</td>
+      <td>G (2.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Behind the Scenes</th>
+      <td></td>
+      <td>R (N/A) unit\nAdditional details are provided in the documentation</td>
+      <td>PG (2.99) unit</td>
+      <td>NC-17 N(/)A unit</td>
+      <td></td>
+      <td>PG-13 (0.99) unit</td>
+      <td>G (0.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <td></td>
+      <td>G (0.99) unit</td>
+      <td>N⁠C-17 (4.99) unit</td>
+      <td>NC-17 (N/​A) un⁠it</td>
+      <td></td>
+      <td>R (N/A) unit</td>
+      <td>G (0.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Commentaries,Deleted Scenes,Behind the Scenes</th>
+      <td></td>
+      <td>G (4.99) unit (see [3])</td>
+      <td>R (4.99) unit</td>
+      <td>PG-13 (N/A) unit (see [2])</td>
+      <td></td>
+      <td>NC-17 (N/A) unit (see [5])</td>
+      <td>PG-13 (0.99) unit</td>
+    </tr>
+    <tr>
+      <th>Trailers,Dele‍ted Sc‌e n⁠es</th>
+      <td></td>
+      <td>G (N/A) unit</td>
+      <td>R( 2.99) unit</td>
+      <td>PG (0.99) unit</td>
+      <td></td>
+      <td>PG-13 (4.99) unti</td>
+      <td>NC-17 (2.99) unit</td>
+    </tr>
+  </tbody>
+</table>",,1.49
+"What is the mean rental cost for movies that either are rated G and come with trailers, commentaries, deleted scenes, plus behind-the-scenes footage for a five-day rental, or are rated NC-17 and include trailers with deleted scenes rented for four days, or have an R rating with trailers and deleted scenes also for four days, or are NC-17 movies that feature trailers, deleted scenes, and behind-the-scenes content with a six-day rental period?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""G"" AND special_features = ""Trailers,Commentaries,Deleted Scenes,Behind the Scenes"" AND rental_duration = ""5"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Trailers,Deleted Scenes"" AND rental_duration = ""4"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""R"" AND special_features = ""Trailers,Deleted Scenes"" AND rental_duration = ""4"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND special_features = ""Trailers,Deleted Scenes,Behind the Scenes"" AND rental_duration = ""6"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Commentaries (3)</th>
+      <th></th>
+      <th>Commentaries (4)</th>
+      <th>Deleted Scenes,Behind the Scenes (3)</th>
+      <th></th>
+      <th>Trailers,Behind the Scenes (7)</th>
+      <th>Trailers,Commentaries,Behind the Scenes (4)</th>
+      <th>Trai⁠ler‌s,Commenta‍ries, Dele t‍ed Sce‌nes,Be‌hind th​e Sc enes​ (3)</th>
+      <th>Trailers,Commentaries,Deleted Scenes,Behind the Scenes (5)</th>
+      <th>raTliers,eDtleed Scenes (4)</th>
+      <th>Trailers,Deleted Scenes,Behind the Scenes (4)</th>
+      <th>Trailers,Deleted Scenes,Behind the Scenes (6)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>rental_rate (unit)</th>
+      <td>rental_rate (unit)</td>
+      <td></td>
+      <td>rental_rate (unit)</td>
+      <td>rental_rate (unit)</td>
+      <td></td>
+      <td>rental_rate (unit)</td>
+      <td>rental_rate (unit)</td>
+      <td>re nta⁠l_r‌ate (unit)</td>
+      <td>rental_rate (unit)</td>
+      <td>rent⁠al_rat e (un‌it)</td>
+      <td>rental_rate (unit)</td>
+      <td>rental_rate (unit)</td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <td></td>
+      <td></td>
+      <td>2.99‌</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.99⁠</td>
+      <td></td>
+      <td>2.99 (see notes)</td>
+      <td>4.99⁠</td>
+    </tr>
+    <tr>
+      <th>NC-17</th>
+      <td></td>
+      <td></td>
+      <td>2.99</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td></td>
+      <td>0.99 (see notes)</td>
+    </tr>
+    <tr>
+      <th>PG</th>
+      <td></td>
+      <td></td>
+      <td>2.99</td>
+      <td>2.99 (see notes)</td>
+      <td></td>
+      <td>0.99</td>
+      <td></td>
+      <td>0.99\nAccording to official data</td>
+      <td>2.99</td>
+      <td>2.99</td>
+      <td>0.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PG-13</th>
+      <td>NaN</td>
+      <td></td>
+      <td>0.99²</td>
+      <td></td>
+      <td></td>
+      <td>0.99</td>
+      <td>0.99⁠</td>
+      <td></td>
+      <td>2.99</td>
+      <td>0.99</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>R</th>
+      <td>0.99\nAccording to official data</td>
+      <td></td>
+      <td></td>
+      <td>4.99</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0.99</td>
+      <td>0.99</td>
+      <td>2.99</td>
+      <td>2.99²</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1.49
+"What is the overall average rental cost across all movies that meet any of these exact criteria: NC-17 rated films with a 7-day rental and special_features exactly ""Trailers""; G rated films with a 5-day rental and special_features exactly ""Behind the Scenes""; PG-13 rated films with a 7-day rental and special_features exactly ""Commentaries""; and R rated films with a 5-day rental and special_features exactly ""Commentaries,Deleted Scenes,Behind the Scenes""?","SELECT AVG(rental_rate) AS rental_rate FROM (SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""NC-17"" AND rental_duration = ""7"" AND special_features = ""Trailers"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""G"" AND rental_duration = ""5"" AND special_features = ""Behind the Scenes"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""PG-13"" AND rental_duration = ""7"" AND special_features = ""Commentaries"" UNION ALL SELECT rental_rate AS rental_rate FROM sample_table WHERE rating = ""R"" AND rental_duration = ""5"" AND special_features = ""Commentaries,Deleted Scenes,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>Behind the Scenes (5)</th>
+      <th>Comm‍en‌taries (4)</th>
+      <th>Commentaries (7)</th>
+      <th>Commentaries,Deleted Scenes,Behind the Scenes (5)</th>
+      <th></th>
+      <th>Deleted Scenes,Behind the Scenes (6)</th>
+      <th>Trailers (7)</th>
+      <th>Trai‌ler​s​,Commentar​ies (6)</th>
+      <th>Trailers,Commentaries,Deleted Scenes (3)</th>
+      <th>Trailers,Commentaries,Deleted Scenes,Behind the Scenes (7)</th>
+      <th>Trailers,Deleted Scenes,Behind the Scenes (6)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td>unit</td>
+      <td>according to official data: unit</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>un​it</td>
+      <td>u​nit</td>
+      <td>unit³</td>
+      <td>unit³</td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <td>2.99</td>
+      <td>2.99</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>2.99</td>
+      <td>according to official data: 2.99​</td>
+      <td>2.99</td>
+      <td>N/A</td>
+      <td>2.99</td>
+      <td>4.99</td>
+    </tr>
+    <tr>
+      <th>NC-17</th>
+      <td>0.99</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>4.99</td>
+      <td>2.99⁠</td>
+      <td>NaN</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>PG</th>
+      <td>N/A</td>
+      <td>N/⁠A</td>
+      <td>N/A</td>
+      <td>4.99</td>
+      <td></td>
+      <td>0.99</td>
+      <td>N/A</td>
+      <td>2.99</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PG-13</th>
+      <td>N/A</td>
+      <td>0.99³</td>
+      <td>2.99</td>
+      <td>N/A</td>
+      <td></td>
+      <td>4.99</td>
+      <td>N/A</td>
+      <td>according to official data: 2.99</td>
+      <td>N/A</td>
+      <td>0.99‌</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>R</th>
+      <td>2.99</td>
+      <td>N/A</td>
+      <td>4.99⁠</td>
+      <td>0.99</td>
+      <td></td>
+      <td>N/A</td>
+      <td>2.99</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>4.99</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,2.99
+"What is the average cost to replace movies available under these categories: ones rented for 4 days classified as general audience containing trailers and behind-the-scenes, those rented for 3 days rated parental guidance with commentary tracks, movies rented for 6 days intended for teens and older featuring commentary, and finally films rented for 5 days restricted to adults that include trailers, commentaries, and behind-the-scenes content?","SELECT AVG(replacement_cost) AS replacement_cost FROM (SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""4"" AND rating = ""G"" AND special_features = ""Trailers,Behind the Scenes"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""3"" AND rating = ""PG"" AND special_features = ""Commentaries"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""6"" AND rating = ""PG-13"" AND special_features = ""Commentaries"" UNION ALL SELECT replacement_cost AS replacement_cost FROM sample_table WHERE rental_duration = ""5"" AND rating = ""NC-17"" AND special_features = ""Trailers,Commentaries,Behind the Scenes"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>Commentaries</th>
+      <th>oCmmnetareisB,ehind th eScenes</th>
+      <th>Deleted Scenes,Behind the Scenes</th>
+      <th>Trailers</th>
+      <th>Trailers,Behind the Scenes</th>
+      <th>Tr​ailer‍s,Commenta‌rie‍s</th>
+      <th></th>
+      <th>Trailers,Commentaries,Behind the Scenes</th>
+      <th></th>
+      <th>T‍r​aile‌rs,Co⁠mmen‌taries,Deleted Sc en es</th>
+      <th>Trailres,Commetnairse,Deleted Scene,sBehindh te Sceens</th>
+      <th>Trailers,Deleted Scenes</th>
+    </tr>
+    <tr>
+      <th>rental_duration (rating)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3 (‍NC-17)</th>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>28.99 unit</td>
+      <td>\</td>
+      <td>\‌</td>
+      <td>18.99 unit</td>
+      <td></td>
+      <td>21.99 unit</td>
+      <td></td>
+      <td>NaN</td>
+      <td>26.99 unit</td>
+      <td>23.99 unit (latest update)</td>
+    </tr>
+    <tr>
+      <th>3 (PG)</th>
+      <td></td>
+      <td>20.99 unit</td>
+      <td>NaN</td>
+      <td>23.99 unit</td>
+      <td>14.99 ​unit (latest update)</td>
+      <td>\</td>
+      <td>24.99 unit</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td>\​ (latest update)</td>
+      <td>28.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4 (G)</th>
+      <td></td>
+      <td>17.99 unit</td>
+      <td>20.99 unit</td>
+      <td>NaN</td>
+      <td>\</td>
+      <td>12.99 unit</td>
+      <td>15.99 unit</td>
+      <td></td>
+      <td>20.99 unit</td>
+      <td></td>
+      <td>11.99 unit</td>
+      <td>\</td>
+      <td>25.99 unit</td>
+    </tr>
+    <tr>
+      <th>5 (G)</th>
+      <td></td>
+      <td>\</td>
+      <td>26.99 uni t</td>
+      <td>26.99 unit</td>
+      <td>10.99 unit</td>
+      <td>15.99 unit (latest update)</td>
+      <td>\‍</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>18.99 unit</td>
+      <td>\</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>5 (NC-17)</th>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>20.99 unit (latest update)</td>
+      <td>10.99 unit</td>
+      <td>25.99 unit</td>
+      <td></td>
+      <td>10.99 unit</td>
+      <td></td>
+      <td>\</td>
+      <td>22.99 unit</td>
+      <td>\</td>
+    </tr>
+    <tr>
+      <th>5 (R)</th>
+      <td></td>
+      <td>15.99 unit (latest update)</td>
+      <td>NaN</td>
+      <td>\</td>
+      <td>23.99 unit</td>
+      <td>12.99 ‍unit</td>
+      <td>\</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+      <td>\</td>
+      <td>\</td>
+      <td>25.99 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6 (NC-17)</th>
+      <td></td>
+      <td>\</td>
+      <td>\‌ (latest update)</td>
+      <td>17.99 unit (latest update)</td>
+      <td>\‍</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>27.99 unit</td>
+      <td></td>
+      <td>11.99 unit</td>
+      <td>25.99 unit (latest update)</td>
+      <td>24.99 unit (latest update)</td>
+    </tr>
+    <tr>
+      <th>6 (PG-13)</th>
+      <td></td>
+      <td>21.99 u​nit</td>
+      <td>26.99 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td>13.99 unit</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>19.99 unit</td>
+      <td>\</td>
+      <td>28.99 unit</td>
+    </tr>
+    <tr>
+      <th>7 (PG)</th>
+      <td></td>
+      <td>26.99 unit (latest update)</td>
+      <td>27.99 unit</td>
+      <td>20.99 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>\</td>
+      <td></td>
+      <td>17.99 unit</td>
+      <td>25.99 unit</td>
+      <td>12.99 unit</td>
+    </tr>
+    <tr>
+      <th>7 (PG-13)</th>
+      <td></td>
+      <td>\‌</td>
+      <td>\</td>
+      <td>24.99 unit</td>
+      <td>\</td>
+      <td>\</td>
+      <td>\</td>
+      <td></td>
+      <td>13.99 unit</td>
+      <td></td>
+      <td>27.99 unit</td>
+      <td>29.99 u​nit</td>
+      <td>\</td>
+    </tr>
+  </tbody>
+</table>",,16.74
+"What is the average value of transactions involving BrandB products sold in the central United States to residents of California, combined with BrandC products bought in the western United States by people living in Georgia?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandB"" AND region = ""Central"" AND customer_state = ""California"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE brand = ""BrandC"" AND region = ""West"" AND customer_state = ""Georgia"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>Central</th>
+      <th>East</th>
+      <th>North</th>
+      <th>South</th>
+      <th>West</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td></td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td>unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>BrandA</th>
+      <td></td>
+      <td>1588.35 (Georgia)</td>
+      <td>4785.9 (Georgia) - according to official data</td>
+      <td>not available (North Dakota)</td>
+      <td>not available (Pennsylvania) (source: official reports)</td>
+      <td>not ‍a‌vai​la​ble (Virginia)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>B‍randB</th>
+      <td></td>
+      <td>436.02 (California)</td>
+      <td>1859.75 (Minnesota)</td>
+      <td>4285.21 (Georgia)</td>
+      <td>not available (Utah)</td>
+      <td>2657.66 (Washington)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>BrandC</th>
+      <td></td>
+      <td>94.04 (Washington)</td>
+      <td>not available (Texas) - according to official data</td>
+      <td>not available (West Virginia)</td>
+      <td>not available (Arizona)</td>
+      <td>5789.27 (Georgia) (source: official reports)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>BrandD</th>
+      <td></td>
+      <td>438.28 (Georgia) (source: official reports)</td>
+      <td>1749.01 (Hwaiai)</td>
+      <td>not available (Connecticut)</td>
+      <td>not available (Colorado) (source: official reports)</td>
+      <td>not available (Hawaii)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>BrandE</th>
+      <td></td>
+      <td>1471.74 (Indiana)</td>
+      <td>2307.21 (Wyom⁠ing)</td>
+      <td>2270.07 (oCnnetcictu)</td>
+      <td>n‌o⁠t availabl‍e (West‍ V‍irginia)</td>
+      <td>not availabe l(alCifornai)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,3112.645
+"What is the mean total value of sales for items sold in quantities of five under the sports category in 2025, combined with sales of three units from the home and kitchen section in 2023, and also for six units sold within the home and kitchen category in 2025?","SELECT AVG(total_amount) AS total_amount FROM (SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2025"" AND category = ""Sports"" AND quantity_sold = ""5"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2023"" AND category = ""Home & Kitchen"" AND quantity_sold = ""3"" UNION ALL SELECT total_amount AS total_amount FROM sample_table WHERE year = ""2025"" AND category = ""Home & Kitchen"" AND quantity_sold = ""6"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>1</th>
+      <th></th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>total_amount (unit)</th>
+      <td>total_amount (unit)</td>
+      <td></td>
+      <td>total_amount (unit)</td>
+      <td>total_amount (unit)</td>
+      <td>total_amount (unit)</td>
+      <td>total_amount (unit)</td>
+      <td>total_amount (unit) (see notes)</td>
+      <td>total_amount (nui)t</td>
+      <td>total_amount (unit)</td>
+      <td>total_amount (unit)</td>
+      <td>total_amount (unit) (see notes)</td>
+    </tr>
+    <tr>
+      <th>2023 (Books)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>1106.84 (see notes)</td>
+      <td>2684.63</td>
+      <td>N/A</td>
+      <td>1408.05</td>
+      <td>5408.98</td>
+      <td>5334.88‌ (see notes)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2023 (Clothing)</th>
+      <td>606.17</td>
+      <td></td>
+      <td>1365.74‌</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N​/A</td>
+      <td>2547.6‍</td>
+      <td>6664.32</td>
+      <td>581.99</td>
+      <td>5949.11 (see notes)</td>
+      <td>7889.94</td>
+    </tr>
+    <tr>
+      <th>2023 (​Ho‌me &amp; Kitchen )</th>
+      <td>664.49  (see notes)</td>
+      <td></td>
+      <td>1133.08</td>
+      <td>1706.92 (see notes)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>3526.68‍</td>
+      <td>N/A</td>
+      <td>2912.27 (see notes)</td>
+      <td>2364.46</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2024 (Books)</th>
+      <td>450.63</td>
+      <td></td>
+      <td>1244.58‌</td>
+      <td>2113.68</td>
+      <td>N/A</td>
+      <td>2482.11</td>
+      <td>3665.66</td>
+      <td>2581.49</td>
+      <td>N/A</td>
+      <td>264.01</td>
+      <td>7619.40</td>
+    </tr>
+    <tr>
+      <th>2024 (Electronics)</th>
+      <td>651.44‌</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1404.19</td>
+      <td>N/A</td>
+      <td>1615.52</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>8875.81</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2024 (Toys)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>1965.41 (see notes)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>380.58</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>7434.62</td>
+      <td>N/A</td>
+      <td>5324.55</td>
+    </tr>
+    <tr>
+      <th>2025 (Clothing)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>299.98</td>
+      <td>N/ A</td>
+      <td>N/A</td>
+      <td>1615.46 (see notes)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>4570.48​</td>
+      <td>6046.32</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2025 (Electronics)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>1789.97‌</td>
+      <td>380.11‌</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1588.35 (see notes)</td>
+      <td>N/A</td>
+      <td>6041.32</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2025 (Home &amp; Kitchen)</th>
+      <td>974.01​</td>
+      <td></td>
+      <td>793.11​</td>
+      <td>N/A</td>
+      <td>966.36 (see notes)</td>
+      <td>N/A</td>
+      <td>4424.76</td>
+      <td>N/A</td>
+      <td>3282.46</td>
+      <td>438.28</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>2025 (Sports)</th>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N⁠/A</td>
+      <td>4406.88</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2570.20</td>
+      <td>7992.45</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,3512.853333
+"What is the average price per unit in 2023 for products that were sold in quantities of either six in the Sports section, four or six in the Toys section, or ten copies in the Books collection?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""6"" AND year = ""2023"" AND category = ""Sports"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""4"" AND year = ""2023"" AND category = ""Toys"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""6"" AND year = ""2023"" AND category = ""Toys"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE quantity_sold = ""10"" AND year = ""2023"" AND category = ""Books"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">1</th>
+      <th colspan=""2"" halign=""left"">2</th>
+      <th>3</th>
+      <th></th>
+      <th>3</th>
+      <th colspan=""3"" halign=""left"">4</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2024</th>
+      <th>2025</th>
+      <th>2024</th>
+      <th>2025</th>
+      <th>2024</th>
+      <th></th>
+      <th>2025</th>
+      <th>2023</th>
+      <th>2024</th>
+      <th>2025</th>
+    </tr>
+    <tr>
+      <th>category (quantity_sold)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Books (10)</th>
+      <td>432.99 unit (see [1])</td>
+      <td>N/A</td>
+      <td>828.74 unit</td>
+      <td>142.2 unit</td>
+      <td>765.39 unit</td>
+      <td></td>
+      <td>20.66 unit</td>
+      <td>873.57 unit</td>
+      <td>667.98 u nit</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Books (5)</th>
+      <td>281.77 unit</td>
+      <td>102.91 unit</td>
+      <td>755.26 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>287.47 unit</td>
+      <td>678.72 unit</td>
+      <td>N​/A</td>
+    </tr>
+    <tr>
+      <th>Electronics (4)</th>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>751.75 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>462.96 unit (see [3])</td>
+      <td>874.82 unit (see [5])</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Home &amp; ⁠Kitch‌en‌ (5)</th>
+      <td>449.26 unit (see [1])</td>
+      <td>251.85 unit (see [2])</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>802.6 unit</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <th>Sports (10)</th>
+      <td>N/A</td>
+      <td>282.86 u​nit (see [2])</td>
+      <td>N/A</td>
+      <td>804.19 unit</td>
+      <td>753.15 unit</td>
+      <td></td>
+      <td>201.91 unit</td>
+      <td>804.09 u‌nit</td>
+      <td>N/A</td>
+      <td>800.09 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sp‌orts (6)</th>
+      <td>844.1 unit</td>
+      <td>952.65 unit</td>
+      <td>N/A</td>
+      <td>460.83 ‌unit</td>
+      <td>N/A</td>
+      <td></td>
+      <td>N/A</td>
+      <td>823.57 unit</td>
+      <td>445.11 unit</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Toys (1)</th>
+      <td>251.58 unit</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>377.57 unit (see [1])</td>
+      <td>797.8 unit (source: official reports)</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>633.66 unit</td>
+    </tr>
+    <tr>
+      <th>Toys (4)</th>
+      <td>N/A</td>
+      <td>472.59 unit</td>
+      <td>N/A</td>
+      <td>16.21 unit</td>
+      <td>545.11 unit</td>
+      <td></td>
+      <td>N/ A</td>
+      <td>645.33 uni‍t</td>
+      <td>N/A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>oTy s(6)</th>
+      <td>718.71 unit</td>
+      <td>N​/A</td>
+      <td>N/A</td>
+      <td>928.13 unit</td>
+      <td>442.78 unit</td>
+      <td></td>
+      <td>424.74 unit</td>
+      <td>321.81 unit (see [5])</td>
+      <td>264.8 unit</td>
+      <td>746.73 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Toys (8)</th>
+      <td>N/A</td>
+      <td>950.95 unit</td>
+      <td>N/A</td>
+      <td>781.13 unit</td>
+      <td>507.28 unit (see [1])</td>
+      <td></td>
+      <td>N/A</td>
+      <td>N‌/A</td>
+      <td>470.68 unit</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>",,666.07
+"What is the average price per unit sold, considering the transactions from 2025 in the Central area where either five or nine items were bought, along with sales from 2024 in the Northern area with one item sold, and from 2024 in the Western area where five units were purchased?","SELECT AVG(unit_price) AS unit_price FROM (SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""Central"" AND quantity_sold = ""9"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""North"" AND quantity_sold = ""1"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2024"" AND region = ""West"" AND quantity_sold = ""5"" UNION ALL SELECT unit_price AS unit_price FROM sample_table WHERE year = ""2025"" AND region = ""Central"" AND quantity_sold = ""5"");",average,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th>2023</th>
+      <th></th>
+      <th>2024</th>
+      <th>2025</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit_price (quantity_sold) (unit)</th>
+      <td>unti_preic( quantity_sodl) (uni)t</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Central</th>
+      <td>439.56 (5)</td>
+      <td></td>
+      <td>n.a. (5)</td>
+      <td>303.22 (5)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>East</th>
+      <td>782.76  (3)</td>
+      <td></td>
+      <td>n.a. (5)</td>
+      <td>n.a (.5) (est.)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>North</th>
+      <td>n.a. (4)</td>
+      <td></td>
+      <td>758.19 (1)</td>
+      <td>.na. (4)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>South</th>
+      <td>565.34 (2)</td>
+      <td></td>
+      <td>370.79 (7) (est.)</td>
+      <td>259.48 (4)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>West</th>
+      <td>665.74 (9) (est.)</td>
+      <td></td>
+      <td>403.95 (5)</td>
+      <td>665.54 (4)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,377.4025

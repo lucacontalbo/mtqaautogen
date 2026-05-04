@@ -1,0 +1,2293 @@
+Question,SQL Query,Method,Table,Constraints,Label
+What is the latitude coordinate of the site located in Virginia that accepts only P.O. Box mailing addresses?,"SELECT latitude FROM sample_table WHERE state = ""VA"" AND type = ""P.O. Box Only"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>division</th>
+      <th colspan=""6"" halign=""left"">South Atlantic</th>
+      <th colspan=""3"" halign=""left"">West South Central</th>
+      <th>WestS touhe Cnrtal</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>GA</th>
+      <th>MD</th>
+      <th>NC</th>
+      <th>SC</th>
+      <th>VA</th>
+      <th>WV</th>
+      <th>AR</th>
+      <th>LA</th>
+      <th>OK</th>
+      <th>TX</th>
+    </tr>
+    <tr>
+      <th>region (type)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>South (Branch)</th>
+      <td>33.390811 unit</td>
+      <td>38.805865 unit</td>
+      <td>35.146635 unit</td>
+      <td>33.976492 unit</td>
+      <td>38.886153 unit</td>
+      <td>38.35933 unit</td>
+      <td>34.280294 unit</td>
+      <td>32.515307 un⁠it</td>
+      <td>34.681146 unit</td>
+      <td>33.02861 unit</td>
+    </tr>
+    <tr>
+      <th>South (Non Postal Community Name)</th>
+      <td>33.968149 unit</td>
+      <td>38.960659 unit</td>
+      <td>36.463544 unit</td>
+      <td>33.889613 unit</td>
+      <td>39.030554 unit</td>
+      <td>37.459645 uni⁠t</td>
+      <td>34.997197 unit</td>
+      <td>29.213034 u‍nit</td>
+      <td>34.485147 unit</td>
+      <td>32.968169 unit</td>
+    </tr>
+    <tr>
+      <th>South (P.O. Box Only)</th>
+      <td>33.9378 unit</td>
+      <td>38.6247 unit</td>
+      <td>36.1822 uni‍t</td>
+      <td>34.1245 unit</td>
+      <td>38.7657 unit</td>
+      <td>37.526504 unit</td>
+      <td>34.2286 unit</td>
+      <td>29.9839 unit</td>
+      <td>35.2325 unit</td>
+      <td>36.505537 unit</td>
+    </tr>
+    <tr>
+      <th>South (P os t⁠ Office)</th>
+      <td>33.771036 unit</td>
+      <td>38.613661 unit</td>
+      <td>35.944562 unit</td>
+      <td>33.773887 unit</td>
+      <td>38.960832 uni‍t</td>
+      <td>37.300884 unit</td>
+      <td>34.196858 un‍it</td>
+      <td>29.9843 unit</td>
+      <td>34.98039 unit</td>
+      <td>32.959787 unit</td>
+    </tr>
+    <tr>
+      <th>South (Unique Post Office)</th>
+      <td>33.9525 un‍it</td>
+      <td>39.0314 unit</td>
+      <td>36.2404 unit</td>
+      <td>33.498438 unit</td>
+      <td>39.3355 unit</td>
+      <td>38.3494 unit</td>
+      <td>34.127184 unit</td>
+      <td>29.9839 unit</td>
+      <td>35.2227 unit</td>
+      <td>30.219702 unit</td>
+    </tr>
+  </tbody>
+</table>",,38.7657
+What type of schooling program is provided in the elementary school area within county number 54?,"SELECT EducationalOptionType FROM sample_table WHERE CountyCode = ""54"" AND DistrictType = ""Elementary School District"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""3"" halign=""left"">County Office of Education (COE)</th>
+      <th>Elementary School District</th>
+      <th colspan=""2"" halign=""left"">High School District</th>
+      <th colspan=""3"" halign=""left"">Unified School District</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>Unified School District</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>County Community School</th>
+      <th>Juvenile Court School</th>
+      <th>Special Education School</th>
+      <th>Tradit⁠io‌nal</th>
+      <th>Continuation School</th>
+      <th>Traditional</th>
+      <th>Alternative School of Choice</th>
+      <th>Com m‌unity Day Sch​ool</th>
+      <th>Continuation School</th>
+      <th></th>
+      <th></th>
+      <th>Traditional</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>CountyCode</th>
+      <th>CountyName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>30</th>
+      <th>Orange</th>
+      <td>2750.0 unit</td>
+      <td>513.0 unit</td>
+      <td>438.0 unit</td>
+      <td>587.0 unit</td>
+      <td>717.0 unit</td>
+      <td>2737.0 unit</td>
+      <td>158.0 unit</td>
+      <td>19.0 unit</td>
+      <td>79.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>1895.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <th>Riverside</th>
+      <td>168.0 unit</td>
+      <td>144.0 unit</td>
+      <td>646.0 unit</td>
+      <td>770.0 unit</td>
+      <td>328.0 unit</td>
+      <td>969.0 unit</td>
+      <td>118.0 unit</td>
+      <td>24.0 unit</td>
+      <td>158.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>774.0 un it</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <th>Sacramento</th>
+      <td>92.0 unit</td>
+      <td>154.0 unit</td>
+      <td>79.0 unit</td>
+      <td>374.0 unit</td>
+      <td>134.0 unit</td>
+      <td>1186.0 unit</td>
+      <td>263.0 unit</td>
+      <td>53.0 unit</td>
+      <td>179.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>987.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <th>San Bernardino</th>
+      <td>537.0 unit</td>
+      <td>94.0 u​nit</td>
+      <td>1532.0 un it</td>
+      <td>648.0 unit</td>
+      <td>456.0 unit</td>
+      <td>2648.0 unit</td>
+      <td>150.0 unit</td>
+      <td>6.0 unit</td>
+      <td>208.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>349.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <th>San Diego</th>
+      <td>289.0 unit</td>
+      <td>83.0 unit</td>
+      <td>28.0 unit</td>
+      <td>156.0 unit</td>
+      <td>335.0 unit</td>
+      <td>906.0 unit</td>
+      <td>15.0 unit</td>
+      <td>3.0 unit</td>
+      <td>2.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>86.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <th>Santa Clara</th>
+      <td>181.0 unit</td>
+      <td>154.0 unit</td>
+      <td>1297.0 unit</td>
+      <td>413.0 unit</td>
+      <td>268.0 unit</td>
+      <td>1665.0 unit</td>
+      <td>40.0 unit</td>
+      <td>35.0 unit</td>
+      <td>259.0 u‌nit</td>
+      <td></td>
+      <td></td>
+      <td>853.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <th>Shasta</th>
+      <td>56.0 unit</td>
+      <td>27.0 unit</td>
+      <td>45.0 unit</td>
+      <td>355.0 unit</td>
+      <td>55.0 unit</td>
+      <td>882.0 unit</td>
+      <td>58.0 unit</td>
+      <td>9.0 unit</td>
+      <td>15.0 un​it</td>
+      <td></td>
+      <td></td>
+      <td>206.0 u nit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <th>S​onoma</th>
+      <td>147.0 unit</td>
+      <td>91.0 unit</td>
+      <td>457.0 unit</td>
+      <td>119.0 unit</td>
+      <td>70.0 unit</td>
+      <td>1317.0 unit</td>
+      <td>313.0 unit</td>
+      <td>10.0 unit</td>
+      <td>24.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>407.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <th>Stanislaus</th>
+      <td>276.0 unit</td>
+      <td>100.0 unit</td>
+      <td>237.0 unit</td>
+      <td>400.0 unit</td>
+      <td>573.0 unit</td>
+      <td>2370.0 unit</td>
+      <td>157.0 unit</td>
+      <td>12.0 unit</td>
+      <td>203.0 u nit</td>
+      <td></td>
+      <td></td>
+      <td>427.0 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <th>Tulare</th>
+      <td>96.0 unit</td>
+      <td>150.0 unit</td>
+      <td>974.0 unit</td>
+      <td>84.0 unit</td>
+      <td>76.0 ​unit</td>
+      <td>1494.0 unit</td>
+      <td>39.0 unit</td>
+      <td>14.0 unit</td>
+      <td>5.0 unit</td>
+      <td></td>
+      <td></td>
+      <td>312.0 unit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,Traditional
+What is the rarity level of creature cards that have a silver-colored border?,"SELECT rarity FROM sample_table WHERE borderColor = ""silver"" AND types = ""Creature"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1993</th>
+      <th></th>
+      <th colspan=""19"" halign=""left"">1993</th>
+      <th colspan=""30"" halign=""left"">1997</th>
+      <th colspan=""30"" halign=""left"">2003</th>
+      <th colspan=""18"" halign=""left"">2015</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">2015</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>rare</th>
+      <th></th>
+      <th colspan=""7"" halign=""left"">rare</th>
+      <th colspan=""12"" halign=""left"">uncommon</th>
+      <th colspan=""12"" halign=""left"">rare</th>
+      <th colspan=""18"" halign=""left"">uncommon</th>
+      <th colspan=""12"" halign=""left"">rare</th>
+      <th colspan=""18"" halign=""left"">uncommon</th>
+      <th colspan=""8"" halign=""left"">rare</th>
+      <th colspan=""10"" halign=""left"">uncommon</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">uncommon</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Enchantment (black)</th>
+      <th></th>
+      <th>Enchantment (white)</th>
+      <th>Instant (black)</th>
+      <th>Instant (white)</th>
+      <th>Land (black)</th>
+      <th>Land (white)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (white)</th>
+      <th>Artifact (black)</th>
+      <th>Artifact (white)</th>
+      <th>Artifact,Creature (black)</th>
+      <th>Artifact,Creature (white)</th>
+      <th>Creature (black)</th>
+      <th>Creature (white)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (white)</th>
+      <th>Instant (black)</th>
+      <th>Instant (white)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (white)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (gold)</th>
+      <th>Enchantment (white)</th>
+      <th>Instant (black)</th>
+      <th>Instant (gold)</th>
+      <th>Instant (white)</th>
+      <th>Land (black)</th>
+      <th>Land (gold)</th>
+      <th>Land (white)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (gold)</th>
+      <th>Sorcery (white)</th>
+      <th>Artifact (black)</th>
+      <th>Artifact (gold)</th>
+      <th>Artifact (white)</th>
+      <th>Artifact,Creature (black)</th>
+      <th>Artifact,Creature (gold)</th>
+      <th>Artifact,Creature (white)</th>
+      <th>Creature (black)</th>
+      <th>Creature (gold)</th>
+      <th>Creature (white)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (gold)</th>
+      <th>Enchantment (white)</th>
+      <th>Instant (black)</th>
+      <th>Instant (gold)</th>
+      <th>Instant (white)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (gold)</th>
+      <th>Sorcery (white)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (gold)</th>
+      <th>Enchantment (white)</th>
+      <th>Instant (black)</th>
+      <th>Instant (gold)</th>
+      <th>Instant (white)</th>
+      <th>Land (black)</th>
+      <th>Land (gold)</th>
+      <th>Land (white)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (gold)</th>
+      <th>Sorcery (white)</th>
+      <th>Artifact (black)</th>
+      <th>Artifact (gold)</th>
+      <th>Artifact (white)</th>
+      <th>Artifact,Creature (black)</th>
+      <th>Artifact,Creature (gold)</th>
+      <th>Artifact,Creature (white)</th>
+      <th>Creature (black)</th>
+      <th>Creature (gold)</th>
+      <th>Creature (white)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (gold)</th>
+      <th>Enchantment (white)</th>
+      <th>Instant (black)</th>
+      <th>Instant (gold)</th>
+      <th>Instant (white)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (gold)</th>
+      <th>Sorcery (white)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (silver)</th>
+      <th>Instant (black)</th>
+      <th>Instant (silver)</th>
+      <th>Land (black)</th>
+      <th>Land (silver)</th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (silver)</th>
+      <th>Artifact (black)</th>
+      <th>Artifact (silver)</th>
+      <th>Artifact,Creature (black)</th>
+      <th>Artifact,Creature (silver)</th>
+      <th>Creature (black)</th>
+      <th>Creature (silver)</th>
+      <th>Enchantment (black)</th>
+      <th>Enchantment (silver)</th>
+      <th>Instant (black)</th>
+      <th>Instant (silver)</th>
+      <th></th>
+      <th>Sorcery (black)</th>
+      <th>Sorcery (silver)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit (source: official reports)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>convertedManaCost (unit)</th>
+      <td>1.0</td>
+      <td></td>
+      <td>1.0 (source: official reports)</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>0.0 (source: official reports)</td>
+      <td>0.0</td>
+      <td>4.0 (source: official reports)</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>3.0 (source: official reports)</td>
+      <td>1.0</td>
+      <td>4.0 (source: official reports)</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>1.0 (source: official reports)</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>1.0 (source: official reports)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.0 (source: official reports)</td>
+      <td>5.0 (source: official reports)</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>3.0 (source: official reports)</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>1.0 (source: official reports)</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>6.0 (source: official reports)</td>
+      <td>2.0 (source: official reports)</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>0.0 (source: official reports)</td>
+      <td>4.0 (source: official reports)</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>4.0 (source: official reports)</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>13.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>7.0 (source: official reports)</td>
+      <td>2.0</td>
+      <td>4.0 (source: official reports)</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>1.0 (source: official reports)</td>
+      <td></td>
+      <td>5.0</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>",,uncommon
+What is the recorded data year for institutions that are privately owned and operate for profit within Maryland?,"SELECT vsa_year FROM sample_table WHERE control = ""Private for-profit"" AND state = ""Maryland"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>control</th>
+      <th>Private for-profit</th>
+      <th colspan=""5"" halign=""left"">Private not-for-profit</th>
+      <th colspan=""4"" halign=""left"">Public</th>
+    </tr>
+    <tr>
+      <th>basic</th>
+      <th>Associates--Private For-profit</th>
+      <th>Baccalaureate Colleges--Arts &amp; Sciences</th>
+      <th>Baccalaureate Colleges--Diverse Fields</th>
+      <th>Masters Colleges and Universities--larger programs</th>
+      <th>Masters Colleges and Universities--medium programs</th>
+      <th>Theological seminaries- Bible colleges- and other faith-related institutions</th>
+      <th>Associates--Public Rural-serving Medium</th>
+      <th>Associates--Public Suburban-serving Multicampus</th>
+      <th>Associates--Public Suburban-serving Single Campus</th>
+      <th>Associates--Public Urban-serving Multicampus</th>
+    </tr>
+    <tr>
+      <th>vsa_year</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+      <th>NULL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Maryland</th>
+      <td>-76.572434 (latest update)</td>
+      <td>-</td>
+      <td>-77.001310</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-76.751799</td>
+      <td>-78.729766</td>
+      <td>-77.009328</td>
+      <td>-76.512223\nAccording to official data</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Massachusetts</th>
+      <td>-</td>
+      <td>-72.518493</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-71.918961</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-72.630978\nAccording to official data</td>
+      <td>-71.120263</td>
+    </tr>
+    <tr>
+      <th>Michigan</th>
+      <td>-83.117242 (latest update)</td>
+      <td>-84.746088</td>
+      <td>-84.059947</td>
+      <td>-83.138369</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-83.445069</td>
+      <td>-</td>
+      <td>-83.470274</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Missouri</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-92.685276</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-93.285385</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-90.640147</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>New York</th>
+      <td>-</td>
+      <td>-73.906243</td>
+      <td>-73.9458 (latest update)</td>
+      <td>-77.788625</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-73.655014</td>
+      <td>-</td>
+      <td>-76.543191\nAccording to official data</td>
+      <td>-74.011826</td>
+    </tr>
+    <tr>
+      <th>North Carolina</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-80.832227</td>
+      <td>-79.997012</td>
+      <td>-76.219606 (latest update)</td>
+      <td>-</td>
+      <td>-80.181739</td>
+      <td>-80.829796</td>
+    </tr>
+    <tr>
+      <th>Pennsylvania</th>
+      <td>-</td>
+      <td>-75.060930</td>
+      <td>-</td>
+      <td>-75.376549</td>
+      <td>-75.938163</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-74.965841</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>-</td>
+      <td>-96.598772</td>
+      <td>-</td>
+      <td>-99.70954 (latest update)</td>
+      <td>-99.733815 (latest update)</td>
+      <td>-97.155661</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-97.792652</td>
+      <td>-97.681720</td>
+    </tr>
+    <tr>
+      <th>Virginia</th>
+      <td>-77.171071</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-79.151518</td>
+      <td>-78.939038</td>
+      <td>-</td>
+      <td>-76.418615</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Washington</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-122.344331</td>
+      <td>-120.395287</td>
+      <td>-</td>
+      <td>-122.512160</td>
+      <td>-122.495524</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>",,NULL
+What is the state approval ranking assigned to public colleges that have a graduation rank of seven?,"SELECT state_appr_rank FROM sample_table WHERE control = ""Public"" AND grad_rate_rank = ""7"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>control</th>
+      <th colspan=""3"" halign=""left"">Private for-profit</th>
+      <th colspan=""3"" halign=""left"">Private not-for-profit</th>
+      <th>Public</th>
+    </tr>
+    <tr>
+      <th>grad_rate_rank</th>
+      <th colspan=""3"" halign=""left"">NULL</th>
+      <th colspan=""3"" halign=""left"">NULL</th>
+      <th>7</th>
+    </tr>
+    <tr>
+      <th>state_appr_value</th>
+      <th>140.43</th>
+      <th>659.39</th>
+      <th>NULL</th>
+      <th>140.43</th>
+      <th>659.39</th>
+      <th>NULL</th>
+      <th>140.43</th>
+    </tr>
+    <tr>
+      <th>state_appr_rank</th>
+      <th>45</th>
+      <th>1</th>
+      <th>NULL</th>
+      <th>45</th>
+      <th>1</th>
+      <th>NULL</th>
+      <th>45</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>awards_per_natl_value</th>
+      <td>32.8 unit</td>
+      <td>24.6 unit</td>
+      <td>32.8 unit</td>
+      <td>25.9 unit</td>
+      <td>22.5 unit</td>
+      <td>25.9 unit</td>
+      <td>21.5 unit</td>
+    </tr>
+  </tbody>
+</table>",,45.0
+"In a setting where the community has a low level of economic hardship and educators are teaching children aged between approximately 8 and 11 years old, who typically uses the title given to female instructors specializing in hands-on educational programs?","SELECT teacher_prefix FROM sample_table WHERE poverty_level = ""low poverty"" AND grade_level = ""Grades 3-5"" AND primary_focus_area = ""Applied Learning"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>teacher_prefix</th>
+      <th colspan=""3"" halign=""left"">Mrs.</th>
+      <th colspan=""7"" halign=""left"">Ms.</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>primary_focus_area</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+      <th>Applied Learning</th>
+      <th>Health &amp; Sports</th>
+      <th>H‍istory &amp; C​iv‌ics</th>
+      <th>Literacy &amp; Language</th>
+      <th>Math &amp; Science</th>
+      <th>Music &amp; The Arts</th>
+      <th>Special Needs</th>
+    </tr>
+    <tr>
+      <th>poverty_level</th>
+      <th>grade_level</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan=""2"" valign=""top"">highest poverty</th>
+      <th>Grades 9-12</th>
+      <td>33.98181 unit</td>
+      <td>41.05923 unit</td>
+      <td>39.31113 unit</td>
+      <td>41.86386 unit</td>
+      <td></td>
+      <td>34.22101 unit</td>
+      <td></td>
+      <td>35.8227 unit</td>
+      <td></td>
+      <td>33.7426 unit</td>
+    </tr>
+    <tr>
+      <th>Grades PreK-2</th>
+      <td></td>
+      <td>42.88912 unit</td>
+      <td></td>
+      <td></td>
+      <td>40.63196 unit</td>
+      <td>36.74079 ​unit⁴</td>
+      <td>42.42205 unit</td>
+      <td>34.04394 unit</td>
+      <td></td>
+      <td>33.98654 unit</td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">low poverty</th>
+      <th>Grades 3-5</th>
+      <td>33.71786 unit</td>
+      <td></td>
+      <td></td>
+      <td>47.69931 unit⁴</td>
+      <td>47.69931 unit</td>
+      <td>34.22145 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Grades 6-8</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>39.80123 unit</td>
+      <td>37.3513 unit</td>
+      <td></td>
+      <td>38.00286 unit</td>
+      <td>29.77641 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Grades 9-12</th>
+      <td>34.05438 unit</td>
+      <td></td>
+      <td></td>
+      <td>41.87758 unit⁴</td>
+      <td>41.76428 unit</td>
+      <td></td>
+      <td></td>
+      <td>43.13178 unit⁴</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Grades PreK-2</th>
+      <td>37.38055 unit</td>
+      <td>34.14836 unit</td>
+      <td></td>
+      <td></td>
+      <td>38.90836 unit⁴</td>
+      <td>37.06683 unit</td>
+      <td>33.86865 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">moderate poverty</th>
+      <th>Grades 3-5</th>
+      <td>39.76487 unit⁴</td>
+      <td>35.32346 unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>32.63691 unit</td>
+      <td>40.66432 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>rGdaes 6-8</th>
+      <td>40.15146 unit</td>
+      <td>41.69577 uni t</td>
+      <td></td>
+      <td>27.85799 unit</td>
+      <td>33.55191 unit⁴</td>
+      <td></td>
+      <td></td>
+      <td>34.08767 unit</td>
+      <td>45.67556 unit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Grades 9-12</th>
+      <td></td>
+      <td>41.61737 unit</td>
+      <td>39.25475 unit⁴</td>
+      <td>43.28286 unit⁴</td>
+      <td></td>
+      <td></td>
+      <td>39.91184 unit</td>
+      <td>33.92422 unit</td>
+      <td>40.53481 unit</td>
+      <td>37.38031 unit</td>
+    </tr>
+    <tr>
+      <th>Grades PreK-2</th>
+      <td>34.0277 unit</td>
+      <td></td>
+      <td></td>
+      <td>40.6181 unit</td>
+      <td></td>
+      <td>36.31781 unit</td>
+      <td>36.13605 unit</td>
+      <td>37.36271 unit⁴</td>
+      <td></td>
+      <td>26.24154 unit</td>
+    </tr>
+  </tbody>
+</table>",,Ms.
+"What is the height in meters of the person born in the Bronx, United States?","SELECT height_meters FROM sample_table WHERE birth_country = ""USA"" AND birth_place = ""Bronx"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""6"" halign=""left"">USA</th>
+      <th colspan=""3"" halign=""left""></th>
+      <th colspan=""4"" halign=""left"">USA</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Bronx</th>
+      <th colspan=""5"" halign=""left"">New York City</th>
+      <th colspan=""3"" halign=""left""></th>
+      <th colspan=""4"" halign=""left"">Philadelphia</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>nm1631092</th>
+      <th>nm0791570</th>
+      <th>nm0914209</th>
+      <th>nm0937725</th>
+      <th>nm0958597</th>
+      <th>nm1905016</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>nm0066616</th>
+      <th>nm0187460</th>
+      <th>nm0231283</th>
+      <th>nm0567370</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>height_meters (birth_region)</th>
+      <td>1.85 (New York) unit</td>
+      <td>n.a. (New York) unit</td>
+      <td>1.83 (New York) unit</td>
+      <td>n.a. (New York) unit</td>
+      <td>n.a. (New York) unit</td>
+      <td>1.83 (New York) unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>n.a. (Pennsylvania) unit</td>
+      <td>n.a. (Pennsylvania) unit</td>
+      <td>n.a. (Pennsylvania) unit</td>
+      <td>n.a. (Pennsylvania) unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1.85
+"What faith does the political figure named Steve with the identifier ""Steve Chabot"" practice?","SELECT religion_bio FROM sample_table WHERE first_name = ""Steve"" AND ballotpedia_id = ""Steve Chabot"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Dick Durbin</th>
+      <th></th>
+      <th>Nita Lowey</th>
+      <th>Patrick J. Tiberi</th>
+      <th></th>
+      <th>Patrick Leahy</th>
+      <th>Peter J. Visclosky</th>
+      <th>Sander Levin</th>
+      <th></th>
+      <th>Steve Chabot</th>
+      <th>Tim Ryan (Ohio)</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Roman Catholic</th>
+      <th></th>
+      <th>Jewish</th>
+      <th>Catholic</th>
+      <th></th>
+      <th>Roman Catholic</th>
+      <th>Roman Catholic</th>
+      <th>Jewish</th>
+      <th></th>
+      <th>Catholic</th>
+      <th>Roman Catholic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>J.</th>
+      <th></th>
+      <th>M.</th>
+      <th>J.</th>
+      <th></th>
+      <th>J.</th>
+      <th>J.</th>
+      <th>M.</th>
+      <th></th>
+      <th>J.</th>
+      <th>J.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>first_name (cspan_id) (unit)</th>
+      <td>first_name (cspan_id) (unit)</td>
+      <td></td>
+      <td>first_name (cspan_id) (unit)</td>
+      <td>first_name (cspan_id) (unit)</td>
+      <td></td>
+      <td>first_name (cspan_id) (unit)</td>
+      <td>first_name (cspan_id) (unit)</td>
+      <td>first_name (cspan_id) (unit)</td>
+      <td></td>
+      <td>first_name (cspan_id) (unit)</td>
+      <td>first_name (cspan_id) (unit)</td>
+    </tr>
+    <tr>
+      <th>first_name (cspan_id) (unit)</th>
+      <td>Richard (6741.0)</td>
+      <td></td>
+      <td>Nita (6110.0)</td>
+      <td>Patrick (88155.0)</td>
+      <td></td>
+      <td>Patrick (N/A)</td>
+      <td>Peter (N/A)</td>
+      <td>Sander (N/A)</td>
+      <td></td>
+      <td>Steve (36705.0)</td>
+      <td>Tim (N/A)</td>
+    </tr>
+  </tbody>
+</table>",,Catholic
+"What classification was recorded for the individual with the identifier C001035 as of the end date January 3, 2009?","SELECT class FROM sample_table WHERE end = ""2009-01-03"" AND bioguide = ""C001035"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""6"" halign=""left"">2003-01-03</th>
+      <th>2009-01-03</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">2009-01-03</th>
+      <th colspan=""4"" halign=""left"">2015-01-03</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">2015-01-03</th>
+      <th>2021-01-03</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">2021-01-03</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""6"" halign=""left"">1997-01-07</th>
+      <th>2003-01-07</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">2003-01-07</th>
+      <th colspan=""4"" halign=""left"">2009-01-06</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">2009-01-06</th>
+      <th>2015-01-06</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">2015-01-06</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""6"" halign=""left"">Republican</th>
+      <th>Republican</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">Republican</th>
+      <th colspan=""4"" halign=""left"">Republican</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Republican</th>
+      <th>Republican</th>
+      <th></th>
+      <th colspan=""5"" halign=""left"">Republican</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>C000567</th>
+      <th>C001035</th>
+      <th>E000285</th>
+      <th>I000024</th>
+      <th>R000307</th>
+      <th>S001141</th>
+      <th>C000567</th>
+      <th></th>
+      <th>C001035</th>
+      <th>E000285</th>
+      <th>I000024</th>
+      <th>R000307</th>
+      <th>S001141</th>
+      <th>C000567</th>
+      <th>C001035</th>
+      <th>E000285</th>
+      <th>I000024</th>
+      <th></th>
+      <th>R000307</th>
+      <th>S001141</th>
+      <th>C000567</th>
+      <th></th>
+      <th>C001035</th>
+      <th>E000285</th>
+      <th>I000024</th>
+      <th>R000307</th>
+      <th>S001141</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>class (unit)</th>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>2.000</td>
+      <td>not available</td>
+      <td></td>
+      <td>2.000</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>2.000</td>
+      <td></td>
+      <td>not available</td>
+      <td>not available</td>
+      <td>not available</td>
+      <td></td>
+      <td>not available</td>
+      <td>2.000</td>
+      <td>2.000</td>
+      <td>not available</td>
+      <td>not available</td>
+    </tr>
+  </tbody>
+</table>",,2.0
+What is the unique representative number for the member known as Jim Moran who follows the Roman Catholic faith?,"SELECT house_history_id FROM sample_table WHERE religion_bio = ""Roman Catholic"" AND ballotpedia_id = ""Jim Moran"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Baptist</th>
+      <th>Presbyterian</th>
+      <th></th>
+      <th>Roman Catholic</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>III</th>
+      <th>Jr.</th>
+      <th>II</th>
+      <th></th>
+      <th>Jr.</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>133.0</th>
+      <th>733.0</th>
+      <th>424.0</th>
+      <th></th>
+      <th>380.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>house_history_id (ballotpedia_id) (unit)</th>
+      <td>house_history_id (ballotpedia_id) (unit)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>house_history_id (ballotpedia_id) (unit)</th>
+      <td>8789.0 (Spencer Bachus)</td>
+      <td>10422.0 (Paul C. Broun)</td>
+      <td>(Nick Rahall)</td>
+      <td></td>
+      <td>18503.0 (Jim Moran)</td>
+    </tr>
+  </tbody>
+</table>",,18503.0
+What is the telephone contact for the senator from New Hampshire who is a member of the Republican party?,"SELECT phone FROM sample_table WHERE party = ""Republican"" AND state = ""NH"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">Democrat</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th colspan=""2"" halign=""left"">Republican</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>AK</th>
+      <th>NC</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>NE</th>
+      <th>NH</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>202-224-3004</th>
+      <th>202-224-6342</th>
+      <th colspan=""2"" halign=""left""></th>
+      <th>202-224-4224</th>
+      <th>202-224-3324</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>http://www.begich.senate.gov/public/?a=rss.feed</th>
+      <th>http://www.hagan.senate.gov/rss</th>
+      <th></th>
+      <th></th>
+      <th>http://www.johanns.senate.gov/public/?a=RSS.Feed</th>
+      <th>http://ayotte.senate.gov/rss/?p=news</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>class</th>
+      <td></td>
+      <td>2.0 unit</td>
+      <td>2.0 unit (latest update)</td>
+      <td></td>
+      <td></td>
+      <td>2.0 unit</td>
+      <td>3.0 unit</td>
+    </tr>
+  </tbody>
+</table>",,202-224-3324
+What is the Facebook username for the user whose Instagram handle is senjeffmerkley and who goes by SenatorJeffMerkley on YouTube?,"SELECT facebook FROM sample_table WHERE instagram = ""senjeffmerkley"" AND youtube = ""SenatorJeffMerkley"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>instagram</th>
+      <th>senjeffmerkley</th>
+      <th>senjerrymoran</th>
+      <th>senjohnhoeven</th>
+      <th>senjohnmccain</th>
+      <th>senlamaralexander</th>
+      <th>senmikelee</th>
+      <th>senrobportman</th>
+      <th>stevedaines</th>
+      <th>stevescalise</th>
+      <th>susanwbrooks</th>
+    </tr>
+    <tr>
+      <th>youtube</th>
+      <th>SenatorJeffMerkley</th>
+      <th>senatorjerrymoran</th>
+      <th>se​nato‍rjohnho⁠evennd</th>
+      <th>SenatorJohnMcCain</th>
+      <th>lamaralexander</th>
+      <th>senatormikelee</th>
+      <th>SenRobPortman</th>
+      <th>SteveDainesMT</th>
+      <th>RepSteveScalise</th>
+      <th>SusanWBrooks</th>
+    </tr>
+    <tr>
+      <th>facebook</th>
+      <th>jeffmerkley</th>
+      <th>jerrymoran</th>
+      <th>SenatorJohnHoeven</th>
+      <th>johnmcacin</th>
+      <th>senatorlamaralexander</th>
+      <th>senatormikelee</th>
+      <th>senrobportman</th>
+      <th>SteveDainesMT</th>
+      <th>RepS‍teveS⁠calise</th>
+      <th>congresswomansusanwbrooks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>youtube_id (facebook_id)</th>
+      <td>UCRoXttCJhMnLVCxCaa6VnNQ (74374931545.0) unit</td>
+      <td>UC1oRxeUPam6-53wPBZ3N02A (171578807105.0) unit</td>
+      <td>UC1kQIC2Q_Fq9_NRqdb6eHiw (194483057244478.0) unit</td>
+      <td>UC9IJssXDUaKHzwx6gW4wEoA (6425923706.0) unit</td>
+      <td>UChDLBjn5RWqgMmCSswT05IQ (89927603836.0) unit</td>
+      <td>UpCVxl_sj_sLAt0fkplcXl4A (178081365556898.0u )itn</td>
+      <td>UCwunkd8Zs-yAWKQwnwBp7ew (45243961073.0) unit</td>
+      <td>UC-ny-W5mEUGytiyMdXbQ20Q (185361254941832.0) unit</td>
+      <td>UCmYveHBVXVBRxl7GiCL-gjw (50936151681.0) unit</td>
+      <td>UCMd7LzaBcbQ06aKHoj9KkSQ (517697358277175.0) unit</td>
+    </tr>
+  </tbody>
+</table>",,jeffmerkley
+What is the length measurement of the lake called Lago di Como that is connected to the Adda river?,"SELECT Length FROM sample_table WHERE Lake = ""Lago di Como"" AND Name = ""Adda"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Lake</th>
+      <th>Chickamauga Lake</th>
+      <th>Lago Maggiore</th>
+      <th>Lago di Como</th>
+      <th>Lake Burley Griffin</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Tennessee</th>
+      <th>Ticino</th>
+      <th>Adda</th>
+      <th>Murrumbidgee River</th>
+    </tr>
+    <tr>
+      <th>Mountains</th>
+      <th>Appalachian Mountains</th>
+      <th>Alps</th>
+      <th>Alps</th>
+      <th>Snowy Mountains</th>
+    </tr>
+    <tr>
+      <th>River</th>
+      <th>Ohio River</th>
+      <th>Po</th>
+      <th>Po</th>
+      <th>Murray River</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Legnth (uint)</th>
+      <td>1049.0</td>
+      <td>248.0</td>
+      <td>313.0‍</td>
+      <td>1579.0</td>
+    </tr>
+  </tbody>
+</table>",,313.0
+"Among the athletes born in North Carolina who filled the role of forward-guard, what racial background is recorded?","SELECT race FROM sample_table WHERE birthState = ""NC"" AND pos = ""F-G"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr style=""text-align: right;"">
+      <th></th>
+      <th></th>
+      <th>birthState</th>
+      <th>MO</th>
+      <th>MS</th>
+      <th>NC</th>
+      <th>NJ</th>
+      <th>NY</th>
+      <th>OH</th>
+      <th>PA</th>
+      <th>TN</th>
+      <th>TX</th>
+      <th>VA</th>
+    </tr>
+    <tr>
+      <th>hsCountry</th>
+      <th>race</th>
+      <th>pos</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>unit</th>
+      <th>unit</th>
+      <th>unit</th>
+      <td>unit</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""10"" valign=""top"">USA</th>
+      <th rowspan=""6"" valign=""top"">B</th>
+      <th>C-F</th>
+      <td></td>
+      <td>82.0</td>
+      <td></td>
+      <td>81.0</td>
+      <td></td>
+      <td>80.0</td>
+      <td>85.0</td>
+      <td></td>
+      <td>83.0</td>
+      <td>82.0‌</td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td></td>
+      <td>83.0</td>
+      <td>81.0</td>
+      <td></td>
+      <td>83.0</td>
+      <td>77.0</td>
+      <td>81.0</td>
+      <td></td>
+      <td></td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>F-C</th>
+      <td></td>
+      <td>82.0</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>83.0⁠</td>
+      <td></td>
+      <td>79.0‍</td>
+      <td></td>
+      <td>81.0</td>
+    </tr>
+    <tr>
+      <th>F-G</th>
+      <td></td>
+      <td>79.0⁠</td>
+      <td>77.0​</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>79.0</td>
+      <td></td>
+      <td>78.0​</td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <td>78.0</td>
+      <td></td>
+      <td></td>
+      <td>72.0‍</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>76.0⁠</td>
+      <td>73.0</td>
+    </tr>
+    <tr>
+      <th>G-F</th>
+      <td>77.0‍</td>
+      <td>77.0</td>
+      <td>77.0</td>
+      <td>77.0</td>
+      <td></td>
+      <td>78.0</td>
+      <td>74.0</td>
+      <td></td>
+      <td>79.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th rowspan=""4"" valign=""top"">W</th>
+      <th>C</th>
+      <td>80.0</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>84.0</td>
+      <td>84.0</td>
+      <td></td>
+      <td>87.0</td>
+      <td></td>
+      <td>83.0‌</td>
+    </tr>
+    <tr>
+      <th>C-F</th>
+      <td>80.0</td>
+      <td>74.0</td>
+      <td></td>
+      <td>83.0</td>
+      <td>81.0</td>
+      <td></td>
+      <td></td>
+      <td>75.0</td>
+      <td>80.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>F</th>
+      <td>79.0</td>
+      <td></td>
+      <td>79.0</td>
+      <td>79.0</td>
+      <td></td>
+      <td>81.0</td>
+      <td>75.0</td>
+      <td></td>
+      <td>75.0</td>
+      <td>82.0‍</td>
+    </tr>
+    <tr>
+      <th>G</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>75.0</td>
+      <td>76.0</td>
+      <td></td>
+      <td></td>
+      <td>74.0‍</td>
+    </tr>
+  </tbody>
+</table>",,B
+What kind of population center is found in Tennessee for locations that lie in the central US timezone?,"SELECT Type FROM sample_table WHERE StateCode = ""TN"" AND TimeZone = ""America/Chicago"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>StateCode</th>
+      <th colspan=""2"" halign=""left"">FL</th>
+      <th colspan=""2"" halign=""left"">NC</th>
+      <th colspan=""2"" halign=""left"">NY</th>
+      <th colspan=""2"" halign=""left"">TN</th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th colspan=""2"" halign=""left"">Florida</th>
+      <th colspan=""2"" halign=""left"">North Carolina</th>
+      <th colspan=""2"" halign=""left"">New York</th>
+      <th colspan=""2"" halign=""left"">Tennessee</th>
+    </tr>
+    <tr>
+      <th>TimeZone</th>
+      <th colspan=""2"" halign=""left"">America/New York</th>
+      <th colspan=""2"" halign=""left"">America/New York</th>
+      <th colspan=""2"" halign=""left"">America/New York</th>
+      <th>America/Chicago</th>
+      <th>America/New York</th>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <th>City</th>
+      <th>Town</th>
+      <th>City</th>
+      <th>Town</th>
+      <th>City</th>
+      <th>Town</th>
+      <th>City</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Latitude</th>
+      <td>N/A</td>
+      <td>26.06287 unit</td>
+      <td>N/A</td>
+      <td>35.78088 unit</td>
+      <td>42.88645 unit (see notes)</td>
+      <td>43.01164 unit</td>
+      <td>36.52977 unit</td>
+      <td>35.04563 unit</td>
+    </tr>
+  </tbody>
+</table>",,City
+"Which area does someone originate from if they were born in St. Thomas, considering it is within the United States?","SELECT birth_region FROM sample_table WHERE birth_country = ""USA"" AND birth_place = ""St. Thomas"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>birth_place</th>
+      <th colspan=""2"" halign=""left"">Brooklyn</th>
+      <th colspan=""5"" halign=""left"">New York City</th>
+      <th>St. Thomas</th>
+    </tr>
+    <tr>
+      <th>birth_region</th>
+      <th colspan=""2"" halign=""left"">New York</th>
+      <th colspan=""5"" halign=""left"">New York</th>
+      <th>U.S. Virgin Islands</th>
+    </tr>
+    <tr>
+      <th>birthdate</th>
+      <th>1940-05-09</th>
+      <th>1941-06-12</th>
+      <th>1957-03-15</th>
+      <th>1959-07-03</th>
+      <th>1961-01-13</th>
+      <th>1964-04-25</th>
+      <th>1982-11-12</th>
+      <th>1955-02-21</th>
+    </tr>
+    <tr>
+      <th>birth_country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>USA</th>
+      <td>1.85 unit</td>
+      <td>1.69 unit</td>
+      <td>1.78 unit</td>
+      <td>2.03 unit\nAdditional details are provided in the documentation</td>
+      <td>1.6 unit</td>
+      <td>1.82 unit</td>
+      <td>1.73 unit</td>
+      <td>1.85 unit</td>
+    </tr>
+  </tbody>
+</table>",,U.S. Virgin Islands
+What is the measured amount of the anticardiolipin IgG antibody in the case where the patient exhibits the S-pattern antibodies and has been diagnosed with Sjögren's syndrome involving the central nervous system?,"SELECT aCLIgG FROM sample_table WHERE ANAPattern = ""S"" AND Diagnosis = ""SjS(CNS)"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>ANAPattern</th>
+      <th colspan=""2"" halign=""left"">P</th>
+      <th colspan=""6"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th>Symptoms</th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+      <th colspan=""4"" halign=""left"">CNS lupus</th>
+      <th colspan=""2"" halign=""left"">brain infarction</th>
+    </tr>
+    <tr>
+      <th>Diagnosis</th>
+      <th>SLE, brain infarction</th>
+      <th>bar ininfrcatino</th>
+      <th>SLE, CNS lupus, dead</th>
+      <th>SLE, SjS</th>
+      <th>SLE, SjS, Cliogloblin+</th>
+      <th>SjS(CNS)</th>
+      <th>SjS, brain infarction</th>
+      <th>brain infarction</th>
+    </tr>
+    <tr>
+      <th>ExaminationDate</th>
+      <th>1997-07-07</th>
+      <th>1998-02-20</th>
+      <th>1995-05-29</th>
+      <th>1992-06-08</th>
+      <th>1993-07-29</th>
+      <th>1995-06-26</th>
+      <th>1997-07-07</th>
+      <th>1997-04-28</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>aCLIgG</th>
+      <td>0.9 unit</td>
+      <td>0.0 unit</td>
+      <td>0.0 unit</td>
+      <td>10.9 unit</td>
+      <td>1.5 unit</td>
+      <td>1.1 unit</td>
+      <td>1.1 unit</td>
+      <td>0.0 unit</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,1.1
+"What is the ModifiedDate for entries that began on September 15, 2010 and count quantities in single units?","SELECT ModifiedDate FROM sample_table WHERE StartDate = ""2010-09-15 00:00:00.0"" AND UnitMeasureCode = ""EA"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">EA</th>
+      <th>IN</th>
+      <th></th>
+      <th colspan=""2"" halign=""left"">OZ</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-09-06 00:00:00.0</th>
+      <th>2010-11-14 00:00:00.0</th>
+      <th>2010-11-14 00:00:00.0</th>
+      <th></th>
+      <th>2010-08-08 00:00:00.0</th>
+      <th>2010-09-06 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2010-08-08 00:00:00.0 (2010-06-09 00:00:00.0)</th>
+      <th>2010-09-06 00:00:00.0 (2010-07-08 00:00:00.0)</th>
+      <th>2010-11-14 00:00:00.0 (2010-09-15 00:00:00.0)</th>
+      <th>2010-11-14 00:00:00.0 (2010-09-15 00:00:00.0)</th>
+      <th></th>
+      <th>2010-08-08 00:00:00.0 (2010-06-09 00:00:00.0)</th>
+      <th>2010-09-06 00:00:00.0 (2010-07-08 00:00:00.0)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>unit</th>
+      <td>unit\nAccording to official data</td>
+      <td>unit</td>
+      <td>un it</td>
+      <td>unit</td>
+      <td></td>
+      <td>unit</td>
+      <td>unit\nAccording to official data</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>PerAssemblyQty (unit)</th>
+      <td>2.0‍</td>
+      <td>N/A</td>
+      <td>3.0</td>
+      <td>41.0</td>
+      <td></td>
+      <td>9.0‍</td>
+      <td>9.0</td>
+    </tr>
+  </tbody>
+</table>",,2010-11-14 00:00:00.0
+"What is the style code of the items from the M product category that had their initial sale date on May 31, 2011?","SELECT Style FROM sample_table WHERE ProductLine = ""M"" AND SellStartDate = ""2011-05-31 00:00:00.0"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">M</th>
+      <th colspan=""11"" halign=""left"">R</th>
+      <th></th>
+      <th>R</th>
+      <th colspan=""2"" halign=""left"">S</th>
+      <th></th>
+      <th colspan=""7"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan=""3"" halign=""left"">42</th>
+      <th colspan=""3"" halign=""left"">44</th>
+      <th colspan=""3"" halign=""left"">48</th>
+      <th colspan=""3"" halign=""left"">52</th>
+      <th colspan=""2"" halign=""left"">58</th>
+      <th></th>
+      <th>58</th>
+      <th colspan=""2"" halign=""left"">L</th>
+      <th></th>
+      <th>L</th>
+      <th colspan=""3"" halign=""left"">M</th>
+      <th colspan=""3"" halign=""left"">S</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th></th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th></th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+      <th>2011-05-31 00:00:00.0</th>
+      <th>2012-05-30 00:00:00.0</th>
+      <th>2013-05-30 00:00:00.0</th>
+    </tr>
+    <tr>
+      <th>Style</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>U</th>
+      <td>747.2 unit</td>
+      <td>1265.6 unit</td>
+      <td>144.6 unit</td>
+      <td>868.6 unit</td>
+      <td>1518.8 unit</td>
+      <td>343.6 unit</td>
+      <td>868.6 unit</td>
+      <td>1518.8 unit</td>
+      <td>343.6 unit</td>
+      <td>868.6 unit</td>
+      <td>1518.8 unit</td>
+      <td>343.6 unit</td>
+      <td>204.6 unit</td>
+      <td>1554.9 unit</td>
+      <td></td>
+      <td>343.6 unit</td>
+      <td>38.5 unit</td>
+      <td>9.2 unit</td>
+      <td></td>
+      <td>23.7 unit</td>
+      <td>38.5 unit</td>
+      <td>9.2 unit</td>
+      <td>23.7 unit</td>
+      <td>38.5 unit</td>
+      <td>9.2 unit</td>
+      <td>23.7 unit</td>
+    </tr>
+  </tbody>
+</table>",,U
+Who is the leader of the French-administered territory located in North America?,"SELECT HeadOfState FROM sample_table WHERE Continent = ""North America"" AND GovernmentForm = ""Overseas Department of France"";",extractive,"<table border=""1"" class=""dataframe"">
+  <thead>
+    <tr>
+      <th>Region</th>
+      <th>Caribbean</th>
+      <th>aCirbbean</th>
+      <th>Caribbean</th>
+      <th colspan=""2"" halign=""left"">Eastern Africa</th>
+      <th colspan=""2"" halign=""left"">South America</th>
+    </tr>
+    <tr>
+      <th>GovernmentForm</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+      <th>US Territory</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+      <th>Dependent Territory of the UK</th>
+      <th>Overseas Department of France</th>
+    </tr>
+    <tr>
+      <th>HeadOfState</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+      <th>George W. Bush</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+      <th>Elisabeth II</th>
+      <th>Jacques Chirac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Continent (SurfaceArea) (unit)</th>
+      <td>Continent (SurfaceArea) (unit) (est.)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Continent (SurfaceArea) (unit)</th>
+      <td>North America (96.0)</td>
+      <td>North America (1705.0)</td>
+      <td>North Ameria c(347.0)</td>
+      <td>Africa (78.0)</td>
+      <td>Africa (2510.0)</td>
+      <td>South America (12173.0)</td>
+      <td>SouthmA ercia (90000.0)</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>",,Jacques Chirac
