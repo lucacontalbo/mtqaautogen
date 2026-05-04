@@ -60,7 +60,7 @@ dataset = DatasetDict({
 )"""
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "Qwen/Qwen3.5-9B", # TODO: change model name
+    model_name = "Qwen/Qwen3.5-9B",
     max_seq_length = max_seq_length,
     load_in_4bit = False,
     load_in_16bit = True,
