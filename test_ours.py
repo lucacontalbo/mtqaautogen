@@ -81,6 +81,10 @@ if __name__ == '__main__':
         filepath = os.path.join(args["model"].split("/")[-1].replace(".", "-"), args['filepath'].split("datasets/")[-1])
         to_save_path = os.path.join("results", "bird", f"{filepath.split('.')[0]}")
         method = df.iloc[0]['Method']
+    elif args["griqa"]:
+        filepath = os.path.join(args["model"].split("/")[-1].replace(".", "-"), args['filepath'].split("datasets/")[-1])
+        to_save_path = os.path.join("results", "griqa", f"{filepath.split('.')[0]}")
+        method = df.iloc[0]['Method']
     else:
         filepath = os.path.join(args["model"].split("/")[-1].replace(".", "-"), args['filepath'].split("datasets/")[-1])
         to_save_path = os.path.join("results", "ours", f"{filepath.split('.')[0]}")

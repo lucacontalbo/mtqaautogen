@@ -31,6 +31,7 @@ def get_args_test():
     parser.add_argument('--model', type=str, required=True, help='Model name')
     parser.add_argument('--tatqa', action="store_true", help='Whether the dataset is tatqa or not')
     parser.add_argument('--bird', action="store_true", help='Execute BIRD ablations')
+    parser.add_argument('--griqa', action="store_true", help='Whether the dataset is griqa or not')
 
     args = vars(parser.parse_args())
     if args['tatqa'] and args['bird']:
