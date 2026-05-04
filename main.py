@@ -22,7 +22,7 @@ if __name__ == "__main__":
     os.makedirs(path, exist_ok=True)
 
     if generate_ablations:
-        samples, error_logs = mtautogen.run_ablations(num_tables=num_tables, num_samples=1, domain=domain, sequential=args["sequential"])
+        samples, error_logs = mtautogen.run_ablations(num_tables=num_tables, num_samples=50, domain=domain, sequential=args["sequential"])
         print(error_logs)
         for num_tables in samples:
             for k1 in samples[str(num_tables)]:

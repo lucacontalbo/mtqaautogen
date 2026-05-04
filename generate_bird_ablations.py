@@ -10,7 +10,7 @@ if __name__ == "__main__":
     #method = "average"
     path = f"datasets/bird/"
 
-    if False:
+    if True:
         print("Started generation of single table BIRD datasets")
         single_datasets = mt.run_bird_comparison(num_tables=1)
         for method in single_datasets:
@@ -53,10 +53,10 @@ if __name__ == "__main__":
     else:
         print("Started generation of multi table BIRD datasets")
 
-        multi_datasets = mt.run_bird_comparison(num_tables=3)
+        multi_datasets = mt.run_bird_comparison(num_tables=3, question_type="parallel")
 
         for method in multi_datasets:
-            multi_table, multi_table_unit_diff = [], []
+            multi_table, multi_table_unit_diff, multi_table_rel = [], [], []
             for k in multi_datasets[method]:
                 for instance in range(len(multi_datasets[method][k])):
                     decimals = multi_datasets[method][k][instance][1]["decimals"]
@@ -77,8 +77,18 @@ if __name__ == "__main__":
                             # constraints, which are empty in this case. I keep it to have the same shape as the other generated datasets
                             multi_datasets[method][k][instance][1]["label"],
                         ])
-                    else:
+                    elif k == "not_unit_converted":
                         multi_table.append([
+                            multi_datasets[method][k][instance][1]["nl_question"],
+                            multi_datasets[method][k][instance][1]["query"],
+                            method,
+                            text,
+                            "",
+                            # constraints, which are empty in this case. I keep it to have the same shape as the other generated datasets
+                            multi_datasets[method][k][instance][1]["label"],
+                        ])
+                    else:
+                        multi_table_rel.append([
                             multi_datasets[method][k][instance][1]["nl_question"],
                             multi_datasets[method][k][instance][1]["query"],
                             method,
@@ -90,10 +100,12 @@ if __name__ == "__main__":
 
                 if k == "unit_converted":
                     df = pd.DataFrame(multi_table_unit_diff, columns=["Question", "SQL Query", "Method", "Table", "Constraints", "Label"])
-                else:
+                elif k == "not_unit_converted":
                     df = pd.DataFrame(multi_table, columns=["Question", "SQL Query", "Method", "Table", "Constraints", "Label"])
+                else:
+                    df = pd.DataFrame(multi_table_rel, columns=["Question", "SQL Query", "Method", "Table", "Constraints", "Label"])
 
                 os.makedirs(os.path.join(path, method), exist_ok=True)
-                df.to_csv(os.path.join(path, method, "multi_table_"+k+".csv"))
+                df.to_csv(os.path.join(path, method, "multi_table_parallel_"+k+".csv"))
 
         print(f"Saving of BIRD multi table datasets completed. Datasets saved in {path}")

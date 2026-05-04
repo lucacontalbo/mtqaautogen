@@ -103,6 +103,8 @@ class Perturber:
         if keep_cols is None:
             keep_cols = []
 
+        rows_to_keep = []
+        cols_to_keep = []
         # Rows
         if reduce_rows:
             keep_rows_idx = pivot.index.intersection(keep_rows)
@@ -147,7 +149,7 @@ class Perturber:
             if n_keep_cols > self.num_columns_range[0]:
                 n_cols = self.rng.randint(n_keep_cols, self.num_columns_range[1])
 
-            n_cols = self.num_cols_range[1] # TODO: remove
+            n_cols = self.num_columns_range[1] # TODO: remove
 
 
             """if n_keep_cols > n_cols:
@@ -170,7 +172,13 @@ class Perturber:
 
             pivot = pivot.loc[:, cols_to_keep]
 
-        return pivot
+        row_mask, col_mask = None, None
+        if len(rows_to_keep) > 0:
+            row_mask = pd.Series(pivot.index.isin(rows_to_keep), index=pivot.index)
+        if len(cols_to_keep) > 0:
+            col_mask = pd.Series(pivot.columns.isin(cols_to_keep), index=pivot.columns)
+
+        return pivot, row_mask, col_mask
 
     def insert_unit_of_measurement(self, table: pd.DataFrame, value_col: str, units_of_measurement: list, unit_in_cell: bool = False):
         if not unit_in_cell and len(set([unit for unit in units_of_measurement if unit is not None and unit != "None"])) != 1:
@@ -195,7 +203,15 @@ class Perturber:
         return table, new_value_col
 
     # SCHEMA LEVEL PERTURBATIONS
-    def column_merging_perturbation(self, table: pd.DataFrame, value_col: str, columns: list[str] = None, constraints: list[str] = None, **kwargs):
+    def column_merging_perturbation(self,
+                                    table: pd.DataFrame,
+                                    value_col: str,
+                                    columns: list[str] = None,
+                                    constraints: list[str] = None,
+                                    return_cols=False,
+                                    rows_chosen=None,
+                                    cols_chosen=None,
+                                    **kwargs):
         """
         merges two random columns into one
         """
@@ -209,7 +225,20 @@ class Perturber:
             return table
 
         cols = list(table.columns)
-        col1, col2 = self.rng.sample(cols, 2)
+        if return_cols:
+            patience = 10
+            while patience > 0:
+                col1, col2 = self.rng.sample(cols, 2)
+                if (col1 in rows_chosen and len(rows_chosen) == 1) or (col2 in rows_chosen and len(rows_chosen) == 1) or (col1 in cols_chosen and len(cols_chosen) == 1) or (col2 in cols_chosen and len(cols_chosen) == 1):
+                    patience -= 1
+                else:
+                    break
+            if patience == 0:
+                return None, None, None, None, None
+
+        else:
+            col1, col2 = self.rng.sample(cols, 2)
+
         if columns is not None and constraints is not None:
             if col1 == value_col:
                 if col2 in columns and avoid_answer_collapse(columns, constraints, col2):
@@ -220,12 +249,15 @@ class Perturber:
 
         new_col_name = f"{col1} ({col2})"
         table[new_col_name] = table[col1].astype(str) + " (" + table[col2].astype(str) + ")"
-
         table.drop(columns=[col1, col2], inplace=True)
 
+        col_is_value_col = False
         if value_col == col1 or value_col == col2:
+            col_is_value_col = True
             value_col = new_col_name
 
+        if return_cols:
+            return table, value_col, col1, col2, col_is_value_col
         return table, value_col
 
     def row_merging_perturbation(self, table: pd.DataFrame):
@@ -456,7 +488,8 @@ class Perturber:
                                  unit_in_cell: bool = False,
                                  full_mask: pd.Series | None = None,
                                  rows_chosen=None,
-                                 cols_chosen=None):
+                                 cols_chosen=None,
+                                 fk=False):
 
         columns = list(table.columns)
         #table_types.pop(columns.index(value_col))
@@ -502,7 +535,7 @@ class Perturber:
             keep_cols = pivot.columns[cols_must_keep]
 
             try:
-                pivot_small = self.shrink_pivot( #shrinking the pivoted table to the desired row/column size
+                pivot_small, kept_pivot_rows, kept_pivot_cols = self.shrink_pivot( #shrinking the pivoted table to the desired row/column size
                     pivot,
                     keep_rows=keep_rows,
                     keep_cols=keep_cols,
@@ -516,8 +549,24 @@ class Perturber:
         if pivot_small is None:
             return None, None, None, None
 
+        # creating masks of selected rows/cols from table
+
+        def make_key(df, cols):
+            if len(cols) == 1:
+                return df[cols[0]]
+            return pd.Series(list(map(tuple, df[cols].to_numpy())), index=df.index)
+
+        row_keys = make_key(table, rows_chosen)
+        col_keys = make_key(table, cols_chosen)
+
+        kept_table_rows = row_keys.isin(pivot_small.index) & col_keys.isin(pivot_small.columns)
+        kept_table_cols = table.columns.isin(rows_chosen + cols_chosen + [value_col])
+        kept_table_full_mask = np.outer(kept_table_rows.to_numpy(), kept_table_cols)
+
+        # dealing with units of measurement
+
         option = -1
-        if not unit_in_cell:
+        if unit_in_cell is not None and not unit_in_cell:
             """
             if the unit is not inside each cell, then it is in the value_col name, which is gone after pivoting.
             In this case, we add it back in one of many possible ways.
@@ -556,6 +605,8 @@ class Perturber:
                 # add an additional multi-header level with the new_value_col
                 pivot.columns = pd.MultiIndex.from_product([[new_value_col], pivot.columns])"""
 
+        if fk:
+            return pivot_small, rows_chosen, cols_chosen, option, kept_table_rows, kept_table_cols, kept_table_full_mask
         return pivot_small, rows_chosen, cols_chosen, option
 
     # CELL LEVEL PERTURBATIONS

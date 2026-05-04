@@ -149,4 +149,39 @@ Keep in mind, however, that it is very important that the dependent components (
 
 Let's think step-by-step."""
 
+prompt_multi_fk = """You will be given some SQL queries that are applied sequentially to each table, some tables and the result of executing those SQL queries.
+You must generate a single natural language question that answers the final result. The question must be phrased exactly with the following style:
+
+"
+What is the [operation] [attribute_value with unit of measure] for [constraints]?
+
+Restrict the calculation to:
+
+1) first option in last SQL query
+2) second option in last SQL query
+...
+"
+
+In particular,
+(1) the [constraints] must be the WHERE constraints appearing inside the first SQL query;
+(2) the options must be the options appearing inside the last SQL query;
+(3) skip the constraints that are equal to "this value depends on the previous instruction".
+(4) by looking at the tables' contents, make sure that the question is semantically sound and plausible.
+(5) you must differ how the sentence is phrased and the words used, in order to avoid too much overlap between question and table contents, as well as overlap with the value of the attributes.
+(6) you must not use the exact SQL table attributes, where the attribute name is in camel case, but you must use them in a more natural way, resembling user questions.
+(7) when possible, prefer using shorter questions: the less tokens you use the better, without losing any important details, such as the constraints or the final question. Variations in the formulation of the values of the attributes between NL and SQL questions are advised, as long as the question remains unambiguous.
+
+Additionally:
+(1) the generated question must be of the following type: {method}
+(2) for superlative questions, make sure to ask for the value. Never ask for the entity.
+
+First reason step-by-step.
+In the end, write "Final question:" followed exclusively by the final question. Do not write anything else after "Final question:".
+
+{text}
+
+This is the final result: {result}
+
+Let's think step-by-step."""
+
 # Make sure to include, in the natural language question, all the information and constraints appearing inside the SQL query.

@@ -115,3 +115,37 @@ Also, remember that intermediate results MUST NOT be explicitly visible inside t
 The final question must always clearly explicitate what are the values that are needed to apply the aggregation operation in the end. It must not say "what is the value across the specified indicators", but say something among the lines of "what is the value across: (1) ..., (n) ...". This is important, as the user cannot see the SQL query, and everything needs to be explicitly stated.
 
 Let's think step-by-step."""
+
+
+prompt_multi_fk = """You will be given a question in natural language, SQL queries that are applied sequentially, some tables and the result of executing those SQL queries.
+You must check if the natural language question does not specify a needed constraint that, without it, makes it impossible to correctly answer the question.
+If there are any missing constraint, your MUST explicitly add those constraints, without unnecessarily modifying other parts of the question.
+
+The question must be formulated exactly with the following style:
+
+"
+What is the [operation] [attribute_value with unit of measure] for [constraints]?
+
+Restrict the calculation to:
+
+1) first option in last SQL query
+2) second option in last SQL query
+...
+"
+
+First, write your step-by-step reasoning and analyze the natural language question and the SQL queries to determine if there are any missing constraints.
+If they are equivalent (use the same information), at the end of your reasoning write exactly "Final answer: Yes".
+If they are not equivalent, at the end of your reasoning write exactly "Final answer:" followed exclusively by the novel formulation of the question with the missing constraints. Do not write anything else after "Final answer:".
+Slight variations in the formulation of the values of the attributes between NL and SQL questions are advised, as long as the question remains unambiguous.
+
+Natural Language Question: {nl_question}
+SQL Question: {sql_question}
+Tables: {table}
+Result: {sql_result}
+
+Remember that, if you change the question, the natural language question must be user-like: it must not contain SQL syntax, camel case, mathematical or boolean symbols, or explicit mentions of certain multi-word string values (appearing in the table) enclosed in "" (slight variations are fine).
+The final question must always clearly explicitate what are the values that are needed to apply the aggregation operation in the end. It must not say "what is the value across the specified indicators", but say something among the lines of "what is the value across: (1) ..., (n) ...". This is important, as the user cannot see the SQL query, and everything needs to be explicitly stated.
+Also, the final natural language question must always specify the following unit of measurement: {unit}
+Remember also to first reason step-by-step. In the end, write "Final answer:" followed exclusively by the answer. Do not write anything else after "Final answer:".
+
+Let's think step-by-step."""
